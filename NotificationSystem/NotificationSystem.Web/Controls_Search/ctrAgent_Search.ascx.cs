@@ -17,8 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-namespace NotificationSystem.NotificationSystem.Web.Controls_Search
-{
+
     public partial class ctrAgent_Search : System.Web.UI.UserControl
     {
         private @int m_AgentID = 0;
@@ -44,4 +43,3 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
             m_AgentID = this.txtagentid.Text;
         }
     }
-}

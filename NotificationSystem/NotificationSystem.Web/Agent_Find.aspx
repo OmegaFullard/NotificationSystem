@@ -1,11 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.master" CodeBehind="Agent_Find.aspx.cs" Inherits="Agent_Find" %>
+﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Agent_Find.aspx.cs" Inherits="Agent_Find" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Search/ctrAgent_Search.ascx" TagPrefix="uc1" TagName="ctrAgent_Search" %>
 <%@ Register Src="Controls_Find/ctrAgent_Find.ascx" TagPrefix="uc1" TagName="ctrAgent_Find" %>
-
-
-
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
@@ -19,7 +16,7 @@
                                      <asp:TableRow>
                                           <asp:TableCell> 
                                               <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">
-                                                           <asp:Image ID="techbg" runat="server" ImageUrl="~/images/techbg.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="80px" style="margin-top: 5px" Width="80px" />
+                                                           <asp:Image ID="techbg" runat="server" ImageUrl="images/techbg.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="80px" style="margin-top: 5px" Width="80px" />
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>

@@ -17,8 +17,7 @@ using System.Data;
 using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
 using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
 
-namespace NotificationSystem.NotificationSystem.Web.Controls_Find
-{
+
     public partial class ctrAgent_Find : System.Web.UI.UserControl
     {
         private @int m_AgentID = 0;
@@ -67,4 +66,3 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
             }
         }
     }
-}

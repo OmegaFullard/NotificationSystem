@@ -12,16 +12,18 @@
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png"/>
 <link rel="manifest" href="/site.webmanifest"/>
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+
 <meta name="msapplication-TileColor" content="#da532c"/>
 <meta name="theme-color" content="#ffffff"/>
     <title>Royal City Help Desk</title>
     <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+
      <link rel="stylesheet" type="text/css" href="styles.css" />
     <link href="styles/base.css" rel="stylesheet" />
     <link href="styles/default.css" rel="stylesheet" />
     <link href="styles/grid.css" rel="stylesheet" />
     <link href="styles/listView.css" rel="stylesheet" />
-    <link href="../NotificationSystem.Data/Site.css" rel="stylesheet" />
+ 
     <link href="http://localhost:64954/css/bootstrap.min.css" rel="stylesheet" />
     <link href="http://localhost:64954/Content/DataTables/css/dataTables.jqueryui.min.css" rel="stylesheet" />
 
@@ -162,3 +164,4 @@
     </form>
 </body>
 </html>
+

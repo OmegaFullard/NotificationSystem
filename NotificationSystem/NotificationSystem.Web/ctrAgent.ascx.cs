@@ -17,8 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
+
     public partial class ctrAgent : System.Web.UI.UserControl
     {
         private @int m_AgentID = 0;
@@ -116,4 +115,3 @@ namespace NotificationSystem.NotificationSystem.Web
             return System.Web.UI.Control.ViewState["direction"].ToString();
         }
     }
-}

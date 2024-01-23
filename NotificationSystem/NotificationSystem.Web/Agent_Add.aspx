@@ -1,15 +1,33 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Agent_Add.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Add" %>
+﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Agent_Add.aspx.cs" Inherits="Agent_Add" %>
 
-<!DOCTYPE html>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Src="Controls_Search/ctrAgent_Search.ascx" TagPrefix="uc1" TagName="ctrAgent_Search" %>
+<%@ Register Src="Controls_Add/ctrAgent_Add.ascx" TagPrefix="uc1" TagName="ctrAgent_Add" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+
+
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
+            </asp:Content>
+           <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="body" >
+              <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
+                     <h2>Create Department</h2><br />
+
+                       <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
+
+ <asp:TableRow>
+                                          <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">
+                                                            <asp:Image ID="techbg" runat="server" ImageUrl="images/techbg.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="80px" style="margin-top: 5px" Width="80px" />
+                                                       </asp:Panel> 
+                                         </asp:TableCell>
+                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
+                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_Search runat="server" id="ctrAgent_Search" Visible="false" /></asp:TableCell>
+                                                 
+                                    </asp:TableRow>
+                         </asp:Table>
+                  <br />
+
+<uc1:ctrAgent_Add runat="server" id="ctrAgent_Add" />
+
+                     </div>                  
+                
+    </asp:Content>
