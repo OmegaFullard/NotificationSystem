@@ -9,33 +9,51 @@
 
 
 
-public partial class ctrAgent_Find
+public partial class Agent
 {
 
     /// <summary>
-    /// lblAgentID control.
+    /// Table1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblAgentID;
+    protected global::System.Web.UI.WebControls.Table Table1;
 
     /// <summary>
-    /// lblStartDate control.
+    /// Panel1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblStartDate;
+    protected global::System.Web.UI.WebControls.Panel Panel1;
 
     /// <summary>
-    /// lblTroubleTicketNo control.
+    /// techbg control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTroubleTicketNo;
+    protected global::System.Web.UI.WebControls.Image techbg;
+
+    /// <summary>
+    /// ctrAgent_Search control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::NotificationSystem.NotificationSystem.Web.Controls_Search.ctrAgent_Search ctrAgent_Search;
+
+    /// <summary>
+    /// ctrAgent control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::NotificationSystem.NotificationSystem.Web.ctrAgent ctrAgent;
 }

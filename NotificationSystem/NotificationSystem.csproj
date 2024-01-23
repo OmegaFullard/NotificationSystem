@@ -3797,7 +3797,7 @@
     <Content Include="NotificationSystem.Data\Site.css" />
     <Content Include="NotificationSystem.Web\AdminLogin.aspx" />
     <Content Include="NotificationSystem.Web\AgentMgt.aspx" />
-    <Content Include="NotificationSystem.Web\Agents.aspx" />
+    <Content Include="NotificationSystem.Web\Agent.aspx" />
     <Content Include="NotificationSystem.Web\Bin\App_Licenses.dll" />
     <Content Include="NotificationSystem.Web\Bin\DocumentFormat.OpenXml.dll" />
     <Content Include="NotificationSystem.Web\Bin\DocumentFormat.OpenXml.xml" />
@@ -3983,6 +3983,13 @@
     <Content Include="NotificationSystem.Web\webReportDesigner1.html" />
     <Content Include="NotificationSystem.Web\WebReportDesigner_Item_Log.html" />
     <Content Include="NotificationSystem\NotificationSystem.csproj.user" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NotificationSystem.Data\Classes\clsAgent.cs" />
@@ -4002,11 +4009,11 @@
     <Compile Include="NotificationSystem.Web\AgentMgt.aspx.cs">
       <DependentUpon>AgentMgt.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NotificationSystem.Web\Agents.aspx.cs">
-      <DependentUpon>Agents.aspx</DependentUpon>
+    <Compile Include="NotificationSystem.Web\Agent.aspx.cs">
+      <DependentUpon>Agent.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NotificationSystem.Web\Agents.aspx.designer.cs">
-      <DependentUpon>Agents.aspx</DependentUpon>
+    <Compile Include="NotificationSystem.Web\Agent.aspx.designer.cs">
+      <DependentUpon>Agent.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Agent_Add.aspx.cs">
       <DependentUpon>Agent_Add.aspx</DependentUpon>
