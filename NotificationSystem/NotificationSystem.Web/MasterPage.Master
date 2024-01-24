@@ -39,7 +39,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <telerik:RadScriptManager runat="server"></telerik:RadScriptManager>
+        <telerik:RadScriptManager Runat="server"></telerik:RadScriptManager>
+      
         <div id="wrapper">
         <telerik:RadPageLayout runat="server" ID="MasterLayout" GridType="Fluid">
             <Rows>

@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,67 +47,101 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="AspNet.ScriptManager.bootstrap">
-      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
-    </Reference>
-    <Reference Include="AspNet.ScriptManager.jQuery">
-      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ScriptManager.MSAjax">
-      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ScriptManager.WebForms">
-      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease">
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=5.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.5.2.3\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
-    <Reference Include="Antlr3.Runtime">
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.7.0\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
-      <Private>True</Private>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AspNet.FriendlyUrls">
-      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.DynamicData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Telerik.Web.UI, Version=2023.3.1010.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="NotificationSystem.Data\Content\bootstrap-grid.css.map" />
     <Content Include="NotificationSystem.Data\Content\bootstrap-grid.min.css.map" />
     <Content Include="NotificationSystem.Data\Content\bootstrap-grid.rtl.css.map" />
@@ -139,6 +174,23 @@
     <Content Include="NotificationSystem.Data\fonts\fontawesome-webfont.woff2" />
     <Content Include="NotificationSystem.Data\fonts\FontAwesome.otf" />
     <Content Include="NotificationSystem.Data\libman.json" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Antlr.3.4.1.9004.nupkg" />
     <None Include="NotificationSystem.Data\packages.config" />
     <Content Include="NotificationSystem.Data\Scripts\bootstrap.bundle.js.map" />
     <Content Include="NotificationSystem.Data\Scripts\bootstrap.bundle.min.js.map" />
@@ -3797,7 +3849,7 @@
     <Content Include="NotificationSystem.Data\Site.css" />
     <Content Include="NotificationSystem.Web\AdminLogin.aspx" />
     <Content Include="NotificationSystem.Web\AgentMgt.aspx" />
-    <Content Include="NotificationSystem.Web\Agents.aspx" />
+    <Content Include="NotificationSystem.Web\Agent.aspx" />
     <Content Include="NotificationSystem.Web\Bin\App_Licenses.dll" />
     <Content Include="NotificationSystem.Web\Bin\DocumentFormat.OpenXml.dll" />
     <Content Include="NotificationSystem.Web\Bin\DocumentFormat.OpenXml.xml" />
@@ -3983,6 +4035,54 @@
     <Content Include="NotificationSystem.Web\webReportDesigner1.html" />
     <Content Include="NotificationSystem.Web\WebReportDesigner_Item_Log.html" />
     <Content Include="NotificationSystem\NotificationSystem.csproj.user" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="web.config" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NotificationSystem.Data\Classes\clsAgent.cs" />
@@ -3995,18 +4095,21 @@
     <Compile Include="NotificationSystem.Data\xsReports.Designer.cs" />
     <Compile Include="NotificationSystem.Web\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\AgentMgt.aspx.cs">
       <DependentUpon>AgentMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="NotificationSystem.Web\Agents.aspx.cs">
-      <DependentUpon>Agents.aspx</DependentUpon>
+    <Compile Include="NotificationSystem.Web\Agent.aspx.cs">
+      <DependentUpon>Agent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="NotificationSystem.Web\Agents.aspx.designer.cs">
-      <DependentUpon>Agents.aspx</DependentUpon>
+    <Compile Include="NotificationSystem.Web\Agent.aspx.designer.cs">
+      <DependentUpon>Agent.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Agent_Add.aspx.cs">
       <DependentUpon>Agent_Add.aspx</DependentUpon>
@@ -4032,132 +4135,154 @@
     <Compile Include="NotificationSystem.Web\Article.cs" />
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrAgent_Add.ascx.cs">
       <DependentUpon>ctrAgent_Add.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrAgent_Add.ascx.designer.cs">
       <DependentUpon>ctrAgent_Add.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrCustomer_Add.ascx.cs">
       <DependentUpon>ctrCustomer_Add.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrCustomer_Add.ascx.designer.cs">
       <DependentUpon>ctrCustomer_Add.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrNotifications_Add.ascx.cs">
       <DependentUpon>ctrNotifications_Add.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrNotifications_Add.ascx.designer.cs">
       <DependentUpon>ctrNotifications_Add.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrTroubleTicketReq_Add.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq_Add.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrTroubleTicketReq_Add.ascx.designer.cs">
       <DependentUpon>ctrTroubleTicketReq_Add.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrAgent_Find.ascx.cs">
       <DependentUpon>ctrAgent_Find.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrAgent_Find.ascx.designer.cs">
       <DependentUpon>ctrAgent_Find.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrCustomer_Find.ascx.cs">
       <DependentUpon>ctrCustomer_Find.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrCustomer_Find.ascx.designer.cs">
       <DependentUpon>ctrCustomer_Find.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrNotifications_Find.ascx.cs">
       <DependentUpon>ctrNotifications_Find.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrNotifications_Find.ascx.designer.cs">
       <DependentUpon>ctrNotifications_Find.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrTroubleTicketReq_Find.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq_Find.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrTroubleTicketReq_Find.ascx.designer.cs">
       <DependentUpon>ctrTroubleTicketReq_Find.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrAgent_Search.ascx.cs">
       <DependentUpon>ctrAgent_Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrAgent_Search.ascx.designer.cs">
       <DependentUpon>ctrAgent_Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrCustomer_Search.ascx.cs">
       <DependentUpon>ctrCustomer_Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrCustomer_Search.ascx.designer.cs">
       <DependentUpon>ctrCustomer_Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrNotifications_Search.ascx.cs">
       <DependentUpon>ctrNotifications_Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrNotifications_Search.ascx.designer.cs">
       <DependentUpon>ctrNotifications_Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrTroubleTicketReq_Search.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq_Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrTroubleTicketReq_Search.ascx.designer.cs">
       <DependentUpon>ctrTroubleTicketReq_Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrAgent_Update.ascx.cs">
       <DependentUpon>ctrAgent_Update.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrAgent_Update.ascx.designer.cs">
       <DependentUpon>ctrAgent_Update.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrCustomer_Update.ascx.cs">
       <DependentUpon>ctrCustomer_Update.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrCustomer_Update.ascx.designer.cs">
       <DependentUpon>ctrCustomer_Update.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrNotifications_Update.ascx.cs">
       <DependentUpon>ctrNotifications_Update.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrNotifications_Update.ascx.designer.cs">
       <DependentUpon>ctrNotifications_Update.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrTroubleTicketReq_Update.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq_Update.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrTroubleTicketReq_Update.ascx.designer.cs">
       <DependentUpon>ctrTroubleTicketReq_Update.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrAgent.ascx.cs">
       <DependentUpon>ctrAgent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrAgent.ascx.designer.cs">
       <DependentUpon>ctrAgent.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrCustomer.ascx.cs">
       <DependentUpon>ctrCustomer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrCustomer.ascx.designer.cs">
       <DependentUpon>ctrCustomer.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrNotifications.ascx.cs">
       <DependentUpon>ctrNotifications.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrNotifications.ascx.designer.cs">
       <DependentUpon>ctrNotifications.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrTroubleTicketReq.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrTroubleTicketReq.ascx.designer.cs">
       <DependentUpon>ctrTroubleTicketReq.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Customer.aspx.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Customer.aspx.designer.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\CustomerMgt.aspx.cs">
       <DependentUpon>CustomerMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Customer_Add.aspx.cs">
       <DependentUpon>Customer_Add.aspx</DependentUpon>
@@ -4182,6 +4307,7 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -4192,6 +4318,7 @@
     <Compile Include="NotificationSystem.Web\Image.cs" />
     <Compile Include="NotificationSystem.Web\Invoices.aspx.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Invoices.aspx.designer.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
@@ -4199,27 +4326,32 @@
     <Compile Include="NotificationSystem.Web\ListView.aspx.designer.cs" />
     <Compile Include="NotificationSystem.Web\Logins.aspx.cs">
       <DependentUpon>Logins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\Logins.aspx.designer.cs">
       <DependentUpon>Logins.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\MasterPageSingleMenu.Master.cs">
       <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\MasterPageSingleMenu.Master.designer.cs">
       <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Notifications.aspx.cs">
       <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\NotificationsMgt.aspx.cs">
       <DependentUpon>NotificationsMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\NotificationsMgt.aspx.designer.cs">
       <DependentUpon>NotificationsMgt.aspx</DependentUpon>
@@ -4271,12 +4403,14 @@
     <Compile Include="NotificationSystem.Web\styles\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="NotificationSystem.Web\TicketDetails.aspx.cs">
       <DependentUpon>TicketDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\TicketDetails.aspx.designer.cs">
       <DependentUpon>TicketDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\TicketReq.aspx.cs">
       <DependentUpon>TicketReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\TroubleTicketReq_Add.aspx.cs">
       <DependentUpon>TroubleTicketReq_Add.aspx</DependentUpon>
@@ -4301,12 +4435,14 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\UserRegistration.aspx.cs">
       <DependentUpon>UserRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\UserRegistration.aspx.designer.cs">
       <DependentUpon>UserRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\UserViewProfile.aspx.cs">
       <DependentUpon>UserViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NotificationSystem.Web\UserViewProfile.aspx.designer.cs">
       <DependentUpon>UserViewProfile.aspx</DependentUpon>
@@ -4329,6 +4465,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
