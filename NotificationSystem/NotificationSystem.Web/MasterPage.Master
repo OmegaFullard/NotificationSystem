@@ -23,7 +23,6 @@
     <link href="styles/default.css" rel="stylesheet" />
     <link href="styles/grid.css" rel="stylesheet" />
     <link href="styles/listView.css" rel="stylesheet" />
- 
     <link href="http://localhost:64954/css/bootstrap.min.css" rel="stylesheet" />
     <link href="http://localhost:64954/Content/DataTables/css/dataTables.jqueryui.min.css" rel="stylesheet" />
 
@@ -38,8 +37,6 @@
     </asp:ContentPlaceHolder>
     <meta name="Omega Fullard" content="Royal City, Developer: Omega Fullard, Designer: Omega Fullard" />
 </head>
-    <asp:ContentPlaceHolder ID="body" runat="server">
-    </asp:ContentPlaceHolder>
 <body>
     <form id="form1" runat="server">
         <telerik:RadScriptManager runat="server"></telerik:RadScriptManager>

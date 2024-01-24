@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NotificationSystem_Practice
+namespace NotificationSystem
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
