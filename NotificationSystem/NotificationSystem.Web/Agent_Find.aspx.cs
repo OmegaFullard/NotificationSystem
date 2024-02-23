@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Genericusing System.Data;
+using System.Collections.Generic;
+using System.Data;
 using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
 using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
 using System.Linq;
@@ -11,9 +12,9 @@ using System.Web.UI.WebControls;
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((System.Web.UI.Control.Page.IsPostBack))
+            if ((Page.IsPostBack))
             {
-                if (System.Web.UI.Page.Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+                if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrAgent_Search.PopulateSearchControl();
                     if (ctrAgent_Search.AgentID.Length == 0)

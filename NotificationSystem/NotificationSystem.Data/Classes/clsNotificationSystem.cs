@@ -203,21 +203,21 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
         //        throw;
         //    }
         //}
-        //public int GetAgentListByID(int AgentID)
-        //{
-        //    try
-        //    {
-        //        AgentListTableAdapter adpAgentList = new AgentListTableAdapter();
-        //        AgentListDataTable tblAgentList = adpAgentList.GetDataByID(AgentID);
+        public int GetAgentListByID(int AgentID)
+        {
+            try
+            {
+                AgentListTableAdapter adpAgentList = new AgentListTableAdapter();
+                AgentListDataTable tblAgentList = adpAgentList.GetDataByID(AgentID);
 
-        //        AgentListRow row = tblAgentList(0);
-        //        return row.AgentID;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw;
-        //    }
-        //}
+                AgentListRow row = tblAgentList(0);
+                return row.AgentID;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
         public DataTable GetAgents()
         {

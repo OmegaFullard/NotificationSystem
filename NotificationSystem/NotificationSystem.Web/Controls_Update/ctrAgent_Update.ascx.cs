@@ -7,14 +7,13 @@ using System.Web.UI.WebControls;
 using System.Data;
 using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
 using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
-
-
+using NotificationSystem_Practice.NotificationSystem.Data.Classes;
 
 public partial class ctrAgent_Update : System.Web.UI.UserControl
 {
-    private @int m_AgentID = 0;
+    private Int16 m_AgentID = 0;
 
-    public Int AgentID
+    public Int16 AgentID
     {
         get
         {
@@ -28,9 +27,9 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        if ((System.Web.UI.Control.Page.IsPostBack))
+        if (Page.IsPostBack)
         {
-            if (m_AgentID.Length > 0)
+            if (m_AgentID > 0)
                 this.lblagentid.Text = "ID" + m_AgentID;
 
             if (this.lblagentid.Text.Length == 2)
@@ -38,9 +37,9 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
 
             try
             {
-                if (System.Web.UI.UserControl.Request.Form["ct100$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+                if (Request.Form["ct100$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
-                    grdAgents.EditIndex = -1;
+                    //grdAgents.EditIndex = -1;
                     this.BindGrid();
                     this.lblagentid.Text = "ID" + m_AgentID;
                 }
@@ -54,9 +53,12 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
 
     private void BindGrid()
     {
-        clsAgent theNotificationSystem = new clsAgent();
+        Int32 count = 0;
+        string result = count.ToString();
+
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
         AgentDataTable tblAgent = theNotificationSystem.GetAgentListByID(Replace(this.lblagentid.Text, "ID", ""));
-        this.lblSearchResult.Text = tblAgent.Rows.Count.ToString + " Result(s)";
+        this.lblSearchResult.Text = tblAgent.Rows.Count.ToString (result + "Result(s)");
 
         grdAgent.DataSource = tblAgent;
         grdAgent.DataBind();
@@ -73,11 +75,11 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
         GridViewRow row = (GridViewRow)grdAgent.Rows(e.RowIndex);
 
 
-        Int AgentID = Convert.ToString(row.FindControl("txtAgentID") as TextBox).ToString;
-        Int TroubleTicketNo = Convert.ToString(row.FindControl("txtTroubleTicketNo") as TextBox).ToString;
+        Int32 AgentID = Convert.ToString(row.FindControl("txtAgentID") as TextBox).ToString;
+        Int32 TroubleTicketNo = Convert.ToString(row.FindControl("txtTroubleTicketNo") as TextBox).ToString;
         string Title = (row.FindControl("txttitle") as TextBox).Text;
         DateTime StartDate = Convert.ToString(row.FindControl("StartDate") as TextBox).ToString;
-        Int Salary = Convert.ToString(row.FindControl("txtsalary") as TextBox).ToString;
+        Int32 Salary = Convert.ToString(row.FindControl("txtsalary") as TextBox).ToString;
         string FirstN = (row.FindControl("txtfirstname") as TextBox).Text;
         string LastN = (row.FindControl("txtlastname") as TextBox).Text;
         string Email = (row.FindControl("txtemail") as TextBox).Text;
@@ -98,7 +100,7 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
         this.BindGrid();
     }
 
-    private clsAgent CheckCalendarControls(ref @int AgentID, DateTime StartDate)
+    private clsAgent CheckCalendarControls(ref Int16 AgentID, DateTime StartDate)
     {
         clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
         clsAgent thisAgent = new clsAgent();
