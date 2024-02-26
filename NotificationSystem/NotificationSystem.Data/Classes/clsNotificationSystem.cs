@@ -188,21 +188,21 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
 
 
 
-        //public DataTable GetAgentList()
-        //{
-        //    try
-        //    {
-        //        AgentListTableAdapter adpAgentList = new AgentListTableAdapter();
-        //        AgentListDataTable tblAgentList = adpAgentList.GetData();
+        public DataTable GetAgentList()
+        {
+            try
+            {
+                AgentListTableAdapter adpAgentList = new AgentListTableAdapter();
+                AgentListDataTable tblAgentList = adpAgentList.GetData();
 
-        //        return tblAgentList;
-        //    }
+                return tblAgentList;
+            }
 
-        //    catch (Exception ex)
-        //    {
-        //        throw;
-        //    }
-        //}
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
         public int GetAgentListByID(int AgentID)
         {
             try

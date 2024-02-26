@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Title="Ticket Request" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="TicketReq.aspx.cs" Inherits="TicketReq" %>
+<%@ Page Title="Ticket Request" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="TicketReq.aspx.cs" Inherits="TicketReq" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">

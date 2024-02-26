@@ -66,7 +66,7 @@
                                           </asp:TableRow> 
                                     <asp:TableRow>   
                                                     
-            <asp:TableRow>   
+              
                                                      <asp:TableCell HorizontalAlign="Right" Font-Bold="true"><div class="containerText"> Title:</div></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">
                                                          &nbsp;&nbsp; <asp:TextBox ID="txttitle" runat="server" Height="20px" Width="300px"  ></asp:TextBox>

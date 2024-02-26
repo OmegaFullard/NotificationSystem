@@ -12,15 +12,15 @@ using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((System.Web.UI.Control.Page.IsPostBack))
+            if ((Page.IsPostBack))
             {
-                if (System.Web.UI.Page.Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+                if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrAgent_Search.PopulateSearchControl();
 
                     if (ctrAgent_Search.AgentID.Length == 0)
                         return;
-                    this.ctrAgent_Update.AgentID = ctrAgent_Search.AgentID;
+                    this.ctrAgent_Update.AgentID = (short)ctrAgent_Search.AgentID;
                 }
             }
         }

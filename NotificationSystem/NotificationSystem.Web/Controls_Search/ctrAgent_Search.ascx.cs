@@ -20,9 +20,9 @@ using Microsoft.VisualBasic;
 
     public partial class ctrAgent_Search : System.Web.UI.UserControl
     {
-        private Int16 m_AgentID = 0;
+        private int m_AgentID = 0;
 
-        public Int16 AgentID
+        public int AgentID
         {
             get
             {

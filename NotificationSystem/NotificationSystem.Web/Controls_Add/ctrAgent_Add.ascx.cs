@@ -55,7 +55,7 @@ public partial class ctrAgent_Add : System.Web.UI.UserControl
 
             {
                 var withBlock = thisAgent;
-                withBlock.AgentID = txtAgentID; withBlock.Title = txttitle.Text; withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text; withBlock.StartDate = txtStartDate.Text; withBlock.Salary = txtSalary.Text;
+                withBlock.AgentID = txtagentid; withBlock.Title = txttitle.Text; withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text; withBlock.StartDate = txtStartDate.Text; withBlock.Salary = txtsalary.Text;
 
                 if (withBlock.AgentID.Length == 0 | withBlock.TroubleTicketNo.Length == 0)
                     return;
@@ -100,9 +100,9 @@ public partial class ctrAgent_Add : System.Web.UI.UserControl
                 txtPhoneNumber.Text = Convert.ToString(dr["Phone"]);
                 txtFaxNumber.Text = Convert.ToString(dr["Fax"]);
                 txttitle.Text = Convert.ToString(dr["Title"]);
-                txtSalary.Text = Convert.ToString(dr["Salary"]);
+                txtsalary.Text = Convert.ToString(dr["Salary"]);
                 txtStartDate.Text = Convert.ToString(dr["StartDate"]);
-                txtAgentID.Text = Convert.ToString(dr["AgentID"]);
+                txtagentid.Text = Convert.ToString(dr["AgentID"]);
             }
         }
         catch (Exception ex)
