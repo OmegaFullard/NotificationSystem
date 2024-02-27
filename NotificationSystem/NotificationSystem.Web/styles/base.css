@@ -31,9 +31,10 @@ img {
     border-style: none;
     border-color: inherit;
     border-width: 0;
-    width: 422px;
+    width: 167px;
     margin-right: 0px;
-    margin-top: 85px;
+    margin-top: 0px;
+    height: 167px;
 }
 
 #logo img{

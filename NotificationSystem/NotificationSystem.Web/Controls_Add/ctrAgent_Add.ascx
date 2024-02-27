@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrAgent_Add.ascx.cs" Inherits="ctrAgent_Add" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 <style type="text/css">
@@ -27,12 +27,10 @@
  
 
   <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-                             
-                              <div> <asp:Label ID="lblAgentID" runat="server" Text=""></asp:Label></div><br />
-                              
-      
-                            
-        <asp:Table ID="Table1" runat="server" Width="930px">
+                         
+                              <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
+          
+                             <asp:Table ID="Table1" runat="server" Width="930px">
                                             <asp:TableRow><asp:TableCell ColumnSpan="2"> <div style="padding-bottom:20px;"> Required fields are marked with <span style="color: red">* </span> (red asterisk).
                                                 </div> </asp:TableCell>
                                             </asp:TableRow>
@@ -43,16 +41,19 @@
                                              
                                                  <asp:RequiredFieldValidator  ID="valFirstN" runat="server" ControlToValidate="txtfirstname" ValidationGroup="Submit"  
                                              ErrorMessage="First Name is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
-                                            
+                                              &nbsp;&nbsp; <asp:TextBox ID="txtfirstname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
                                            </asp:TableCell>
              
                                           </asp:TableRow> 
-										  
+										  <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                          </asp:TableRow> 
 										  
                                            <asp:TableRow> 
                                              <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>Last Name:<span style="color: red">*</span></b></div></asp:TableCell>
                                              <asp:TableCell HorizontalAlign="Left"> 
-                                             
+                                               &nbsp;&nbsp; <asp:TextBox ID="txtlastname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
                                                  <asp:RequiredFieldValidator  ID="valLastN" runat="server" ControlToValidate="txtlastname" ValidationGroup="Submit"  
                                              ErrorMessage="Last Name is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
                                             
@@ -103,7 +104,7 @@
                                              <asp:TableRow> 
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">StartDate:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<asp:TextBox ID="txtStartDate" runat="server" Height="20px" Width="300px"  MaxLength="127"></asp:TextBox>     
+                                                        &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickStartDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127"></Telerik:RadDatePicker>     
                                                     </asp:TableCell>
                                                 </asp:TableRow> 
                                                  <asp:TableRow  > 
@@ -145,11 +146,17 @@
                                                          </asp:textbox>
                                                        </asp:TableCell>    
                                                 </asp:TableRow>
-                       
-                                   </asp:Table>                                                             
+                       <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                          </asp:TableRow> 
+                                   </asp:Table>     
+      <br />
                           </div>       
-                
-                  <div style="padding-left:750px;padding-bottom:10px;"  ><asp:Button ID="btnCreate" runat="server" Text="Add" Width="150" /></div>
+                <br />
+<br />
+                 <div style="padding-left:700px;padding-bottom:10px;"  ><asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="150" Height="25px" OnClick="btnCancel_Click"  />&nbsp;&nbsp;
+                 <asp:Button ID="btnAdd" runat="server" Text="Add" Width="150" Height="25px" ValidationGroup="Submit" /></div>
 
               
 

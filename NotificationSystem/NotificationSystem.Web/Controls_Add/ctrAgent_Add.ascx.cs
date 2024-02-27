@@ -19,6 +19,7 @@ using Microsoft.VisualBasic;
 using Telerik.Web.UI;
 using System.Data.SqlClient;
 using NotificationSystem_Practice.NotificationSystem.Data.Classes;
+using System.Net.Http;
 
 public partial class ctrAgent_Add : System.Web.UI.UserControl
 {
@@ -44,7 +45,26 @@ public partial class ctrAgent_Add : System.Web.UI.UserControl
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+        AgentDataTable tblAgent = new AgentDataTable();
+        var client = new HttpClient();
+        try
+        {
+            if ((Page.IsPostBack))
+            {
+                //button click to add form data ?
+                
+                if (Request.Form["ctl00$MainContent$ctrAgent_Add$btnAdd"] == "Add")
+                    AddAgent();
+            }
+            else
+            {
+            }
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
     }
 
     public void AddAgent()
@@ -55,21 +75,36 @@ public partial class ctrAgent_Add : System.Web.UI.UserControl
 
             {
                 var withBlock = thisAgent;
-                withBlock.AgentID = txtagentid; withBlock.Title = txttitle.Text; withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text; withBlock.StartDate = txtStartDate.Text; withBlock.Salary = txtsalary.Text;
-
-                if (withBlock.AgentID.Length == 0 | withBlock.TroubleTicketNo.Length == 0)
+                if (txtagentid.Text.Length == 0 )
                     return;
+
+
+                withBlock.AgentID = int.Parse(txtagentid.Text); withBlock.Title = txttitle.Text; withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text;
+                withBlock.Salary = int.Parse(txtsalary.Text);
             }
 
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            m_AgentID = theNotificationSystem.AddAgent(thisAgent);
-
-
-            this.lblAgentID.Text = "ID" + m_AgentID;
+            try
+            {
+                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                theNotificationSystem.AddAgent(thisAgent);
+                lblResult.Text = "Agent data has been added";
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                    lblResult.Text = "Agent already exist!";
+                else
+                    throw new ApplicationException(ex.Message);
+            }
         }
+
+
         catch (Exception ex)
         {
-            throw;
+            //clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+            //string NotificationBody = ex.Message + "  " + ex.StackTrace;
+            //SendError.SendMailMessage(NotificationBody);
+            //Response.Redirect("ErrorPage.aspx", false);
         }
     }
 
@@ -77,6 +112,7 @@ public partial class ctrAgent_Add : System.Web.UI.UserControl
     {
         try
         {
+         
         }
 
 
@@ -85,28 +121,9 @@ public partial class ctrAgent_Add : System.Web.UI.UserControl
             throw;
         }
     }
-    private void PopulateControls()
-    {
-        var AgentID = Request.QueryString["num"];
-        try
-        {
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
-            if (true)
-            {
-                txtfirstname.Text = Convert.ToString(dr["FirstN"]);
-                txtlastname.Text = Convert.ToString(dr["LastN"]);
-                txtemailaddress.Text = Convert.ToString(dr["Email"]);
-                txtPhoneNumber.Text = Convert.ToString(dr["Phone"]);
-                txtFaxNumber.Text = Convert.ToString(dr["Fax"]);
-                txttitle.Text = Convert.ToString(dr["Title"]);
-                txtsalary.Text = Convert.ToString(dr["Salary"]);
-                txtStartDate.Text = Convert.ToString(dr["StartDate"]);
-                txtagentid.Text = Convert.ToString(dr["AgentID"]);
-            }
-        }
-        catch (Exception ex)
-        {
-        }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Agent_Find.aspx", false);
     }
 }

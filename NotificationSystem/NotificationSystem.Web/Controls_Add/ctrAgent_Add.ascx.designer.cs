@@ -13,13 +13,13 @@ public partial class ctrAgent_Add
 {
 
     /// <summary>
-    /// lblAgentID control.
+    /// lblResult control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblAgentID;
+    protected global::System.Web.UI.WebControls.Label lblResult;
 
     /// <summary>
     /// Table1 control.
@@ -38,6 +38,24 @@ public partial class ctrAgent_Add
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.RequiredFieldValidator valFirstN;
+
+    /// <summary>
+    /// txtfirstname control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtfirstname;
+
+    /// <summary>
+    /// txtlastname control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtlastname;
 
     /// <summary>
     /// valLastN control.
@@ -76,13 +94,13 @@ public partial class ctrAgent_Add
     protected global::System.Web.UI.WebControls.TextBox txtagentid;
 
     /// <summary>
-    /// txtStartDate control.
+    /// pickStartDate control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtStartDate;
+    protected global::Telerik.Web.UI.RadDatePicker pickStartDate;
 
     /// <summary>
     /// txtemailaddress control.
@@ -130,11 +148,20 @@ public partial class ctrAgent_Add
     protected global::System.Web.UI.WebControls.TextBox txtFaxNumber;
 
     /// <summary>
-    /// btnCreate control.
+    /// btnCancel control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btnCreate;
+    protected global::System.Web.UI.WebControls.Button btnCancel;
+
+    /// <summary>
+    /// btnAdd control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btnAdd;
 }
