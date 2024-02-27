@@ -84,99 +84,53 @@
         <div class="header">
 		<meta name="msapplication-TileColor" content="#da532c"/>
 <meta name="theme-color" content="#ffffff"/>
-     <div class="title">
-                <h1>Royal City Help Desk</h1>
-				 
-            </div>
-               </div>    
-    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
-           
+    <h1>
                   <%--Logo--%>
-                       <div class="container">
-    <div class="row">
-        <div class="col-md-2 col-sm-12">
+
             <a href="#" class="logo">
                 <img src="images/RCLogo.png" alt="site logo" />
             </a>
-        </div>
+
+        </h1>
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+           </div>
         <!-- Main Nav -->
-        <div class="col-md-10 col-sm-12">
-            <div class="radmenu">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Default.aspx">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="troubleTicketsDropdown" data-toggle="dropdown">
-                            Trouble Tickets
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="troubleTicketsDropdown">
-                            <a class="dropdown-item" href="TicketReq.aspx">Ticket Request</a>
-                            <a class="dropdown-item" href="TicketDetails.aspx">Ticket Details</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Notifications.aspx">Notifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="AgentReport.aspx">Agent Report</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+      <div class="topnav menu">
+            <asp:Menu ID="NavigationMenu" runat="server" CssClass="topnav" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" EnableScreenBoundaryDetection="true">
+               <Items>
+              
+                    <asp:MenuItem NavigateUrl="Default.aspx" Text="Home" />
+                    
+                   <asp:MenuItem Text="Trouble Tickets">
+                    <asp:MenuItem Text="Ticket Request" NavigateUrl="TicketReq.aspx"></asp:MenuItem>
+                     <asp:MenuItem Text="Ticket Details" NavigateUrl="TicketDetails.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Notifications" NavigateUrl="Notifications.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+        
+                   <asp:MenuItem Text="Customers">
+                   <asp:MenuItem Text="Customers" NavigateUrl="Customers.aspx"></asp:MenuItem>
+               <asp:MenuItem Text="Login" NavigateUrl="Logins.aspx"></asp:MenuItem>
+              <asp:MenuItem Text= "Registration" NavigateUrl="UserRegistration.aspx"></asp:MenuItem>
+             <asp:MenuItem Text="User Profile" NavigateUrl="UserViewProfile.aspx"></asp:MenuItem>
+             </asp:MenuItem>
 
-<div class="container">
-    <div class="row">
-        <!-- Notifications Report and Customer Report -->
-        <div class="col-md-12">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="NotificationsReport.aspx">Notifications Report</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="CustomerReport.aspx">Customer Report</a>
-                </li>
-            </ul>
-        </div>
-        <!-- Customer Portal -->
-        <div class="col-md-12">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="Customer.aspx">Customers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Logins.aspx">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="UserRegistration.aspx">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="UserViewProfile.aspx">User Profile</a>
-                </li>
-            </ul>
-        </div>
-        <!-- Admin Portal -->
-        <div class="col-md-12">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="AdminLogin.aspx">Admin Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="NotificationsMgt.aspx">Notifications Management</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="CustomerMgt.aspx">Customer Management</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="AgentMgt.aspx">Agent Management</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+            <asp:MenuItem Text="Admin">
+            <asp:MenuItem Text="Admin Login" NavigateUrl="AdminLogin.aspx"></asp:MenuItem>
+               <asp:MenuItem Text="Notifications Management" NavigateUrl="NotificationsMgt.aspx"></asp:MenuItem>
+               <asp:MenuItem Text="Customer Management" NavigateUrl="CustomerMgt.aspx"></asp:MenuItem>
+              <asp:MenuItem Text="Agent Management" NavigateUrl="AgentMgt.aspx"></asp:MenuItem>
+              </asp:MenuItem>
 
+                     <asp:MenuItem Text="Reports"></asp:MenuItem>
+                   <asp:MenuItem Text="Agent Report" NavigateUrl="AgentReport.aspx"></asp:MenuItem>
+                   <asp:MenuItem Text="Notifications Report" NavigateUrl="NotificationsReport.aspx"></asp:MenuItem>
+               <asp:MenuItem Text="Customer Report" NavigateUrl="CustomerReport.aspx"></asp:MenuItem>
+             
+        
+            </Items>
+            </asp:Menu>
+</div>
+           </div>
 <div class="container">
     <!-- Main Content -->
     <div class="row">
@@ -199,8 +153,6 @@
     </div>
 </div>
 
-
-       </div>
     </form>
 </body>
 </html>
