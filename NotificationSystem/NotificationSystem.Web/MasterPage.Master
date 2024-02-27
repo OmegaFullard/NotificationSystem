@@ -17,6 +17,45 @@
 <meta name="theme-color" content="#ffffff"/>
     <title>Royal City Help Desk</title>
     <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <style>
+
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
 
      <link rel="stylesheet" type="text/css" href="styles.css" />
     <link href="styles/base.css" rel="stylesheet" />
@@ -37,127 +76,130 @@
     </asp:ContentPlaceHolder>
     <meta name="Omega Fullard" content="Royal City, Developer: Omega Fullard, Designer: Omega Fullard" />
 </head>
+
 <body>
     <form id="form1" runat="server">
-        <telerik:RadScriptManager Runat="server"></telerik:RadScriptManager>
-      
-        <div id="wrapper">
-        <telerik:RadPageLayout runat="server" ID="MasterLayout" GridType="Fluid">
-            <Rows>
-                <%--Header--%>
-                <telerik:LayoutRow CssClass="header">
-                    <Columns>
-                        <%--Logo--%>
-                        <telerik:LayoutColumn Span="2" SpanMd="3" SpanSm="12" SpanXs="12">
-                            <a href="#" class="logo">
-                                <img src="images/RCLogo.png" alt="site logo" />
-                            </a>
-                        </telerik:LayoutColumn>
+       <div class="col-12 col-s-9">
 
-                        <%--Main Nav--%>
+        <div class="header">
+		<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+     <div class="title">
+                <h1>Royal City Help Desk</h1>
+				 
+            </div>
+               </div>    
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+           
+                  <%--Logo--%>
+                       <div class="container">
+    <div class="row">
+        <div class="col-md-2 col-sm-12">
+            <a href="#" class="logo">
+                <img src="images/RCLogo.png" alt="site logo" />
+            </a>
+        </div>
+        <!-- Main Nav -->
+        <div class="col-md-10 col-sm-12">
+            <div class="radmenu">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Default.aspx">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="troubleTicketsDropdown" data-toggle="dropdown">
+                            Trouble Tickets
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="troubleTicketsDropdown">
+                            <a class="dropdown-item" href="TicketReq.aspx">Ticket Request</a>
+                            <a class="dropdown-item" href="TicketDetails.aspx">Ticket Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Notifications.aspx">Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AgentReport.aspx">Agent Report</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-                        <telerik:LayoutColumn Span="10" SpanMd="9" SpanSm="12" SpanXs="12">
-                        <div class ="radmenu">
+<div class="container">
+    <div class="row">
+        <!-- Notifications Report and Customer Report -->
+        <div class="col-md-12">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="NotificationsReport.aspx">Notifications Report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CustomerReport.aspx">Customer Report</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Customer Portal -->
+        <div class="col-md-12">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Customer.aspx">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Logins.aspx">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UserRegistration.aspx">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UserViewProfile.aspx">User Profile</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Admin Portal -->
+        <div class="col-md-12">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="AdminLogin.aspx">Admin Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="NotificationsMgt.aspx">Notifications Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CustomerMgt.aspx">Customer Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AgentMgt.aspx">Agent Management</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-                            <telerik:RadNavigation ID="Nav1" runat="server" EnableScreenBoundaryDetection="true">
-                                <Nodes>
-                                <telerik:NavigationNode Text="Home">
-                            <Nodes>
-                                <telerik:NavigationNode Text="Home" NavigateUrl="Default.aspx"></telerik:NavigationNode>
-                            </Nodes>
-                        </telerik:NavigationNode>  
-                                    
-                                    <telerik:NavigationNode Text="Trouble Tickets">
-                                        <Nodes>
-                        <telerik:NavigationNode Text="Ticket Request" NavigateUrl="TicketReq.aspx"></telerik:NavigationNode>
-                        <telerik:NavigationNode Text="Ticket Details" NavigateUrl="TicketDetails.aspx"></telerik:NavigationNode>
-                    </Nodes>
-                </telerik:NavigationNode>
+<div class="container">
+    <!-- Main Content -->
+    <div class="row">
+        <div class="col-md-10 col-sm-12">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
 
-<telerik:NavigationNode Text="Notifications" NavigateUrl="Notifications.aspx">
-                    <Nodes>
-                        <telerik:NavigationNode Text="Notifications" NavigateUrl="Notifications.aspx"></telerik:NavigationNode>
-                    </Nodes>
-                </telerik:NavigationNode>
-
-<telerik:NavigationNode Text="Reports">
-                    <Nodes>
-                        <telerik:NavigationNode Text="Agent Report" NavigateUrl="AgentReport.aspx"></telerik:NavigationNode>
-                    </Nodes>
-     <Nodes>
-                        <telerik:NavigationNode Text="Notifications Report" NavigateUrl="NotificationsReport.aspx"></telerik:NavigationNode>
-                    </Nodes>
-     <Nodes>
-                        <telerik:NavigationNode Text="Customer Report" NavigateUrl="CustomerReport.aspx"></telerik:NavigationNode>
-                    </Nodes>
-                </telerik:NavigationNode>
+    <!-- Footer -->
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+            Footer: © 2024 - Royal City Inc. 13 Majesty Way Royal City, PA 19106
+        </div>
+    </div>
+</div>
 
 
-<telerik:NavigationNode Text="Customer Portal">
-                    <Nodes>
-                        <telerik:NavigationNode Text="Customers" NavigateUrl="Customer.aspx"></telerik:NavigationNode>
-                        <telerik:NavigationNode Text="Login" NavigateUrl="Logins.aspx"></telerik:NavigationNode>
-                        <telerik:NavigationNode Text="Registration" NavigateUrl="UserRegistration.aspx"></telerik:NavigationNode>
-                        <telerik:NavigationNode Text="User Profile" NavigateUrl="UserViewProfile.aspx"></telerik:NavigationNode>
-
-                    </Nodes>
-                </telerik:NavigationNode>
-
-<telerik:NavigationNode Text="Admin Portal">
-                    <Nodes>
-                        <telerik:NavigationNode Text="Admin Login" NavigateUrl="AdminLogin.aspx"></telerik:NavigationNode>
-                        <telerik:NavigationNode Text="Notifications Management" NavigateUrl="NotificationsMgt.aspx"></telerik:NavigationNode>
-                        <telerik:NavigationNode Text="Customer Management" NavigateUrl="CustomerMgt.aspx"></telerik:NavigationNode>
-                        <telerik:NavigationNode Text="Agent Management" NavigateUrl="AgentMgt.aspx"></telerik:NavigationNode>
-
-                    </Nodes>
-                </telerik:NavigationNode>
-            </Nodes>
-        </telerik:RadNavigation>
-
-                    </div>
-                          
-					   
-                        </telerik:LayoutColumn>
-                    </Columns>
-                </telerik:LayoutRow>
-
-                <%--Main--%>
-                <telerik:LayoutRow>
-                    <Columns>
-                       
-
-                        <%--Content--%>
-
-                             
-                        <telerik:CompositeLayoutColumn Span="10" SpanMd="12" SpanSm="12" SpanXs="12">
-                            <Content>
-                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                                </asp:ContentPlaceHolder>
-                                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                                </asp:ContentPlaceHolder>
-                                    <Content>
-                                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
-                                </asp:ContentPlaceHolder>
-                            </Content>
-                            
-                            </Content>
-                        </telerik:CompositeLayoutColumn>
-                    </Columns>
-                </telerik:LayoutRow>
-                 
-         
-                <%--Footer--%>
-                <telerik:LayoutRow>
-                    <Columns>
-                        <telerik:LayoutColumn CssClass="footer">
-                            <hr />
-                            Footer: © 2024 - Royal City Inc. 13 Majesty Way Royal City, PA 19106 
-                        </telerik:LayoutColumn>
-                    </Columns>
-                </telerik:LayoutRow>
-            </Rows>
-        </telerik:RadPageLayout>
        </div>
     </form>
 </body>
