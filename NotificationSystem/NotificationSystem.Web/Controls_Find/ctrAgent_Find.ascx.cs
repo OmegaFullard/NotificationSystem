@@ -35,33 +35,36 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
     }
     protected void Page_Load(object sender, EventArgs e)
     {
-        if ((Page.IsPostBack))
-        {
-            try
-            {
-                if (m_AgentID.Length > 0)
-                    this.lblAgentID.Text = "ID" + m_AgentID;
-                if (this.lblAgentID.Text.Length == 2)
-                    return;
+
+        //syntax errors 2/27/24
+
+        //if ((Page.IsPostBack))
+        //{
+        //    try
+        //    {
+        //        if (m_AgentID > 0)
+        //            this.lblAgentID.Text = "ID" + m_AgentID;
+        //        if (this.lblAgentID.Text.Length == 2)
+        //            return;
 
 
 
-                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                AgentDataTable tblAgent = theNotificationSystem.GetAgentListByID(System.Convert.ToInt32(Replace(this.lblAgentID.Text, "ID", "")));
-                if (tblAgent.Count == 0)
-                    return;
+        //        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+        //        AgentDataTable tblAgent = theNotificationSystem.GetAgentListByID(System.Convert.ToInt32(Replace(this.lblAgentID.Text, "ID", "")));
+        //        if (tblAgent.Count == 0)
+        //            return;
 
-                {
-                    var withBlock = tblAgent(0);
-                    lblStartDate.Text = withBlock.StartDate.ToString("MM/dd/yyyy");
-                    lblAgentID.Text = theNotificationSystem.GetAgentListByID(withBlock.AgentID);
-                    lblTroubleTicketNo.Text = withBlock.TroubleTicketNo;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
+        //        {
+        //            var withBlock = tblAgent(0);
+        //            lblStartDate.Text = withBlock.StartDate.ToString("MM/dd/yyyy");
+        //            lblAgentID.Text = theNotificationSystem.GetAgentListByID(withBlock.AgentID);
+        //            lblTroubleTicketNo.Text = withBlock.TroubleTicketNo;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //}
     }
 }

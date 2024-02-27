@@ -101,10 +101,10 @@ public partial class ctrAgent_Add : System.Web.UI.UserControl
 
         catch (Exception ex)
         {
-            clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
-            string NotificationBody = ex.Message + "  " + ex.StackTrace;
-            SendError.SendMailMessage(NotificationBody);
-            Response.Redirect("ErrorPage.aspx", false);
+            //clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+            //string NotificationBody = ex.Message + "  " + ex.StackTrace;
+            //SendError.SendMailMessage(NotificationBody);
+            //Response.Redirect("ErrorPage.aspx", false);
         }
     }
 
