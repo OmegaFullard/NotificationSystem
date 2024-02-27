@@ -42,15 +42,15 @@ public partial class ctrAgent : System.Web.UI.UserControl
         try
         {
             if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
-                this.ctrHiddebField.Value = m_AgentID;
+                this.ctrHiddebField.Value = Convert.ToString(m_AgentID);
 
             if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
-                tblAgent = theNotificationSystem.GetAgentListByID("%" + this.ctrHiddebField.Value + "%");
+                tblAgent = theNotificationSystem.GetAgentByID("%" + this.ctrHiddebField.Value + "%");
             else
                 tblAgent = theNotificationSystem.GetAgentList;
 
 
-            this.lblSearchResult.Text = tblAgent.Rows.Count.ToString + " Result(s)";
+            this.lblSearchResult.Text = tblAgent.Rows.Count + " Result(s)";
             this.grdAgents.DataSource = tblAgent.DefaultView;
             this.grdAgents.DataBind();
         }
@@ -66,13 +66,13 @@ public partial class ctrAgent : System.Web.UI.UserControl
     {
         try
         {
-            if (!(Information.IsNothing(System.Web.UI.Control.ViewState["columnname"]) | Information.IsNothing(System.Web.UI.Control.ViewState["direction"])))
+            if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
             {
                 DataView m_DataView = (DataView)this.grdAgents.DataSource;
 
-                if (!m_DataView == null)
+                if (m_DataView == null)
                 {
-                    m_DataView.Sort = System.Web.UI.Control.ViewState["columnname"].ToString() + " " + System.Web.UI.Control.ViewState["direction"].ToString();
+                    m_DataView.Sort = ViewState["columnname"].ToString() + " " + ViewState["direction"].ToString();
                     this.grdAgents.DataSource = m_DataView;
                 }
             }
@@ -92,7 +92,7 @@ public partial class ctrAgent : System.Web.UI.UserControl
         {
             DataView m_Dataview = (DataView)grdAgents.DataSource;
 
-            if (!m_Dataview == null)
+            if (m_Dataview == null)
             {
                 m_Dataview.Sort = e.SortExpression + " " + ConvertSortDirection(e);
                 this.grdAgents.DataSource = m_Dataview;
@@ -107,13 +107,13 @@ public partial class ctrAgent : System.Web.UI.UserControl
 
     private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
     {
-        System.Web.UI.Control.ViewState.Add("columnname", e.SortExpression);
+        ViewState.Add("columnname", e.SortExpression);
 
-        if ((System.Web.UI.Control.ViewState["direction"] == null))
-            System.Web.UI.Control.ViewState.Add("direction", "asc");
+        if ((ViewState["direction"] == null))
+            ViewState.Add("direction", "asc");
         else
-            System.Web.UI.Control.ViewState["direction"] = Interaction.IIf(System.Web.UI.Control.ViewState["direction"].ToString().ToLower() == "desc", "asc", "desc");
+            ViewState["direction"] = Interaction.IIf(ViewState["direction"].ToString().ToLower() == "desc", "asc", "desc");
 
-        return System.Web.UI.Control.ViewState["direction"].ToString();
+        return ViewState["direction"].ToString();
     }
 }

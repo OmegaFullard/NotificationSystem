@@ -193,7 +193,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             try
             {
                 AgentListTableAdapter adpAgentList = new AgentListTableAdapter();
-                AgentListDataTable tblAgentList = adpAgentList.GetData();
+                xsNotificationSystem.AgentListDataTable tblAgentList = adpAgentList.GetData();
 
                 return tblAgentList;
             }
@@ -203,12 +203,15 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
                 throw;
             }
         }
-        public int GetAgentListByID(int AgentID)
+
+
+        
+public int GetAgentByID(int AgentID)
         {
             try
             {
-                AgentListTableAdapter adpAgentList = new AgentListTableAdapter();
-                AgentListDataTable tblAgentList = adpAgentList.GetDataByID(AgentID);
+                AgentTableAdapter adpAgentList = new AgentTableAdapter();
+                xsNotificationSystem.AgentDataTable tblAgentList = adpAgentList.GetDataByAgentID(AgentID);
 
                 AgentListRow row = tblAgentList(0);
                 return row.AgentID;

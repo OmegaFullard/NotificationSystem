@@ -80,6 +80,7 @@
       <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -1294,6 +1295,7 @@
     <Content Include="NotificationSystem.Web\Customer_Add.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Find.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Update.aspx" />
+    <Content Include="NotificationSystem.Web\ErrorPage.aspx" />
     <Content Include="NotificationSystem.Web\images\favicon\site.webmanifest" />
     <Content Include="NotificationSystem.Web\images\site.webmanifest" />
     <Content Include="NotificationSystem.Web\MasterPage.Master" />
@@ -4243,6 +4245,13 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
