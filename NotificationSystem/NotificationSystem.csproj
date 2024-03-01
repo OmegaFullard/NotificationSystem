@@ -3975,6 +3975,10 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -4067,6 +4071,7 @@
       <DependentUpon>Agent_Update.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Article.cs" />
+    <Compile Include="NotificationSystem.Web\clsNotificationSystem_Web.cs" />
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrAgent_Add.ascx.cs">
       <DependentUpon>ctrAgent_Add.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4389,6 +4394,11 @@
       <DependentUpon>UserViewProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NotificationSystem.Web\images\Thumbnails\" />
