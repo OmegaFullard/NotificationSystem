@@ -12,7 +12,7 @@ using System.Security;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using System.Data;
-
+using static NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystem;
 
 namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
 {
@@ -37,23 +37,23 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             }
         }
 
-        //public int GetCustomerListbyID(int CustomerID)
-        //{
-        //    try
-        //    {
-        //        CustomerListTableAdapter adpCustomerList = new CustomerListTableAdapter();
-        //        CustomerListDataTable tblCustomerList = adpCustomerList.GetDataByID(CustomerID);
-        //        CustomerListRow row = tblCustomerList(0);
-        //        return row.CustomerList;
-                
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw;
-        //    }
-        //}
+		public int GetCustomerListbyID(int CustomerID)
+		{
+			try
+			{
+				CustomerListTableAdapter adpCustomerList = new CustomerListTableAdapter();
+				CustomerListDataTable tblCustomerList = adpCustomerList.GetDataByID(CustomerID);
+				CustomerListRow row = tblCustomerList[0];
+				return row.CustomerID;
 
-        public DataTable GetCustomers()
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
+
+		public DataTable GetCustomers()
         {
             try
             {
@@ -96,7 +96,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             {
                 {
                     var withBlock = thisCustomer;
-                    adpCustomer.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
+                    adpCustomer.UpdateQuery(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
                 }
             }
 

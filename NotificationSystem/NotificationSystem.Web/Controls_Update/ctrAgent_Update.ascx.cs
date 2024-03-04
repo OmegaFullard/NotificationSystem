@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
+using NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystemTableAdapters;
+using static NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystem;
 using NotificationSystem_Practice.NotificationSystem.Data.Classes;
 
 public partial class ctrAgent_Update : System.Web.UI.UserControl
 {
-    private Int16 m_AgentID = 0;
+    private int m_AgentID = 0;
 
-    public Int16 AgentID
+    public int AgentID
     {
         get
         {
@@ -53,11 +53,11 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
 
     private void BindGrid()
     {
-        Int32 count = 0;
+        int count = 0;
         string result = count.ToString();
 
         clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        AgentDataTable tblAgent = theNotificationSystem.GetAgentListByID(Replace(this.lblagentid.Text, "ID", ""));
+        AgentDataTable tblAgent = theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblagentid.Text.Replace("ID", "")));
         this.lblSearchResult.Text = tblAgent.Rows.Count.ToString (result + "Result(s)");
 
         grdAgent.DataSource = tblAgent;
@@ -72,14 +72,15 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
         if (this.lblagentid.Text.Length == 2)
             return;
 
-        GridViewRow row = (GridViewRow)grdAgent.Rows(e.RowIndex);
+        GridViewRow row = (GridViewRow)grdAgent.Rows[e.RowIndex];
 
 
-        Int32 AgentID = Convert.ToString(row.FindControl("txtAgentID") as TextBox).ToString;
-        Int32 TroubleTicketNo = Convert.ToString(row.FindControl("txtTroubleTicketNo") as TextBox).ToString;
+        
+        int AgentID = Convert.ToInt32((row.FindControl("txtAgentID") as TextBox)?.Text);
+        int TroubleTicketNo = Convert.ToInt32((row.FindControl("txtTroubleTicketNo") as TextBox)?.Text);
         string Title = (row.FindControl("txttitle") as TextBox).Text;
-        DateTime StartDate = Convert.ToString(row.FindControl("StartDate") as TextBox).ToString;
-        Int32 Salary = Convert.ToString(row.FindControl("txtsalary") as TextBox).ToString;
+        DateTime StartDate = Convert.ToDateTime((row.FindControl("StartDate") as TextBox)?.Text);
+        int Salary = Convert.ToInt32((row.FindControl("txtsalary") as TextBox)?.Text);
         string FirstN = (row.FindControl("txtfirstname") as TextBox).Text;
         string LastN = (row.FindControl("txtlastname") as TextBox).Text;
         string Email = (row.FindControl("txtemail") as TextBox).Text;
@@ -100,22 +101,24 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
         this.BindGrid();
     }
 
-    private clsAgent CheckCalendarControls(ref Int16 AgentID, DateTime StartDate)
-    {
-        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        clsAgent thisAgent = new clsAgent();
-        AgentDataTable tblAgent = theNotificationSystem.GetAgentListByID(AgentID);
-        AgentRow row = tblAgent(0);
+    //syntax errors row 109 and 116
 
-        {
-            var withBlock = thisAgent;
+    //private clsAgent CheckCalendarControls(ref Int16 AgentID, DateTime StartDate)
+    //{
+    //    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+    //    clsAgent thisAgent = new clsAgent();
+    //    AgentDataTable tblAgent = theNotificationSystem.GetAgentByID(AgentID);
+    //    AgentRow row = tblAgent[0];
 
-            // .StartDate = IIf(StartDate = String.Empty, row.StartDate, StartDate)
-            withBlock.AgentID = IIf(AgentID == string.Empty, row.AgentID, AgentID);
-        }
+    //    {
+    //        var withBlock = thisAgent;
 
-        return thisAgent;
-    }
+    //        // .StartDate = IIf(StartDate = String.Empty, row.StartDate, StartDate)
+    //        withBlock.AgentID = (AgentID == string.Empty) ? row.AgentID : AgentID;
+    //    }
+
+    //    return thisAgent;
+    //}
 
     private void grdAgent_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {

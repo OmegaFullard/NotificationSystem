@@ -2691,7 +2691,7 @@ SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Addres
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::NotificationSystem_Practice.Properties.Settings.Default.NotificationSystemConnectionString;
+            //this._connection.ConnectionString = global::NotificationSystem_Practice.Properties.Settings.Default.NotificationSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3277,7 +3277,7 @@ SELECT AgentID, TroubleTicketNo, Title, StartDate, Salary, FirstN, LastN, Email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::NotificationSystem_Practice.Properties.Settings.Default.NotificationSystemConnectionString;
+          //  this._connection.ConnectionString = global::NotificationSystem_Practice.Properties.Settings.Default.NotificationSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3817,7 +3817,7 @@ SELECT AgentID, TroubleTicketNo, Title, StartDate, Salary, FirstN, LastN, Email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::NotificationSystem_Practice.Properties.Settings.Default.NotificationSystemConnectionString;
+          //  this._connection.ConnectionString = global::NotificationSystem_Practice.Properties.Settings.Default.NotificationSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4084,7 +4084,7 @@ SELECT CustomerID, AgentID, TroubleTicketNo, Status, DueDate, RequestDate FROM T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::NotificationSystem_Practice.Properties.Settings.Default.NotificationSystemConnectionString;
+        //    this._connection.ConnectionString = global::NotificationSystem_Practice.Properties.Settings.Default.NotificationSystemConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
