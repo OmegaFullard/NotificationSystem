@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace NotificationSystem_Practice.NotificationSystem.Data {
     
     
@@ -4794,7 +4796,12 @@ SELECT AgentID, TroubleTicketNo, Title, StartDate, Salary, FirstN, LastN, Email,
                     string Original_Fax) {
             return this.Update(TroubleTicketNo, Title, StartDate, Salary, FirstN, LastN, Email, Phone, Fax, Original_AgentID, Original_TroubleTicketNo, Original_Title, Original_StartDate, Original_Salary, Original_FirstN, Original_LastN, Original_Email, Original_Phone, Original_Fax, Original_AgentID);
         }
-    }
+
+		internal void Update(int agentID, int troubleTicketNo, string title, DateTime startDate, int salary, string firstN, string lastN, string email, string phone, string fax)
+		{
+			throw new NotImplementedException();
+		}
+	}
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -5575,7 +5582,12 @@ SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Addres
             }
             return returnValue;
         }
-    }
+
+		internal void UpdateQuery(int customerID, int agentID, int troubleTicketNo, string firstN, string lastN, string email, string phone, string address, string city, string state, string zip)
+		{
+			throw new NotImplementedException();
+		}
+	}
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.

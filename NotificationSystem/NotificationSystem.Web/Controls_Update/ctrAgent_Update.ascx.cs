@@ -57,7 +57,7 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
         string result = count.ToString();
 
         clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        AgentDataTable tblAgent = theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblagentid.Text.Replace("ID", "")));
+        AgentDataTable tblAgent = (AgentDataTable)theNotificationSystem.GetAgents();
         this.lblSearchResult.Text = tblAgent.Rows.Count.ToString (result + "Result(s)");
 
         grdAgent.DataSource = tblAgent;

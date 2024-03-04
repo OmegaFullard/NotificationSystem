@@ -109,27 +109,30 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
 
         public void AddCustomer(clsCustomer thisCustomer)
         {
-            CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
 
-            xsNotificationSystem.CustomerDataTable tblCustomer = new xsNotificationSystem.CustomerDataTable();
-            Customer = false;
+            //add CustomerID to table and save 
+
+            //CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
+
+            //xsNotificationSystem.CustomerDataTable tblCustomer = new xsNotificationSystem.CustomerDataTable();
+            //Customer = false;
 
             
-            try
-            {
-                {
-                    var withBlock = thisCustomer;
-                    adpCustomer.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
-                }
+            //try
+            //{
+            //    {
+            //        var withBlock = thisCustomer;
+            //        adpCustomer.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
+            //    }
 
                
               
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            return;
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
+            //return;
 
         }
 
@@ -192,8 +195,8 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
         {
             try
             {
-                AgentListTableAdapter adpAgentList = new AgentListTableAdapter();
-                xsNotificationSystem.AgentListDataTable tblAgentList = adpAgentList.GetData();
+                AgentTableAdapter adpAgentList = new AgentTableAdapter();
+                xsNotificationSystem.AgentDataTable tblAgentList = adpAgentList.GetData();
 
                 return tblAgentList;
             }
@@ -213,7 +216,7 @@ public int GetAgentByID(int AgentID)
                 AgentTableAdapter adpAgentList = new AgentTableAdapter();
                 xsNotificationSystem.AgentDataTable tblAgentList = adpAgentList.GetDataByAgentID(AgentID);
 
-                AgentListRow row = tblAgentList(0);
+                AgentRow row = tblAgentList[0];
                 return row.AgentID;
             }
             catch (Exception ex)
@@ -258,6 +261,7 @@ public int GetAgentByID(int AgentID)
 
         public void AddAgent(clsAgent thisAgent)
         {
+            //Removed withBlock.AgentID 
 
             xsNotificationSystem.AgentDataTable tblAgent = new xsNotificationSystem.AgentDataTable();
             Agent = false;
@@ -270,7 +274,7 @@ public int GetAgentByID(int AgentID)
 
                 {
                     var withBlock = thisAgent;
-                    adpAgent.Insert(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax);
+                    adpAgent.Insert(withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax);
 
                   
                 }
