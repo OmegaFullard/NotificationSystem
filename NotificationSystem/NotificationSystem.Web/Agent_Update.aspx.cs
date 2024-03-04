@@ -18,7 +18,7 @@ using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
                 {
                     ctrAgent_Search.PopulateSearchControl();
 
-                    if (ctrAgent_Search.AgentID.Length == 0)
+                    if (((short)ctrAgent_Search.AgentID) == 0)
                         return;
                     this.ctrAgent_Update.AgentID = (short)ctrAgent_Search.AgentID;
                 }

@@ -47,7 +47,7 @@ public partial class ctrAgent : System.Web.UI.UserControl
             if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
              //   tblAgent = theNotificationSystem.GetAgentByID("%" + this.ctrHiddebField.Value + "%");
            // else
-             //   tblAgent = theNotificationSystem.GetAgentList;
+             //   tblAgent = theNotificationSystem.GetAgents;
 
 
             this.lblSearchResult.Text = tblAgent.Rows.Count + " Result(s)";

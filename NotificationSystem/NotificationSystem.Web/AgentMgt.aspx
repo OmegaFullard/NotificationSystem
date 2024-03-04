@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Agent Management" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeFile="AgentMgt.aspx.cs" Inherits="AgentMgt" %>
+﻿<%@ Page Title="Agent Management" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeFile="AgentMgt.aspx.cs" Inherits="AgentMgt" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -56,15 +56,15 @@
 
                         <div class="row">
                             <div class="col-4 mx-auto">
-                                <telerik:CardSeparatorComponent runat="server"></telerik:CardSeparatorComponent>
-                         <telerik:CardActionsContainerComponent runat="server" CardActionsAlignment="Stretched" Orientation="Vertical">
+                                <telerik:cardseparatorcomponent runat="server"></telerik:cardseparatorcomponent>
+                         <telerik:cardactionscontainercomponent runat="server" CardActionsAlignment="Stretched" Orientation="Vertical">
                         <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6" Text="Add" />
                 
                         <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #c0c0c0; border: medium solid #000000" Text="Update" />
                     
                         <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #4800ff; border: medium solid #ffeef3" Text="Delete" />
                      
-                         </telerik:CardActionsContainerComponent>
+                         </telerik:cardactionscontainercomponent>
                         </div>
                         </div>
 

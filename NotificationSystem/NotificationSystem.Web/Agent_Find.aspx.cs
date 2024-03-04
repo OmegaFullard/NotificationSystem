@@ -17,10 +17,10 @@ using System.Web.UI.WebControls;
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrAgent_Search.PopulateSearchControl();
-                    if (ctrAgent_Search.AgentID.Length == 0)
-                        return;
+                if (((short)ctrAgent_Search.AgentID) == 0)
+                    return;
                     // Me.ctrAgent_Find.ClearControls()
-                    this.ctrAgent_Find.AgentID = ctrAgentSearch.AgentID;
+                 //   this.ctrAgent_Find.AgentID = ctrAgentSearch.AgentID;
                 }
             }
         }
