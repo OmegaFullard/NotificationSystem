@@ -6,14 +6,14 @@
     <title>Agents</title>
 </asp:Content>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="body" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  
     
-                   <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
+                   <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="222px" Width="483px" >
                                    
                                      <asp:TableRow>
                                           <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">
-                                                            <asp:Image ID="techbg" runat="server" ImageUrl="images/techbg.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="80px" style="margin-top: 5px" Width="80px" />
+                                                            <asp:Image ID="techbg" runat="server" ImageUrl="images/techbg.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>

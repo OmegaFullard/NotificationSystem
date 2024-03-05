@@ -1,17 +1,59 @@
-﻿using System;
+﻿using NotificationSystem_Practice.NotificationSystem.Data.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystem;
 
-namespace NotificationSystem.NotificationSystem.Web.Controls_Find
-{
-    public partial class ctrCustomer_Find : System.Web.UI.UserControl
+public partial class ctrCustomer_Find : System.Web.UI.UserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
 
+    private int m_CustomerID = 0;
+
+    public int CustomerID
+    {
+        get
+        {
+            return m_CustomerID;
+        }
+        set
+        {
+            m_CustomerID = value;
         }
     }
-}
+    protected void Page_Load(object sender, EventArgs e)
+        {
+        //if ((Page.IsPostBack))
+        //{
+        //    try
+        //    {
+        //        if (m_CustomerID > 0)
+        //            this.lblCustomerID.Text = "ID" + m_CustomerID;
+        //        if (this.lblCustomerID.Text.Length == 2)
+        //            return;
+
+
+        //        //Sytnax Errors 3/5/24
+
+        //        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+        //        CustomerDataTable tblCustomer = theNotificationSystem.GetCustomerListbyID(Convert.ToInt32(this.lblCustomerID.Text.Replace ("ID", "")));
+        //        if (tblCustomer.Count == 0)
+        //            return;
+
+        //        {
+        //            var withBlock = tblCustomer[0];
+
+        //            lblCustomerID.Text = theNotificationSystem.GetCustomerListbyID(Convert.ToInt32(withBlock.CustomerID));
+
+
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //}
+    }
+    }

@@ -50,12 +50,12 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
 
 
         //        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        //        AgentDataTable tblAgent = theNotificationSystem.GetAgentListByID(System.Convert.ToInt32(Replace(this.lblAgentID.Text, "ID", "")));
+        //       AgentDataTable tblAgent = theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblagentid.Text.Replace("ID", "")));
         //        if (tblAgent.Count == 0)
         //            return;
 
         //        {
-        //            var withBlock = tblAgent(0);
+        //            var withBlock = tblAgent[0];
         //            lblStartDate.Text = withBlock.StartDate.ToString("MM/dd/yyyy");
         //            lblAgentID.Text = theNotificationSystem.GetAgentListByID(withBlock.AgentID);
         //            lblTroubleTicketNo.Text = withBlock.TroubleTicketNo;
