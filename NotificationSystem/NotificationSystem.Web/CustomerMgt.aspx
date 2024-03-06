@@ -18,7 +18,8 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img src="images/person1.png" />
+                          
+                            <asp:Image ID="customer" runat="server" ImageUrl="images/defaultuser.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="10px" Height="250px" style="margin-top: 5px" Width="250px" />
                         </center>
                      </div>
                   </div>
@@ -103,15 +104,15 @@
                   
                   <div class="row">
                         <div class="col-4 mx-auto">
-                     <telerik:cardseparatorcomponent runat="server"></telerik:cardseparatorcomponent>
-                         <telerik:cardactionscontainercomponent runat="server" CardActionsAlignment="Stretched" Orientation="Vertical">
+                    <div class="card" style="width: 18rem;">
+                                <div class="card-body">
                         <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6" Text="Add" />
-     
+      &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #c0c0c0; border: medium solid #000000" Text="Update" />
-                                 
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
                         <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #4800ff; border: medium solid #ffeef3" Text="Delete" />
+                      
                      
-                         </telerik:cardactionscontainercomponent>
                      </div>   
                   </div>
                </div>
@@ -136,7 +137,26 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                        <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="CustomerID" DataSourceID="SqlDataSource1">
+                            <Columns>
+                                <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" InsertVisible="False" ReadOnly="True" SortExpression="CustomerID" />
+                                <asp:BoundField DataField="AgentID" HeaderText="AgentID" SortExpression="AgentID" />
+                                <asp:BoundField DataField="TroubleTicketNo" HeaderText="TroubleTicketNo" SortExpression="TroubleTicketNo" />
+                                <asp:BoundField DataField="FirstN" HeaderText="FirstN" SortExpression="FirstN" />
+                                <asp:BoundField DataField="LastN" HeaderText="LastN" SortExpression="LastN" />
+                                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                                <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
+                                <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+                                <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
+                                <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" />
+                                <asp:BoundField DataField="Zip" HeaderText="Zip" SortExpression="Zip" />
+                            </Columns>
+                         </asp:GridView>
+                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NotificationSystemConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([CustomerID] = @CustomerID)">
+                             <SelectParameters>
+                                 <asp:ControlParameter ControlID="TextBox1" Name="CustomerID" PropertyName="Text" Type="Int32" />
+                             </SelectParameters>
+                         </asp:SqlDataSource>
                      </div>
                   </div>
                </div>
@@ -144,4 +164,7 @@
          </div>
       </div>
    </div>
+
+          </div>
+         </div>
     </asp:Content>

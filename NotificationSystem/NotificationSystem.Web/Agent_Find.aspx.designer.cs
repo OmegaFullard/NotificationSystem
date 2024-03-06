@@ -31,13 +31,13 @@ public partial class Agent_Find
 	protected global::System.Web.UI.WebControls.Panel Panel1;
 
 	/// <summary>
-	/// techbg control.
+	/// person1 control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.Image techbg;
+	protected global::System.Web.UI.WebControls.Image person1;
 
 	/// <summary>
 	/// ctrAgent_Search control.
@@ -55,5 +55,5 @@ public partial class Agent_Find
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::NotificationSystem.NotificationSystem.Web.Controls_Find.ctrAgent_Find ctrAgent_Find;
+	protected global::ctrAgent_Find ctrAgent_Find;
 }

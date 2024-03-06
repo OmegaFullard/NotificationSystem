@@ -7,38 +7,35 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NotificationSystem.NotificationSystem.Web.Controls_Find
+
+
+public partial class ctrAgent_Find
 {
 
+	/// <summary>
+	/// lblAgentID control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Label lblAgentID;
 
-    public partial class ctrAgent_Find
-    {
+	/// <summary>
+	/// lblSearchResult control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Label lblSearchResult;
 
-        /// <summary>
-        /// lblAgentID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAgentID;
-
-        /// <summary>
-        /// lblSearchResult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSearchResult;
-
-        /// <summary>
-        /// grdAgent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdAgent;
-    }
+	/// <summary>
+	/// grdAgent control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.GridView grdAgent;
 }

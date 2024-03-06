@@ -22,7 +22,8 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                 <img src="images/person1.png" />
+                                 
+                                    <asp:Image ID="agent" runat="server" ImageUrl="images/person1.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="250px" style="margin-top: 5px" Width="250px" />
                                        
                                     </center>
                             </div>
@@ -40,6 +41,9 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
+                                        
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        
                                         <asp:Button class="btn btn-primary" ID="Button1" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #0000ff; border: medium solid #C0C0C0" Text="Go" />
                                     </div>
                                 </div>
@@ -53,25 +57,31 @@
                                 </div>
                             </div>
                         </div>
-
+                        <br />
+                        <br />
                         <div class="row">
                             <div class="col-4 mx-auto">
-                                <telerik:cardseparatorcomponent runat="server"></telerik:cardseparatorcomponent>
-                         <telerik:cardactionscontainercomponent runat="server" CardActionsAlignment="Stretched" Orientation="Vertical">
+                               <div class="card" style="width: 18rem;">
+                                <div class="card-body">
                         <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6" Text="Add" />
+                
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                 
                         <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #c0c0c0; border: medium solid #000000" Text="Update" />
                     
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    
                         <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #4800ff; border: medium solid #ffeef3" Text="Delete" />
                      
-                         </telerik:cardactionscontainercomponent>
+                         </div>
+                                   </div>
                         </div>
                         </div>
 
 
                     </div>
                 </div>
-
+                <br />
                 <a href="Default.aspx"><< Back to Home</a><br/>
                 <br/>
             </div>
