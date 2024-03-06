@@ -4320,7 +4320,6 @@
       <DependentUpon>Notifications_Update.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="NotificationSystem.Web\Properties\AssemblyInfo.cs" />
     <Compile Include="NotificationSystem.Web\Reports\DateRangebyAgent_Report.aspx.cs">
       <DependentUpon>DateRangebyAgent_Report.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -10,7 +10,20 @@ using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
 
     public partial class Agent_Update : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+    private int m_AgentID = 0;
+
+    public int AgentID
+    {
+        get
+        {
+            return m_AgentID;
+        }
+        set
+        {
+            m_AgentID = value;
+        }
+    }
+    protected void Page_Load(object sender, EventArgs e)
         {
             if ((Page.IsPostBack))
             {
@@ -20,7 +33,7 @@ using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
 
                     if (((short)ctrAgent_Search.AgentID) == 0)
                         return;
-                    this.ctrAgent_Update.AgentID = (short)ctrAgent_Search.AgentID;
+                    this.ctrAgent_Update.AgentID = ctrAgent_Search.AgentID;
                 }
             }
         }

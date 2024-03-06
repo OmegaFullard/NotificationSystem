@@ -39,7 +39,7 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
             {
                 if (Request.Form["ct100$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
-                    //grdAgents.EditIndex = -1;
+                    grdAgent.EditIndex = -1;
                     this.BindGrid();
                     this.lblagentid.Text = "ID" + m_AgentID;
                 }

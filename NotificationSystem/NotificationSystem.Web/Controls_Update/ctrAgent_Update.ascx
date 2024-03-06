@@ -1,4 +1,32 @@
-﻿ <div style="width: 950px; height:500px;  overflow: auto; padding-left:30px" >
+﻿ <%@ Control Language="c#" AutoEventWireup="false" CodeBehind="ctrAgent_Update.ascx.vb" Inherits="ctrAgent_Update" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+
+<style type="text/css">
+
+    div.RadCalendarFastNavPopup {
+        width: 105px !important;
+        overflow: hidden;
+    }
+
+    table.RadCalendarMonthView_Default {
+        width: 210px !important;
+        margin-left: -105px;
+    }
+
+    table.RadCalendarMonthView_Default tr:nth-child(7) td.rcButtons
+    {
+        text-align: right !important;
+    }
+
+    .rcOkButton {
+        margin-left: 20px;
+    }
+
+   
+</style>
+
+<div style="width: 950px; height:500px;  overflow: auto; padding-left:30px" >
       <h2>Agent Update</h2>
             
            <div> <asp:Label ID="lblagentid" runat="server" Text=""></asp:Label></div><br />

@@ -55,5 +55,5 @@ public partial class Agent_Update
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.UserControl ctrAgent_Update;
+	protected global::ctrAgent_Update ctrAgent_Update;
 }
