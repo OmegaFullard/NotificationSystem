@@ -4,14 +4,123 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
+using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.VisualBasic;
+using Telerik.Web.UI;
+using System.Data.SqlClient;
+using NotificationSystem_Practice.NotificationSystem.Data.Classes;
+using System.Net.Http;
 
-namespace NotificationSystem.NotificationSystem.Web.Controls_Add
-{
-    public partial class ctrCustomer_Add : System.Web.UI.UserControl
+public partial class ctrCustomer_Add : System.Web.UI.UserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
 
+    private int m_CustomerID = 0;
+
+    public int CustomerID
+    {
+        get
+        {
+            return m_CustomerID;
+        }
+        set
+        {
+            m_CustomerID = value;
         }
     }
+
+    public TextBox txtCustomerList { get; set; }
+    protected void Page_Load(object sender, EventArgs e)
+        {
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+        CustomerDataTable tblAgent = new CustomerDataTable();
+        var client = new HttpClient();
+        try
+        {
+            if ((Page.IsPostBack))
+            {
+
+
+                if (Request.Form["ctl00$MainContent$ctrCustomer_Add$btnAdd"] == "Add")
+                    AddCustomer();
+            }
+            else
+            {
+            }
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+
+    }
+
+
+    public void AddCustomer()
+    {
+        try
+        {
+            clsCustomer thisCustomer = new clsCustomer();
+
+            {
+                var withBlock = thisCustomer;
+                if (txtcustomerid.Text.Length == 0)
+                    return;
+
+                withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
+
+
+            }
+            try
+
+            {
+
+                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                theNotificationSystem.AddCustomer(thisCustomer);
+                lblResult.Text = "Customer data has been added";
+
+            }
+
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                    lblResult.Text = "Customer already exist!";
+                else
+                    throw new ApplicationException(ex.Message);
+            }
+
+        }
+        catch (Exception ex)
+        {
+            clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+            string NotificationBody = ex.Message + "  " + ex.StackTrace;
+            SendError.SendMailMessage(NotificationBody);
+            Response.Redirect("ErrorPage.aspx", false);
+        }
+    }
+
+    public void ClearControls()
+    {
+        try
+        {
+        }
+
+
+        catch (Exception ex)
+        {
+            throw;
+        }
+    }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Agent_Find.aspx", false);
+    }
 }
+    

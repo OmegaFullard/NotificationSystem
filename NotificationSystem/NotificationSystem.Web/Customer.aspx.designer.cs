@@ -12,228 +12,39 @@
 public partial class Customer
 {
 
-    /// <summary>
-    /// itemPlaceholder control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl itemPlaceholder;
+	/// <summary>
+	/// Table1 control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Table Table1;
 
-    /// <summary>
-    /// Div1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+	/// <summary>
+	/// Panel1 control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Panel Panel1;
 
-    /// <summary>
-    /// lblCustomerID control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblCustomerID;
+	/// <summary>
+	/// defaultuser control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Image defaultuser;
 
-    /// <summary>
-    /// Label4 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label4;
-
-    /// <summary>
-    /// lblAgentID control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblAgentID;
-
-    /// <summary>
-    /// Label1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label1;
-
-    /// <summary>
-    /// lblTicketNo control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblTicketNo;
-
-    /// <summary>
-    /// Label5 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label5;
-
-    /// <summary>
-    /// lblFN control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblFN;
-
-    /// <summary>
-    /// lbl2 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lbl2;
-
-    /// <summary>
-    /// lblLN control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblLN;
-
-    /// <summary>
-    /// lbl4 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lbl4;
-
-    /// <summary>
-    /// lblEmail control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblEmail;
-
-    /// <summary>
-    /// lbl6 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lbl6;
-
-    /// <summary>
-    /// lblPhone control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblPhone;
-
-    /// <summary>
-    /// lbl8 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lbl8;
-
-    /// <summary>
-    /// lblAddress control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblAddress;
-
-    /// <summary>
-    /// lbl10 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lbl10;
-
-    /// <summary>
-    /// lblCity control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblCity;
-
-    /// <summary>
-    /// lbl12 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lbl12;
-
-    /// <summary>
-    /// lblState control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblState;
-
-    /// <summary>
-    /// Label2 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label2;
-
-    /// <summary>
-    /// lblZip control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblZip;
-
-    /// <summary>
-    /// Label3 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label3;
-
-    /// <summary>
-    /// SqlDataSource1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+	/// <summary>
+	/// ctrCustomer_Search control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::ctrCustomer_Search ctrCustomer_Search;
 }
