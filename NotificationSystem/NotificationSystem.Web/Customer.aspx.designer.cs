@@ -47,4 +47,13 @@ public partial class Customer
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::ctrCustomer_Search ctrCustomer_Search;
+
+	/// <summary>
+	/// ctrCustomer control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::ctrCustomer ctrCustomer;
 }

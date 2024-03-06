@@ -55,5 +55,5 @@ public partial class Customer_Update
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::NotificationSystem.NotificationSystem.Web.Controls_Update.ctrCustomer_Update ctrCustomer_Update;
+	protected global::ctrCustomer_Update ctrCustomer_Update;
 }

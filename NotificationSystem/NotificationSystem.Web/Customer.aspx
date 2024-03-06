@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="False" CodeBehind="Customer.aspx.cs" Inherits="Customer" %>
-<%@ Register Src="ctrAgent.ascx" TagPrefix="uc1" TagName="ctrAgent" %>
 <%@ Register Src="Controls_Search/ctrCustomer_Search.ascx" TagPrefix="uc1" TagName="ctrCustomer_Search" %>
+<%@ Register Src="ctrCustomer.ascx" TagPrefix="uc1" TagName="ctrCustomer" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -21,7 +21,7 @@
                          </asp:Table>
                   <br />
                
-              <uc1:ctrcustomer runat="server" id="ctrAgent" />
+              <uc1:ctrCustomer runat="server" id="ctrCustomer" />
             <br />
     <div>
             <a href="Default.aspx"><< Back to Home</a><br />
