@@ -1,4 +1,6 @@
-﻿<%@ Page Title="Admin Login" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Inherits="Default.aspx.cs" %>
+﻿<%@ Page Title="Admin Login" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Inherits="AdminLogin.aspx.cs" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">

@@ -1322,6 +1322,7 @@
     <Content Include="NotificationSystem.Web\styles\obj\Debug\TelerikWebSite1.csproj.AssemblyReference.cache" />
     <Content Include="NotificationSystem.Web\styles\obj\Debug\TelerikWebSite1.csproj.CopyComplete" />
     <Content Include="NotificationSystem.Web\styles\obj\Debug\TelerikWebSite1.csproj.CoreCompileInputs.cache" />
+    <Content Include="NotificationSystem.Web\Test.aspx" />
     <Content Include="NotificationSystem.Web\TroubleTicketReq_Add.aspx" />
     <Content Include="NotificationSystem.Web\TroubleTicketReq_Find.aspx" />
     <Content Include="NotificationSystem.Web\TroubleTicketReq_Update.aspx" />
@@ -4342,6 +4343,13 @@
       <DependentUpon>TicketByCustomer_Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\styles\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="NotificationSystem.Web\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NotificationSystem.Web\TicketDetails.aspx.cs">
       <DependentUpon>TicketDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

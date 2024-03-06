@@ -7,11 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Default.aspx
+namespace AdminLogin.aspx
 {
 
 
-    public partial class cs
-    {
-    }
+	public partial class cs
+	{
+
+		/// <summary>
+		/// RadCard1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::Telerik.Web.UI.RadCard RadCard1;
+
+		/// <summary>
+		/// RadTextBox1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::Telerik.Web.UI.RadTextBox RadTextBox1;
+
+		/// <summary>
+		/// RadTextBox2 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::Telerik.Web.UI.RadTextBox RadTextBox2;
+	}
 }
