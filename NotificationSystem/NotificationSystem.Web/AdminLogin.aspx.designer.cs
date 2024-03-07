@@ -7,38 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdminLogin.aspx
+namespace NotificationSystem.NotificationSystem.Web
 {
 
 
-	public partial class cs
+	public partial class AdminLogin
 	{
 
 		/// <summary>
-		/// RadCard1 control.
+		/// agent control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::Telerik.Web.UI.RadCard RadCard1;
+		protected global::System.Web.UI.WebControls.Image agent;
 
 		/// <summary>
-		/// RadTextBox1 control.
+		/// TextBox1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::Telerik.Web.UI.RadTextBox RadTextBox1;
+		protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
 		/// <summary>
-		/// RadTextBox2 control.
+		/// TextBox2 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::Telerik.Web.UI.RadTextBox RadTextBox2;
+		protected global::System.Web.UI.WebControls.TextBox TextBox2;
+
+		/// <summary>
+		/// Button2 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button Button2;
 	}
 }

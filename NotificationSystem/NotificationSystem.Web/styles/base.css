@@ -10,7 +10,16 @@ form {
 body {
     font: normal 16px "Segoe UI", Arial, sans-serif;
     color: #051e26;
+    /*
+          background-image: url('...');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    opacity: 0.4;
+    filter: opacity(=60);
+    */
+    
 }
+
 
 @media only screen and (min-width: 481px) and (max-width: 720px) {
     body {
@@ -140,7 +149,8 @@ div.RadMenuPopup,
     }
 
     .topnav a {
-        background-color: #666699;
+        
+        background-color: #666699;           
         border: 1px #884dff solid;
         color: #e6ecff;
         display: block;
@@ -150,14 +160,16 @@ div.RadMenuPopup,
         white-space: nowrap;
     }
 
-            .topnav a:hover {
-                background-color: #c1c1d7;
-                color: #f2c2f2;
-                text-decoration: none;
-            }
+        .topnav a:hover {
+            background-color: #c1c1d7;
+            color: #E8E3D8;
+            text-decoration: none;
+        }
 
 div.topnav a:active {
     background-color: #1e1e2f;
     color: #f0f0f5;
     text-decoration: none;
 }
+
+

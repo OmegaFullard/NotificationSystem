@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Customer Management" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeFile="CustomerMgt.aspx.cs" Inherits="CustomerMgt" %>
+﻿<%@ Page Title="Customer Management" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeFile="CustomerMgt.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.CustomerMgt" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -152,11 +152,9 @@
                                 <asp:BoundField DataField="Zip" HeaderText="Zip" SortExpression="Zip" />
                             </Columns>
                          </asp:GridView>
-                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NotificationSystemConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([CustomerID] = @CustomerID)">
-                             <SelectParameters>
-                                 <asp:ControlParameter ControlID="TextBox1" Name="CustomerID" PropertyName="Text" Type="Int32" />
-                             </SelectParameters>
-                         </asp:SqlDataSource>
+                        
+                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NotificationSystemConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
+                        
                      </div>
                   </div>
                </div>

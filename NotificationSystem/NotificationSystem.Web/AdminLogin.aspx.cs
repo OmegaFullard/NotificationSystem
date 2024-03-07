@@ -5,7 +5,7 @@ using System.Web;
 
 
 
-namespace NotificationSystem
+namespace NotificationSystem.NotificationSystem.Web
 {
     public partial class AdminLogin : System.Web.UI.Page
     {

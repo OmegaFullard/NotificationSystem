@@ -4,10 +4,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class AgentMgt : System.Web.UI.Page
+namespace NotificationSystem.NotificationSystem.Web
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class AgentMgt : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -9,17 +9,19 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
 
-
-public partial class Customer : System.Web.UI.Page
+namespace NotificationSystem.NotificationSystem.Web
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class Customer : System.Web.UI.Page
     {
-        if ((Page.IsPostBack))
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+            if ((Page.IsPostBack))
             {
-                ctrCustomer_Search.PopulateSearchControl();
-                ctrCustomer_Search.CustomerID = ctrCustomer_Search.CustomerID;
+                if (Page.Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+                {
+                    ctrCustomer_Search.PopulateSearchControl();
+                    ctrCustomer_Search.CustomerID = ctrCustomer_Search.CustomerID;
+                }
             }
         }
     }

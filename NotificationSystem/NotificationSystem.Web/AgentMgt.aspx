@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Agent Management" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeFile="AgentMgt.aspx.cs" Inherits="AgentMgt" %>
+﻿<%@ Page Title="Agent Management" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeFile="AgentMgt.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.AgentMgt" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="False" CodeBehind="Customer.aspx.cs" Inherits="Customer" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="False" CodeBehind="Customer.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Customer" %>
 <%@ Register Src="Controls_Search/ctrCustomer_Search.ascx" TagPrefix="uc1" TagName="ctrCustomer_Search" %>
 <%@ Register Src="ctrCustomer.ascx" TagPrefix="uc1" TagName="ctrCustomer" %>
 
