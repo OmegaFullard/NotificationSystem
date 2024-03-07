@@ -7,53 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
-public partial class Agent_Add
+namespace NotificationSystem.NotificationSystem.Web
 {
 
-	/// <summary>
-	/// Table1 control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Table Table1;
 
-	/// <summary>
-	/// Panel1 control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Panel Panel1;
+	public partial class Agent_Add
+	{
 
-	/// <summary>
-	/// agent control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Image agent;
+		/// <summary>
+		/// Table1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Table Table1;
 
-	/// <summary>
-	/// ctrAgent_Search control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::ctrAgent_Search ctrAgent_Search;
+		/// <summary>
+		/// Panel1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Panel Panel1;
 
-	/// <summary>
-	/// ctrAgent_Add control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::ctrAgent_Add ctrAgent_Add;
+		/// <summary>
+		/// agent control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Image agent;
+
+		/// <summary>
+		/// ctrAgent_Search control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::ctrAgent_Search ctrAgent_Search;
+
+		/// <summary>
+		/// ctrAgent_Add control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::ctrAgent_Add ctrAgent_Add;
+	}
 }

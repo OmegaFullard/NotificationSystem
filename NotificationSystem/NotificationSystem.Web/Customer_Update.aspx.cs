@@ -5,34 +5,36 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
+namespace NotificationSystem.NotificationSystem.Web
+{
     public partial class Customer_Update : System.Web.UI.Page
     {
 
 
-    private int m_CustomerID = 0;
+        private int m_CustomerID = 0;
 
-    public int CustomerID
-    {
-        get
+        public int CustomerID
         {
-            return m_CustomerID;
-        }
-        set
-        {
-            m_CustomerID = value;
-        }
-    }
-            protected void Page_Load(object sender, EventArgs e)
-        {
-        if ((Page.IsPostBack))
-        {
-            if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+            get
             {
-                if (((short)ctrCustomer_Search.CustomerID) == 0)
-                    return;
-                this.ctrCustomer_Update.CustomerID = (short)ctrCustomer_Search.CustomerID;
+                return m_CustomerID;
+            }
+            set
+            {
+                m_CustomerID = value;
+            }
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if ((Page.IsPostBack))
+            {
+                if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+                {
+                    if (((short)ctrCustomer_Search.CustomerID) == 0)
+                        return;
+                    this.ctrCustomer_Update.CustomerID = (short)ctrCustomer_Search.CustomerID;
+                }
             }
         }
     }
-    }
+}

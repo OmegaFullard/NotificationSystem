@@ -8,22 +8,24 @@ using System.Data;
 using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
 using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
 
+namespace NotificationSystem.NotificationSystem.Web
+{
     public partial class Agent_Update : System.Web.UI.Page
     {
-    private int m_AgentID = 0;
+        private int m_AgentID = 0;
 
-    public int AgentID
-    {
-        get
+        public int AgentID
         {
-            return m_AgentID;
+            get
+            {
+                return m_AgentID;
+            }
+            set
+            {
+                m_AgentID = value;
+            }
         }
-        set
-        {
-            m_AgentID = value;
-        }
-    }
-    protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             if ((Page.IsPostBack))
             {
@@ -38,3 +40,4 @@ using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
             }
         }
     }
+}

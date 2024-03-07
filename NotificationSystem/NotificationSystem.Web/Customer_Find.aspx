@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Customer_Find.aspx.cs" Inherits="Customer_Find" %>
+﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Customer_Find.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Customer_Find" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Search/ctrCustomer_Search.ascx" TagPrefix="uc1" TagName="ctrCustomer_Search" %>
 <%@ Register Src="Controls_Find/ctrCustomer_Find.ascx" TagPrefix="uc1" TagName="ctrCustomer_Find" %>
@@ -9,9 +9,9 @@
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
             </asp:Content>
-           <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="body" >
+           <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
-                     <h2>Find Agent</h2><br />
+                     <h2>Find Customer</h2><br />
 
                    
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Agent_Update.aspx.cs" Inherits="Agent_Update" %>
+﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Agent_Update.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Update" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Update/ctrAgent_Update.ascx" TagPrefix="uc1" TagName="ctrAgent_Update" %>
 <%@ Register Src="Controls_Search/ctrAgent_Search.ascx" TagPrefix="uc1" TagName="ctrAgent_Search" %>

@@ -8,20 +8,23 @@ using System.Data;
 using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
 using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
 
-public partial class Customer_Find : System.Web.UI.Page
+namespace NotificationSystem.NotificationSystem.Web
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class Customer_Find : System.Web.UI.Page
     {
-        if ((Page.IsPostBack))
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+            if ((Page.IsPostBack))
             {
-                ctrCustomer_Search.PopulateSearchControl();
-                if (((short)ctrCustomer_Search.CustomerID) == 0)
-                    return;
-                // this.ctrCustomer_Find.ClearControls()
-                this.ctrCustomer_Find.CustomerID = ctrCustomer_Search.CustomerID;
+                if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+                {
+                    ctrCustomer_Search.PopulateSearchControl();
+                    if (((short)ctrCustomer_Search.CustomerID) == 0)
+                        return;
+                    // this.ctrCustomer_Find.ClearControls()
+                    this.ctrCustomer_Find.CustomerID = ctrCustomer_Search.CustomerID;
 
+                }
             }
         }
     }

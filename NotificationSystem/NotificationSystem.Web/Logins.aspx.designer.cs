@@ -7,17 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
-public partial class Logins
+namespace NotificationSystem.NotificationSystem.Web
 {
 
-    /// <summary>
-    /// DynamicHyperLink1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.HyperLink DynamicHyperLink1;
+
+	public partial class Logins
+	{
+
+		/// <summary>
+		/// DynamicHyperLink1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.HyperLink DynamicHyperLink1;
+	}
 }

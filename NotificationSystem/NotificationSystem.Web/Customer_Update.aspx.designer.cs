@@ -7,53 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
-public partial class Customer_Update
+namespace NotificationSystem.NotificationSystem.Web
 {
 
-	/// <summary>
-	/// Table1 control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Table Table1;
 
-	/// <summary>
-	/// Panel1 control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Panel Panel1;
+	public partial class Customer_Update
+	{
 
-	/// <summary>
-	/// customer control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Image customer;
+		/// <summary>
+		/// Table1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Table Table1;
 
-	/// <summary>
-	/// ctrCustomer_Search control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::ctrCustomer_Search ctrCustomer_Search;
+		/// <summary>
+		/// Panel1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Panel Panel1;
 
-	/// <summary>
-	/// ctrCustomer_Update control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::ctrCustomer_Update ctrCustomer_Update;
+		/// <summary>
+		/// customer control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Image customer;
+
+		/// <summary>
+		/// ctrCustomer_Search control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::ctrCustomer_Search ctrCustomer_Search;
+
+		/// <summary>
+		/// ctrCustomer_Update control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::ctrCustomer_Update ctrCustomer_Update;
+	}
 }

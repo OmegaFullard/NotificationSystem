@@ -9,7 +9,7 @@ using System.Web.Security;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace NotificationSystem_Practice
+namespace NotificationSystem.NotificationSystem.Web
 {
 
 

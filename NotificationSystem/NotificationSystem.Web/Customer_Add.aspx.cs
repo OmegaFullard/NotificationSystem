@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 using System.Data;
 using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
 
-
+namespace NotificationSystem.NotificationSystem.Web
+{ 
     public partial class Customer_Add : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+    protected void Page_Load(object sender, EventArgs e)
+    {
         if ((IsPostBack))
         {
             if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
@@ -29,4 +30,5 @@ using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters
             }
         }
     }
-    }
+}
+}
