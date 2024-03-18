@@ -194,6 +194,17 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Antlr.3.4.1.9004.nupkg" />
+    <Content Include="NotificationSystem.Data\NotificationSystem.xsc">
+      <DependentUpon>NotificationSystem.xsd</DependentUpon>
+    </Content>
+    <None Include="NotificationSystem.Data\NotificationSystem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NotificationSystem.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="NotificationSystem.Data\NotificationSystem.xss">
+      <DependentUpon>NotificationSystem.xsd</DependentUpon>
+    </Content>
     <None Include="NotificationSystem.Data\packages.config" />
     <Content Include="NotificationSystem.Data\Scripts\bootstrap.bundle.js.map" />
     <Content Include="NotificationSystem.Data\Scripts\bootstrap.bundle.min.js.map" />
@@ -1251,13 +1262,6 @@
     <None Include="NotificationSystem.Data\Web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
-    <Content Include="NotificationSystem.Data\xsNotificationSystem.xsc">
-      <DependentUpon>xsNotificationSystem.xsd</DependentUpon>
-    </Content>
-    <None Include="NotificationSystem.Data\xsNotificationSystem.xsd" />
-    <Content Include="NotificationSystem.Data\xsNotificationSystem.xss">
-      <DependentUpon>xsNotificationSystem.xsd</DependentUpon>
-    </Content>
     <Content Include="NotificationSystem.Data\xsReports.xsc">
       <DependentUpon>xsReports.xsd</DependentUpon>
     </Content>
@@ -4016,7 +4020,11 @@
     <Compile Include="NotificationSystem.Data\Classes\clsNotificationSystem.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsReports.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsTroubleTicketReq.cs" />
-    <Compile Include="NotificationSystem.Data\xsNotificationSystem.Designer.cs" />
+    <Compile Include="NotificationSystem.Data\NotificationSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotificationSystem.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NotificationSystem.Data\xsReports.Designer.cs" />
     <Compile Include="NotificationSystem.Web\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
