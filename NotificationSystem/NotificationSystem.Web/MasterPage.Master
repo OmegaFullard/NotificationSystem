@@ -105,7 +105,7 @@
                    <asp:MenuItem Text="Trouble Tickets">
                     <asp:MenuItem Text="Ticket Request" NavigateUrl="TicketReq.aspx"></asp:MenuItem>
                      <asp:MenuItem Text="Ticket Details" NavigateUrl="TicketDetails.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Notifications" NavigateUrl="Notifications.aspx"></asp:MenuItem>
+                    
                         </asp:MenuItem>
         
                    <asp:MenuItem Text="Customers">
@@ -117,14 +117,13 @@
 
             <asp:MenuItem Text="Admin">
             <asp:MenuItem Text="Admin Login" NavigateUrl="AdminLogin.aspx"></asp:MenuItem>
-               <asp:MenuItem Text="Notifications Management" NavigateUrl="NotificationsMgt.aspx"></asp:MenuItem>
+               <asp:MenuItem Text="Ticket Management" NavigateUrl="TicketMgt.aspx"></asp:MenuItem>
                <asp:MenuItem Text="Customer Management" NavigateUrl="CustomerMgt.aspx"></asp:MenuItem>
               <asp:MenuItem Text="Agent Management" NavigateUrl="AgentMgt.aspx"></asp:MenuItem>
               </asp:MenuItem>
 
                      <asp:MenuItem Text="Reports">
                    <asp:MenuItem Text="Agent Report" NavigateUrl="AgentReport.aspx"></asp:MenuItem>
-                   <asp:MenuItem Text="Notifications Report" NavigateUrl="NotificationsReport.aspx"></asp:MenuItem>
                <asp:MenuItem Text="Customer Report" NavigateUrl="CustomerReport.aspx"></asp:MenuItem>
              </asp:MenuItem>        
             </Items>

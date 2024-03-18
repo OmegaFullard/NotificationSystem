@@ -1272,23 +1272,18 @@
     <Content Include="NotificationSystem.Web\AJsSweetsWebsite.csproj.user.exclude" />
     <Content Include="NotificationSystem.Web\Controls_Add\ctrAgent_Add.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Add\ctrCustomer_Add.ascx" />
-    <Content Include="NotificationSystem.Web\Controls_Add\ctrNotifications_Add.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Add\ctrTroubleTicketReq_Add.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Find\ctrAgent_Find.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Find\ctrCustomer_Find.ascx" />
-    <Content Include="NotificationSystem.Web\Controls_Find\ctrNotifications_Find.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Find\ctrTroubleTicketReq_Find.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Search\ctrAgent_Search.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Search\ctrCustomer_Search.ascx" />
-    <Content Include="NotificationSystem.Web\Controls_Search\ctrNotifications_Search.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Search\ctrTroubleTicketReq_Search.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Update\ctrAgent_Update.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Update\ctrCustomer_Update.ascx" />
-    <Content Include="NotificationSystem.Web\Controls_Update\ctrNotifications_Update.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Update\ctrTroubleTicketReq_Update.ascx" />
     <Content Include="NotificationSystem.Web\ctrAgent.ascx" />
     <Content Include="NotificationSystem.Web\ctrCustomer.ascx" />
-    <Content Include="NotificationSystem.Web\ctrNotifications.ascx" />
     <Content Include="NotificationSystem.Web\ctrTroubleTicketReq.ascx" />
     <Content Include="NotificationSystem.Web\Customer_Add.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Find.aspx" />
@@ -1298,9 +1293,6 @@
     <Content Include="NotificationSystem.Web\images\site.webmanifest" />
     <Content Include="NotificationSystem.Web\MasterPage.Master" />
     <Content Include="NotificationSystem.Web\MasterPageSingleMenu.Master" />
-    <Content Include="NotificationSystem.Web\Notifications_Add.aspx" />
-    <Content Include="NotificationSystem.Web\Notifications_Find.aspx" />
-    <Content Include="NotificationSystem.Web\Notifications_Update.aspx" />
     <Content Include="NotificationSystem.Web\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="NotificationSystem.Web\obj\Debug\TelerikWebSite1.csproj.AssemblyReference.cache" />
     <Content Include="NotificationSystem.Web\obj\Debug\TelerikWebSite1.csproj.CopyComplete" />
@@ -3880,8 +3872,7 @@
     <Content Include="NotificationSystem.Web\images\techbg.png" />
     <Content Include="NotificationSystem.Web\Invoices.aspx" />
     <Content Include="NotificationSystem.Web\Logins.aspx" />
-    <Content Include="NotificationSystem.Web\Notifications.aspx" />
-    <Content Include="NotificationSystem.Web\NotificationsMgt.aspx" />
+    <Content Include="NotificationSystem.Web\TicketMgt.aspx" />
     <Content Include="NotificationSystem.Web\obj\Debug\Telerik.Web.dll" />
     <Content Include="NotificationSystem.Web\obj\Debug\telerik.web.dll.licenses" />
     <Content Include="NotificationSystem.Web\obj\Debug\Telerik.Web.pdb" />
@@ -4022,7 +4013,6 @@
   <ItemGroup>
     <Compile Include="NotificationSystem.Data\Classes\clsAgent.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsCustomer.cs" />
-    <Compile Include="NotificationSystem.Data\Classes\clsNotifications.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsNotificationSystem.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsReports.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsTroubleTicketReq.cs" />
@@ -4083,13 +4073,6 @@
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrCustomer_Add.ascx.designer.cs">
       <DependentUpon>ctrCustomer_Add.ascx</DependentUpon>
     </Compile>
-    <Compile Include="NotificationSystem.Web\Controls_Add\ctrNotifications_Add.ascx.cs">
-      <DependentUpon>ctrNotifications_Add.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Controls_Add\ctrNotifications_Add.ascx.designer.cs">
-      <DependentUpon>ctrNotifications_Add.ascx</DependentUpon>
-    </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrTroubleTicketReq_Add.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq_Add.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4110,13 +4093,6 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrCustomer_Find.ascx.designer.cs">
       <DependentUpon>ctrCustomer_Find.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Controls_Find\ctrNotifications_Find.ascx.cs">
-      <DependentUpon>ctrNotifications_Find.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Controls_Find\ctrNotifications_Find.ascx.designer.cs">
-      <DependentUpon>ctrNotifications_Find.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Find\ctrTroubleTicketReq_Find.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq_Find.ascx</DependentUpon>
@@ -4139,13 +4115,6 @@
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrCustomer_Search.ascx.designer.cs">
       <DependentUpon>ctrCustomer_Search.ascx</DependentUpon>
     </Compile>
-    <Compile Include="NotificationSystem.Web\Controls_Search\ctrNotifications_Search.ascx.cs">
-      <DependentUpon>ctrNotifications_Search.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Controls_Search\ctrNotifications_Search.ascx.designer.cs">
-      <DependentUpon>ctrNotifications_Search.ascx</DependentUpon>
-    </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Search\ctrTroubleTicketReq_Search.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq_Search.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4167,13 +4136,6 @@
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrCustomer_Update.ascx.designer.cs">
       <DependentUpon>ctrCustomer_Update.ascx</DependentUpon>
     </Compile>
-    <Compile Include="NotificationSystem.Web\Controls_Update\ctrNotifications_Update.ascx.cs">
-      <DependentUpon>ctrNotifications_Update.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Controls_Update\ctrNotifications_Update.ascx.designer.cs">
-      <DependentUpon>ctrNotifications_Update.ascx</DependentUpon>
-    </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Update\ctrTroubleTicketReq_Update.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq_Update.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4194,13 +4156,6 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrCustomer.ascx.designer.cs">
       <DependentUpon>ctrCustomer.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\ctrNotifications.ascx.cs">
-      <DependentUpon>ctrNotifications.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\ctrNotifications.ascx.designer.cs">
-      <DependentUpon>ctrNotifications.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\ctrTroubleTicketReq.ascx.cs">
       <DependentUpon>ctrTroubleTicketReq.ascx</DependentUpon>
@@ -4288,37 +4243,12 @@
     <Compile Include="NotificationSystem.Web\MasterPageSingleMenu.Master.designer.cs">
       <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
     </Compile>
-    <Compile Include="NotificationSystem.Web\Notifications.aspx.cs">
-      <DependentUpon>Notifications.aspx</DependentUpon>
+    <Compile Include="NotificationSystem.Web\TicketMgt.aspx.cs">
+      <DependentUpon>TicketMgt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="NotificationSystem.Web\NotificationsMgt.aspx.cs">
-      <DependentUpon>NotificationsMgt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\NotificationsMgt.aspx.designer.cs">
-      <DependentUpon>NotificationsMgt.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Notifications_Add.aspx.cs">
-      <DependentUpon>Notifications_Add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Notifications_Add.aspx.designer.cs">
-      <DependentUpon>Notifications_Add.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Notifications_Find.aspx.cs">
-      <DependentUpon>Notifications_Find.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Notifications_Find.aspx.designer.cs">
-      <DependentUpon>Notifications_Find.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Notifications_Update.aspx.cs">
-      <DependentUpon>Notifications_Update.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NotificationSystem.Web\Notifications_Update.aspx.designer.cs">
-      <DependentUpon>Notifications_Update.aspx</DependentUpon>
+    <Compile Include="NotificationSystem.Web\TicketMgt.aspx.designer.cs">
+      <DependentUpon>TicketMgt.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="NotificationSystem.Web\Reports\DateRangebyAgent_Report.aspx.cs">

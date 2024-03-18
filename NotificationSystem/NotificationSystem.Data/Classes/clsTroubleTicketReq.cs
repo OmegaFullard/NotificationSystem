@@ -15,7 +15,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
         private int m_AgentID = 0;
         private int m_TroubleTicketNo = 0;
         private DateTime m_DueDate;
-        private DateTime m_RequestDate;
+        private DateTime m_RequestDate = DateTime.Now;
 
         public string Status
         {
@@ -90,5 +90,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
                 m_RequestDate = value;
             }
         }
-    }
+
+		public string Type { get; internal set; }
+	}
 }
