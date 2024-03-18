@@ -5,7 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystem;
+using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
+using NotificationSystem.NotificationSystem.Data.Classes;
 
 public partial class ctrCustomer_Find : System.Web.UI.UserControl
     {

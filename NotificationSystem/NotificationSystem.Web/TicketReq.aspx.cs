@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Web.UI.WebControls;
-using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
+using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
+using NotificationSystem.NotificationSystem.Data.Classes;
 
 
-namespace NotificationSystem_Practice
+namespace NotificationSystem.NotificationSystem.Web
 {
     public partial class TicketReq : System.Web.UI.Page
     {

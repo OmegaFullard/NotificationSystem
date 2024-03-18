@@ -14,9 +14,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using System.Data;
-using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
-using NotificationSystem_Practice.NotificationSystem.Data.Classes;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
+using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
+using NotificationSystem.NotificationSystem.Data.Classes;
 
 public partial class ctrAgent_Find : System.Web.UI.UserControl
     {

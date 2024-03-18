@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystemTableAdapters;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
 
-namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
+namespace NotificationSystem.NotificationSystem.Data.Classes
 {
     public class clsCustomer
     {

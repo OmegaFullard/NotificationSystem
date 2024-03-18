@@ -1,4 +1,6 @@
-﻿<%@ Page Title="User Profile" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UserViewProfile.aspx.cs" Inherits="UserViewProfile" %>
+﻿<%@ Page Title="User Profile" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="false" CodeBehind="UserViewProfile.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.UserViewProfile" %>
+<%@ Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
       <link href="styles/default.css" rel="stylesheet" />
 </asp:Content>
@@ -180,8 +182,8 @@
                   </div>
                   <div class="row">
                      <div class="col-8 mx-auto">
-                           <telerik:CardSeparatorComponent runat="server"></telerik:CardSeparatorComponent>
-                         <telerik:CardActionsContainerComponent runat="server" CardActionsAlignment="Stretched" Orientation="Vertical">
+                           <telerik:cardseparatorcomponent runat="server"></telerik:cardseparatorcomponent>
+                         <telerik:cardactionscontainercomponent runat="server" CardActionsAlignment="Stretched" Orientation="Vertical">
                         <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #009900; border: medium solid #ffffff" Text="Add" />
                      
                               
@@ -194,7 +196,7 @@
                           
                         <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #4800ff; border: medium solid #ffeef3" Text="Delete" />
                      
-                         </telerik:CardActionsContainerComponent>
+                         </telerik:cardactionscontainercomponent>
                         
                          </div>
                   </div>

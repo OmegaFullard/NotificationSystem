@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
+using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
+using NotificationSystem.NotificationSystem.Data.Classes;
 using System.Linq;
 using System.Web;
 using System.Web.UI;

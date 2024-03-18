@@ -1,5 +1,5 @@
-﻿<%@ Page Title="User Registration" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UserRegistration.aspx.cs" Inherits="UserRegistration" %>
-
+﻿<%@ Page Title="User Registration" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="false" CodeBehind="UserRegistration.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.UserRegistration" %>
+<%@ Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
   
@@ -17,7 +17,7 @@
                          <br />
                          <br />
                         <center>
-                               <telerik:CardImageComponent runat="server" src="images/defaultuser.png"></telerik:CardImageComponent>
+                               <telerik:cardimagecomponent runat="server" src="images/defaultuser.png"></telerik:cardimagecomponent>
                         </center>
                      </div>
                   </div>
@@ -203,7 +203,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <telerik:CardImageComponent runat="server" src="images/RCLogo.png"></telerik:CardImageComponent>
+                           <telerik:cardimagecomponent runat="server" src="images/RCLogo.png"></telerik:cardimagecomponent>
                         </center>
                      </div>
                   </div>

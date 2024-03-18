@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
+using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
+using NotificationSystem.NotificationSystem.Data.Classes;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -16,7 +17,6 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using Telerik.Web.UI;
 using System.Data.SqlClient;
-using NotificationSystem_Practice.NotificationSystem.Data.Classes;
 using System.Net.Http;
 
 public partial class ctrCustomer_Add : System.Web.UI.UserControl

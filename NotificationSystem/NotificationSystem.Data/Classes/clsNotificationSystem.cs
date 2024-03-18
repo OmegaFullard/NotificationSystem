@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystemTableAdapters;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -12,9 +11,10 @@ using System.Security;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using System.Data;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystem;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
+using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 
-namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
+namespace NotificationSystem.NotificationSystem.Data.Classes
 {
     public class clsNotificationSystem
     {
@@ -27,7 +27,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             try
             {
                 CustomerListTableAdapter adpCustomerList = new CustomerListTableAdapter();
-                xsNotificationSystem.CustomerListDataTable tblCustomerList = adpCustomerList.GetData();
+                NotificationSystem.CustomerListDataTable tblCustomerList = adpCustomerList.GetData();
 
                 return tblCustomerList;
             }
@@ -59,7 +59,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             try
             {
                 CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
-                xsNotificationSystem.CustomerDataTable tblCustomer = adpCustomer.GetData();
+                NotificationSystem.CustomerDataTable tblCustomer = adpCustomer.GetData();
 
                 return tblCustomer;
             }
@@ -75,7 +75,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             try
             {
                 CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
-                xsNotificationSystem.CustomerDataTable tblCustomer = adpCustomer.GetDataByTroubleTicket(TroubleTicketNo);
+                NotificationSystem.CustomerDataTable tblCustomer = adpCustomer.GetDataByTroubleTicket(TroubleTicketNo);
 
                 return tblCustomer;
             }
@@ -97,7 +97,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             {
                 {
                     var withBlock = thisCustomer;
-                    adpCustomer.UpdateQuery(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
+                    adpCustomer.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
                 }
             }
 
@@ -116,7 +116,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
 
 			CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
 
-			xsNotificationSystem.CustomerDataTable tblCustomer = new xsNotificationSystem.CustomerDataTable();
+			NotificationSystem.CustomerDataTable tblCustomer = new NotificationSystem.CustomerDataTable();
 			Customer = false;
 
 
@@ -124,7 +124,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
 			{
 				{
 					var withBlock = thisCustomer;
-				//	adpCustomer.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
+					adpCustomer.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
 				}
 
 
@@ -143,7 +143,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             try
             {
                 TroubleTicketListTableAdapter adpTroubleTicketList = new TroubleTicketListTableAdapter();
-                xsNotificationSystem.TroubleTicketListDataTable tblTroubleTicketList = adpTroubleTicketList.GetData();
+                NotificationSystem.TroubleTicketListDataTable tblTroubleTicketList = adpTroubleTicketList.GetData();
 
                 return tblTroubleTicketList;
             }
@@ -175,7 +175,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             try
             {
                 TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
-                xsNotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = adpTroubleTicketReq.GetData();
+                NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = adpTroubleTicketReq.GetData();
 
                 return tblTroubleTicketReq;
             }
@@ -232,7 +232,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
 
             TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
 
-            xsNotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = new xsNotificationSystem.TroubleTicketReqDataTable();
+            NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = new NotificationSystem.TroubleTicketReqDataTable();
             TroubleTicket = false;
 
 
@@ -314,7 +314,7 @@ namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
             try
             {
                 AgentTableAdapter adpAgentList = new AgentTableAdapter();
-                xsNotificationSystem.AgentDataTable tblAgentList = adpAgentList.GetData();
+                NotificationSystem.AgentDataTable tblAgentList = adpAgentList.GetData();
 
                 return tblAgentList;
             }
@@ -332,7 +332,7 @@ public int GetAgentByID(int AgentID)
             try
             {
                 AgentTableAdapter adpAgentList = new AgentTableAdapter();
-                xsNotificationSystem.AgentDataTable tblAgentList = adpAgentList.GetDataByAgentID(AgentID);
+                NotificationSystem.AgentDataTable tblAgentList = adpAgentList.GetDataByAgentID(AgentID);
 
                 AgentRow row = tblAgentList[0];
                 return row.AgentID;
@@ -348,7 +348,7 @@ public int GetAgentByID(int AgentID)
             try
             {
                 AgentTableAdapter adpAgent = new AgentTableAdapter();
-                xsNotificationSystem.AgentDataTable tblAgent = adpAgent.GetData();
+                NotificationSystem.AgentDataTable tblAgent = adpAgent.GetData();
 
                 return tblAgent;
             }
@@ -364,7 +364,7 @@ public int GetAgentByID(int AgentID)
             try
             {
                 AgentTableAdapter adpAgent = new AgentTableAdapter();
-                xsNotificationSystem.AgentDataTable tblAgent = adpAgent.GetDataByTicket(TroubleTicketNo);
+                NotificationSystem.AgentDataTable tblAgent = adpAgent.GetDataByTicket(TroubleTicketNo);
 
                 return tblAgent;
             }
@@ -381,7 +381,7 @@ public int GetAgentByID(int AgentID)
         {
             //Removed withBlock.AgentID 
 
-            xsNotificationSystem.AgentDataTable tblAgent = new xsNotificationSystem.AgentDataTable();
+            NotificationSystem.AgentDataTable tblAgent = new NotificationSystem.AgentDataTable();
             Agent = false;
 
             try

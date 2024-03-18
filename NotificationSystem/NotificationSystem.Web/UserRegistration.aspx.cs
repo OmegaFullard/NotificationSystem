@@ -7,8 +7,11 @@ using System.Configuration;
 using System.Web.Security;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
+using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
+using NotificationSystem.NotificationSystem.Data.Classes;
 
-namespace NotificationSystem_Practice
+namespace NotificationSystem.NotificationSystem.Web
 {
     public partial class UserRegistration : System.Web.UI.Page
     {

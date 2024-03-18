@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystemTableAdapters;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsNotificationSystem;
-using NotificationSystem_Practice.NotificationSystem.Data.Classes;
+using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
+using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
+using NotificationSystem.NotificationSystem.Data.Classes;
 
 public partial class ctrAgent_Update : System.Web.UI.UserControl
 {
