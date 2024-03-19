@@ -27,35 +27,36 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
     }
     protected void Page_Load(object sender, EventArgs e)
         {
-        //if ((Page.IsPostBack))
-        //{
-        //    try
-        //    {
-        //        if (m_CustomerID > 0)
-        //            this.lblCustomerID.Text = "ID" + m_CustomerID;
-        //        if (this.lblCustomerID.Text.Length == 2)
-        //            return;
+		if ((Page.IsPostBack))
+		{
+			try
+			{
+				if (m_CustomerID > 0)
+					this.lblCustomerID.Text = "ID" + m_CustomerID;
+				if (this.lblCustomerID.Text.Length == 2)
+					return;
 
 
-        //        //Sytnax Errors 3/5/24
-
-        //        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        //        CustomerDataTable tblCustomer = theNotificationSystem.GetCustomerListbyID(Convert.ToInt32(this.lblCustomerID.Text.Replace ("ID", "")));
-        //        if (tblCustomer.Count == 0)
-        //            return;
-
-        //        {
-        //            var withBlock = tblCustomer[0];
-
-        //            lblCustomerID.Text = theNotificationSystem.GetCustomerListbyID(Convert.ToInt32(withBlock.CustomerID));
 
 
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw;
-        //    }
-        //}
-    }
+				clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+				CustomerDataTable tblCustomer = new CustomerDataTable();
+					theNotificationSystem.GetCustomerListbyID(Convert.ToInt32(this.lblCustomerID.Text.Replace("ID", "")));
+				if (tblCustomer.Count == 0)
+					return;
+
+				{
+					var withBlock = tblCustomer[0];
+
+					withBlock.CustomerID = int.Parse(lblCustomerID.Text);
+
+
+				}
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
+	}
     }

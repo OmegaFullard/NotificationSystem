@@ -5,31 +5,23 @@
  <div style="width: 1050px; height:800px;  overflow: auto; padding-left:30px" >
 
 <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-
                               <h2>Agents</h2><br />
-							  
                               <div> <asp:Label ID="lblAgentID" runat="server" Text=""></asp:Label></div><br />
-     <div style="padding-bottom:10px; font-weight:400"> <asp:Label ID="lblSearchResult" runat="server" Text=""></asp:Label></div>
-           <asp:GridView ID="grdAgent" runat="server" 
-                    AutoGenerateColumns="False" 
-                    ShowFooter="True"
-                    EmptyDataText="There are no records matching this search criteria."
-                    BackColor="White" ForeColor="Black" CssClass="grdRecords"
-                    HeaderStyle-CssClass="grdHeader"
-                    width="700px" AllowPaging="True" AllowSorting="True" PageSize="18">
-                    <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
-                          <Columns>
-                              
-                     <asp:BoundField DataField="TroubleTicketNo" HeaderText="Ticket Number" HtmlEncode="False" 
-                                       ReadOnly="True"  Visible="True" />
-                               <asp:BoundField DataField="StartDate" HeaderText="Start Date" HtmlEncode="False" DataFormatString="{0:MM/dd/yyyy}"
-                                       ReadOnly="True"  Visible="True" />
-                                 
-                     
-                          </Columns>
-                        <FooterStyle BackColor ="#CCCCCC" ForeColor="black"/>
-                        <HeaderStyle  HorizontalAlign="Left" ForeColor="#303030" />
-                          <AlternatingRowStyle CssClass="grdAlternatingRow"></AlternatingRowStyle>
-               </asp:GridView>
-        </div>
+                              Start Date:&nbsp;&nbsp;<telerik:RadLabel ID="lblStartDate" BackColor="White"  text="--" Width="145px"  runat="server"></telerik:RadLabel><br /><br />
+                              Trouble Ticket#:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<telerik:RadLabel ID="lblTroubleTicketNo" BackColor="White"  text="--" Width="145px"  runat="server"></telerik:RadLabel>&nbsp;&nbsp;&nbsp
+                              Title:&nbsp;&nbsp;<telerik:RadLabel ID="lblTitle" BackColor="White" text="--"  Width="145px"  runat="server"></telerik:RadLabel> &nbsp;&nbsp;&nbsp
+                               Salary:&nbsp;&nbsp;<telerik:RadLabel ID="lblSalary" BackColor="White" text="--"  Width="145px"  runat="server"></telerik:RadLabel>
+							   
+							  First:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<telerik:RadLabel ID="lblFN" BackColor="White"  text="--" Width="145px"  runat="server"></telerik:RadLabel>&nbsp;&nbsp;&nbsp
+                              Last:&nbsp;&nbsp;<telerik:RadLabel ID="lblLN" BackColor="White" text="--"  Width="145px"  runat="server"></telerik:RadLabel> &nbsp;&nbsp;&nbsp
+                               
+							   Email:&nbsp;&nbsp;<telerik:RadLabel ID="lblEmail" BackColor="White" text="--"  Width="145px"  runat="server"></telerik:RadLabel>							   
+							 Phone#:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<telerik:RadLabel ID="lblPhone" BackColor="White"  text="--" Width="145px"  runat="server"></telerik:RadLabel>&nbsp;&nbsp;&nbsp
+                              Fax#:&nbsp;&nbsp;<telerik:RadLabel ID="lblFax" BackColor="White" text="--"  Width="145px"  runat="server"></telerik:RadLabel> &nbsp;&nbsp;&nbsp
+                               
+							   
+                    
+                 </div>
+                 
+
      </div>

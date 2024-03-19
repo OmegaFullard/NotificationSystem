@@ -3954,8 +3954,10 @@ namespace NotificationSystem.NotificationSystem.Data {
                     this[this.tableAgent.FaxColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+
+			public int TroubleTicketNo { get; internal set; }
+
+			[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTitleNull() {
                 return this.IsNull(this.tableAgent.TitleColumn);

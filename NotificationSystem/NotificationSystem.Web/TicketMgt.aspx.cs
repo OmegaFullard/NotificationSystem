@@ -14,7 +14,7 @@ using NotificationSystem.NotificationSystem.Data.Classes;
 
 namespace NotificationSystem.NotificationSystem.Web
 {
-    public partial class NotificationsMgt : System.Web.UI.Page
+    public partial class TicketMgt : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
