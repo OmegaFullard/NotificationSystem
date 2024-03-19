@@ -22,7 +22,13 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         public bool Agent { get; private set; }
 		public bool TroubleTicket { get; private set; }
 
-		public DataTable GetCustomersList()
+        public bool TroubleTicketNo { get; private set; }
+        public bool Title { get; private set; }
+        public bool StartDate { get; private set; }
+
+        public bool Salary { get; private set; }
+
+        public DataTable GetCustomersList()
         {
             try
             {
@@ -154,23 +160,23 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-      //  public int GetTroubleTicketListbyID(int TroubleTicketNo)
-      //  {
-      //      try
-       //     {
-                TroubleTicketListTableAdapter adpTroubleTicketList = new TroubleTicketListTableAdapter();
-               // TroubleTicketListDataTable tblTroubleTicketList = adpTroubleTicketList.GetDataByTroubleTicketNo(TroubleTicketNo);
-              //  TroubleTicketListRow row = tblTroubleTicketList[0];
-               // return row.TroubleTicketNo;
+		public int GetTroubleTicketListbyID(int TroubleTicketNo)
+		{
+			try
+			{
+				TroubleTicketListTableAdapter adpTroubleTicketList = new TroubleTicketListTableAdapter();
+				TroubleTicketListDataTable tblTroubleTicketList = adpTroubleTicketList.GetDataByTroubleTicketNo(TroubleTicketNo);
+				TroubleTicketListRow row = tblTroubleTicketList[0];
+				return row.TroubleTicketNo;
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw;
-        //    }
-      //  }
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
 
-        public DataTable GetTroubleTicket()
+		public DataTable GetTroubleTicket()
         {
             try
             {
@@ -186,25 +192,25 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-        //public DataTable GetTroubleTicketByNo(ref int TroubleTicketNo)
-        //{
-        //    try
-        //    {
-        //      //  TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
-        //     //   NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = adpTroubleTicketReq.GetDataByTroubleTicket(TroubleTicketNo);
+		public DataTable GetTroubleTicketByNo(int TroubleTicketNo)
+		{
+			try
+			{
+				TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
+				NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = adpTroubleTicketReq.GetDataByTroubleTicketNo(TroubleTicketNo);
 
-        //       // return tblTroubleTicketReq;
-        //    }
+				return tblTroubleTicketReq;
+			}
 
-        //    catch (Exception ex)
-        //    {
-        //        throw;
-        //    }
-        //}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
 
 
 
-        public void UpdateTroubleTicket(clsTroubleTicketReq thisTroubleTicket)
+		public void UpdateTroubleTicket(clsTroubleTicketReq thisTroubleTicket)
         {
             TroubleTicketReqTableAdapter adpTroubleTicket = new TroubleTicketReqTableAdapter();
 
@@ -254,58 +260,69 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
         }
 
-  //      public DataTable GetTypeList()
-		//{
-		//	DataSet ds = new DataSet();
-		//	DataTable dt = new DataTable("GetData");
-		//	DataRow dr;
+		public DataTable GetTypeList()
+		{
+			DataSet ds = new DataSet();
+			DataTable dt = new DataTable("GetData");
+		
 
 
 
-		//	dt.Columns.Add("ID", Type.GetType("System.Integer")).DefaultValue = string.Empty;
-		//	dt.Columns.Add("Type", Type.GetType("System.String")).DefaultValue = string.Empty;
+			dt.Columns.Add("ID", Type.GetType("System.Integer")).DefaultValue = string.Empty;
+			dt.Columns.Add("Type", Type.GetType("System.String")).DefaultValue = string.Empty;
 
-		//	dr = dt.NewRow;
-		//	dr("ID") = "0"; dr("Type") = "Incident";
-		//	dt.Rows.Add(dr);
-		//	dr = dt.NewRow;
-		//	dr("ID") = "1"; dr("Type") = "Task";
-		//	dt.Rows.Add(dr);
-		//	dr = dt.NewRow;
-		//	dr("ID") = "2"; dr("Type") = "Problem";
-		//	dt.Rows.Add(dr);
+            // Create and populate rows
+            DataRow dr = dt.NewRow();
+            dr["ID"] = 0; dr["Type"] = "Incident";
+            dt.Rows.Add(dr);
 
+            dr = dt.NewRow();
+            dr["ID"] = 1; dr["Type"] = "Task";
+            dt.Rows.Add(dr);
 
-
-		//	return dt;
-		//}
-
-		//public DataTable GetStatusList()
-		//{
-		//	DataSet ds = new DataSet();
-		//	DataTable dt = new DataTable("GetData");
-		//	DataRow dr;
+            dr = dt.NewRow();
+            dr["ID"] = 2; dr["Type"] = "Problem";
+            dt.Rows.Add(dr);
 
 
 
-		//	dt.Columns.Add("TroubleTicketNo", Type.GetType("System.Integer")).DefaultValue = 0;
-		//	dt.Columns.Add("Status", Type.GetType("System.String")).DefaultValue = string.Empty;
+            return dt;
+		}
 
-		//	dr = dt.NewRow;
-		//	dr("ID") = "1"; dr("Status") = "Open";
-		//	dt.Rows.Add(dr);
-		//	dr = dt.NewRow;
-		//	dr("ID") = "2"; dr("Status") = "Pending";
-		//	dt.Rows.Add(dr);
-		//	dr = dt.NewRow;
-		//	dr("ID") = "3"; dr("Status") = "Resolved";
-		//	dt.Rows.Add(dr);
-		//	dr = dt.NewRow;
-		//	dr("ID") = "4"; dr("Status") = "Closed";
-		//	dt.Rows.Add(dr);
+		public DataTable GetStatusList()
+		{
+			DataSet ds = new DataSet();
+			DataTable dt = new DataTable("GetData");
 
-		//	return dt;
-		//}
+
+			//Add columns with appropriate data types
+
+
+			dt.Columns.Add("TroubleTicketNo", Type.GetType("System.Integer")).DefaultValue = 0;
+			dt.Columns.Add("Status", Type.GetType("System.String")).DefaultValue = string.Empty;
+
+			//Create and populate rows
+
+		DataRow dr = dt.NewRow();
+
+			dr = dt.NewRow();
+			dr["ID"] = "1"; dr["Status"] = "Open";
+			dt.Rows.Add(dr);
+
+			dr = dt.NewRow();
+			dr["ID"] = "2"; dr["Status"] = "Pending";
+			dt.Rows.Add(dr);
+
+			dr = dt.NewRow();
+			dr["ID"] = "3"; dr["Status"] = "Resolved";
+			dt.Rows.Add(dr);
+
+			dr = dt.NewRow();
+			dr["ID"] = "4"; dr["Status"] = "Closed";
+			dt.Rows.Add(dr);
+
+			return dt;
+		}
 
 
 
@@ -379,7 +396,7 @@ public int GetAgentByID(int AgentID)
 
         public void AddAgent(clsAgent thisAgent)
         {
-            //Removed withBlock.AgentID 
+           
 
             NotificationSystem.AgentDataTable tblAgent = new NotificationSystem.AgentDataTable();
             Agent = false;
@@ -392,7 +409,7 @@ public int GetAgentByID(int AgentID)
 
                 {
                     var withBlock = thisAgent;
-                    adpAgent.Insert(withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax);
+                    adpAgent.Insert(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax);
 
                   
                 }

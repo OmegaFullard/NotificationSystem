@@ -10,8 +10,6 @@
 
 #pragma warning disable 1591
 
-using System;
-
 namespace NotificationSystem.NotificationSystem.Data {
     
     
@@ -5635,17 +5633,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         public virtual int Update(int TroubleTickeNo, string Title, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<int> Salary, string FirstN, string LastN, string Email, string Phone, string Fax, int Original_AgentID) {
             return this.Update(Original_AgentID, TroubleTickeNo, Title, StartDate, Salary, FirstN, LastN, Email, Phone, Fax, Original_AgentID);
         }
-
-		internal void Insert(int troubleTicketNo, string title, DateTime startDate, int salary, string firstN, string lastN, string email, string phone, string fax)
-		{
-			throw new NotImplementedException();
-		}
-
-		internal void Update(int agentID, int troubleTicketNo, string title, DateTime startDate, int salary, string firstN, string lastN, string email, string phone, string fax)
-		{
-			throw new NotImplementedException();
-		}
-	}
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -5934,7 +5922,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NotificationSystem dataSet) {
+        public virtual int Update(int customerID, int agentID, NotificationSystem dataSet) {
             return this.Adapter.Update(dataSet, "Customer");
         }
         
@@ -6127,12 +6115,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         public virtual int Update(int AgentID, int TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, int Original_CustomerID) {
             return this.Update(Original_CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address, City, State, Zip, Original_CustomerID);
         }
-
-		internal void Update(int customerID, int agentID, int troubleTicketNo, string firstN, string lastN, string email, string phone, string address, string city, string state, string zip)
-		{
-			throw new NotImplementedException();
-		}
-	}
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -7073,11 +7056,17 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT AgentID, TroubleTicketNo, Status,Type FROM TroubleTicketReq";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT AgentID, TroubleTicketNo, Status,Type FROM TroubleTicketReq WHERE TroubleT" +
+                "icketNo = @TroubleTicketNo";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7099,6 +7088,32 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual NotificationSystem.TroubleTicketListDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            NotificationSystem.TroubleTicketListDataTable dataTable = new NotificationSystem.TroubleTicketListDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(NotificationSystem.TroubleTicketListDataTable dataTable, int TroubleTicketNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual NotificationSystem.TroubleTicketListDataTable GetDataByTroubleTicketNo(int TroubleTicketNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
             NotificationSystem.TroubleTicketListDataTable dataTable = new NotificationSystem.TroubleTicketListDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

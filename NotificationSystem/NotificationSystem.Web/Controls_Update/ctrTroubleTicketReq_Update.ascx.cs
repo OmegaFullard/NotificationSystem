@@ -60,11 +60,11 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
 
                         {
                             var withBlock = tblTroubleTicketReq[0];
-                            this.txtAgentID.Text = withBlock.AgentID; this.txtCustomerID.Text = withBlock.CustomerID; this.txttroubleticketno.Text = withBlock.TroubleTicketNo;
+                            withBlock.AgentID = int.Parse(this.txtAgentID.Text); withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
                             cmbStatus.Text = withBlock.Status;
                             cmbType.Text = withBlock.Type;
-                            pickRequestDate.DbRequestDate = withBlock.RequestDate;
-                            pickDueDate.DbDueDate = withBlock.DueDate;
+                            withBlock.RequestDate = DateTime.Now;
+                            withBlock.DueDate = DateTime.Now;
                         }
 
                         this.btnUpdate.Enabled = true;
@@ -128,10 +128,16 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
             {
                 var withBlock = thisTroubleTicket;
                 if (txttroubleticketno.Text.Length == 0)
+
+                    if (pickRequestDate.SelectedDate == null)
+                        withBlock.RequestDate = DateTime.Now;
+                    else
+                        withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
+                if (cmbType.Text == string.Empty)
                     return;
 
-                withBlock.orig_CustomerID = int.Parse(txtcustomerid.Text.Trim); withBlock.orig_AgentID = int.Parse(txtAgentID.Text.Trim); withBlock.orig_TroubleTicketNo = int.Parse(txttroubleticketno.Text.Trim);
-                withBlock.Status = IIF(cmbStatus.Text.Length > 0, cmbStatus.Text, "****"); withBlock.Type = IIF(cmbType.Text.Length > 0, cmbType.Text, "****"); withBlock.DueDate = DateTime; withBlock.InsertDate = DateTime.Now;
+                withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text);
+                withBlock.Status = (cmbStatus.Text.Length > 0, cmbStatus.Text, "****"); withBlock.Type = IIF(cmbType.Text.Length > 0, cmbType.Text, "****"); withBlock.DueDate = DateTime; withBlock.InsertDate = DateTime.Now;
 
 
             }
