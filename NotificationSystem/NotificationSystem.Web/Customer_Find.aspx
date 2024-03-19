@@ -19,7 +19,7 @@
                                    
                                      <asp:TableRow>
                                           <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">
-                                                       <asp:Image ID="defaultcustomer" runat="server" ImageUrl="~/images/defaultcustomer.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="100px" style="margin-top: 5px" Width="100px" />
+                                                       <asp:Image ID="defaultuser" runat="server" ImageUrl="images/defaultuser.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="100px" style="margin-top: 5px" Width="100px" />
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>

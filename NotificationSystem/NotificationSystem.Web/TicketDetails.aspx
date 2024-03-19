@@ -12,13 +12,11 @@
                         </center>
                      </div>
                   </div>
-                  <div class="row">
-                     <div class="col">
-                        <center>
-                         <img src="images/techbanner.png" />
-                        </center>
-                     </div>
-                  </div>
+   
+                  <div>
+                      <asp:Image ID="techbanner" runat="server" ImageUrl="images/techbanner.png" BorderStyle="Solid" BorderWidth="1px" Height="1200px" style="margin-top: 0px" Width="1200px" />
+                      </div>
+                 
                   <div class="row">
                      <div class="col">
                         <hr/>
@@ -37,7 +35,7 @@
                         <label>Request Date</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Request Date"></asp:TextBox>
-                        </div>
+                      </div>
                      </div>
                      <div class="col-md-6">
                         <label>Due Date</label>
@@ -61,21 +59,26 @@
          </div>
     <div class="row">
                      <div class="col">
-                         <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="TroubleTicketNo" DataSourceID="SqlDataSource1" EnableModelValidation="True">
+                         <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="AgentID" DataSourceID="SqlDataSource1">
                              <Columns>
-                                 <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID"></asp:BoundField>
-                                 <asp:BoundField DataField="AgentID" HeaderText="AgentID" SortExpression="AgentID"></asp:BoundField>
-                                 <asp:BoundField DataField="TroubleTicketNo" HeaderText="TroubleTicketNo" SortExpression="TroubleTicketNo" InsertVisible="False" ReadOnly="True"></asp:BoundField>
-                                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status"></asp:BoundField>
-                                 <asp:BoundField DataField="DueDate" HeaderText="DueDate" SortExpression="DueDate"></asp:BoundField>
-                                 <asp:BoundField DataField="RequestDate" HeaderText="RequestDate" SortExpression="RequestDate"></asp:BoundField>
+                                 <asp:BoundField DataField="AgentID" HeaderText="AgentID" SortExpression="AgentID" ReadOnly="True"></asp:BoundField>
+                                 <asp:BoundField DataField="TroubleTickeNo" HeaderText="TroubleTickeNo" SortExpression="TroubleTickeNo"></asp:BoundField>
+                                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title"></asp:BoundField>
+                                 <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate"></asp:BoundField>
+                                 <asp:BoundField DataField="Salary" HeaderText="Salary" SortExpression="Salary"></asp:BoundField>
+                                 <asp:BoundField DataField="FirstN" HeaderText="FirstN" SortExpression="FirstN"></asp:BoundField>
+                                 <asp:BoundField DataField="LastN" HeaderText="LastN" SortExpression="LastN" />
+                                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                                 <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
+                                 <asp:BoundField DataField="Fax" HeaderText="Fax" SortExpression="Fax" />
                              </Columns>
                          </asp:GridView>
-                         <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:NotificationSystemConnectionString %>' SelectCommand="SELECT * FROM [TroubleTicketReq] WHERE ([TroubleTicketNo] = @TroubleTicketNumber)">
+                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NotificationSystemConnectionString1 %>" SelectCommand="SELECT * FROM [Agent] WHERE ([TroubleTickeNo] = @TroubleTickeNo)">
                              <SelectParameters>
-                                 <asp:ControlParameter ControlID="TextBox3" PropertyName="Text" Name="TroubleTicketNumber"></asp:ControlParameter>
+                                 <asp:ControlParameter ControlID="TextBox3" Name="TroubleTickeNo" PropertyName="Text" Type="Int32" ></asp:ControlParameter>
                              </SelectParameters>
                          </asp:SqlDataSource>
+                         
                      </div>
         </div>
 

@@ -54,7 +54,7 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
                             return;
 
 
-                        tblTroubleTicketReq = theNotificationSystem.GetTroubleTicketByNo(m_TroubleTicketNo);
+                        tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(m_TroubleTicketNo);
                         if (tblTroubleTicketReq.Count == 0)
                             return;
 
@@ -106,13 +106,13 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
         clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
 
-        this.cmbStatus.DataSource = theNotificationSystem.GetStatusList;
+        this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
         this.cmbStatus.DataTextField = "Status";
         this.cmbStatus.DataBind();
         this.cmbStatus.Text = "Open";
 
 
-        this.cmbType.DataSource = theNotificationSystem.GetTypeList;
+        this.cmbType.DataSource = theNotificationSystem.GetTypeList();
         this.cmbType.DataTextField = "Type";
         this.cmbType.DataBind();
 
@@ -137,7 +137,27 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
                     return;
 
                 withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text);
-                withBlock.Status = (cmbStatus.Text.Length > 0, cmbStatus.Text, "****"); withBlock.Type = IIF(cmbType.Text.Length > 0, cmbType.Text, "****"); withBlock.DueDate = DateTime; withBlock.InsertDate = DateTime.Now;
+                if (!string.IsNullOrEmpty(cmbStatus.Text))
+                {
+                    withBlock.Status = cmbStatus.Text;
+                }
+                else
+				{
+                    withBlock.Status = "****";
+                }
+
+                if (!string.IsNullOrEmpty(cmbType.Text))
+                {
+                    withBlock.Type = cmbType.Text;
+                }
+                else
+                {
+                    withBlock.Type = "****"; // Default value
+                }
+
+
+
+                withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
 
 
             }

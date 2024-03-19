@@ -12,8 +12,7 @@ using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
-namespace NotificationSystem_Practice
-{
+
 
 
     public partial class TicketDetails : System.Web.UI.Page
@@ -23,4 +22,4 @@ namespace NotificationSystem_Practice
 
         }
     }
-}
+

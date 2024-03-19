@@ -11,7 +11,8 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
     public class clsAgent
     {
-        private string m_Title = string.Empty;
+		internal int Original_AgentID;
+		private string m_Title = string.Empty;
         private string m_FirstN = string.Empty;
         private string m_LastN = string.Empty;
         private string m_Email = string.Empty;

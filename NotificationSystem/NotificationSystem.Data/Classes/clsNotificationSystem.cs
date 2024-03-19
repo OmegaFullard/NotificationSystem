@@ -103,7 +103,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             {
                 {
                     var withBlock = thisCustomer;
-                    adpCustomer.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
+                    adpCustomer.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.CustomerID);
                 }
             }
 
@@ -218,9 +218,9 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             try
             {
                 {
-                  //  var withBlock = thisTroubleTicket;
-                  //  adpTroubleTicket.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.Status, withBlock.DueDate, withBlock.RequestDate);
-                }
+					var withBlock = thisTroubleTicket;
+					adpTroubleTicket.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.Status, withBlock.DueDate, withBlock.RequestDate, withBlock.Type, withBlock.TroubleTicketNo);
+				}
             }
 
             catch (Exception ex)
@@ -245,9 +245,9 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             try
             {
                 {
-               //     var withBlock = thisTroubleTicket;
-                //    adpTroubleTicketReq.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.Status, withBlock.DueDate, withBlock.RequestDate);
-                }
+					var withBlock = thisTroubleTicket;
+					adpTroubleTicketReq.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.Status, withBlock.DueDate, withBlock.RequestDate, withBlock.Type);
+				}
 
 
 
@@ -434,7 +434,7 @@ public int GetAgentByID(int AgentID)
             {
                 {
                     var withBlock = thisAgent;
-                    adpAgent.Update(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax);
+                    adpAgent.Update(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax, withBlock.Original_AgentID);
                 }
             }
 

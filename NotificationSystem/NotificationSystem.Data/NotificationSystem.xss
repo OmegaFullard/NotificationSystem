@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:Agent" ZOrder="10" X="50" Y="76" Height="425" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="304" />
     <Shape ID="DesignTable:Customer" ZOrder="9" X="389" Y="72" Height="452" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="331" />
-    <Shape ID="DesignTable:TroubleTicketReq" ZOrder="8" X="799" Y="81" Height="371" Width="368" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="223" />
+    <Shape ID="DesignTable:TroubleTicketReq" ZOrder="8" X="799" Y="81" Height="371" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="223" />
     <Shape ID="DesignTable:CustomerList" ZOrder="7" X="358" Y="605" Height="371" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="277" />
     <Shape ID="DesignTable:TroubleTicketList" ZOrder="1" X="1190" Y="76" Height="236" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="142" />
     <Shape ID="DesignTable:GetTypeList" ZOrder="6" X="1181" Y="350" Height="209" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="142" />
