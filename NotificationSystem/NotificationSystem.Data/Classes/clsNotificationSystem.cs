@@ -186,12 +186,12 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-        //public DataTable GetByTroubleTicketNo(ref int TroubleTicketNo)
+        //public DataTable GetTroubleTicketByNo(ref int TroubleTicketNo)
         //{
         //    try
         //    {
         //      //  TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
-        //     //   xsNotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = adpTroubleTicketReq.GetDataByTroubleTicket(TroubleTicketNo);
+        //     //   NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = adpTroubleTicketReq.GetDataByTroubleTicket(TroubleTicketNo);
 
         //       // return tblTroubleTicketReq;
         //    }
