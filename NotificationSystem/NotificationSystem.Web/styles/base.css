@@ -40,10 +40,10 @@ img {
     border-style: none;
     border-color: inherit;
     border-width: 0;
-    width: 850px;
+    width: 100px;
     margin-right: 0px;
     margin-top: 0px;
-    height: 425px;
+    height: 100px;
     margin-left: 0px;
 }
 
@@ -171,15 +171,5 @@ div.topnav a:active {
     background-color: #1e1e2f;
     color: #f0f0f5;
     text-decoration: none;
-}
-
-.my-div {
-    background-image: url('images/techbanner.png');
-    background-size: cover; /* Adjust as needed (cover, contain, etc.) */
-    background-repeat: no-repeat;
-    background-position: center center; /* Center the image */
-    /* Additional styling properties (width, height, etc.) */
-    width: auto;
-    height: auto;
 }
 
