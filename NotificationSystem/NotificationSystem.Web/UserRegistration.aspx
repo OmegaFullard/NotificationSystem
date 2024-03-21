@@ -17,7 +17,7 @@
                          <br />
                          <br />
                         <center>
-                               <telerik:cardimagecomponent runat="server" src="images/defaultuser.png"></telerik:cardimagecomponent>
+                                <asp:Image ID="generaluser" runat="server" ImageUrl="images/generaluser.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
                         </center>
                      </div>
                   </div>
@@ -39,13 +39,13 @@
                      <div class="col-md-6">
                         <label>Full Name</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Full Name"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Full Name" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
                         </div>
                      </div>
                      <div class="col-md-6">
-                        <label>Start Date</label>
+                        <label>Registration Date</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Start Date"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Registration Date" ReadOnly="True"></asp:TextBox>
                         </div>
                      </div>
                   </div>
@@ -53,20 +53,38 @@
                      <div class="col-md-6">
                         <label>Phone Number</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Phone"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Phone" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
                         </div>
                      </div>
                      <div class="col-md-6">
                         <label>Email Address</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Email Address"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Email Address" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
                         </div>
                      </div>
                   </div>
+
+                    <div class="row">
+                     <div class="col">
+                        <label>Full Address</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2" AutoCompleteType="HomeStreetAddress" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
+                            <ajaxToolkit:CalendarExtender ID="TextBox5_CalendarExtender" runat="server" BehaviorID="TextBox5_CalendarExtender" TargetControlID="TextBox5" />
+                        </div>
+                     </div>
+
+                  </div>
+
+                    <div class="col-md-4">
+                        <label>City</label>
+                        <div class="form-group">
+                           <asp:TextBox class="form-control" ID="TextBox6" runat="server" placeholder="City" AutoCompleteType="HomeCity" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
+                        </div>
+                     </div>
                   <div class="row">
                      <div class="col-md-4">
                         <label>State</label>
-                        <div class="form-group">
+                        <div class="form-group" autocompletetype="HomeState">
                            <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
                               <asp:ListItem Text="Alabama" Value="Alabama" />
@@ -122,28 +140,15 @@
                            </asp:DropDownList>
                         </div>
                      </div>
-                     <div class="col-md-4">
-                        <label>City</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox6" runat="server" placeholder="City"></asp:TextBox>
-                        </div>
-                     </div>
+                    
                      <div class="col-md-4">
                         <label>Pincode</label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox7" runat="server" placeholder="Pincode" TextMode="Password"></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="TextBox7" runat="server" placeholder="Pincode" TextMode="Password" ReadOnly="True"></asp:TextBox>
                         </div>
                      </div>
                   </div>
-                  <div class="row">
-                     <div class="col">
-                        <label>Full Address</label>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2"></asp:TextBox>
-                        </div>
-                     </div>
-
-                  </div>
+                 
                     <br />
                     <br />
                   <div class="row">
@@ -160,19 +165,19 @@
                      <div class="col-md-4">
                         <label>User ID</label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="User ID" ReadOnly="True"></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="User ID" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
                         </div>
                      </div>
                      <div class="col-md-4">
                         <label>Old Password</label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Email ID" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Password" TextMode="Password" ReadOnly="True" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
                         </div>
                      </div>
                      <div class="col-md-4">
                         <label>New Password</label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="Email ID" TextMode="Password"></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="Password" TextMode="Password" ReadOnly="True"></asp:TextBox>
                         </div>
                      </div>
                   </div>
@@ -203,7 +208,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <telerik:cardimagecomponent runat="server" src="images/RCLogo.png"></telerik:cardimagecomponent>
+                             <asp:Image ID="logo" runat="server" ImageUrl="images/RCLogo.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
                         </center>
                      </div>
                   </div>

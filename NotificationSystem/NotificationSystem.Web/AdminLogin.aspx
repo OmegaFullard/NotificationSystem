@@ -38,7 +38,7 @@
                                 <label>Admin ID</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
                                         
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         
@@ -49,7 +49,7 @@
                             <div class="col-md-6">
                                 <label>Password</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
 
                                 </div>
                             </div>
