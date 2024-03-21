@@ -37,37 +37,26 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
     {
 
 
-		if ((Page.IsPostBack))
-		{
-			try
-			{
-				if (m_AgentID > 0)
-					this.lblAgentID.Text = "ID" + m_AgentID;
-				if (this.lblAgentID.Text.Length == 2)
-					return;
+        if ((Page.IsPostBack))
+        {
+            if (((short)m_AgentID) > 0)
+                this.lblAgentID.Text = "ID" + m_AgentID;
+            if (this.lblAgentID.Text.Length == 2)
+                return;
 
+            try
+            {
+                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                AgentDataTable tblAgent = new AgentDataTable();
+                theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblAgentID.Text.Replace("ID", "")));
+                if (tblAgent.Count == 0)
+                    return;
 
+                this.grdAgent.DataSource = tblAgent;
+                this.grdAgent.DataBind();
+            }
 
-				clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-				AgentDataTable tblAgent = new AgentDataTable();
-				theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblAgentID.Text.Replace("ID", "")));
-				if (tblAgent.Count == 0)
-					return;
-
-				{
-					var withBlock = tblAgent[0];
-					lblStartDate.Text = withBlock.StartDate.ToString("MM/dd/yyyy");				
-					withBlock.TroubleTicketNo = int.Parse(lblTroubleTicketNo.Text);
-					withBlock.Title = (lblTitle.Text);
-					withBlock.Salary = int.Parse(lblSalary.Text);
-					withBlock.FirstN = (lblFN.Text);
-					withBlock.LastN = (lblLN.Text);
-					withBlock.Email = (lblEmail.Text);
-					withBlock.Phone = (lblPhone.Text);
-					withBlock.Fax = (lblFax.Text);
-				}
-			}
-			catch (Exception ex)
+            catch (Exception ex)
 			{
 				throw;
 			}

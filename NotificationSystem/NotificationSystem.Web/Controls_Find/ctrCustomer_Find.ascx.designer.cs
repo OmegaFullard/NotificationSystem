@@ -20,4 +20,22 @@ public partial class ctrCustomer_Find
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::System.Web.UI.WebControls.Label lblCustomerID;
+
+	/// <summary>
+	/// lblSearchResult control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Label lblSearchResult;
+
+	/// <summary>
+	/// grdCustomer control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.GridView grdCustomer;
 }

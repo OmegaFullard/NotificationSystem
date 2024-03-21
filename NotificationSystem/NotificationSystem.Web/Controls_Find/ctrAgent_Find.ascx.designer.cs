@@ -22,83 +22,20 @@ public partial class ctrAgent_Find
 	protected global::System.Web.UI.WebControls.Label lblAgentID;
 
 	/// <summary>
-	/// lblStartDate control.
+	/// lblSearchResult control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblStartDate;
+	protected global::System.Web.UI.WebControls.Label lblSearchResult;
 
 	/// <summary>
-	/// lblTroubleTicketNo control.
+	/// grdAgent control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblTroubleTicketNo;
-
-	/// <summary>
-	/// lblTitle control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblTitle;
-
-	/// <summary>
-	/// lblSalary control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblSalary;
-
-	/// <summary>
-	/// lblFN control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblFN;
-
-	/// <summary>
-	/// lblLN control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblLN;
-
-	/// <summary>
-	/// lblEmail control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblEmail;
-
-	/// <summary>
-	/// lblPhone control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblPhone;
-
-	/// <summary>
-	/// lblFax control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblFax;
+	protected global::System.Web.UI.WebControls.GridView grdAgent;
 }

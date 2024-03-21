@@ -31,7 +31,7 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
 		{
 			try
 			{
-				if (m_CustomerID > 0)
+				if (((short)m_CustomerID) > 0)
 					this.lblCustomerID.Text = "ID" + m_CustomerID;
 				if (this.lblCustomerID.Text.Length == 2)
 					return;
@@ -46,9 +46,8 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
 					return;
 
 				{
-					var withBlock = tblCustomer[0];
-
-					withBlock.CustomerID = int.Parse(lblCustomerID.Text);
+					this.grdCustomer.DataSource = tblCustomer;
+					this.grdCustomer.DataBind();
 
 
 				}

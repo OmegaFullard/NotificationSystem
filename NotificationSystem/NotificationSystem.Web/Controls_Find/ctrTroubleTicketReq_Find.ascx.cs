@@ -33,23 +33,15 @@ public partial class ctrTroubleTicketReq_Find : System.Web.UI.UserControl
 				if (this.lblTroubleTicketNo.Text.Length == 2)
 					return;
 
-
-
 				clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 				TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
-					
-					theNotificationSystem.GetTroubleTicketListbyID(TroubleTicketNo);
+				theNotificationSystem.GetTroubleTicketByNo(Convert.ToInt32(this.lblTroubleTicketNo.Text.Replace("TicketNo", "")));
 				if (tblTroubleTicketReq.Count == 0)
 					return;
 
 				{
-					var withBlock = tblTroubleTicketReq[0];
-					withBlock.CustomerID = int.Parse(lblCustomerID.Text);
-					withBlock.AgentID = int.Parse(lblAgentID.Text);
-					withBlock.Status = (lblStatus.Text);
-					lblDueDate.Text = withBlock.DueDate.ToString("MM/dd/yyyy");
-					lblRequestDate.Text = withBlock.RequestDate.ToString("MM/dd/yyyy");
-					withBlock.Type = (lblType.Text);
+					this.grdTroubleTicketReq.DataSource = tblTroubleTicketReq;
+					this.grdTroubleTicketReq.DataBind();
 				}
 			}
 			catch (Exception ex)
