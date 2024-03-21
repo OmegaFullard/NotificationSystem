@@ -8,16 +8,16 @@
             </asp:Content>
            <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
-                     <h2>Find Agent</h2><br />
+                     <h2>Find Ticket</h2><br />
                   
                           <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="350px" Width="700px" >
                                    
                                      <asp:TableRow>
                                           <asp:TableCell> 
                                               <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">
-											  <center>
+											 
                                                            <asp:Image ID="issue2" runat="server" ImageUrl="images/issue2.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="200px" style="margin-top: 5px" Width="200px" />
-														   </center>
+														
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>

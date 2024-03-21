@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TroubleTicketReq_Update.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.TroubleTicketReq_Update" %>
+﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.Master" CodeBehind="TroubleTicketReq_Update.aspx.cs" Inherits="TroubleTicketReq_Update" %>
 
 <!DOCTYPE html>
 

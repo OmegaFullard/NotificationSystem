@@ -8,8 +8,7 @@ using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
+
     public partial class TroubleTicketReq_Update : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -17,4 +16,3 @@ namespace NotificationSystem.NotificationSystem.Web
 
         }
     }
-}
