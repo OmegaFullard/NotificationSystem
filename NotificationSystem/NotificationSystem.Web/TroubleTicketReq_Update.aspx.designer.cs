@@ -13,11 +13,47 @@ public partial class TroubleTicketReq_Update
 {
 
 	/// <summary>
-	/// form1 control.
+	/// Table1 control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+	protected global::System.Web.UI.WebControls.Table Table1;
+
+	/// <summary>
+	/// Panel1 control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Panel Panel1;
+
+	/// <summary>
+	/// issue1 control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Image issue1;
+
+	/// <summary>
+	/// ctrTroubleTicketReq_Search control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::ctrTroubleTicketReq_Search ctrTroubleTicketReq_Search;
+
+	/// <summary>
+	/// ctrTroubleTicketReq_Update control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::ctrTroubleTicketReq_Update ctrTroubleTicketReq_Update;
 }

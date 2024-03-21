@@ -72,6 +72,14 @@
 
     <script src="http://localhost:64954/Scripts/popper.min.js"></script>
     <script src="http://localhost:64954/Scripts/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $('#pw').keypress(function(e){
+      if(e.keyCode==13)
+      $('#GoBtn').click();
+    });
+});
+    </script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

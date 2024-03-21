@@ -126,7 +126,7 @@
                                  <asp:TableRow>
 									<asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Type:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
-                                                        <telerik:RadMultiColumnComboBox runat="server"   ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px" AutoPostBack="true"
+                                                        <telerik:RadMultiColumnComboBox runat="server"   ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px" AutoPostBack="true" Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false"
                                                                 Placeholder="--Select" >
                                                                 <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Type" Title="Type" Width="100px" />
