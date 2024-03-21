@@ -27,8 +27,9 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         public bool StartDate { get; private set; }
 
         public bool Salary { get; private set; }
+		public bool Admin { get; private set; }
 
-        public DataTable GetCustomersList()
+		public DataTable GetCustomersList()
         {
             try
             {
@@ -103,7 +104,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             {
                 {
                     var withBlock = thisCustomer;
-                    adpCustomer.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.CustomerID);
+                    adpCustomer.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.UserName, withBlock.Password, withBlock.Original_CustomerID);
                 }
             }
 
@@ -130,7 +131,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 			{
 				{
 					var withBlock = thisCustomer;
-					adpCustomer.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip);
+					adpCustomer.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.UserName, withBlock.Password);
 				}
 
 
@@ -143,6 +144,22 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 			return;
 
 		}
+
+        public void GetbyUserPW(string username, string password)
+        {
+            try
+            {
+                CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
+                CustomerDataTable tblCustomer = adpCustomer.GetDataByUserPW(username, password);
+                CustomerRow row = tblCustomer[0];
+                return;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
         public DataTable GetTroubleTicketList()
         {
@@ -443,5 +460,94 @@ public int GetAgentByID(int AgentID)
                 throw;
             }
         }
+
+
+        public void GetAdminbyUserPW(string password, string username)
+        {
+            try
+            {
+                AdminTableAdapter adpAdmin = new AdminTableAdapter();
+                AdminDataTable tblAdmin = adpAdmin.GetData(username, password);
+                AdminRow row = tblAdmin[0];
+                return;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public DataTable GetAdmins(string username, string password)
+        {
+            try
+            {
+                AdminTableAdapter adpAdmin = new AdminTableAdapter();
+                NotificationSystem.AdminDataTable tblAdmin = adpAdmin.GetData(username, password);
+
+                return tblAdmin;
+            }
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+
+
+
+        public void UpdateAdmin(clsAdmin thisAdmin)
+        {
+            AdminTableAdapter adpAdmin = new AdminTableAdapter();
+
+
+            try
+            {
+                {
+                    var withBlock = thisAdmin;
+                    adpAdmin.Update(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+        public void AddAdmin(clsAdmin thisAdmin)
+        {
+
+            //add Admin to table and save
+
+
+            AdminTableAdapter adpAdmin = new AdminTableAdapter();
+
+            NotificationSystem.AdminDataTable tblAdmin = new NotificationSystem.AdminDataTable();
+            Admin = false;
+
+
+            try
+            {
+                {
+                    var withBlock = thisAdmin;
+                    adpAdmin.Insert(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return;
+
+        }
+
+
     }
 }

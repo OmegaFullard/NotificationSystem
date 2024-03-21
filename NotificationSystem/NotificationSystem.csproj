@@ -108,6 +108,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.dll</HintPath>
@@ -4015,6 +4016,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotificationSystem.Data\Classes\clsAdmin.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsAgent.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsCustomer.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsNotificationSystem.cs" />

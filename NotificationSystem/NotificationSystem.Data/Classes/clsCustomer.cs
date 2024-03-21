@@ -8,7 +8,8 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 {
     public class clsCustomer
     {
-        private string m_FirstN = string.Empty;
+		internal int Original_CustomerID;
+		private string m_FirstN = string.Empty;
         private string m_LastN = string.Empty;
         private string m_Email = string.Empty;
         private string m_Phone = string.Empty;
@@ -16,6 +17,8 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         private string m_City = string.Empty;
         private string m_State = string.Empty;
         private string m_Zip = string.Empty;
+        private string m_UserName = string.Empty;
+        private string m_Password = string.Empty;
 
         private int m_CustomerID = 0;
         private int m_AgentID = 0;
@@ -171,6 +174,31 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             set
             {
                 m_StartDate = value;
+            }
+        }
+
+        public string UserName
+        {
+            get
+            {
+                return m_UserName;
+            }
+            set
+            {
+                m_UserName = value;
+            }
+        }
+
+
+        public string Password
+        {
+            get
+            {
+                return m_Password;
+            }
+            set
+            {
+                m_Password = value;
             }
         }
 
