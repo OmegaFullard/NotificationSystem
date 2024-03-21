@@ -18,9 +18,9 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        
+                        <center>
                           <asp:Image ID="Issues" runat="server" ImageUrl="images/issue1.png" BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" style="margin-top: 5px" Width="800px" Height="400px"/>
-                        
+                        </center>
                      </div>
                   </div>
                   <div class="row">

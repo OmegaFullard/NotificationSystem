@@ -11,16 +11,19 @@ using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
-public partial class Agent : System.Web.UI.Page 
+namespace NotificationSystem.NotificationSystem.Web
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class Agent : System.Web.UI.Page
     {
-        if ((Page.IsPostBack))
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+            if ((Page.IsPostBack))
             {
-                ctrAgent_Search.PopulateSearchControl();
-                ctrAgent_Search.AgentID = ctrAgent_Search.AgentID;
+                if (Page.Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+                {
+                    ctrAgent_Search.PopulateSearchControl();
+                    ctrAgent_Search.AgentID = ctrAgent_Search.AgentID;
+                }
             }
         }
     }

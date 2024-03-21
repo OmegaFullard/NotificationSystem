@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ticket Details" Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.Master" CodeBehind="TicketDetails.aspx.cs" Inherits="TicketDetails" %>
+﻿<%@ Page Title="Ticket Details" Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.Master" CodeBehind="TicketDetails.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.TicketDetails" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">  
 </asp:Content>
@@ -13,10 +13,20 @@
                      </div>
                   </div>
    
-                  <div>
-                      <asp:Image ID="techbanner" runat="server" ImageUrl="images/techbanner.png" BorderStyle="Solid" BorderWidth="1px" Height="1200px" style="margin-top: 0px" Width="1200px" />
+                  <div class="col-md-7">
+                      <div class="card">
+                          <div class="card-body">
+                     <div class="row">
+                         <div class="col">
+                             <center>
+                      <asp:Image ID="issue2" runat="server" ImageUrl="images/issue2.png" BorderStyle="Solid" BorderWidth="1px" Height="250px" style="margin-top: 0px" Width="350px" />
+                      </center>
+                             </div>
+                 </div>
+    </div>
+                          </div>
                       </div>
-                 
+    </div>
                   <div class="row">
                      <div class="col">
                         <hr/>

@@ -7,35 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
-public partial class ctrTroubleTicketReq
+namespace NotificationSystem.NotificationSystem.Web
 {
 
-	/// <summary>
-	/// ctrHiddebField control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.HiddenField ctrHiddebField;
 
-	/// <summary>
-	/// lblSearchResult control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Label lblSearchResult;
+	public partial class ctrTroubleTicketReq
+	{
 
-	/// <summary>
-	/// grdTroubleTicketReq control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.GridView grdTroubleTicketReq;
+		/// <summary>
+		/// ctrHiddebField control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.HiddenField ctrHiddebField;
+
+		/// <summary>
+		/// lblSearchResult control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblSearchResult;
+
+		/// <summary>
+		/// grdTroubleTicketReq control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.GridView grdTroubleTicketReq;
+	}
 }

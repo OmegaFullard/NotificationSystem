@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrTroubleTicketReq.ascx.cs" Inherits="ctrTroubleTicketReq" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrTroubleTicketReq.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrTroubleTicketReq" %>
 
 <div style="width: 1200px; height:500px;  overflow: auto; padding-left:5px" >
            <div class="Heading" >Customer List</div>

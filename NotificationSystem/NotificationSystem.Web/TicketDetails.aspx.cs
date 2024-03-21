@@ -13,7 +13,8 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
 
-
+namespace NotificationSystem.NotificationSystem.Web
+    { 
 
     public partial class TicketDetails : System.Web.UI.Page
     {
@@ -23,3 +24,4 @@ using NotificationSystem.NotificationSystem.Data.Classes;
         }
     }
 
+}
