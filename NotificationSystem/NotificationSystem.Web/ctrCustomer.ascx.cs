@@ -43,18 +43,19 @@ namespace NotificationSystem.NotificationSystem.Web
 
             try
             {
-                if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
-                    this.ctrHiddebField.Value = Convert.ToString(m_CustomerID);
+    //            if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+    //                ctrHiddebField.Value = Convert.ToString(m_CustomerID);
 
-                //if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
-                //    tblCustomer = theNotificationSystem.GetCustomerListbyID(Convert.ToInt32("%" + this.ctrHiddebField.Value + "%")));
-
-                //else
-
-                //    tblCustomer = theNotificationSystem.GetCustomers;
+				//if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
+				//	tblCustomer = theNotificationSystem.GetCustomerListbyID(int.Parse("%" + this.ctrHiddebField.Value + "%"));
 
 
-                this.lblSearchResult.Text = tblCustomer.Rows.Count + " Result(s)";
+				//else
+
+				//	tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
+
+
+				this.lblSearchResult.Text = tblCustomer.Rows.Count + " Result(s)";
                 this.grdCustomers.DataSource = tblCustomer.DefaultView;
                 this.grdCustomers.DataBind();
 

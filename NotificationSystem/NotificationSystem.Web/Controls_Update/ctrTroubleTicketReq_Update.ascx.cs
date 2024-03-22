@@ -10,38 +10,40 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 using System.Data.SqlClient;
 
-public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
+namespace NotificationSystem.NotificationSystem.Web
 {
-
-    private int m_TroubleTicketNo = 0;
-
-    public int TroubleTicketNo
+    public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
     {
-        get
+
+        private int m_TroubleTicketNo = 0;
+
+        public int TroubleTicketNo
         {
-            return m_TroubleTicketNo;
+            get
+            {
+                return m_TroubleTicketNo;
+            }
+            set
+            {
+                m_TroubleTicketNo = value;
+            }
         }
-        set
+
+        public TextBox txtTroubleTicketList { get; set; }
+        protected void Page_Load(object sender, EventArgs e)
         {
-            m_TroubleTicketNo = value;
-        }
-    }
-
-    public TextBox txtTroubleTicketList { get; set; }
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
+            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+            TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
 
 
-        try
-        {
-
-            if ((Page.IsPostBack))
+            try
             {
 
+                if ((Page.IsPostBack))
+                {
 
-                
+
+
 
                     if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Update$btnUpdate"] == "Update")
                         UpdateTroubleTicket();
@@ -73,118 +75,119 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
 
 
                 }
-                        else
+                else
 
                     PopulateControls();
             }
 
 
-        catch (Exception ex)
-        {
-            clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
-            string NotificationBody = ex.Message + "  " + ex.StackTrace;
-            SendError.SendMailMessage(NotificationBody);
-            Response.Redirect("ErrorPage.aspx", false);
-        }
-    }
-
-    public void ClearControls()
-    {
-        try
-        {
-        }
-
-
-        catch (Exception ex)
-        {
-            throw;
-        }
-    }
-
-    private void PopulateControls()
-    {
-        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-
-
-        this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-        this.cmbStatus.DataTextField = "Status";
-        this.cmbStatus.DataBind();
-        this.cmbStatus.Text = "Open";
-
-
-        this.cmbType.DataSource = theNotificationSystem.GetTypeList();
-        this.cmbType.DataTextField = "Type";
-        this.cmbType.DataBind();
-
-
-    }
-
-    public void UpdateTroubleTicket()
-    {
-        try
-        {
-            clsTroubleTicketReq thisTroubleTicket = new clsTroubleTicketReq();
-
+            catch (Exception ex)
             {
-                var withBlock = thisTroubleTicket;
-                if (txttroubleticketno.Text.Length == 0)
-
-                    if (pickRequestDate.SelectedDate == null)
-                        withBlock.RequestDate = DateTime.Now;
-                    else
-                        withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
-                if (cmbType.Text == string.Empty)
-                    return;
-
-                withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text);
-                if (!string.IsNullOrEmpty(cmbStatus.Text))
-                {
-                    withBlock.Status = cmbStatus.Text;
-                }
-                else
-				{
-                    withBlock.Status = "****";
-                }
-
-                if (!string.IsNullOrEmpty(cmbType.Text))
-                {
-                    withBlock.Type = cmbType.Text;
-                }
-                else
-                {
-                    withBlock.Type = "****"; // Default value
-                }
-
-
-
-                withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
-
-
+                clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+                string NotificationBody = ex.Message + "  " + ex.StackTrace;
+                SendError.SendMailMessage(NotificationBody);
+                Response.Redirect("ErrorPage.aspx", false);
             }
+        }
+
+        public void ClearControls()
+        {
             try
-
             {
-                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                theNotificationSystem.UpdateTroubleTicket(thisTroubleTicket);
-                lblResult.Text = "Trouble Ticket data has been updated";
-
-            }
-            catch (SqlException ex)
-            {
-                throw new ApplicationException(ex.Message);
             }
 
+
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        catch (Exception ex)
+        private void PopulateControls()
         {
-            throw;
+            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+
+
+            this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
+            this.cmbStatus.DataTextField = "Status";
+            this.cmbStatus.DataBind();
+            this.cmbStatus.Text = "Open";
+
+
+            this.cmbType.DataSource = theNotificationSystem.GetTypeList();
+            this.cmbType.DataTextField = "Type";
+            this.cmbType.DataBind();
+
+
         }
-    }
+
+        public void UpdateTroubleTicket()
+        {
+            try
+            {
+                clsTroubleTicketReq thisTroubleTicket = new clsTroubleTicketReq();
+
+                {
+                    var withBlock = thisTroubleTicket;
+                    if (txttroubleticketno.Text.Length == 0)
+
+                        if (pickRequestDate.SelectedDate == null)
+                            withBlock.RequestDate = DateTime.Now;
+                        else
+                            withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
+                    if (cmbType.Text == string.Empty)
+                        return;
+
+                    withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text);
+                    if (!string.IsNullOrEmpty(cmbStatus.Text))
+                    {
+                        withBlock.Status = cmbStatus.Text;
+                    }
+                    else
+                    {
+                        withBlock.Status = "****";
+                    }
+
+                    if (!string.IsNullOrEmpty(cmbType.Text))
+                    {
+                        withBlock.Type = cmbType.Text;
+                    }
+                    else
+                    {
+                        withBlock.Type = "****"; // Default value
+                    }
 
 
-    protected void btnCancel_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("TroubleTicketReq_Find.aspx", false);
+
+                    withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
+
+
+                }
+                try
+
+                {
+                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                    theNotificationSystem.UpdateTroubleTicket(thisTroubleTicket);
+                    lblResult.Text = "Trouble Ticket data has been updated";
+
+                }
+                catch (SqlException ex)
+                {
+                    throw new ApplicationException(ex.Message);
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TroubleTicketReq_Find.aspx", false);
+        }
     }
 }

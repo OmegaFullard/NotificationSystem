@@ -40,29 +40,29 @@ namespace NotificationSystem.NotificationSystem.Web
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            AgentDataTable tblAgent = new AgentDataTable();
+    //        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+    //        AgentDataTable tblAgent = new AgentDataTable();
 
-            try
-            {
-                if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
-                    this.ctrHiddebField.Value = Convert.ToString(m_AgentID);
+    //        try
+    //        {
+    //            if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+    //                ctrHiddebField.Value = Convert.ToString(m_AgentID);
 
-                //         if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
-                //	tblAgent = theNotificationSystem.GetAgentByID("%" + this.ctrHiddebField.Value + "%");
-                //else
-                //	tblAgent = theNotificationSystem.GetAgents;
+    //            if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
+    //                tblAgent = theNotificationSystem.GetAgentByID(int.Parse("%" + this.ctrHiddebField.Value + "%"));
+    //            else
+    //                tblAgent = (AgentDataTable)theNotificationSystem.GetAgents();
 
 
-                this.lblSearchResult.Text = tblAgent.Rows.Count + " Result(s)";
-                this.grdAgents.DataSource = tblAgent.DefaultView;
-                this.grdAgents.DataBind();
-            }
+				//this.lblSearchResult.Text = tblAgent.Rows.Count + " Result(s)";
+    //            this.grdAgents.DataSource = tblAgent.DefaultView;
+    //            this.grdAgents.DataBind();
+    //        }
 
-            catch (Exception ex)
-            {
-                throw;
-            }
+    //        catch (Exception ex)
+    //        {
+    //            throw;
+    //        }
         }
 
 

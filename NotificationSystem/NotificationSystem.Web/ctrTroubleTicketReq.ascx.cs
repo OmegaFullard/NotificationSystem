@@ -36,38 +36,39 @@ namespace NotificationSystem.NotificationSystem.Web
                 m_TroubleTicketNo = value;
             }
         }
-        // protected void Page_Load(object sender, EventArgs e)
-        //     {
-        //     clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        //     TroubleTicketReqDataTable tblTTR = new TroubleTicketReqDataTable();
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+			TroubleTicketReqDataTable tblTTR = new TroubleTicketReqDataTable();
 
-        //     try
-        //     {
-        //         if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
-        //            // this.ctrHiddebField.Value = Convert.ToString(m_TroubleTicketNo);
+			try
+			{
+				if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
+					 ctrHiddebField.Value = Convert.ToString(m_TroubleTicketNo);
 
-        //if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
-        //	tblTTR = theNotificationSystem.GetTroubleTicketListbyID(m_TroubleTicketNo);
-        //    tblTTR = theNotificationSystem.GetTroubleTicketListbyID(Convert.ToInt32("%" + this.ctrHiddebField.Value + "%")));
-
-
-        //else
-
-        //	tblTTR = theNotificationSystem.GetTroubleTicket;
+					if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
+					
+				tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(int.Parse("%" + this.ctrHiddebField.Value + "%"));
 
 
-        //this.lblSearchResult.Text = tblTTR.Rows.Count + " Result(s)";
-        //         this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;
-        //         this.grdTroubleTicketReq.DataBind();
 
-        //     }
+		else
 
-        //     catch (Exception ex)
-        //     {
-        //         throw;
-        //     }
-        // }
-        private void grdTroubleTicketReq_PageIndexChanging(object sender, GridViewPageEventArgs e)
+					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
+
+
+				this.lblSearchResult.Text = tblTTR.Rows.Count + " Result(s)";
+				this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;
+				this.grdTroubleTicketReq.DataBind();
+
+			}
+
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
+		private void grdTroubleTicketReq_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             try
             {
