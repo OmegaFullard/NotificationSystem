@@ -16,15 +16,19 @@ namespace NotificationSystem.NotificationSystem.Web
 {
     public partial class TicketReq : System.Web.UI.Page
     {
+      
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if ((Page.IsPostBack))
             {
                 if (Page.Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
                 {
+
+
 					//ctrTroubleTicketReq_Search.PopulateSearchControl();
-                   // ctrTroubleTicketReq_Search.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
-                }
+					//ctrTroubleTicketReq_Search.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
+				}
             }
         }
 

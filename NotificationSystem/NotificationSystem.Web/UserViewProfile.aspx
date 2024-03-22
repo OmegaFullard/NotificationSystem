@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="User Profile" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="false" CodeBehind="UserViewProfile.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.UserViewProfile" %>
-<%@ Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
       <link href="styles/default.css" rel="stylesheet" />

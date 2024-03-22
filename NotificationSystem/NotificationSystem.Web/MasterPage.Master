@@ -117,8 +117,8 @@
                         </asp:MenuItem>
         
                    <asp:MenuItem Text="Customers">
-                   <asp:MenuItem Text="Customers" NavigateUrl="Customers.aspx"></asp:MenuItem>
-               <asp:MenuItem Text="Login" NavigateUrl="Logins.aspx"></asp:MenuItem>
+                   <asp:MenuItem Text="Customers" NavigateUrl="Customer.aspx"></asp:MenuItem>
+               
               <asp:MenuItem Text= "Registration" NavigateUrl="UserRegistration.aspx"></asp:MenuItem>
              <asp:MenuItem Text="User Profile" NavigateUrl="UserViewProfile.aspx"></asp:MenuItem>
              </asp:MenuItem>

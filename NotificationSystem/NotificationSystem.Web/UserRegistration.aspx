@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="User Registration" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="false" CodeBehind="UserRegistration.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.UserRegistration" %>
-<%@ Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
   
