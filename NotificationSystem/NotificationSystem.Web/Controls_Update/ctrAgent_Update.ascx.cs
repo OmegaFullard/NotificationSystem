@@ -9,8 +9,7 @@ using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
+
     public partial class ctrAgent_Update : System.Web.UI.UserControl
     {
         private int m_AgentID = 0;
@@ -138,5 +137,4 @@ namespace NotificationSystem.NotificationSystem.Web
             this.BindGrid();
         }
     }
-}
     

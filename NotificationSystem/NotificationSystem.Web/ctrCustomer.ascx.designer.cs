@@ -7,38 +7,35 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NotificationSystem.NotificationSystem.Web
+
+
+public partial class ctrCustomer
 {
 
+	/// <summary>
+	/// ctrHiddebField control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.HiddenField ctrHiddebField;
 
-	public partial class ctrCustomer
-	{
+	/// <summary>
+	/// lblSearchResult control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Label lblSearchResult;
 
-		/// <summary>
-		/// ctrHiddebField control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.HiddenField ctrHiddebField;
-
-		/// <summary>
-		/// lblSearchResult control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblSearchResult;
-
-		/// <summary>
-		/// grdCustomers control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.GridView grdCustomers;
-	}
+	/// <summary>
+	/// grdCustomers control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.GridView grdCustomers;
 }

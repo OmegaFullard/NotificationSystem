@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NotificationSystem
+namespace NotificationSystem.NotificationSystem.Web
 {
 
 

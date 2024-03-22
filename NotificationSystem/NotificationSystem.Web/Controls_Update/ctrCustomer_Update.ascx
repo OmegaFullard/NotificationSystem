@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrCustomer_Update.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrCustomer_Update" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrCustomer_Update.ascx.cs" Inherits="ctrCustomer_Update" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 

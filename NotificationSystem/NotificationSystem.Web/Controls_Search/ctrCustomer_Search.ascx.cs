@@ -18,8 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
+
     public partial class ctrCustomer_Search : System.Web.UI.UserControl
     {
         private int m_CustomerID = 0;
@@ -45,4 +44,4 @@ namespace NotificationSystem.NotificationSystem.Web
             m_CustomerID = int.Parse(this.txtcustomerid.Text);
         }
     }
-}
+

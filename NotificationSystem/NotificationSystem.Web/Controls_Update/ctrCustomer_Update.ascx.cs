@@ -9,8 +9,7 @@ using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
+
     public partial class ctrCustomer_Update : System.Web.UI.UserControl
     {
 
@@ -118,4 +117,4 @@ namespace NotificationSystem.NotificationSystem.Web
             this.BindGrid();
         }
     }
-}
+

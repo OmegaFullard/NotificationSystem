@@ -19,8 +19,6 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 using System.Net.Http;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
     public partial class ctrTroubleTicketReq_Add : System.Web.UI.UserControl
     {
         private int m_TroubleTicketNo = 0;
@@ -148,4 +146,3 @@ namespace NotificationSystem.NotificationSystem.Web
             Response.Redirect("TroubleTicketReq_Find.aspx", false);
         }
     }
-}

@@ -10,8 +10,6 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 using System.Data.SqlClient;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
     public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
     {
 
@@ -190,4 +188,4 @@ namespace NotificationSystem.NotificationSystem.Web
             Response.Redirect("TroubleTicketReq_Find.aspx", false);
         }
     }
-}
+

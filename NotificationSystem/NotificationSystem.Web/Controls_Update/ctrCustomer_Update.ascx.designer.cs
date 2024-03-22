@@ -7,47 +7,44 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NotificationSystem.NotificationSystem.Web
+
+
+public partial class ctrCustomer_Update
 {
 
+	/// <summary>
+	/// lblcustomerid control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Label lblcustomerid;
 
-	public partial class ctrCustomer_Update
-	{
+	/// <summary>
+	/// lblSearchResult control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Label lblSearchResult;
 
-		/// <summary>
-		/// lblcustomerid control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblcustomerid;
+	/// <summary>
+	/// grdCustomers control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.GridView grdCustomers;
 
-		/// <summary>
-		/// lblSearchResult control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblSearchResult;
-
-		/// <summary>
-		/// grdCustomers control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.GridView grdCustomers;
-
-		/// <summary>
-		/// btnUpdate control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnUpdate;
-	}
+	/// <summary>
+	/// btnUpdate control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Button btnUpdate;
 }

@@ -7,8 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
+
 	public partial class ctrTroubleTicketReq_Find : System.Web.UI.UserControl
 	{
 		private int m_TroubleTicketNo = 0;
@@ -53,4 +52,4 @@ namespace NotificationSystem.NotificationSystem.Web
 			}
 		}
 	}
-}
+

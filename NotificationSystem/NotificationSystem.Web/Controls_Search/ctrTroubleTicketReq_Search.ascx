@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrTroubleTicketReq_Search.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrTroubleTicketReq_Search" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrTroubleTicketReq_Search.ascx.cs" Inherits="ctrTroubleTicketReq_Search" %>
 
 <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >

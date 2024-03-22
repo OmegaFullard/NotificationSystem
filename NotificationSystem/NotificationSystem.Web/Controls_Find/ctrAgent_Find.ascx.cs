@@ -19,8 +19,6 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
 
-namespace NotificationSystem.NotificationSystem.Web
-{
     public partial class ctrAgent_Find : System.Web.UI.UserControl
     {
         private int m_AgentID = 0;
@@ -66,4 +64,3 @@ namespace NotificationSystem.NotificationSystem.Web
             }
         }
     }
-}

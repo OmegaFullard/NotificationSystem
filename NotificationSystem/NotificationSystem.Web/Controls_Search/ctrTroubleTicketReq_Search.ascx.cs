@@ -5,8 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
 
     public partial class ctrTroubleTicketReq_Search : System.Web.UI.UserControl
     {
@@ -34,4 +32,4 @@ namespace NotificationSystem.NotificationSystem.Web
             m_TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
         }
     }
-}
+

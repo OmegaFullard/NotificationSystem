@@ -19,8 +19,7 @@ using Telerik.Web.UI;
 using System.Data.SqlClient;
 using System.Net.Http;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
+
     public partial class ctrCustomer_Add : System.Web.UI.UserControl
     {
 
@@ -125,5 +124,4 @@ namespace NotificationSystem.NotificationSystem.Web
             Response.Redirect("Agent_Find.aspx", false);
         }
     }
-}
     

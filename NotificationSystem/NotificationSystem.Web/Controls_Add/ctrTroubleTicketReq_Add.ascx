@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrTroubleTicketReq_Add.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrTroubleTicketReq_Add" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrTroubleTicketReq_Add.ascx.cs" Inherits="ctrTroubleTicketReq_Add" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 

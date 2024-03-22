@@ -1,4 +1,4 @@
-﻿ <%@ Control Language="c#" AutoEventWireup="false" CodeBehind="ctrAgent_Update.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrAgent_Update" %>
+﻿ <%@ Control Language="c#" AutoEventWireup="false" CodeBehind="ctrAgent_Update.ascx.cs" Inherits="ctrAgent_Update" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 

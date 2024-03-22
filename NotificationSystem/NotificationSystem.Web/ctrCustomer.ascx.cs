@@ -18,8 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-namespace NotificationSystem.NotificationSystem.Web
-{
+
     public partial class ctrCustomer : System.Web.UI.UserControl
     {
 
@@ -122,4 +121,3 @@ namespace NotificationSystem.NotificationSystem.Web
             return ViewState["direction"].ToString();
         }
     }
-}

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrCustomer_Find.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrCustomer_Find" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrCustomer_Find.ascx.cs" Inherits="ctrCustomer_Find" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
  
