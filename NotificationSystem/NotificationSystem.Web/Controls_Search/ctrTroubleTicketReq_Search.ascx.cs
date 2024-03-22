@@ -5,31 +5,33 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
+namespace NotificationSystem.NotificationSystem.Web
+{
 
     public partial class ctrTroubleTicketReq_Search : System.Web.UI.UserControl
     {
 
-    private int m_TroubleTicketNo = 0;
+        private int m_TroubleTicketNo = 0;
 
-    public int TroubleTicketNo
-    {
-        get
+        public int TroubleTicketNo
         {
-            return m_TroubleTicketNo;
+            get
+            {
+                return m_TroubleTicketNo;
+            }
+            set
+            {
+                m_TroubleTicketNo = value;
+            }
         }
-        set
-        {
-            m_TroubleTicketNo = value;
-        }
-    }
-    protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-    public void PopulateSearchControl()
-    {
-        m_TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
+        public void PopulateSearchControl()
+        {
+            m_TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
+        }
     }
 }

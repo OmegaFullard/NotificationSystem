@@ -18,48 +18,52 @@ using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
-public partial class ctrAgent_Find : System.Web.UI.UserControl
+
+namespace NotificationSystem.NotificationSystem.Web
+{
+    public partial class ctrAgent_Find : System.Web.UI.UserControl
     {
-    private int m_AgentID = 0;
+        private int m_AgentID = 0;
 
-    public int AgentID
-    {
-        get
+        public int AgentID
         {
-            return m_AgentID;
-        }
-        set
-        {
-            m_AgentID = value;
-        }
-    }
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-
-        if ((Page.IsPostBack))
-        {
-            if (((short)m_AgentID) > 0)
-                this.lblAgentID.Text = "ID" + m_AgentID;
-            if (this.lblAgentID.Text.Length == 2)
-                return;
-
-            try
+            get
             {
-                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                AgentDataTable tblAgent = new AgentDataTable();
-                theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblAgentID.Text.Replace("ID", "")));
-                if (tblAgent.Count == 0)
+                return m_AgentID;
+            }
+            set
+            {
+                m_AgentID = value;
+            }
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+
+            if ((Page.IsPostBack))
+            {
+                if (((short)m_AgentID) > 0)
+                    this.lblAgentID.Text = "ID" + m_AgentID;
+                if (this.lblAgentID.Text.Length == 2)
                     return;
 
-                this.grdAgent.DataSource = tblAgent;
-                this.grdAgent.DataBind();
-            }
+                try
+                {
+                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                    AgentDataTable tblAgent = new AgentDataTable();
+                    theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblAgentID.Text.Replace("ID", "")));
+                    if (tblAgent.Count == 0)
+                        return;
 
-            catch (Exception ex)
-			{
-				throw;
-			}
-		}
-	}
+                    this.grdAgent.DataSource = tblAgent;
+                    this.grdAgent.DataBind();
+                }
+
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
+    }
 }

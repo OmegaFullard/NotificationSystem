@@ -21,109 +21,112 @@ using Telerik.Web.UI;
 using System.Data.SqlClient;
 using System.Net.Http;
 
-public partial class ctrAgent_Add : System.Web.UI.UserControl
+namespace NotificationSystem.NotificationSystem.Web
 {
-
-    private SqlDataReader dr;
-
-    private int m_AgentID = 0;
-
-    public int AgentID
+    public partial class ctrAgent_Add : System.Web.UI.UserControl
     {
-        get
-        {
-            return m_AgentID;
-        }
-        set
-        {
-            m_AgentID = value;
-        }
-    }
 
+        private SqlDataReader dr;
 
-    public TextBox txtAgentList { get; set; }
+        private int m_AgentID = 0;
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        AgentDataTable tblAgent = new AgentDataTable();
-        var client = new HttpClient();
-        try
+        public int AgentID
         {
-            if ((Page.IsPostBack))
+            get
             {
-                //button click to add form data ?
-                
-                if (Request.Form["ctl00$MainContent$ctrAgent_Add$btnAdd"] == "Add")
-                    AddAgent();
+                return m_AgentID;
             }
-            else
+            set
             {
+                m_AgentID = value;
             }
         }
-        catch (Exception ex)
+
+
+        public TextBox txtAgentList { get; set; }
+
+        protected void Page_Load(object sender, EventArgs e)
         {
-            throw;
-        }
-    }
-
-    public void AddAgent()
-    {
-        try
-        {
-            clsAgent thisAgent = new clsAgent();
-
-            {
-                var withBlock = thisAgent;
-                if (txtagentid.Text.Length == 0 )
-                    return;
-
-
-                withBlock.AgentID = int.Parse(txtagentid.Text); withBlock.Title = txttitle.Text; withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text;
-                withBlock.Salary = int.Parse(txtsalary.Text);
-            }
-
+            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+            AgentDataTable tblAgent = new AgentDataTable();
+            var client = new HttpClient();
             try
             {
-                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                theNotificationSystem.AddAgent(thisAgent);
-                lblResult.Text = "Agent data has been added";
-            }
-            catch (SqlException ex)
-            {
-                if (ex.Number == 2627)
-                    lblResult.Text = "Agent already exist!";
+                if ((Page.IsPostBack))
+                {
+                    //button click to add form data ?
+
+                    if (Request.Form["ctl00$MainContent$ctrAgent_Add$btnAdd"] == "Add")
+                        AddAgent();
+                }
                 else
-                    throw new ApplicationException(ex.Message);
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
 
-
-        catch (Exception ex)
+        public void AddAgent()
         {
-			clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
-			string NotificationBody = ex.Message + "  " + ex.StackTrace;
-			SendError.SendMailMessage(NotificationBody);
-			Response.Redirect("ErrorPage.aspx", false);
-		}
-    }
+            try
+            {
+                clsAgent thisAgent = new clsAgent();
 
-    public void ClearControls()
-    {
-        try
-        {
-         
+                {
+                    var withBlock = thisAgent;
+                    if (txtagentid.Text.Length == 0)
+                        return;
+
+
+                    withBlock.AgentID = int.Parse(txtagentid.Text); withBlock.Title = txttitle.Text; withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text;
+                    withBlock.Salary = int.Parse(txtsalary.Text);
+                }
+
+                try
+                {
+                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                    theNotificationSystem.AddAgent(thisAgent);
+                    lblResult.Text = "Agent data has been added";
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 2627)
+                        lblResult.Text = "Agent already exist!";
+                    else
+                        throw new ApplicationException(ex.Message);
+                }
+            }
+
+
+            catch (Exception ex)
+            {
+                clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+                string NotificationBody = ex.Message + "  " + ex.StackTrace;
+                SendError.SendMailMessage(NotificationBody);
+                Response.Redirect("ErrorPage.aspx", false);
+            }
         }
 
-
-        catch (Exception ex)
+        public void ClearControls()
         {
-            throw;
-        }
-    }
+            try
+            {
 
-    protected void btnCancel_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("Agent_Find.aspx", false);
+            }
+
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Agent_Find.aspx", false);
+        }
     }
 }

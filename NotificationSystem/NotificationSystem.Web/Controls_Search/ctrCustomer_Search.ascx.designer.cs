@@ -7,44 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
-public partial class ctrCustomer_Search
+namespace NotificationSystem.NotificationSystem.Web
 {
 
-	/// <summary>
-	/// ScriptManager2 control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.ScriptManager ScriptManager2;
 
-	/// <summary>
-	/// Table1 control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Table Table1;
+	public partial class ctrCustomer_Search
+	{
 
-	/// <summary>
-	/// txtcustomerid control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.TextBox txtcustomerid;
+		/// <summary>
+		/// ScriptManager2 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.ScriptManager ScriptManager2;
 
-	/// <summary>
-	/// btnSearch control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Button btnSearch;
+		/// <summary>
+		/// Table1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Table Table1;
+
+		/// <summary>
+		/// txtcustomerid control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtcustomerid;
+
+		/// <summary>
+		/// btnSearch control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnSearch;
+	}
 }

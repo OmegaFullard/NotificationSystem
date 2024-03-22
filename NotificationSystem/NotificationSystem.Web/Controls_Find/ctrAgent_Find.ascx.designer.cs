@@ -7,35 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
-public partial class ctrAgent_Find
+namespace NotificationSystem.NotificationSystem.Web
 {
 
-	/// <summary>
-	/// lblAgentID control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Label lblAgentID;
 
-	/// <summary>
-	/// lblSearchResult control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.Label lblSearchResult;
+	public partial class ctrAgent_Find
+	{
 
-	/// <summary>
-	/// grdAgent control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.GridView grdAgent;
+		/// <summary>
+		/// lblAgentID control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblAgentID;
+
+		/// <summary>
+		/// lblSearchResult control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblSearchResult;
+
+		/// <summary>
+		/// grdAgent control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.GridView grdAgent;
+	}
 }

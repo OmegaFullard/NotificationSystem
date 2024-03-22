@@ -19,46 +19,48 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 using System.Net.Http;
 
+namespace NotificationSystem.NotificationSystem.Web
+{
     public partial class ctrTroubleTicketReq_Add : System.Web.UI.UserControl
     {
-    private int m_TroubleTicketNo = 0;
+        private int m_TroubleTicketNo = 0;
 
-    public int TroubleTicketNo
-    {
-        get
+        public int TroubleTicketNo
         {
-            return m_TroubleTicketNo;
-        }
-        set
-        {
-            m_TroubleTicketNo = value;
-        }
-    }
-
-    public TextBox txtTroubleTicketList { get; set; }
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
-        var client = new HttpClient();
-        try
-        {
-            if ((Page.IsPostBack))
+            get
             {
-
-
-                if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"] == "Add")
-                    AddTroubleTicket();
+                return m_TroubleTicketNo;
             }
-            else
+            set
             {
+                m_TroubleTicketNo = value;
             }
         }
-        catch (Exception ex)
+
+        public TextBox txtTroubleTicketList { get; set; }
+        protected void Page_Load(object sender, EventArgs e)
         {
-            throw;
+            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+            TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
+            var client = new HttpClient();
+            try
+            {
+                if ((Page.IsPostBack))
+                {
+
+
+                    if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"] == "Add")
+                        AddTroubleTicket();
+                }
+                else
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
-    }
 
         public void AddTroubleTicket()
         {
@@ -69,18 +71,18 @@ using System.Net.Http;
                 {
                     var withBlock = thisTroubleTicket;
                     if (txttroubleticketno.Text.Length == 0)
-                   
-                if (pickRequestDate.SelectedDate == null)
-                    withBlock.RequestDate = DateTime.Now;
-                else
-                    withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
-                if (cmbType.Text == string.Empty)
-                    return;
 
-                
+                        if (pickRequestDate.SelectedDate == null)
+                            withBlock.RequestDate = DateTime.Now;
+                        else
+                            withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
+                    if (cmbType.Text == string.Empty)
+                        return;
+
+
 
                     withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.Status = cmbStatus.Text; withBlock.Type = cmbType.Text; withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
-                return;
+                    return;
 
                 }
                 try
@@ -146,3 +148,4 @@ using System.Net.Http;
             Response.Redirect("TroubleTicketReq_Find.aspx", false);
         }
     }
+}

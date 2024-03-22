@@ -9,53 +9,56 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
-public partial class ctrCustomer_Find : System.Web.UI.UserControl
-    {
+namespace NotificationSystem.NotificationSystem.Web
+{
+	public partial class ctrCustomer_Find : System.Web.UI.UserControl
+	{
 
-    private int m_CustomerID = 0;
+		private int m_CustomerID = 0;
 
-    public int CustomerID
-    {
-        get
-        {
-            return m_CustomerID;
-        }
-        set
-        {
-            m_CustomerID = value;
-        }
-    }
-    protected void Page_Load(object sender, EventArgs e)
-        {
-		if ((Page.IsPostBack))
+		public int CustomerID
 		{
-			try
+			get
 			{
-				if (((short)m_CustomerID) > 0)
-					this.lblCustomerID.Text = "ID" + m_CustomerID;
-				if (this.lblCustomerID.Text.Length == 2)
-					return;
-
-
-
-
-				clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-				CustomerDataTable tblCustomer = new CustomerDataTable();
-					theNotificationSystem.GetCustomerListbyID(Convert.ToInt32(this.lblCustomerID.Text.Replace("ID", "")));
-				if (tblCustomer.Count == 0)
-					return;
-
-				{
-					this.grdCustomer.DataSource = tblCustomer;
-					this.grdCustomer.DataBind();
-
-
-				}
+				return m_CustomerID;
 			}
-			catch (Exception ex)
+			set
 			{
-				throw;
+				m_CustomerID = value;
+			}
+		}
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			if ((Page.IsPostBack))
+			{
+				try
+				{
+					if (((short)m_CustomerID) > 0)
+						this.lblCustomerID.Text = "ID" + m_CustomerID;
+					if (this.lblCustomerID.Text.Length == 2)
+						return;
+
+
+
+
+					clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+					CustomerDataTable tblCustomer = new CustomerDataTable();
+					theNotificationSystem.GetCustomerListbyID(Convert.ToInt32(this.lblCustomerID.Text.Replace("ID", "")));
+					if (tblCustomer.Count == 0)
+						return;
+
+					{
+						this.grdCustomer.DataSource = tblCustomer;
+						this.grdCustomer.DataBind();
+
+
+					}
+				}
+				catch (Exception ex)
+				{
+					throw;
+				}
 			}
 		}
 	}
-    }
+}

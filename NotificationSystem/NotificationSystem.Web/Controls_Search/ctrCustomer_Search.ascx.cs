@@ -18,28 +18,31 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
+namespace NotificationSystem.NotificationSystem.Web
+{
     public partial class ctrCustomer_Search : System.Web.UI.UserControl
     {
-    private int m_CustomerID = 0;
+        private int m_CustomerID = 0;
 
-    public int CustomerID
-    {
-        get
+        public int CustomerID
         {
-            return m_CustomerID;
+            get
+            {
+                return m_CustomerID;
+            }
+            set
+            {
+                m_CustomerID = value;
+            }
         }
-        set
-        {
-            m_CustomerID = value;
-        }
-    }
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-    public void PopulateSearchControl()
-    {
-        m_CustomerID = int.Parse(this.txtcustomerid.Text);
+        public void PopulateSearchControl()
+        {
+            m_CustomerID = int.Parse(this.txtcustomerid.Text);
+        }
     }
 }
