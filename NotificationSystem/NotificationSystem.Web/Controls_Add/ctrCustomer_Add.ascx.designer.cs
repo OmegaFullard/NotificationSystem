@@ -85,6 +85,24 @@ public partial class ctrCustomer_Add
 	protected global::System.Web.UI.WebControls.RequiredFieldValidator valLastN;
 
 	/// <summary>
+	/// txtusername control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtusername;
+
+	/// <summary>
+	/// txtpassword control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtpassword;
+
+	/// <summary>
 	/// txtaddress control.
 	/// </summary>
 	/// <remarks>
@@ -173,15 +191,6 @@ public partial class ctrCustomer_Add
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
-
-	/// <summary>
-	/// txtFaxNumber control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.TextBox txtFaxNumber;
 
 	/// <summary>
 	/// btnCancel control.

@@ -60,6 +60,7 @@ using System.Net.Http;
                 }
                 else
                 {
+                PopulateControls();
                 }
             }
             catch (Exception ex)
@@ -108,7 +109,10 @@ using System.Net.Http;
                 Response.Redirect("ErrorPage.aspx", false);
             }
         }
-
+    public void PopulateControls()
+	{
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+    }
         public void ClearControls()
         {
             try

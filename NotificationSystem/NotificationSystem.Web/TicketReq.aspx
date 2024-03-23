@@ -1,8 +1,10 @@
 ﻿
-<%@ Page Title="Ticket Request" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="false" CodeBehind="TicketReq.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.TicketReq" %>
+<%@ Page Language="C#" AutoEventWireup="false"  MasterPageFile="MasterPage.master" CodeBehind="TicketReq.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.TicketReq" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="ctrTroubleTicketReq.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq" %>
 <%@ Register Src="Controls_Search/ctrTroubleTicketReq_Search.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Search" %>
+<%@ Register Src="Controls_Find/ctrTroubleTicketReq_Find.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Find" %>
+
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
     <title>Tickets</title>

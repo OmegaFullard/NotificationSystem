@@ -80,10 +80,10 @@ using System.Net.Http;
 
 
                     withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.Status = cmbStatus.Text; withBlock.Type = cmbType.Text; withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
-                    return;
+                   
 
                 }
-                try
+			try
 
                 {
 
@@ -124,24 +124,24 @@ using System.Net.Http;
             }
         }
 
-        //private void PopulateControls()
-        //{
-        //    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+	private void PopulateControls()
+	{
+		clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
 
-        //    this.cmbStatus.DataSource = theNotificationSystem.GetStatusList;
-        //    this.cmbStatus.DataTextField = "Status";
-        //    this.cmbStatus.DataBind();
-        //    this.cmbStatus.Text = "Open";
+		this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
+		this.cmbStatus.DataTextField = "Status";
+		this.cmbStatus.DataBind();
+		this.cmbStatus.Text = "Open";
 
 
-        //    this.cmbType.DataSource = theNotificationSystem.GetTypeList;
-        //    this.cmbType.DataTextField = "Type";
-        //    this.cmbType.DataBind();
+		this.cmbType.DataSource = theNotificationSystem.GetTypeList();
+		this.cmbType.DataTextField = "Type";
+		this.cmbType.DataBind();
 
 
-        //}
-        protected void btnCancel_Click(object sender, EventArgs e)
+	}
+	protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("TroubleTicketReq_Find.aspx", false);
         }

@@ -27,6 +27,7 @@
  
 
   <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
+       <div class="Heading" >Add Customer</div>
                          
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
           
@@ -74,6 +75,35 @@
                                                      <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
                                           </asp:TableRow> 
+
+
+
+                                   <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">User Name:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtusername" runat="server" Height="20px" Width="300px"  MaxLength="10" CausesValidation="True"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow> 
+
+                                   <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Password:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtpassword" runat="server" Height="20px" Width="300px"  MaxLength="10" CausesValidation="True"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow>
+
+
+
+
+
 
                                   <asp:TableRow> 
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Address:</asp:TableCell>
@@ -167,10 +197,6 @@
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Phone:</asp:TableCell>
                                                       <asp:TableCell HorizontalAlign="Left" Font-Bold="true">
                                                         &nbsp;&nbsp;<asp:textbox ID="txtPhoneNumber" SelectionOnFocus="CaretToBeginning" Height="20px" Width="200px" RenderMode="Lightweight" Runat="server" Mask="(###)-#######"  ValidationGroup="Submit">
-                                                         </asp:textbox>&nbsp;&nbsp;Fax:
-                                                        
-														
-														<asp:textbox ID="txtFaxNumber" SelectionOnFocus="CaretToBeginning" Height="20px" Width="200px" RenderMode="Lightweight" Runat="server" Mask="(###)-#######" ValidationGroup="Submit">
                                                          </asp:textbox>
                                                        </asp:TableCell>    
                                                 </asp:TableRow>

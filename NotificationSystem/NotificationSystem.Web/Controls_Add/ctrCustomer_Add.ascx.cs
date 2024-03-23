@@ -76,9 +76,9 @@ using System.Net.Http;
                         return;
 
                     withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
+                withBlock.UserName = txtusername.Text; withBlock.Password = txtpassword.Text;
 
-
-                }
+            }
                 try
 
                 {
@@ -107,6 +107,10 @@ using System.Net.Http;
             }
         }
 
+    private void PopulateControls()
+	{
+
+	}
         public void ClearControls()
         {
             try

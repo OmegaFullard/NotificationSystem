@@ -111,8 +111,10 @@
                     <asp:MenuItem NavigateUrl="Default.aspx" Text="Home" />
                     
                    <asp:MenuItem Text="Trouble Tickets">
-                    <asp:MenuItem Text="Ticket Request" NavigateUrl="TicketReq.aspx"></asp:MenuItem>
-                     
+                        <asp:MenuItem Text="Ticket Request" NavigateUrl="TicketMgt.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Ticket Search" NavigateUrl="TicketReq.aspx"></asp:MenuItem>
+                     <asp:MenuItem Text="Ticket Details" NavigateUrl="TicketDetails.aspx"></asp:MenuItem>
+                      
                     
                         </asp:MenuItem>
         

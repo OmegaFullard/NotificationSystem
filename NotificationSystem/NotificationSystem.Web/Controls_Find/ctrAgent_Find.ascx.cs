@@ -19,7 +19,7 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 
 
-    public partial class ctrAgent_Find : System.Web.UI.UserControl
+public partial class ctrAgent_Find : System.Web.UI.UserControl
     {
         private int m_AgentID = 0;
 
@@ -34,33 +34,133 @@ using NotificationSystem.NotificationSystem.Data.Classes;
                 m_AgentID = value;
             }
         }
-        protected void Page_Load(object sender, EventArgs e)
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        if ((Page.IsPostBack))
         {
+            if (((short)m_AgentID) > 0)
+                this.lblAgentID.Text = "ID" + m_AgentID;
+            if (this.lblAgentID.Text.Length == 2)
+                return;
 
-
-            if ((Page.IsPostBack))
+            try
             {
-                if (((short)m_AgentID) > 0)
-                    this.lblAgentID.Text = "ID" + m_AgentID;
-                if (this.lblAgentID.Text.Length == 2)
+                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                AgentDataTable tblAgent = new AgentDataTable();
+                theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblAgentID.Text.Replace("ID", "")));
+                if (tblAgent.Count == 0)
                     return;
 
-                try
-                {
-                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                    AgentDataTable tblAgent = new AgentDataTable();
-                    theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblAgentID.Text.Replace("ID", "")));
-                    if (tblAgent.Count == 0)
-                        return;
+                this.grdAgent.DataSource = tblAgent;
+                this.grdAgent.DataBind();
+            }
 
-                    this.grdAgent.DataSource = tblAgent;
-                    this.grdAgent.DataBind();
-                }
-
-                catch (Exception ex)
-                {
-                    throw;
-                }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
     }
+
+    private void grdAgent_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
+            {
+                DataView m_DataView = (DataView)this.grdAgent.DataSource;
+
+                if (m_DataView == null)
+                {
+                    m_DataView.Sort = ViewState["columnname"].ToString() + " " + ViewState["direction"].ToString();
+                    this.grdAgent.DataSource = m_DataView;
+                }
+            }
+
+            this.grdAgent.PageIndex = e.NewPageIndex;
+            this.grdAgent.DataBind();
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+    }
+
+    private void grdAgent_Sorting(object sender, GridViewSortEventArgs e)
+    {
+        try
+        {
+            DataView m_Dataview = (DataView)grdAgent.DataSource;
+
+            if (m_Dataview == null)
+            {
+                m_Dataview.Sort = e.SortExpression + " " + ConvertSortDirection(e);
+                this.grdAgent.DataSource = m_Dataview;
+                this.grdAgent.DataBind();
+            }
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+    }
+
+    private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
+    {
+        ViewState.Add("columnname", e.SortExpression);
+
+        if ((ViewState["direction"] == null))
+            ViewState.Add("direction", "asc");
+        else
+            ViewState["direction"] = Interaction.IIf(ViewState["direction"].ToString().ToLower() == "desc", "asc", "desc");
+
+        return ViewState["direction"].ToString();
+    }
+    public void CreateExcelFiles()
+    {
+        try
+        {
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", "attachment;filename=Agent_Information.xls");
+            Response.Charset = "";
+            Response.ContentType = "application/vnd.ms-excel";
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
+            grdAgent.AllowPaging = false;
+            this.grdAgent.DataBind();
+
+            for (int y = 0; y <= 12; y++)
+                grdAgent.HeaderRow.Cells[y].Style.Add("background-color", "#cfdbe6");
+
+            for (int x = 0; x <= grdAgent.Rows.Count - 1; x++)
+            {
+                for (int y = 0; y <= 12; y++)
+                {
+                    if (x % 2 > 0)
+                        grdAgent.Rows[x].Cells[y].Style.Add("background-color", "#e0ebea");
+                }
+            }
+
+            grdAgent.Attributes.Add("style", "vnd.ms-excel.numberformat:@");
+            grdAgent.RenderControl(hw);
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
+            Response.End();
+        }
+
+
+
+
+        catch (Exception ex)
+        {
+            throw;
+        }
+    }
+
+    private void btnSubmit_Click(object sender, EventArgs e)
+    {
+        CreateExcelFiles();
+    }
+}

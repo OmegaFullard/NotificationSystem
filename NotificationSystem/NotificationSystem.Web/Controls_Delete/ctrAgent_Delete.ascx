@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrAgent_Add.ascx.cs" Inherits="ctrAgent_Add" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrAgent_Delete.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Delete.ctrAgent_Delete" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
@@ -27,7 +27,7 @@
  
 
   <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-                         <div class="Heading" >Add Agent</div>
+                         <div class="Heading" >Delete Agent</div>
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
           
                              <asp:Table ID="Table1" runat="server" Width="930px">
@@ -156,7 +156,7 @@
                 <br />
 <br />
                  <div style="padding-left:700px;padding-bottom:10px;"  ><asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="150" Height="25px" OnClick="btnCancel_Click"  />&nbsp;&nbsp;
-                 <asp:Button ID="btnAdd" runat="server" Text="Add" Width="150" Height="25px" ValidationGroup="Submit" /></div>
+                 <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="150" Height="25px" ValidationGroup="Submit" /></div>
 
               
 

@@ -145,6 +145,23 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 		}
 
+        public void DeleteCustomer(clsCustomer thisCustomer)
+        {
+            CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
+
+            try
+            {
+                {
+                    var withBlock = thisCustomer;
+                    adpCustomer.DeleteQuery(withBlock.CustomerID);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         public void GetbyUserPW(string username, string password)
         {
             try
@@ -460,6 +477,23 @@ public int GetAgentByID(int AgentID)
                 throw;
             }
         }
+        public void DeleteAgent(clsAgent thisAgent)
+        {
+            AgentTableAdapter adpAgent = new AgentTableAdapter();
+
+            try
+            {
+                {
+                    var withBlock = thisAgent;
+                    adpAgent.DeleteQuery(withBlock.AgentID);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
 
 
         public void GetAdminbyUserPW(string password, string username)

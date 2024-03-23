@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ticket Management" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true"  CodeBehind="TicketMgt.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.TicketMgt" %>
+﻿<%@ Page Title="Ticket Request" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true"  CodeBehind="TicketMgt.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.TicketMgt" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -12,7 +12,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <h4>Ticket Management</h4>
+                           <h4>Ticket Request</h4>
                         </center>
                      </div>
                   </div>
