@@ -13,38 +13,200 @@ public partial class ctrCustomer_Update
 {
 
 	/// <summary>
-	/// lblcustomerid control.
+	/// lblResult control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.Label lblcustomerid;
+	protected global::System.Web.UI.WebControls.Label lblResult;
 
 	/// <summary>
-	/// lblSearchResult control.
+	/// Table1 control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.Label lblSearchResult;
+	protected global::System.Web.UI.WebControls.Table Table1;
 
 	/// <summary>
-	/// grdCustomers control.
+	/// RequiredFieldValidator1 control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.GridView grdCustomers;
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
 	/// <summary>
-	/// btnUpdate control.
+	/// txtcustomerid control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.Button btnUpdate;
+	protected global::System.Web.UI.WebControls.TextBox txtcustomerid;
+
+	/// <summary>
+	/// valFirstN control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valFirstN;
+
+	/// <summary>
+	/// txtfirstname control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtfirstname;
+
+	/// <summary>
+	/// txtlastname control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtlastname;
+
+	/// <summary>
+	/// valLastN control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valLastN;
+
+	/// <summary>
+	/// txtusername control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtusername;
+
+	/// <summary>
+	/// txtpassword control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtpassword;
+
+	/// <summary>
+	/// txtaddress control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtaddress;
+
+	/// <summary>
+	/// txtcity control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtcity;
+
+	/// <summary>
+	/// txtstate control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtstate;
+
+	/// <summary>
+	/// txtzip control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtzip;
+
+	/// <summary>
+	/// txtAgentID control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtAgentID;
+
+	/// <summary>
+	/// txttroubleticketno control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txttroubleticketno;
+
+	/// <summary>
+	/// txtemailaddress control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtemailaddress;
+
+	/// <summary>
+	/// valEmailAddress control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valEmailAddress;
+
+	/// <summary>
+	/// valRegularExprEmailAddr control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.RegularExpressionValidator valRegularExprEmailAddr;
+
+	/// <summary>
+	/// txtPhoneNumber control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
+
+	/// <summary>
+	/// btnCancel control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Button btnCancel;
+
+	/// <summary>
+	/// btnCustomer control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Button btnCustomer;
 }

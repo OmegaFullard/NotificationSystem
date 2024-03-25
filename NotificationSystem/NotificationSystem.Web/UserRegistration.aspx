@@ -18,19 +18,20 @@
                          <br />
                          <br />
                         <center>
-                                <asp:Image ID="generaluser" runat="server" ImageUrl="images/generaluser.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
+                                <asp:Image ID="adminuser" runat="server" ImageUrl="images/admin.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
                         </center>
                      </div>
                   </div>
+                   </div>
                   <div class="row">
                      <div class="col">
-                        <center>
-                           <h4>My Profile</h4>
-                           <span>Account Status - </span>
-                           <asp:Label class="badge badge-pill badge-info" ID="Label1" runat="server" Text="My Status"></asp:Label>
-                        </center>
+                       
                      </div>
                   </div>
+                   <br />
+                       <div class="info-text login">
+                <h2>Account Registration</h2>
+                <p>Please verify all information is correct.</p>
                   <div class="row">
                      <div class="col">
                         <hr/>
@@ -195,8 +196,14 @@
                       
                      </div>
                   </div>
+                   </div>
+                    <br />
+                    <p>Already Have an Account?<a href="AdminLogin.aspx">   Login</a></p>
+                    </div>                            
+            <br />
+                <br />
                </div>
-            </div>
+            
               <br/>
              <br/>
             <a href="default.aspx"><< Back to Home</a>
@@ -219,7 +226,7 @@
             </div>
          </div>
       </div>
-   </div>
+   
 </asp:Content>
 
 

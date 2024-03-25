@@ -20,5 +20,25 @@ namespace NotificationSystem.NotificationSystem.Web
         {
 
         }
-    }
+
+		private void PopulateControls()
+		{
+			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+
+
+			//this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
+			//this.cmbStatus.DataTextField = "Status";
+			//this.cmbStatus.DataBind();
+			//this.cmbStatus.Text = "Open";
+
+
+			//this.cmbType.DataSource = theNotificationSystem.GetTypeList();
+			//this.cmbType.DataTextField = "Type";
+			//this.cmbType.DataBind();
+
+
+		}
+	}
+
+
 }

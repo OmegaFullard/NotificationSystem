@@ -1300,8 +1300,15 @@
     <Content Include="NotificationSystem.Web\Customer_Find.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Update.aspx" />
     <Content Include="NotificationSystem.Web\ErrorPage.aspx" />
+    <Content Include="NotificationSystem.Web\images\envelope-regular-24.png" />
+    <Content Include="NotificationSystem.Web\images\facebook-square-logo-24.png" />
     <Content Include="NotificationSystem.Web\images\favicon\site.webmanifest" />
+    <Content Include="NotificationSystem.Web\images\instagram-logo-24.png" />
+    <Content Include="NotificationSystem.Web\images\lock-alt-solid-24.png" />
     <Content Include="NotificationSystem.Web\images\site.webmanifest" />
+    <Content Include="NotificationSystem.Web\images\twitter-logo-24.png" />
+    <Content Include="NotificationSystem.Web\images\user-rectangle-solid-24.png" />
+    <Content Include="NotificationSystem.Web\images\youtube-logo-24.png" />
     <Content Include="NotificationSystem.Web\MasterPage.Master" />
     <Content Include="NotificationSystem.Web\MasterPageSingleMenu.Master" />
     <Content Include="NotificationSystem.Web\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />

@@ -153,7 +153,7 @@
                                              <asp:TableRow>                     
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Agent ID:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
-                                                       &nbsp;&nbsp; <asp:TextBox ID="txtAgentID" runat="server" Height="20px" Width="300px"  MaxLength="127"></asp:TextBox>
+                                                       &nbsp;&nbsp; <asp:TextBox ID="txtAgentID" runat="server" Height="20px" Width="300px"  MaxLength="127" ReadOnly="True"></asp:TextBox>
                                                     </asp:TableCell>
                                              </asp:TableRow>
                                               <asp:TableRow  > 
@@ -163,7 +163,7 @@
                                              <asp:TableRow> 
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Trouble Ticket #:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<asp:TextBox ID="txttroubleticketno" runat="server" Height="20px" Width="300px"  MaxLength="127"></asp:TextBox>     
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txttroubleticketno" runat="server" Height="20px" Width="300px"  MaxLength="127" ReadOnly="True"></asp:TextBox>     
                                                     </asp:TableCell>
                                                 </asp:TableRow> 
                                    <asp:TableRow  > 

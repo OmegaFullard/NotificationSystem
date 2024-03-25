@@ -37,6 +37,28 @@
     line-height: 30px;
 }
 
+.wrapper .info-text {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #f0f0f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.wrapper .info-text.login {
+    right: 0;
+}
+
+.info-text h2 {
+    font-size: 36px;
+    color: #884dff;
+    line-height: 1.3;
+}
+
 .MyLabel {
     display: block;
     width: 150px;

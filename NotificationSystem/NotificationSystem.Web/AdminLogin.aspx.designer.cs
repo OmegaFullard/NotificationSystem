@@ -15,13 +15,13 @@ namespace NotificationSystem.NotificationSystem.Web
 	{
 
 		/// <summary>
-		/// agent control.
+		/// admin control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Image agent;
+		protected global::System.Web.UI.WebControls.Image admin;
 
 		/// <summary>
 		/// TextBox1 control.

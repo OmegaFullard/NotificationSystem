@@ -1,9 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrCustomer_Update.ascx.cs" Inherits="ctrCustomer_Update" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
-
-  <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      </asp:Content>
 <style type="text/css">
 
     div.RadCalendarFastNavPopup {
@@ -24,141 +22,196 @@
     .rcOkButton {
         margin-left: 20px;
     }
-
-   
 </style>
 
-  <div style="width: 950px; height:500px;  overflow: auto; padding-left:30px" >
-      <h2>Customer Update</h2>
-            
-           <div> <asp:Label ID="lblcustomerid" runat="server" Text=""></asp:Label></div><br />
-           <div style="padding-bottom:10px; font-weight:400"> <asp:Label ID="lblSearchResult" runat="server" Text=""></asp:Label></div>
-     
-           <asp:GridView ID="grdCustomers" runat="server" 
-                    AutoGenerateColumns="False" 
-               DataKeyNames="CustomerID"
-                    ShowFooter="True"
-                    EmptyDataText="There are no records matching this search criteria."
-                    BackColor="White" ForeColor="Black" CssClass="grdRecords"
-                    HeaderStyle-CssClass="grdHeader"
-                    width="950px" AllowPaging="True" AllowSorting="True" PageSize="18">
-                    <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
-                          <Columns>
+ 
 
-                               <asp:CommandField ShowEditButton="true"  EditText="Edit"  ButtonType="Button" ItemStyle-Width="150"/> 
-
-                               <asp:TemplateField HeaderText="Customer ID" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblcustomerid" runat="server" Text='<%# Eval("CustomerID") %>' Width="140"></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtCustomerID" runat="server" Text='<%# Eval("CustomerID") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                               </asp:TemplateField>
-							   
-							     <asp:TemplateField HeaderText="Agent ID" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblagentid" runat="server" Text='<%# Eval("AgentID") %>' Width="140"></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtAgentID" runat="server" Text='<%# Eval("AgentID") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                               </asp:TemplateField>
-                              
-                              <asp:TemplateField HeaderText="Ticket Number" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblTroubleTicketNo" runat="server" Text='<%# Eval("TroubleTicketNo") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtTroubleTicketNo" runat="server" Text='<%# Eval("TroubleTicketNo") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                               </asp:TemplateField>                                                       
-                                 
-								   <asp:TemplateField HeaderText="First Name" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblfirstname" runat="server" Text='<%# Eval("FirstN") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtfirstname" runat="server" Text='<%# Eval("FirstN") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                               </asp:TemplateField>
-							   
-							   
-                                <asp:TemplateField HeaderText="Last Name" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lbllastname" runat="server" Text='<%# Eval("LastN") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtlastname" runat="server" Text='<%# Eval("LastN") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                               </asp:TemplateField>
-							   
-							                  
-                    
-                                <asp:TemplateField HeaderText="Email" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblemail" runat="server" Text='<%# Eval("Email") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtemail" runat="server" Text='<%# Eval("Email") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                               </asp:TemplateField>
-
-                              <asp:TemplateField HeaderText="Phone" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblphone" runat="server" Text='<%# Eval("Phone") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtphone" runat="server" Text='<%# Eval("Phone") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                               </asp:TemplateField>
-                                  
+  <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
+       <div class="Heading" >Add Customer</div>
                          
-                                   <asp:TemplateField HeaderText="Address" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lbladdress" runat="server" Text='<%# Eval("Address") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtaddress" runat="server" Text='<%# Eval("Address") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                              </asp:TemplateField>
-							  
-							        <asp:TemplateField HeaderText="City" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblcity" runat="server" Text='<%# Eval("City") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtcity" runat="server" Text='<%# Eval("City") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                              </asp:TemplateField>
-      <asp:TemplateField HeaderText="State" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblstate" runat="server" Text='<%# Eval("State") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtstate" runat="server" Text='<%# Eval("State") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                              </asp:TemplateField>
-							        <asp:TemplateField HeaderText="Zip" ItemStyle-Width="150">
-                                   <ItemTemplate>
-                                          <asp:Label ID="lblzip" runat="server" Text='<%# Eval("Zip") %>'></asp:Label>
-                                  </ItemTemplate>
-                                  <EditItemTemplate>
-                                       <asp:TextBox ID="txtzip" runat="server" Text='<%# Eval("Zip") %>' Width="140" AutoPostBack="True"></asp:TextBox>
-                                   </EditItemTemplate>
-                              </asp:TemplateField>
+                              <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
+          
+                             <asp:Table ID="Table1" runat="server" Width="930px">
+                                            <asp:TableRow><asp:TableCell ColumnSpan="2"> <div style="padding-bottom:20px;"> Required fields are marked with <span style="color: red">* </span> (red asterisk).
+                                                </div> </asp:TableCell>
+                                            </asp:TableRow>
+                                  <asp:TableRow> 
+                                             <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>Customer ID:<span style="color: red">*</span></b></div></asp:TableCell>
+                                             <asp:TableCell HorizontalAlign="Left"> 
+                                             
+                                                 <asp:RequiredFieldValidator  ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtcustomerid" ValidationGroup="Submit"  
+                                             ErrorMessage="Customer ID is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
+                                              &nbsp;&nbsp; <asp:TextBox ID="txtcustomerid" runat="server" Height="20px" Width="300px"  ReadOnly="True"></asp:TextBox>
+                                           </asp:TableCell>
+                                 </asp:TableRow>
+     
+                                           <asp:TableRow> 
+                                             <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>First Name:<span style="color: red">*</span></b></div></asp:TableCell>
+                                             <asp:TableCell HorizontalAlign="Left"> 
+                                             
+                                                 <asp:RequiredFieldValidator  ID="valFirstN" runat="server" ControlToValidate="txtfirstname" ValidationGroup="Submit"  
+                                             ErrorMessage="First Name is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
+                                              &nbsp;&nbsp; <asp:TextBox ID="txtfirstname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
+                                           </asp:TableCell>
+             
+                                          </asp:TableRow> 
+										  <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                          </asp:TableRow> 
+										  
+                                           <asp:TableRow> 
+                                             <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>Last Name:<span style="color: red">*</span></b></div></asp:TableCell>
+                                             <asp:TableCell HorizontalAlign="Left"> 
+                                               &nbsp;&nbsp; <asp:TextBox ID="txtlastname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
+                                                 <asp:RequiredFieldValidator  ID="valLastN" runat="server" ControlToValidate="txtlastname" ValidationGroup="Submit"  
+                                             ErrorMessage="Last Name is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
+                                            
+                                           </asp:TableCell>
+             
+                                          </asp:TableRow> 
+										  
+                                          <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                          </asp:TableRow> 
+
+
+
+                                   <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">User Name:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtusername" runat="server" Height="20px" Width="300px"  MaxLength="10" CausesValidation="True"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow> 
+
+                                   <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Password:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtpassword" runat="server" Height="20px" Width="300px"  MaxLength="10" CausesValidation="True"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow>
 
 
 
 
-                          </Columns>
-                        <FooterStyle BackColor ="#CCCCCC" ForeColor="black"/>
-                        <HeaderStyle  HorizontalAlign="Left" ForeColor="#303030" />
-                          <AlternatingRowStyle CssClass="grdAlternatingRow"></AlternatingRowStyle>
 
-               
-               </asp:GridView>
-        </div>
+
+                                  <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Address:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtaddress" runat="server" Height="20px" Width="300px"  MaxLength="127"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow> 
+
+                                   <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">City:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtcity" runat="server" Height="20px" Width="300px"  MaxLength="50"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow> 
+
+                                
+                                   <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">State:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtstate" runat="server" Height="20px" Width="300px"  MaxLength="25"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+
+                                   <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Zip:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtzip" runat="server" Height="20px" Width="300px"  MaxLength="10"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow> 
+
+                                             <asp:TableRow>                     
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Agent ID:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                       &nbsp;&nbsp; <asp:TextBox ID="txtAgentID" runat="server" Height="20px" Width="300px"  MaxLength="127"></asp:TextBox>
+                                                    </asp:TableCell>
+                                             </asp:TableRow>
+                                              <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow> 
+                                             <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Trouble Ticket #:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txttroubleticketno" runat="server" Height="20px" Width="300px"  MaxLength="127" ReadOnly="True"></asp:TextBox>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                   <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                             </asp:TableRow> 
+											 
+                   
+                                                <asp:TableRow>            
+                                                        <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Email Address:<span style="color: red">*</span></asp:TableCell>
+                                                        <asp:TableCell HorizontalAlign="Left">
+                                                                &nbsp;&nbsp;<asp:TextBox ID="txtemailaddress" runat="server" Height="20px" Width="300px"  MaxLength="50"></asp:TextBox>
+                                                                 <asp:RequiredFieldValidator  ID="valEmailAddress" runat="server" ControlToValidate="txtemailaddress" ValidationGroup="Submit" 
+                                                                                            ErrorMessage="Email Address cannot be blank!"><span style="color: red">!</span></asp:RequiredFieldValidator>
+
+                                                               
+                
+                                                                <asp:RegularExpressionValidator ID="valRegularExprEmailAddr" runat="server" ControlToValidate="txtemailaddress"
+                                                                                             ErrorMessage="Email Address is in the wrong format" 
+                                                                                             ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                                                                                             ValidationGroup="Submit">!</asp:RegularExpressionValidator>
+                                                                
+                                                            </asp:TableCell>                                         
+                                                </asp:TableRow>
+												
+                                                 <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                                </asp:TableRow> 
+                                                <asp:TableRow>                     
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Phone:</asp:TableCell>
+                                                      <asp:TableCell HorizontalAlign="Left" Font-Bold="true">
+                                                        &nbsp;&nbsp;<asp:textbox ID="txtPhoneNumber" SelectionOnFocus="CaretToBeginning" Height="20px" Width="200px" RenderMode="Lightweight" Runat="server" Mask="(###)-#######"  ValidationGroup="Submit">
+                                                         </asp:textbox>
+                                                       </asp:TableCell>    
+                                                </asp:TableRow>
+                       <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                          </asp:TableRow> 
+                                   </asp:Table>     
+      <br />
+                          </div>       
+                <br />
 <br />
-<br />
- <div style="padding-left:750px;padding-bottom:10px;"  ><asp:Button ID="btnUpdate" runat="server" Text="Update" Width="150" /></div>
+                 <div style="padding-left:700px;padding-bottom:10px;"  ><asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="150" Height="25px" OnClick="btnCancel_Click"  />&nbsp;&nbsp;
+                 <asp:Button ID="btnCustomer" runat="server" Text="Update" Width="150" Height="25px" ValidationGroup="Submit" /></div>
+
+              
+
+

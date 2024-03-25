@@ -115,16 +115,9 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                         <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#D1E0E0" DataKeyNames="TroubleTicketNo">
-                             <Columns>
-                                 <asp:BoundField DataField="AgentID" HeaderText="AgentID" SortExpression="AgentID"></asp:BoundField>
-                                 <asp:BoundField DataField="TroubleTicketNo" HeaderText="TroubleTicketNo" SortExpression="TroubleTicketNo" InsertVisible="False" ReadOnly="True"></asp:BoundField>
-                                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status"></asp:BoundField>
-                                 <asp:BoundField DataField="Type" HeaderText="Type" SortExpression="Type" />
-                             </Columns>
+                         <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#D1E0E0">
                          </asp:GridView>
-                         <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:NotificationSystemConnectionString1 %>' SelectCommand="SELECT [AgentID], [TroubleTicketNo], [Status], [Type] FROM [TroubleTicketReq]">
-                         </asp:SqlDataSource>
+                         
                      </div>
                   </div>
                </div>

@@ -8,9 +8,9 @@ using System.Data;
 using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
+using System.Data.SqlClient;
 
-
-    public partial class ctrCustomer_Update : System.Web.UI.UserControl
+public partial class ctrCustomer_Update : System.Web.UI.UserControl
     {
 
         private int m_CustomerID = 0;
@@ -26,95 +26,115 @@ using NotificationSystem.NotificationSystem.Data.Classes;
                 m_CustomerID = value;
             }
         }
-        protected void Page_Load(object sender, EventArgs e)
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+        CustomerDataTable tblCustomer = new CustomerDataTable();
+        try
         {
-            if ((Page.IsPostBack))
+            if (Page.IsPostBack)
             {
-                if (m_CustomerID > 0)
-                    this.lblcustomerid.Text = "ID" + m_CustomerID;
 
-                if (this.lblcustomerid.Text.Length == 2)
-                    return;
+                if (Request.Form["ct100$MainContent$ctrCustomer_Update$btnUpdate"] == "Update")
+                    UpdateCustomer();
+                else
+                {
+                    if (m_CustomerID > 0)
+                        this.lblResult.Text = "ID" + m_CustomerID;
+
+                    if (this.lblResult.Text.Length == 0)
+                        return;
+
+                    tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
+                    if (tblCustomer.Count == 0)
+                        return;
+
+                    {
+                        var withBlock = tblCustomer[0];
+
+                        withBlock.AgentID = int.Parse(this.txtAgentID.Text); withBlock.CustomerID = int.Parse(this.txtcustomerid.Text);
+                        withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); this.txtfirstname.Text = withBlock.FirstN; this.txtlastname.Text = withBlock.LastN;
+                        withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
+                        withBlock.UserName = txtusername.Text; withBlock.Password = txtpassword.Text;
+
+
+                        if (!string.IsNullOrEmpty(withBlock.Phone))
+                            txtPhoneNumber.Text = withBlock.Phone.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "");
+
+                        if (!string.IsNullOrEmpty(withBlock.Email))
+                        {
+                            txtemailaddress.Text = withBlock.Email;
+                        }
+
+                        if (!string.IsNullOrEmpty(withBlock.Fax))
+                            txtFaxNumber.Text = withBlock.Fax.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "");
+
+                    }
+
+                }
+                this.btnUpdate.Enabled = true;
+            }
+        }
+
+
+        catch (Exception ex)
+        {
+            clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+            string NotificationBody = ex.Message + "  " + ex.StackTrace;
+            SendError.SendMailMessage(NotificationBody);
+            Response.Redirect("ErrorPage.aspx", false);
+
+        }
+    }
+
+        public void UpdateCustomer()
+        {
+            try
+            {
+                clsCustomer thisCustomer = new clsCustomer();
+
+                {
+                    var withBlock = thisCustomer;
+                    if (txtcustomerid.Text.Length == 0)
+                        return;
+
+
+                withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.AgentID = int.Parse(txtagentid.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text;
+                withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
+                withBlock.UserName = txtusername.Text; withBlock.Password = txtpassword.Text;
+            }
 
                 try
                 {
-                    if (Request.Form["ct100$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
-                    {
-                        grdCustomers.EditIndex = -1;
-                        this.BindGrid();
-                        this.lblcustomerid.Text = "ID" + m_CustomerID;
-                    }
+                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                    theNotificationSystem.UpdateCustomer(thisCustomer);
+                    lblResult.Text = "Customer data has been updated";
                 }
-                catch (Exception ex)
+                catch (SqlException ex)
                 {
-                    throw;
+                    //if (ex.Number == 2627)
+                    //    lblResult.Text = "Customer already exist!";
+                    //else
+                    //    throw new ApplicationException(ex.Message);
                 }
             }
-        }
-
-        private void BindGrid()
-        {
-            int count = 0;
-            string result = count.ToString();
-
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            CustomerDataTable tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
-            this.lblSearchResult.Text = tblCustomer.Rows.Count.ToString(result + "Result(s)");
-
-            grdCustomers.DataSource = tblCustomer;
-            grdCustomers.DataBind();
-        }
-
-        private void grdCustomers_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            clsCustomer thisCustomer = new clsCustomer();
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-
-            if (this.lblcustomerid.Text.Length == 2)
-                return;
-
-            GridViewRow row = (GridViewRow)grdCustomers.Rows[e.RowIndex];
-
-            int CustomerID = Convert.ToInt32((row.FindControl("txtCustomerID") as TextBox)?.Text);
-            int AgentID = Convert.ToInt32((row.FindControl("txtAgentID") as TextBox)?.Text);
-            int TroubleTicketNo = Convert.ToInt32((row.FindControl("txtTroubleTicketNo") as TextBox)?.Text);
-            string FirstN = (row.FindControl("txtfirstname") as TextBox).Text;
-            string LastN = (row.FindControl("txtlastname") as TextBox).Text;
-            string Email = (row.FindControl("txtemail") as TextBox).Text;
-            string Phone = (row.FindControl("txtphone") as TextBox).Text;
-            string Address = (row.FindControl("txtaddress") as TextBox).Text;
-            string City = (row.FindControl("txtcity") as TextBox).Text;
-            string State = (row.FindControl("txtstate") as TextBox).Text;
-            string Zip = (row.FindControl("txtzip") as TextBox).Text;
 
 
+            catch (Exception ex)
             {
-                var withBlock = thisCustomer;
-                withBlock.CustomerID = CustomerID;
+                clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+                string NotificationBody = ex.Message + "  " + ex.StackTrace;
+                SendError.SendMailMessage(NotificationBody);
+                Response.Redirect("ErrorPage.aspx", false);
             }
 
-            theNotificationSystem.UpdateCustomer(thisCustomer);
-
-            grdCustomers.EditIndex = -1;
-            this.BindGrid();
         }
 
-
-
-        private void grdCustomers_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-        }
-
-        protected void grdCustomers_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            grdCustomers.EditIndex = -1;
-            this.BindGrid();
-        }
-
-        protected void grdCustomers_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            grdCustomers.EditIndex = e.NewEditIndex;
-            this.BindGrid();
-        }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Customer_Find.aspx", false);
     }
+}
+      
+    
 

@@ -3,7 +3,10 @@
 
 
 
+
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
+
+
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -26,15 +29,22 @@
                             <div class="col">
                                 <center>
                                  
-                                    <asp:Image ID="agent" runat="server" ImageUrl="images/admin.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
+                                    <asp:Image ID="admin" runat="server" ImageUrl="images/admin.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
                                        
                                     </center>
                             </div>
                         </div>
+                        <br />
+                       <div class="info-text login">
+                <h2>Welcome Back!</h2>
+                <p>Please verify all information is correct.</p>
+            </div>
+                        <br />
+                        <br />
                        
                         <div class="row">
                             <div class="col-md-6">
-                                <center></center>
+                                
                                 <label>Admin ID</label>
                                 <div class="form-group">
                                     <div class="input-group">
@@ -49,7 +59,7 @@
                             <div class="col-md-6">
                                 <label>Password</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
 
                                 </div>
                             </div>
@@ -68,10 +78,12 @@
                                    </div>
                         </div>
                         </div>
-
-
+                    <br />
+                    <p>Don't Have an Account?<a href="UserRegistration.aspx">   Sign Up</a></p>
                     </div>
                 </div>
+            
+            <br />
                 <br />
                 <a href="Default.aspx"><< Back to Home</a><br/>
                 <br/>

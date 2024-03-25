@@ -125,7 +125,7 @@ using System.Net.Http;
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Agent_Find.aspx", false);
+            Response.Redirect("Customer_Find.aspx", false);
         }
     }
     
