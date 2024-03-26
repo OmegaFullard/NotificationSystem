@@ -66,8 +66,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                             txtemailaddress.Text = withBlock.Email;
                         }
 
-                        if (!string.IsNullOrEmpty(withBlock.Fax))
-                            txtFaxNumber.Text = withBlock.Fax.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "");
+                 
 
                     }
 
@@ -99,7 +98,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                         return;
 
 
-                withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.AgentID = int.Parse(txtagentid.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text;
+                withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; 
                 withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
                 withBlock.UserName = txtusername.Text; withBlock.Password = txtpassword.Text;
             }

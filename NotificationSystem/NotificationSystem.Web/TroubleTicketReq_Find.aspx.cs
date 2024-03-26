@@ -18,9 +18,9 @@ using NotificationSystem.NotificationSystem.Data.Classes;
             if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
             {
                 ctrTroubleTicketReq_Search.PopulateSearchControl();
-                if (((short)ctrTroubleTicketReq_Search.TroubleTicketNo) == 0)
+                if ((ctrTroubleTicketReq_Search.TroubleTicketNo) == 0)
                     return;
-                //this.ctrTroubleTicketReq_Find.ClearControls();
+              
                 this.ctrTroubleTicketReq_Find.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
             }
         }

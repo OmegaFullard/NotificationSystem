@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
+using Microsoft.VisualBasic;
 
-
-    public partial class TroubleTicketReq_Update : System.Web.UI.Page
+public partial class TroubleTicketReq_Update : System.Web.UI.Page
     {
     private int m_TroubleTicketNo = 0;
 
@@ -27,14 +27,28 @@ using NotificationSystem.NotificationSystem.Data.Classes;
     }
     protected void Page_Load(object sender, EventArgs e)
         {
-        if ((Page.IsPostBack))
+        try
         {
-            if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
+            if ((Page.IsPostBack))
             {
-                if (((short)ctrTroubleTicketReq_Search.TroubleTicketNo) == 0)
-                    return;
-                this.ctrTroubleTicketReq_Update.TroubleTicketNo = (short)ctrTroubleTicketReq_Search.TroubleTicketNo;
+                string strTroubleTicketReq = (Request.Form["ctl00_MainContent_ctrTroubleTicketReq_Update_TroubleTicketNo_ClientState"]
+                    .Replace("\"", "")
+                    .Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&"));
+
+                if (strTroubleTicketReq.Length > 6)
+                {
+                    string[] arrTroubleTicketReq = strTroubleTicketReq.Split(Convert.ToChar(":"));
+                    this.ctrTroubleTicketReq_Update.TroubleTicketNo = int.Parse(arrTroubleTicketReq[1]); this.ctrTroubleTicketReq_Update.TroubleTicketNo = int.Parse(arrTroubleTicketReq[2]);
+                }
             }
+        }
+        catch (Exception ex)
+        {
+            clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+            string NotificationBody = ex.Message + Constants.vbCrLf + ex.StackTrace;
+            SendError.SendMailMessage(NotificationBody);
+            Response.Redirect("ErrorPage.aspx", false);
         }
     }
     }
+    

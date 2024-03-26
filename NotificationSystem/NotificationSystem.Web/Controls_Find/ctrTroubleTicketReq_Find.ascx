@@ -6,7 +6,8 @@
 <div style="width: 1050px; height:800px;  overflow: auto; padding-left:30px" >
            <h2>Ticket Details</h2><br />   
            <div> <asp:Label ID="lblTroubleTicketNo" runat="server" Text=""></asp:Label></div><br />
-           <div style="padding-bottom:10px; font-weight:400"> <asp:Label ID="lblSearchResult" runat="server" Text=""></asp:Label></div>
+           <div style="padding-bottom:10px; font-weight:400"> </div>
+  
            <asp:GridView ID="grdTroubleTicketReq" runat="server" 
                     AutoGenerateColumns="False" 
                     ShowFooter="True"
