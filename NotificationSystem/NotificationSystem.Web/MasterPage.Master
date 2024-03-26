@@ -128,10 +128,14 @@
              </asp:MenuItem>
 
             <asp:MenuItem Text="Admin">
-            <asp:MenuItem Text="Admin Login" NavigateUrl="AdminLogin.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Admin Login" NavigateUrl="AdminLogin.aspx"></asp:MenuItem>                
                 <asp:MenuItem Text="Ticket Update" NavigateUrl="TroubleTicketReq_Update.aspx"></asp:MenuItem>
-               <asp:MenuItem Text="Customer Management" NavigateUrl="CustomerMgt.aspx"></asp:MenuItem>
-              <asp:MenuItem Text="Agent Management" NavigateUrl="AgentMgt.aspx"></asp:MenuItem>
+               <asp:MenuItem Text="Customer Add" NavigateUrl="Customer_Add.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Customer Update" NavigateUrl="Customer_Update.aspx"></asp:MenuItem>
+              <asp:MenuItem Text="Customer Delete" NavigateUrl="Customer_Delete.aspx"></asp:MenuItem>
+              <asp:MenuItem Text="Agent Add" NavigateUrl="Agent_Add.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Agent Update" NavigateUrl="Agent_Update.aspx"></asp:MenuItem>
+              <asp:MenuItem Text="Agent Delete" NavigateUrl="Agent_Delete.aspx"></asp:MenuItem>
               </asp:MenuItem>
 
                      <asp:MenuItem Text="Reports">

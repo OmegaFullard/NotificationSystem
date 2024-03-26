@@ -15,13 +15,13 @@ namespace NotificationSystem.NotificationSystem.Web
 	{
 
 		/// <summary>
-		/// adminuser control.
+		/// customerreg control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Image adminuser;
+		protected global::System.Web.UI.WebControls.Image customerreg;
 
 		/// <summary>
 		/// TextBox1 control.
@@ -96,13 +96,13 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
 		/// <summary>
-		/// TextBox7 control.
+		/// TextBox11 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBox7;
+		protected global::System.Web.UI.WebControls.TextBox TextBox11;
 
 		/// <summary>
 		/// TextBox8 control.
@@ -121,15 +121,6 @@ namespace NotificationSystem.NotificationSystem.Web
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox TextBox9;
-
-		/// <summary>
-		/// TextBox10 control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBox10;
 
 		/// <summary>
 		/// Button2 control.

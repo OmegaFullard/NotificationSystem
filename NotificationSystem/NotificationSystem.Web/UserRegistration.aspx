@@ -18,14 +18,14 @@
                          <br />
                          <br />
                         <center>
-                                <asp:Image ID="adminuser" runat="server" ImageUrl="images/admin.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
+                                <asp:Image ID="customerreg" runat="server" ImageUrl="images/defaultuserFir.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
                         </center>
                      </div>
                   </div>
                    </div>
                   <div class="row">
                      <div class="col">
-                       
+                      
                      </div>
                   </div>
                    <br />
@@ -142,15 +142,15 @@
                            </asp:DropDownList>
                         </div>
                      </div>
-                    
                      <div class="col-md-4">
-                        <label>Pincode</label>
+                        <label>Zip</label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox7" runat="server" placeholder="Pincode" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="TextBox11" runat="server" placeholder="Zip" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
                         </div>
                      </div>
                   </div>
-                 
+                 </div>
+            
                     <br />
                     <br />
                   <div class="row">
@@ -171,18 +171,12 @@
                         </div>
                      </div>
                      <div class="col-md-4">
-                        <label>Old Password</label>
+                        <label>Password</label>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Password" TextMode="Password" ReadOnly="True" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
                         </div>
                      </div>
-                     <div class="col-md-4">
-                        <label>New Password</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="Password" TextMode="Password" ReadOnly="True"></asp:TextBox>
-                        </div>
-                     </div>
-                  </div>
+                    
                        
                   <div class="row">
                      <div class="col-8 mx-auto">
@@ -198,7 +192,7 @@
                   </div>
                    </div>
                     <br />
-                    <p>Already Have an Account?<a href="AdminLogin.aspx">   Login</a></p>
+                    <p>Already Have an Account?<a href="UserViewProfile.aspx">   Login</a></p>
                     </div>                            
             <br />
                 <br />
