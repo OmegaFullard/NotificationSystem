@@ -1271,6 +1271,7 @@
       <DependentUpon>xsReports.xsd</DependentUpon>
     </Content>
     <Content Include="NotificationSystem.Web\Agent_Add.aspx" />
+    <Content Include="NotificationSystem.Web\Agent_Delete.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Find.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Find_Details.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Update.aspx" />
@@ -1297,6 +1298,7 @@
     <Content Include="NotificationSystem.Web\ctrCustomer.ascx" />
     <Content Include="NotificationSystem.Web\ctrTroubleTicketReq.ascx" />
     <Content Include="NotificationSystem.Web\Customer_Add.aspx" />
+    <Content Include="NotificationSystem.Web\Customer_Delete.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Find.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Update.aspx" />
     <Content Include="NotificationSystem.Web\ErrorPage.aspx" />
@@ -4066,6 +4068,13 @@
     <Compile Include="NotificationSystem.Web\Agent_Add.aspx.designer.cs">
       <DependentUpon>Agent_Add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NotificationSystem.Web\Agent_Delete.aspx.cs">
+      <DependentUpon>Agent_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Agent_Delete.aspx.designer.cs">
+      <DependentUpon>Agent_Delete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NotificationSystem.Web\Agent_Find.aspx.cs">
       <DependentUpon>Agent_Find.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4246,6 +4255,13 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\Customer_Add.aspx.designer.cs">
       <DependentUpon>Customer_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Customer_Delete.aspx.cs">
+      <DependentUpon>Customer_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Customer_Delete.aspx.designer.cs">
+      <DependentUpon>Customer_Delete.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Customer_Find.aspx.cs">
       <DependentUpon>Customer_Find.aspx</DependentUpon>

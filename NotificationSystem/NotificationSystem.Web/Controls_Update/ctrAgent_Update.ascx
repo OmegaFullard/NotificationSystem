@@ -28,6 +28,7 @@
 
   <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
                          <div class="Heading" >Update Agent</div>
+      <br />
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
           
                              <asp:Table ID="Table1" runat="server" Width="930px">

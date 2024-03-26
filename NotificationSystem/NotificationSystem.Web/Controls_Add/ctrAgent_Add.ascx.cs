@@ -82,7 +82,7 @@ using System.Net.Http;
 
 
                     withBlock.AgentID = int.Parse(txtagentid.Text); withBlock.Title = txttitle.Text; withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; withBlock.Fax = txtFaxNumber.Text;
-                    withBlock.Salary = int.Parse(txtsalary.Text);
+                    withBlock.Salary = int.Parse(txtsalary.Text); 
                 }
 
                 try

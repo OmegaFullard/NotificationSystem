@@ -18,14 +18,14 @@ using NotificationSystem.NotificationSystem.Data.Classes;
             if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
             {
                 ctrTroubleTicketReq_Search.PopulateSearchControl();
-                if (((short)ctrTroubleTicketReq_Search.TroubleTicketNo) == 0)
+                if (((ctrTroubleTicketReq_Search.TroubleTicketNo) == 0))
                     return;
                 this.ctrTroubleTicketReq_Add.ClearControls(); this.ctrTroubleTicketReq_Add.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
             }
             else if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnCreate"] == "Add")
             {
                 this.ctrTroubleTicketReq_Add.AddTroubleTicket();
-                if (((short)ctrTroubleTicketReq_Search.TroubleTicketNo) == 0)
+                if (((ctrTroubleTicketReq_Search.TroubleTicketNo) == 0))
                     return;
             }
         }

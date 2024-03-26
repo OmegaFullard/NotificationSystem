@@ -112,22 +112,24 @@
                     <asp:MenuItem NavigateUrl="Default.aspx" Text="Home" />
                     
                    <asp:MenuItem Text="Trouble Tickets">
-                        <asp:MenuItem Text="Ticket Request" NavigateUrl="TicketMgt.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Ticket Search" NavigateUrl="TicketReq.aspx"></asp:MenuItem>
-                     <asp:MenuItem Text="Ticket Details" NavigateUrl="TicketDetails.aspx"></asp:MenuItem>
-                      
-                    
+                        <asp:MenuItem Text="Ticket Find" NavigateUrl="TroubleTicketReq_Find.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Ticket Request" NavigateUrl="TroubleTicketReq_Add.aspx"></asp:MenuItem>                                   
                         </asp:MenuItem>
         
                    <asp:MenuItem Text="Customers">
-                   <asp:MenuItem Text="Customers" NavigateUrl="Customer.aspx"></asp:MenuItem>
-               
-              <asp:MenuItem Text= "Registration" NavigateUrl="UserRegistration.aspx"></asp:MenuItem>
-             <asp:MenuItem Text="User Profile" NavigateUrl="UserViewProfile.aspx"></asp:MenuItem>
+                   <asp:MenuItem Text="Customers" NavigateUrl="Customer_Find.aspx"></asp:MenuItem>                
+              <asp:MenuItem Text= "Customer Registration" NavigateUrl="UserRegistration.aspx"></asp:MenuItem>
+             <asp:MenuItem Text="Customer Login" NavigateUrl="UserViewProfile.aspx"></asp:MenuItem>
+             </asp:MenuItem>
+
+                        <asp:MenuItem Text="Agents">
+                   <asp:MenuItem Text="Agents" NavigateUrl="Agents_Find.aspx"></asp:MenuItem>  
+                            <asp:MenuItem Text="Assigned Ticket" NavigateUrl="TicketReq.aspx"></asp:MenuItem>      
              </asp:MenuItem>
 
             <asp:MenuItem Text="Admin">
             <asp:MenuItem Text="Admin Login" NavigateUrl="AdminLogin.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Ticket Update" NavigateUrl="TroubleTicketReq_Update.aspx"></asp:MenuItem>
                <asp:MenuItem Text="Customer Management" NavigateUrl="CustomerMgt.aspx"></asp:MenuItem>
               <asp:MenuItem Text="Agent Management" NavigateUrl="AgentMgt.aspx"></asp:MenuItem>
               </asp:MenuItem>

@@ -1,34 +1,17 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
-using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
-using NotificationSystem.NotificationSystem.Data.Classes;
-using Microsoft.VisualBasic;
 
 namespace NotificationSystem.NotificationSystem.Web
 {
-    public partial class Agent_Update : System.Web.UI.Page
-    {
-        private int m_AgentID = 0;
-
-        public int AgentID
-        {
-            get
-            {
-                return m_AgentID;
-            }
-            set
-            {
-                m_AgentID = value;
-            }
-        }
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class Agent_Delete : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
             try
             {
                 if ((Page.IsPostBack))
@@ -40,7 +23,7 @@ namespace NotificationSystem.NotificationSystem.Web
                     if (strAgent.Length > 2)
                     {
                         string[] arrAgents = strAgent.Split(Convert.ToChar(":"));
-                        this.ctrAgent_Update.AgentID = int.Parse(arrAgents[1]); this.ctrAgent_Update.AgentID = int.Parse(arrAgents[2]);
+                        this.ctrAgent_Delete.AgentID = int.Parse(arrAgents[1]); this.ctrAgent_Delete.AgentID = int.Parse(arrAgents[2]);
                     }
                 }
             }
@@ -52,5 +35,5 @@ namespace NotificationSystem.NotificationSystem.Web
                 Response.Redirect("ErrorPage.aspx", false);
             }
         }
-    }
+	}
 }

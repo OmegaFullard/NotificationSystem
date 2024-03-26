@@ -1,35 +1,17 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
-using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
-using NotificationSystem.NotificationSystem.Data.Classes;
-using Microsoft.VisualBasic;
 
 namespace NotificationSystem.NotificationSystem.Web
 {
-    public partial class Customer_Update : System.Web.UI.Page
-    {
-
-
-        private int m_CustomerID = 0;
-
-        public int CustomerID
-        {
-            get
-            {
-                return m_CustomerID;
-            }
-            set
-            {
-                m_CustomerID = value;
-            }
-        }
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class Customer_Delete : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
             try
             {
                 if ((Page.IsPostBack))
@@ -41,7 +23,7 @@ namespace NotificationSystem.NotificationSystem.Web
                     if (strCustomer.Length > 3)
                     {
                         string[] arrCustomers = strCustomer.Split(Convert.ToChar(":"));
-                        this.ctrCustomer_Update.CustomerID = int.Parse(arrCustomers[1]); this.ctrCustomer_Update.CustomerID = int.Parse(arrCustomers[2]);
+                        this.ctrCustomer_Delete.CustomerID = int.Parse(arrCustomers[1]); this.ctrCustomer_Delete.CustomerID = int.Parse(arrCustomers[2]);
                     }
                 }
             }
@@ -53,5 +35,5 @@ namespace NotificationSystem.NotificationSystem.Web
                 Response.Redirect("ErrorPage.aspx", false);
             }
         }
-    }
+	}
 }

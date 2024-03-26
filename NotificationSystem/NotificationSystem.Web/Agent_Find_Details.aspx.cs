@@ -29,49 +29,50 @@ namespace NotificationSystem.NotificationSystem.Web
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //syntax errors 3/23/24
-        //    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        //    AgentDataTable tblAgent = new AgentDataTable();
+			//syntax errors 3 / 23 / 24
 
-        //    try
-        //    {
-        //        if ((Request.QueryString["Department"] == null))
-        //            return;
+			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+			AgentDataTable tblAgent = new AgentDataTable();
 
-        //        string[] arrAgents = Request.QueryString["agent"].Split(":");
-        //        AgentID = arrAgents[0];
-        //        if (AgentID.Length == 0)
-        //            return;
+			try
+			{
+				if ((Request.QueryString["Department"] == null))
+					return;
 
-        //        tblAgent = theNotificationSystem.GetAgentByID(AgentID);
-        //        if (tblAgent.Count == 0)
-        //            return;
+				string[] arrAgents = Request.QueryString["agent"].Split(Convert.ToChar(":"));
+				AgentID = int.Parse(arrAgents[0]);
+				if (AgentID == 0)
+					return;
 
-        //        {
-        //            var withBlock = tblAgent[0];
-        //            this.txttroubleticketno.Text = withBlock.TroubleTickeNo; this.txttitle.Text = withBlock.Title; this.txtSalary.Text = withBlock.Salary; if (withBlock.IsTroubleTickeNoNull)
-        //                this.txttroubleticketno.Text = withBlock.TroubleTickeNo;
+				tblAgent = (AgentDataTable)theNotificationSystem.GetAgentByID(AgentID);
+				if (tblAgent.Count == 0)
+					return;
 
-        //            if (withBlock.IsPhoneNull)
-        //                txtPhoneNumber.Text = withBlock.Phone.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "");
+				{
+					var withBlock = tblAgent[0];
+					withBlock.AgentID = int.Parse(this.txtAgentID.Text); this.txttitle.Text = withBlock.Title; withBlock.Salary = int.Parse(this.txtSalary.Text); 
+						this.txtfirstname.Text = withBlock.FirstN; this.txtlastname.Text = withBlock.LastN;
 
-        //            if (withBlock.IsEmailNull)
-        //            {
-        //                txtEmailAddress.Text = withBlock.Email;
-        //            }
+					if (!string.IsNullOrEmpty(withBlock.Phone))
+						txtPhoneNumber.Text = withBlock.Phone.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "");
 
-        //            if (!withBlock.IsFaxNull)
-        //                txtFaxNumber.Text = withBlock.Fax.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "");
-        //        }
-        //    }
+					if (!string.IsNullOrEmpty(withBlock.Email))
+					{
+						txtEmailAddress.Text = withBlock.Email;
+					}
 
-
-
+					if (!string.IsNullOrEmpty(withBlock.Fax))
+						txtFaxNumber.Text = withBlock.Fax.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "");
+				}
+			}
 
 
-        //    catch (Exception ex)
-        //    {
-        //    }
-        }
+
+
+
+			catch (Exception ex)
+			{
+			}
+		}
     }
     }

@@ -2,8 +2,9 @@
 
 <div style="width: 1200px; height:500px;  overflow: auto; padding-left:5px" >
            <div class="Heading" >Ticket List</div>
+    <br />
            <div><asp:HiddenField ID="ctrHiddebField" runat="server" /></div><br />
-    
+    <br />
            <div style="padding-bottom:10px; font-weight:400"> <asp:Label ID="lblSearchResult" runat="server" Text=""></asp:Label></div>
            <asp:GridView ID="grdTroubleTicketReq" runat="server" 
                     AutoGenerateColumns="False" 

@@ -11,7 +11,7 @@ namespace NotificationSystem.NotificationSystem.Web
 {
 
 
-	public partial class Agent_Update
+	public partial class Agent_Delete
 	{
 
 		/// <summary>
@@ -51,12 +51,12 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::ctrAgent_Search ctrAgent_Search;
 
 		/// <summary>
-		/// ctrAgent_Update control.
+		/// ctrAgent_Delete control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::NotificationSystem.NotificationSystem.Web.ctrAgent_Update ctrAgent_Update;
+		protected global::NotificationSystem.NotificationSystem.Web.Controls_Delete.ctrAgent_Delete ctrAgent_Delete;
 	}
 }

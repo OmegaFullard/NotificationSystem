@@ -39,22 +39,23 @@ using Microsoft.VisualBasic;
         {
             clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
             CustomerDataTable tblCustomer = new CustomerDataTable();
+        int customerID = m_CustomerID;
 
             try
-            {
-    //            if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
-    //                ctrHiddebField.Value = Convert.ToString(m_CustomerID);
+		{
+			if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+				ctrHiddebField.Value = Convert.ToString(m_CustomerID);
 
-				//if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
-				//	tblCustomer = theNotificationSystem.GetCustomerListbyID(int.Parse("%" + this.ctrHiddebField.Value + "%"));
-
-
-				//else
-
-				//	tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
+			if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
+				tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomerListbyID(customerID);
 
 
-				this.lblSearchResult.Text = tblCustomer.Rows.Count + " Result(s)";
+			else
+
+				tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
+
+
+			this.lblSearchResult.Text = tblCustomer.Rows.Count + " Result(s)";
                 this.grdCustomers.DataSource = tblCustomer.DefaultView;
                 this.grdCustomers.DataBind();
 

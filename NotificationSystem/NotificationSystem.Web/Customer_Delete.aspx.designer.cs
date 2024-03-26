@@ -11,7 +11,7 @@ namespace NotificationSystem.NotificationSystem.Web
 {
 
 
-	public partial class Agent_Update
+	public partial class Customer_Delete
 	{
 
 		/// <summary>
@@ -33,13 +33,13 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Panel Panel1;
 
 		/// <summary>
-		/// agent control.
+		/// customer control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Image agent;
+		protected global::System.Web.UI.WebControls.Image customer;
 
 		/// <summary>
 		/// ctrAgent_Search control.
@@ -48,15 +48,15 @@ namespace NotificationSystem.NotificationSystem.Web
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::ctrAgent_Search ctrAgent_Search;
+		protected global::ctrCustomer_Search ctrAgent_Search;
 
 		/// <summary>
-		/// ctrAgent_Update control.
+		/// ctrCustomer_Delete control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::NotificationSystem.NotificationSystem.Web.ctrAgent_Update ctrAgent_Update;
+		protected global::NotificationSystem.NotificationSystem.Web.Controls_Delete.ctrCustomer_Delete ctrCustomer_Delete;
 	}
 }

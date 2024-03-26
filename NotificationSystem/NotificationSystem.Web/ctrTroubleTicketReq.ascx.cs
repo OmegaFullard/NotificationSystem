@@ -38,37 +38,38 @@ namespace NotificationSystem.NotificationSystem.Web
         }
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            //exception error..connection not found
-
-		//	clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-		//	TroubleTicketReqDataTable tblTTR = new TroubleTicketReqDataTable();
-
-		//	try
-		//	{
-		//		if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
-		//			 ctrHiddebField.Value = Convert.ToString(m_TroubleTicketNo);
-
-		//			if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
-					
-		//		tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(int.Parse("%" + this.ctrHiddebField.Value + "%"));
 
 
+			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+			TroubleTicketReqDataTable tblTTR = new TroubleTicketReqDataTable();
+			int troubleticketNo = m_TroubleTicketNo;
 
-		//else
+			try
+			{
+				if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
+					this.lblSearchResult.Text = Convert.ToString(m_TroubleTicketNo);
 
-		//			tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
+				if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
+
+					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(troubleticketNo);
 
 
-		//		this.lblSearchResult.Text = tblTTR.Rows.Count + " Result(s)";
-		//		this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;
-		//		this.grdTroubleTicketReq.DataBind();
 
-		//	}
+				else
 
-		//	catch (Exception ex)
-		//	{
-		//		throw;
-		//	}
+					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
+
+
+				this.lblSearchResult.Text = tblTTR.Rows.Count + " Result(s)";
+				this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;
+				this.grdTroubleTicketReq.DataBind();
+
+			}
+
+			catch (Exception ex)
+			{
+				throw;
+			}
 		}
 		private void grdTroubleTicketReq_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {

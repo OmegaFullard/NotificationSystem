@@ -20,14 +20,14 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrAgent_Search.PopulateSearchControl();
-                    if (((short)ctrAgent_Search.AgentID) == 0)
+                    if (((ctrAgent_Search.AgentID) == 0))
                         return;
                     this.ctrAgent_Add.ClearControls(); this.ctrAgent_Add.AgentID = ctrAgent_Search.AgentID;
                 }
                 else if (Request.Form["ctl00$MainContent$ctrAgent_Add$btnCreate"] == "Add")
                 {
                     this.ctrAgent_Add.AddAgent();
-                    if (((short)ctrAgent_Search.AgentID) == 0)
+                    if (((ctrAgent_Search.AgentID) == 0))
 
                         return;
                 }

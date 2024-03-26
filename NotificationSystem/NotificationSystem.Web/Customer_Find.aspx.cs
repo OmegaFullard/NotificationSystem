@@ -20,7 +20,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
                 {
                     ctrCustomer_Search.PopulateSearchControl();
-                    if (((short)ctrCustomer_Search.CustomerID) == 0)
+                    if (((ctrCustomer_Search.CustomerID) == 0))
                         return;
                     // this.ctrCustomer_Find.ClearControls()
                     this.ctrCustomer_Find.CustomerID = ctrCustomer_Search.CustomerID;

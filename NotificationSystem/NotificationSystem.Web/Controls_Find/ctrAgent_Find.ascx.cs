@@ -39,7 +39,7 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
 
         if ((Page.IsPostBack))
         {
-            if (((short)m_AgentID) > 0)
+            if (((m_AgentID) > 0))
                 this.lblAgentID.Text = "ID" + m_AgentID;
             if (this.lblAgentID.Text.Length == 2)
                 return;

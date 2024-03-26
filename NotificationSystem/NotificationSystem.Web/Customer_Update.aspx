@@ -11,9 +11,7 @@
             </asp:Content>
            <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
-                     <h2>Update Customer</h2><br />
-
-                          <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="141px" Width="152px" >
+                                               <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="141px" Width="152px" >
                                    
                                      <asp:TableRow>
                                           <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">

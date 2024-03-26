@@ -27,7 +27,7 @@
  
 
   <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-       <div class="Heading" >Add Customer</div>
+       <h2>Update Customer</h2><br />
                          
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
           
