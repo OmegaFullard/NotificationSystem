@@ -94,16 +94,18 @@ namespace NotificationSystem.NotificationSystem.Web
                 m_Year = value;
             }
         }
-        //public int m_AgentID
-        //{
-        //    get
-        //    {
-        //        return m_AgentID;
-        //    }
-        //    set
-        //    {
-        //        m_AgentID = value;
-        //    }
-        //}
-    }
+
+		public object AgentID { get; internal set; }
+		//public int m_AgentID
+		//{
+		//    get
+		//    {
+		//        return m_AgentID;
+		//    }
+		//    set
+		//    {
+		//        m_AgentID = value;
+		//    }
+		//}
+	}
 }

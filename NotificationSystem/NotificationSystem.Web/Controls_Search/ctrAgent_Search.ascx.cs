@@ -22,7 +22,7 @@ using Microsoft.VisualBasic;
 
     public partial class ctrAgent_Search : System.Web.UI.UserControl
     {
-        private int m_AgentID = 0;
+        public int m_AgentID = 0;
 
         public int AgentID
         {
@@ -43,5 +43,6 @@ using Microsoft.VisualBasic;
         public void PopulateSearchControl()
         {
             m_AgentID = int.Parse(this.txtagentid.Text);
+       
         }
     }

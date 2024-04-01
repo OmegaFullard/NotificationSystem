@@ -139,8 +139,8 @@
               </asp:MenuItem>
 
                      <asp:MenuItem Text="Reports">
-                   <asp:MenuItem Text="Agent Report" NavigateUrl="AgentReport.aspx"></asp:MenuItem>
-               <asp:MenuItem Text="Customer Report" NavigateUrl="CustomerReport.aspx"></asp:MenuItem>
+                   <asp:MenuItem Text="Agent Report" NavigateUrl="rptAgent.aspx"></asp:MenuItem>
+               <asp:MenuItem Text="Customer Report" NavigateUrl="rptCustomer.aspx"></asp:MenuItem>
              </asp:MenuItem>        
             </Items>
             </asp:Menu>

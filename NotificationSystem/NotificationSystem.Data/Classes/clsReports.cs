@@ -10,60 +10,72 @@ using System.Runtime.CompilerServices;
 using System.Security;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
-using NotificationSystem_Practice.NotificationSystem.Data;
 using System.Data;
-using NotificationSystem_Practice.NotificationSystem.Data.xsReportsTableAdapters;
-using static NotificationSystem_Practice.NotificationSystem.Data.xsReports;
+using NotificationSystem.NotificationSystem.Data.xsReportsTableAdapters;
+using static NotificationSystem.NotificationSystem.Data.xsReports;
 
-namespace NotificationSystem_Practice.NotificationSystem.Data.Classes
+namespace NotificationSystem.NotificationSystem.Data.Classes
 {
-    class clsReports
-    {
-        public DataTable Notification()
-        {
-            try
-            {
-                NotificationsTableAdapter adpNotification = new NotificationsTableAdapter();
-                NotificationsDataTable tblNotification = adpNotification.GetData();
+	class clsReports
+	{
+		public DataTable GetAgentID()
+		{
+			try
+			{
+				AgentTableAdapter adpAgents = new AgentTableAdapter();
+				AgentDataTable tblAgent = adpAgents.GetData();
 
-                return tblNotification;
-            }
+				return tblAgent;
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
+		public DataTable GetAgentByAgentID(int numAgentID)
+		{
+			try
+			{
+				AgentTableAdapter adpAgents = new AgentTableAdapter();
+				AgentDataTable tblAgent = adpAgents.GetDataByAgentID(numAgentID);
 
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        public DataTable GetRange(DateTime RequestDate)
-        {
-            try
-            {
-                TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
-                TroubleTicketReqDataTable tblMonthly = adpTroubleTicketReq.GetDataByRange(Convert.ToString(RequestDate));
-
-                return tblMonthly;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
+				return tblAgent;
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
 
 
-        public DataTable GetByCustID(int CustomerID)
-        {
-            try
-            {
-                TroubleTicketReqTableAdapter adpTroubleTicket = new TroubleTicketReqTableAdapter();
-                TroubleTicketReqDataTable tblTroubleTicketReq = adpTroubleTicket.GetDataByCustomerID(CustomerID);
+		public DataTable GetCustomerID()
+		{
+			try
+			{
+				CustomerTableAdapter adpCustomers = new CustomerTableAdapter();
+				CustomerDataTable tblCustomer = adpCustomers.GetData();
 
-                return tblTroubleTicketReq;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-    }
+				return tblCustomer;
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
+
+		public DataTable GetCustomerByCustomerID(int numCustomerID)
+		{
+			try
+			{
+				CustomerTableAdapter adpCustomers = new CustomerTableAdapter();
+				CustomerDataTable tblCustomer = adpCustomers.GetDataByCustomerID(numCustomerID);
+
+				return tblCustomer;
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
+	}
 }
