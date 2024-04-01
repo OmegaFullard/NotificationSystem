@@ -1263,13 +1263,6 @@
     <None Include="NotificationSystem.Data\Web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
-    <Content Include="NotificationSystem.Data\xsReports.xsc">
-      <DependentUpon>xsReports.xsd</DependentUpon>
-    </Content>
-    <None Include="NotificationSystem.Data\xsReports.xsd" />
-    <Content Include="NotificationSystem.Data\xsReports.xss">
-      <DependentUpon>xsReports.xsd</DependentUpon>
-    </Content>
     <Content Include="NotificationSystem.Web\Agent_Add.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Delete.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Find.aspx" />
@@ -4035,6 +4028,7 @@
     <Compile Include="NotificationSystem.Data\Classes\clsAgent.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsCustomer.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsNotificationSystem.cs" />
+    <Compile Include="NotificationSystem.Data\Classes\clsNotificationSystem_Reports.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsReports.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsTroubleTicketReq.cs" />
     <Compile Include="NotificationSystem.Data\NotificationSystem.Designer.cs">
@@ -4042,7 +4036,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NotificationSystem.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NotificationSystem.Data\xsReports.Designer.cs" />
     <Compile Include="NotificationSystem.Web\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4098,6 +4091,7 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\Article.cs" />
     <Compile Include="NotificationSystem.Web\clsNotificationSystem_Web.cs" />
+    <Compile Include="NotificationSystem.Web\clsSearch.cs" />
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrAgent_Add.ascx.cs">
       <DependentUpon>ctrAgent_Add.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
