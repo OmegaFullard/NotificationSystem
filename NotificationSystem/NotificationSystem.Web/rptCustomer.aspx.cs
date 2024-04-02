@@ -13,37 +13,35 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
-using NotificationSystem.NotificationSystem.Data;
 using NotificationSystem.NotificationSystem.Data.Classes;
 using NotificationSystem.NotificationSystem.Data.xsReportsTableAdapters;
 using static NotificationSystem.NotificationSystem.Data.xsReports;
 using Microsoft.Reporting.WebForms;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
-using System.Text.RegularExpressions;
 
 namespace NotificationSystem.NotificationSystem.Web
 {
-	public partial class rptAgent : System.Web.UI.Page
+	public partial class rptCustomer : System.Web.UI.Page
 	{
-        
-        private clsSearch theSearch = new clsSearch();
-        public bool IsNumeric(string value)
+		private clsSearch theSearch = new clsSearch();
+
+		public bool IsNumeric(string value)
 		{
-            return value.All(char.IsNumber);
+			return value.All(char.IsNumber);
 		}
-        protected void Page_Load(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
 		{
-            if ((Page.IsPostBack))
-            {
-                if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
-                {
-                    ctrAgent_Search.PopulateSearchControl();
-                    theSearch.ReportPath = "~/rptAgent.rdlc";
-                    theSearch.AgentID = ctrAgent_Search.AgentID;
-                    ShowReport();
-                }
-            }
-        }
+			if ((Page.IsPostBack))
+			{
+				if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+				{
+					ctrCustomer_Search.PopulateSearchControl();
+					theSearch.ReportPath = "~/rptCustomer.rdlc";
+					theSearch.CustomerID = ctrCustomer_Search.CustomerID;
+					ShowReport();
+				}
+			}
+		}
 
         private void ShowReport()
         {
@@ -53,21 +51,22 @@ namespace NotificationSystem.NotificationSystem.Web
 
                 ReportDataSource ReportDataSource = new ReportDataSource();
                 string strTitle = string.Empty;
-				Data.xsReports.AgentDataTable dtReport;
+                Data.xsReports.CustomerDataTable dtReport;
 
                 ReportDataSource.Name = "DataSet1";
 
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
                 ReportViewer1.LocalReport.ReportPath = Page.Server.MapPath(theSearch.ReportPath);
-                if (theSearch.AgentID is 0)
-                    theSearch.AgentID = 0;
-                if (IsNumeric((string)theSearch.AgentID))
-                    Int32.Parse((string)theSearch.AgentID);
+
+                if (theSearch.CustomerID is 0)
+                    theSearch.CustomerID = 0;
+                if (IsNumeric((string)theSearch.CustomerID))
+                    Int32.Parse((string)theSearch.CustomerID);
 
 
-
-                int numAgentID = Int32.Parse((string)theSearch.AgentID);
-                dtReport = (Data.xsReports.AgentDataTable)theNotificationSystem.GetAgentByAgentID(numAgentID);
+                //implicit cast
+                int numCustomerID = Int32.Parse((string)theSearch.CustomerID);
+                dtReport = (Data.xsReports.CustomerDataTable)theNotificationSystem.GetCustomerByCustomerID(numCustomerID);  
 
                 ReportDataSource.Value = dtReport;
 
@@ -99,7 +98,5 @@ namespace NotificationSystem.NotificationSystem.Web
             }
         }
 
-
     }
-
 }

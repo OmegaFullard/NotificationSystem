@@ -1347,6 +1347,7 @@
     </Content>
     <None Include="NotificationSystem.Web\packages.config" />
     <Content Include="NotificationSystem.Web\rptAgent.aspx" />
+    <Content Include="NotificationSystem.Web\rptCustomer.aspx" />
     <Content Include="NotificationSystem.Web\styles\Bin\Newtonsoft.Json.dll.refresh" />
     <Content Include="NotificationSystem.Web\styles\Bin\ReportLibrary.dll.config" />
     <Content Include="NotificationSystem.Web\styles\Bin\Reports\Profits.trdp" />
@@ -4375,6 +4376,13 @@
     <Compile Include="NotificationSystem.Web\rptAgent.aspx.designer.cs">
       <DependentUpon>rptAgent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NotificationSystem.Web\rptCustomer.aspx.cs">
+      <DependentUpon>rptCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\rptCustomer.aspx.designer.cs">
+      <DependentUpon>rptCustomer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NotificationSystem.Web\TicketMgt.aspx.cs">
       <DependentUpon>TicketMgt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4459,6 +4467,8 @@
   <ItemGroup>
     <EmbeddedResource Include="NotificationSystem.Web\licenses.licx" />
     <EmbeddedResource Include="NotificationSystem.Web\Properties\licenses.licx" />
+    <EmbeddedResource Include="NotificationSystem.Web\rptAgent.rdlc" />
+    <EmbeddedResource Include="NotificationSystem.Web\rptCustomer.rdlc" />
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>

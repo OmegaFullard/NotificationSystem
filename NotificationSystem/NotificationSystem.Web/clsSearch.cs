@@ -10,11 +10,12 @@ namespace NotificationSystem.NotificationSystem.Web
         private string m_ReportName = string.Empty;
         private string m_ActivityBy = string.Empty;
         private string m_ReportPath = string.Empty;
-        private string m_DateFrom = string.Empty;
-        private string m_DateTo = string.Empty;
+        private string m_RequestDate = string.Empty;
+        private string m_DueDate = string.Empty;
         private string m_Year = string.Empty;
         private bool m_DateRange = false;
         private int m_AgentID = 0;
+        private int m_CustomerID = 0;
 
         public string ReportName
         {
@@ -61,26 +62,26 @@ namespace NotificationSystem.NotificationSystem.Web
             }
         }
 
-        public string DateFrom
+        public string RequestDate
         {
             get
             {
-                return m_DateFrom;
+                return m_RequestDate;
             }
             set
             {
-                m_DateFrom = value;
+                m_RequestDate = value;
             }
         }
-        public string DateTo
+        public string DueDate
         {
             get
             {
-                return m_DateTo;
+                return m_DueDate;
             }
             set
             {
-                m_DateTo = value;
+                m_DueDate = value;
             }
         }
         public string Year
@@ -96,16 +97,28 @@ namespace NotificationSystem.NotificationSystem.Web
         }
 
 		public object AgentID { get; internal set; }
-		//public int m_AgentID
-		//{
-		//    get
-		//    {
-		//        return m_AgentID;
-		//    }
-		//    set
-		//    {
-		//        m_AgentID = value;
-		//    }
-		//}
-	}
+        //public int m_AgentID
+        //{
+        //    get
+        //    {
+        //        return m_AgentID;
+        //    }
+        //    set
+        //    {
+        //        m_AgentID = value;
+        //    }
+        //}
+        public object CustomerID { get; internal set; }
+        //public int m_CustomerID
+        //{
+        //    get
+        //    {
+        //        return m_CustomerID;
+        //    }
+        //    set
+        //    {
+        //        m_CustomerID = value;
+        //    }
+        //}
+    }
 }
