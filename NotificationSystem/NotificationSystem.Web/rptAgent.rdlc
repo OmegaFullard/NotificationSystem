@@ -207,7 +207,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value> =First(Fields!TroubleTicketNo.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -271,8 +271,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
-                <Style />
+                <Value>=First(Fields!RequestDate.Value, "DataSet2")</Value>
+                <Style>
+                  <Format>MM/dd/yyyy</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -314,7 +316,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!Title.Value, "DataSet1" )</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -345,7 +347,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!FirstN.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -410,7 +412,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!Email.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -441,7 +443,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!LastN.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -540,7 +542,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!Phone.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -571,7 +573,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!Fax.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -635,7 +637,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>="ID" &amp; First(Fields!AgentID.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -666,14 +668,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Status:</Value>
+                <Value>Status</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -700,7 +704,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Status.Value, "DataSet3") = 1, "Open", 
+    First(Fields!Status.Value, "DataSet3") = 2, "Pending",
+    First(Fields!Status.Value, "DataSet3") = 3, "Resolved",
+    First(Fields!Status.Value, "DataSet3") = 4, "Closed")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -731,7 +739,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Status.Value, "DataSet3") = 1, "Open", 
+    First(Fields!Status.Value, "DataSet3") = 2, "Pending",
+    First(Fields!Status.Value, "DataSet3") = 3, "Resolved",
+    First(Fields!Status.Value, "DataSet3") = 4, "Closed")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -762,7 +774,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Status.Value, "DataSet3") = 1, "Open", 
+    First(Fields!Status.Value, "DataSet3") = 2, "Pending",
+    First(Fields!Status.Value, "DataSet3") = 3, "Resolved",
+    First(Fields!Status.Value, "DataSet3") = 4, "Closed")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -793,7 +809,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Status.Value, "DataSet3") = 1, "Open", 
+    First(Fields!Status.Value, "DataSet3") = 2, "Pending",
+    First(Fields!Status.Value, "DataSet3") = 3, "Resolved",
+    First(Fields!Status.Value, "DataSet3") = 4, "Closed")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -824,14 +844,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Type:</Value>
+                <Value>Type</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -858,7 +880,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Type.Value, "DataSet3") = 1, "Incident", 
+    First(Fields!Type.Value, "DataSet3") = 2, "Task",
+    First(Fields!Type.Value, "DataSet3") = 3, "Problem")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -889,7 +914,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Type.Value, "DataSet3") = 1, "Incident", 
+    First(Fields!Type.Value, "DataSet3") = 2, "Task",
+    First(Fields!Type.Value, "DataSet3") = 3, "Problem")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -920,7 +948,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Type.Value, "DataSet3") = 1, "Incident", 
+    First(Fields!Type.Value, "DataSet3") = 2, "Task",
+    First(Fields!Type.Value, "DataSet3") = 3, "Problem")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -996,8 +1027,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
-                <Style />
+                <Value>=First(Fields!DueDate.Value, "DataSet2")</Value>
+                <Style>
+                  <Format>MM/dd/yyyy</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -1074,6 +1107,149 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="NotificationSystem">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>14dd02e5-945e-4f01-a5c9-0efb07d949a5</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>NotificationSystem</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="AgentID">
+          <DataField>AgentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TroubleTickeNo">
+          <DataField>TroubleTickeNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Title">
+          <DataField>Title</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Salary">
+          <DataField>Salary</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FirstN">
+          <DataField>FirstN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LastN">
+          <DataField>LastN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fax">
+          <DataField>Fax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>NotificationSystem</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\NotificationSystem.xsd</rd:SchemaPath>
+        <rd:TableName>Agent</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>AgentTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>NotificationSystem</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AgentID">
+          <DataField>AgentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TroubleTicketNo">
+          <DataField>TroubleTicketNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RequestDate">
+          <DataField>RequestDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>NotificationSystem</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\NotificationSystem.xsd</rd:SchemaPath>
+        <rd:TableName>TroubleTicketReq</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>TroubleTicketReqTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet3">
+      <Query>
+        <DataSourceName>NotificationSystem</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="AgentID">
+          <DataField>AgentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TroubleTicketNo">
+          <DataField>TroubleTicketNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>NotificationSystem</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\NotificationSystem.xsd</rd:SchemaPath>
+        <rd:TableName>TroubleTicketList</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>TroubleTicketListTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="Report">
       <MIMEType>image/png</MIMEType>

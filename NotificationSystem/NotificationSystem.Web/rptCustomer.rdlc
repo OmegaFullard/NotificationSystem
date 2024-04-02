@@ -207,7 +207,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>="ID" &amp; First(Fields!CP_Number.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -271,7 +271,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!TroubleTicketNo.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -302,7 +302,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Request Date:</Value>
+                <Value>Report Date:</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -335,7 +335,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Globals!ExecutionTime</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -359,76 +359,12 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox38">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Due Date:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>2.29167in</Top>
-        <Left>9.02778in</Left>
-        <Height>0.25in</Height>
-        <Width>1.34375in</Width>
-        <ZIndex>11</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox15">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.29167in</Top>
-        <Left>10.4132in</Left>
-        <Height>0.25in</Height>
-        <Width>1in</Width>
-        <ZIndex>12</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Line Name="Line1">
         <Top>2.7175in</Top>
         <Left>0.3125in</Left>
         <Height>0in</Height>
         <Width>11.67882in</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -442,7 +378,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First (Fields!FirstN.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -454,7 +390,7 @@
         <Left>0.32639in</Left>
         <Height>0.25in</Height>
         <Width>3.69792in</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -473,7 +409,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!LastN.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -485,38 +421,7 @@
         <Left>0.32639in</Left>
         <Height>0.25in</Height>
         <Width>3.69792in</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox13">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>3.55382in</Top>
-        <Left>0.32639in</Left>
-        <Height>0.25in</Height>
-        <Width>3.69792in</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -549,7 +454,7 @@
         <Left>0.32639in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>14</ZIndex>
         <ToolTip>Email Address</ToolTip>
         <Style>
           <Border>
@@ -569,7 +474,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!Email.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -581,7 +486,7 @@
         <Left>1.35417in</Left>
         <Height>0.25in</Height>
         <Width>2.65625in</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -614,7 +519,7 @@
         <Left>0.32639in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>16</ZIndex>
         <ToolTip>Contact Number</ToolTip>
         <Style>
           <Border>
@@ -634,7 +539,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!Phone.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -646,72 +551,7 @@
         <Left>1.35417in</Left>
         <Height>0.25in</Height>
         <Width>1.3125in</Width>
-        <ZIndex>20</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox17">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Fax:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>4.13715in</Top>
-        <Left>2.69444in</Left>
-        <Height>0.25in</Height>
-        <Width>1in</Width>
-        <ZIndex>21</ZIndex>
-        <ToolTip>Fax Number</ToolTip>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox19">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>4.13715in</Top>
-        <Left>3.73611in</Left>
-        <Height>0.25in</Height>
-        <Width>1.30208in</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -744,7 +584,7 @@
         <Left>6.57292in</Left>
         <Height>0.25in</Height>
         <Width>1.34375in</Width>
-        <ZIndex>23</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -763,7 +603,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!Address.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -775,7 +615,7 @@
         <Left>7.95834in</Left>
         <Height>0.25in</Height>
         <Width>3.26389in</Width>
-        <ZIndex>24</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -808,7 +648,7 @@
         <Left>6.56251in</Left>
         <Height>0.25in</Height>
         <Width>1.34375in</Width>
-        <ZIndex>25</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -827,7 +667,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!City.Value, "DataSet1" )</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -839,7 +679,7 @@
         <Left>7.94792in</Left>
         <Height>0.25in</Height>
         <Width>1.52083in</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -872,7 +712,7 @@
         <Left>6.56251in</Left>
         <Height>0.25in</Height>
         <Width>1.34375in</Width>
-        <ZIndex>27</ZIndex>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -891,7 +731,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!State.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -903,7 +743,7 @@
         <Left>7.94792in</Left>
         <Height>0.25in</Height>
         <Width>1.52083in</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -936,7 +776,7 @@
         <Left>6.56251in</Left>
         <Height>0.25in</Height>
         <Width>0.71875in</Width>
-        <ZIndex>29</ZIndex>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -955,7 +795,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!Zip.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -967,7 +807,7 @@
         <Left>7.32292in</Left>
         <Height>0.25in</Height>
         <Width>0.58333in</Width>
-        <ZIndex>30</ZIndex>
+        <ZIndex>25</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -984,7 +824,7 @@
         <Left>0.3125in</Left>
         <Height>0in</Height>
         <Width>11.66493in</Width>
-        <ZIndex>31</ZIndex>
+        <ZIndex>26</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -998,14 +838,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Status:</Value>
+                <Value>Status</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -1013,7 +855,7 @@
         <Left>0.3125in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>32</ZIndex>
+        <ZIndex>27</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1032,7 +874,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Status.Value, "DataSet2") = 1, "Open", 
+    First(Fields!Status.Value, "DataSet2") = 2, "Pending",
+    First(Fields!Status.Value, "DataSet2") = 3, "Resolved",
+    First(Fields!Status.Value, "DataSet2") = 4, "Closed")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1044,7 +890,7 @@
         <Left>0.3125in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>33</ZIndex>
+        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1063,7 +909,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Status.Value, "DataSet2") = 1, "Open", 
+    First(Fields!Status.Value, "DataSet2") = 2, "Pending",
+    First(Fields!Status.Value, "DataSet2") = 3, "Resolved",
+    First(Fields!Status.Value, "DataSet2") = 4, "Closed")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1075,7 +925,7 @@
         <Left>0.3125in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>34</ZIndex>
+        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1094,7 +944,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Status.Value, "DataSet2") = 1, "Open", 
+    First(Fields!Status.Value, "DataSet2") = 2, "Pending",
+    First(Fields!Status.Value, "DataSet2") = 3, "Resolved",
+    First(Fields!Status.Value, "DataSet2") = 4, "Closed")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1106,7 +960,7 @@
         <Left>0.3125in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>35</ZIndex>
+        <ZIndex>30</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1125,7 +979,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Switch(
+    First(Fields!Status.Value, "DataSet2") = 1, "Open", 
+    First(Fields!Status.Value, "DataSet2") = 2, "Pending",
+    First(Fields!Status.Value, "DataSet2") = 3, "Resolved",
+    First(Fields!Status.Value, "DataSet2") = 4, "Closed")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1137,7 +995,7 @@
         <Left>0.3125in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>36</ZIndex>
+        <ZIndex>31</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1156,14 +1014,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Type:</Value>
+                <Value>Type</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -1171,7 +1031,7 @@
         <Left>6.66667in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>37</ZIndex>
+        <ZIndex>32</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1190,7 +1050,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value> =Switch(
+    First(Fields!Type.Value, "DataSet2") = 1, "Incident", 
+    First(Fields!Type.Value, "DataSet2") = 2, "Task",
+    First(Fields!Type.Value, "DataSet2") = 3, "Problem")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1202,7 +1065,7 @@
         <Left>6.66667in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>38</ZIndex>
+        <ZIndex>33</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1221,7 +1084,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value> =Switch(
+    First(Fields!Type.Value, "DataSet2") = 1, "Incident", 
+    First(Fields!Type.Value, "DataSet2") = 2, "Task",
+    First(Fields!Type.Value, "DataSet2") = 3, "Problem")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1233,7 +1099,7 @@
         <Left>6.66667in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>39</ZIndex>
+        <ZIndex>34</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1252,7 +1118,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value> =Switch(
+    First(Fields!Type.Value, "DataSet2") = 1, "Incident", 
+    First(Fields!Type.Value, "DataSet2") = 2, "Task",
+    First(Fields!Type.Value, "DataSet2") = 3, "Problem")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1264,7 +1133,7 @@
         <Left>6.66667in</Left>
         <Height>0.25in</Height>
         <Width>3.40972in</Width>
-        <ZIndex>40</ZIndex>
+        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1330,6 +1199,117 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="NotificationSystem">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>140e3832-3da5-48be-8108-6a43d1313b38</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>NotificationSystem</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AgentID">
+          <DataField>AgentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TroubleTicketNo">
+          <DataField>TroubleTicketNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FirstN">
+          <DataField>FirstN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LastN">
+          <DataField>LastN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip">
+          <DataField>Zip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Password">
+          <DataField>Password</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>NotificationSystem</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\NotificationSystem.xsd</rd:SchemaPath>
+        <rd:TableName>Customer</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>CustomerTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>NotificationSystem</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="AgentID">
+          <DataField>AgentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TroubleTicketNo">
+          <DataField>TroubleTicketNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>NotificationSystem</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\NotificationSystem.xsd</rd:SchemaPath>
+        <rd:TableName>TroubleTicketList</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>TroubleTicketListTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="Report">
       <MIMEType>image/png</MIMEType>

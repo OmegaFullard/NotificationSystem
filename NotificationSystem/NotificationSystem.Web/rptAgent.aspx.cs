@@ -56,6 +56,8 @@ namespace NotificationSystem.NotificationSystem.Web
 				Data.xsReports.AgentDataTable dtReport;
 
                 ReportDataSource.Name = "DataSet1";
+                ReportDataSource.Name = "DataSet2";
+                ReportDataSource.Name = "DataSet3";
 
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
                 ReportViewer1.LocalReport.ReportPath = Page.Server.MapPath(theSearch.ReportPath);
