@@ -112,19 +112,19 @@
                     <asp:MenuItem NavigateUrl="Default.aspx" Text="Home" />
                     
                    <asp:MenuItem Text="Trouble Tickets">
-                        <asp:MenuItem Text="Ticket Find" NavigateUrl="TroubleTicketReq.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Ticket Find" NavigateUrl="TroubleTicketReq_Find.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Ticket Request" NavigateUrl="TroubleTicketReq_Add.aspx"></asp:MenuItem>
                        <asp:MenuItem Text="Ticket Update" NavigateUrl="TroubleTicketReq_Update.aspx"></asp:MenuItem>
                         </asp:MenuItem>
         
                    <asp:MenuItem Text="Customers">
-                   <asp:MenuItem Text="Customers" NavigateUrl="Customer.aspx"></asp:MenuItem>                
+                   <asp:MenuItem Text="Customers" NavigateUrl="Customer_Find.aspx"></asp:MenuItem>                
               <asp:MenuItem Text= "Customer Registration" NavigateUrl="UserRegistration.aspx"></asp:MenuItem>
              <asp:MenuItem Text="Customer Login" NavigateUrl="UserViewProfile.aspx"></asp:MenuItem>
              </asp:MenuItem>
 
                         <asp:MenuItem Text="Agents">
-                   <asp:MenuItem Text="Agents" NavigateUrl="Agent.aspx"></asp:MenuItem>  
+                   <asp:MenuItem Text="Agents" NavigateUrl="Agent_Find.aspx"></asp:MenuItem>  
                             <asp:MenuItem Text="Assigned Ticket" NavigateUrl="TicketDetails.aspx"></asp:MenuItem>      
              </asp:MenuItem>
 
@@ -138,9 +138,10 @@
               <asp:MenuItem Text="Customer Delete" NavigateUrl="Customer_Delete.aspx"></asp:MenuItem>
                    </asp:MenuItem>
 
-              <asp:MenuItem Text="Agent Add" NavigateUrl="Agent_Add.aspx"></asp:MenuItem>
+             
                   
                 <asp:MenuItem Text="Agent Mgt">
+                     <asp:MenuItem Text="Agent Add" NavigateUrl="Agent_Add.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Agent Update" NavigateUrl="Agent_Update.aspx"></asp:MenuItem>
               <asp:MenuItem Text="Agent Delete" NavigateUrl="Agent_Delete.aspx"></asp:MenuItem>
               </asp:MenuItem>

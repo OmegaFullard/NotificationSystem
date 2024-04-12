@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrTroubleTicketReq_Add.ascx.cs" Inherits="ctrTroubleTicketReq_Add" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrTroubleTicketReq_Add.ascx.cs" Inherits="ctrTroubleTicketReq_Add" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
@@ -51,14 +51,26 @@
 
 
 <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+  
 							<H2>Trouble Ticket Request</h2><br/>
                          
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
-							  Request Date:&nbsp;&nbsp;<telerik:RadDatePicker  ID="pickRequestDate"  DateInput-EmptyMessage="Select"    DataFormatString="{0:MM/dd/yyyy}" Width="140px" Runat="server" >
-                                                          </telerik:RadDatePicker><br /><br />
+							  <br />
+                              <br />
           
                              <asp:Table ID="Table1" runat="server" Width="930px">
+
+                                 <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Request Date:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickRequestDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127"></Telerik:RadDatePicker>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                                 <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                                </asp:TableRow> 
+
                                             <asp:TableRow><asp:TableCell ColumnSpan="2"> <div style="padding-bottom:20px;"> Required fields are marked with <span style="color: red">* </span> (red asterisk).
                                                 </div> </asp:TableCell>
                                             </asp:TableRow>

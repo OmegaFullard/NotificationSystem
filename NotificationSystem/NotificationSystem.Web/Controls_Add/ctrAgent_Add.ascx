@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="ctrAgent_Add.ascx.cs" Inherits="ctrAgent_Add" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrAgent_Add.ascx.cs" Inherits="ctrAgent_Add" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
@@ -102,7 +102,7 @@
 											 
 											 
                                              <asp:TableRow> 
-                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">StartDate:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Start Date:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
                                                         &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickStartDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127"></Telerik:RadDatePicker>     
                                                     </asp:TableCell>

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master"  CodeBehind="ctrCustomer_Add.ascx.cs" Inherits="ctrCustomer_Add" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrCustomer_Add.ascx.cs" Inherits="ctrCustomer_Add" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 

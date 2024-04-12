@@ -26,6 +26,17 @@
                          </asp:Table>
                   <br />
 
+                    <div class="clear hideSkiplink">
+                                          <asp:Menu ID="NavigationMenu" runat="server" CssClass="sub_menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                                              <Items>
+                                                   <asp:MenuItem Text="Find" NavigateUrl="Agent_Find.aspx"></asp:MenuItem> 
+                                                   <asp:MenuItem  Text="Add"  NavigateUrl="Agent_Add.aspx"></asp:MenuItem>
+                                                  <asp:MenuItem Text="Update" NavigateUrl="Agent_Update.aspx"></asp:MenuItem> 
+                                                  <asp:MenuItem Text="Delete" NavigateUrl="Agent_Delete.aspx"></asp:MenuItem> 
+                                              </Items>
+                                           </asp:Menu>
+                                 </div>
+
 <uc1:ctrAgent_Add runat="server" id="ctrAgent_Add" />
 
                      </div>                  
