@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrTroubleTicketReq_Update.ascx.cs" Inherits="ctrTroubleTicketReq_Update" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrTroubleTicketReq_Update.ascx.cs" MasterPageFile="MasterPage.master" Inherits="ctrTroubleTicketReq_Update" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
@@ -48,6 +48,7 @@
  </script>
 
 <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 							<H2>Trouble Ticket Update</h2><br/>
                          
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />

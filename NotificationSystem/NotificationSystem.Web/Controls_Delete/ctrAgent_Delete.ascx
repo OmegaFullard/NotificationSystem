@@ -100,20 +100,7 @@
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
                                              </asp:TableRow> 
 											 
-											 
-                                             <asp:TableRow> 
-                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">StartDate:</asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickStartDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127"></Telerik:RadDatePicker>     
-                                                    </asp:TableCell>
-                                                </asp:TableRow> 
-                                                 <asp:TableRow  > 
-                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
-                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
-                                                </asp:TableRow> 
-												
-												
-                                               
+											   
                                                 <asp:TableRow>            
                                                         <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Email Address:<span style="color: red">*</span></asp:TableCell>
                                                         <asp:TableCell HorizontalAlign="Left">

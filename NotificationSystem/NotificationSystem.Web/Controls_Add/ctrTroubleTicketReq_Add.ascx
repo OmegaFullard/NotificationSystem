@@ -51,6 +51,7 @@
 
 
 <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 							<H2>Trouble Ticket Request</h2><br/>
                          
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
@@ -108,7 +109,7 @@
 										  <asp:TableRow>
 										  <asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Status:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
-                                                        <telerik:RadMultiColumnComboBox runat="server"   ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px" AutoPostBack="true"
+                                                        <telerik:RadMultiColumnComboBox runat="server"   ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
                                                                 Placeholder="--Select" >
                                                                 <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Status" Title="Status" Width="100px" />
@@ -126,9 +127,9 @@
                                  <asp:TableRow>
 									<asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Type:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
-                                                        <telerik:RadMultiColumnComboBox runat="server"   ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px" AutoPostBack="true" Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false"
-                                                                Placeholder="--Select" >
-                                                                <ColumnsCollection>
+                                                        <telerik:RadMultiColumnComboBox runat="server"   ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true" 
+                                                            Placeholder="--Select" >    
+                                                            <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Type" Title="Type" Width="100px" />
                                                                 </ColumnsCollection>
                                                  </telerik:RadMultiColumnComboBox>                                                                  

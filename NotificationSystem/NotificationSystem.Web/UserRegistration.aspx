@@ -6,6 +6,7 @@
   
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
      <div class="container-fluid">
       <div class="row">
          <div class="col-md-5">
@@ -18,7 +19,7 @@
                          <br />
                          <br />
                         <center>
-                                <asp:Image ID="customerreg" runat="server" ImageUrl="images/defaultuserFir.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
+                                <asp:Image ID="customerreg" runat="server" ImageUrl="images/defaultuser.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
                         </center>
                      </div>
                   </div>
