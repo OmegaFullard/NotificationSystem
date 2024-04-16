@@ -15,7 +15,7 @@
                                    
                                      <asp:TableRow>
                                         <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">
-                                                            <asp:Image ID="Image1" runat="server" ImageUrl="Images/Report2.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="200px" style="margin-top: 5px" Width="200px" />
+                                                            <asp:Image ID="Image1" runat="server" ImageUrl="Images/Report2.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="80px" style="margin-top: 5px" Width="80px" />
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>

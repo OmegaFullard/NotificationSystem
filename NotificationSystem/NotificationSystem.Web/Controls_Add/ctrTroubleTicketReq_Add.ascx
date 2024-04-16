@@ -24,7 +24,6 @@
     }
 </style>
 
-
  <script>
      function OnClientLoad0(sender, args) {
        
@@ -60,16 +59,7 @@
           
                              <asp:Table ID="Table1" runat="server" Width="930px">
 
-                                 <asp:TableRow> 
-                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Request Date:</asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickRequestDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127"></Telerik:RadDatePicker>     
-                                                    </asp:TableCell>
-                                                </asp:TableRow> 
-                                                 <asp:TableRow  > 
-                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
-                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
-                                                </asp:TableRow> 
+                                 
 
                                             <asp:TableRow><asp:TableCell ColumnSpan="2"> <div style="padding-bottom:20px;"> Required fields are marked with <span style="color: red">* </span> (red asterisk).
                                                 </div> </asp:TableCell>
@@ -121,8 +111,8 @@
 										  <asp:TableRow>
 										  <asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Status:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
-                                                        <telerik:RadMultiColumnComboBox runat="server"   ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
-                                                                Placeholder="--Select" >
+                                                        <telerik:RadMultiColumnComboBox runat="server"  ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
+                                                                Placeholder="--Select" EnableEmbeddedSkins="False">
                                                                 <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Status" Title="Status" Width="100px" />
                                                                 </ColumnsCollection>
@@ -140,7 +130,7 @@
 									<asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Type:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
                                                         <telerik:RadMultiColumnComboBox runat="server"   ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true" 
-                                                            Placeholder="--Select" >    
+                                                            Placeholder="--Select" EnableEmbeddedSkins="False">    
                                                             <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Type" Title="Type" Width="100px" />
                                                                 </ColumnsCollection>
@@ -154,13 +144,22 @@
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
                                           </asp:TableRow>  
 										  
-										  
+										  <asp:TableRow> 
+                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Request Date:</asp:TableCell>
+                                                    <asp:TableCell HorizontalAlign="Left">
+                                                        &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickRequestDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127" EnableEmbeddedSkins="True" DateInput-CssClass="RadCalendarFastNavPopup"></Telerik:RadDatePicker>     
+                                                    </asp:TableCell>
+                                                </asp:TableRow> 
+                                                 <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                                </asp:TableRow> 
 										      
 										  
 										    <asp:TableRow> 
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true"> Due Date:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickDueDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127"></Telerik:RadDatePicker>     
+                                                        &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickDueDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127" EnableEmbeddedSkins="False"></Telerik:RadDatePicker>     
                                                     </asp:TableCell>
                                                 </asp:TableRow> 
                                                  <asp:TableRow  > 

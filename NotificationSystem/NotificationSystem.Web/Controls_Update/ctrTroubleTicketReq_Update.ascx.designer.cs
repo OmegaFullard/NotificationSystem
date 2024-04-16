@@ -31,15 +31,6 @@ public partial class ctrTroubleTicketReq_Update
 	protected global::System.Web.UI.WebControls.Label lblResult;
 
 	/// <summary>
-	/// pickRequestDate control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadDatePicker pickRequestDate;
-
-	/// <summary>
 	/// Table1 control.
 	/// </summary>
 	/// <remarks>
@@ -101,15 +92,6 @@ public partial class ctrTroubleTicketReq_Update
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::Telerik.Web.UI.RadMultiColumnComboBox cmbType;
-
-	/// <summary>
-	/// pickDueDate control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadDatePicker pickDueDate;
 
 	/// <summary>
 	/// btnCancel control.

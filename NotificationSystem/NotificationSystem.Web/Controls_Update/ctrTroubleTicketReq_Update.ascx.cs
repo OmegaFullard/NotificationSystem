@@ -129,10 +129,10 @@ using System.Data.SqlClient;
                     var withBlock = thisTroubleTicket;
                     if (txttroubleticketno.Text.Length == 0)
 
-                        if (pickRequestDate.SelectedDate == null)
-                            withBlock.RequestDate = DateTime.Now;
-                        else
-                            withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
+                        //if (pickRequestDate.SelectedDate == null)
+                        //    withBlock.RequestDate = DateTime.Now;
+                        //else
+                        //    withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
                     if (cmbType.Text == string.Empty)
                         return;
 

@@ -13,8 +13,8 @@
                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="400px" Width="400px" >
 
  <asp:TableRow>
-                                          <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="350px" HorizontalAlign="Center"  Width="350px">
-                                           <asp:Image ID="issue2" runat="server" ImageUrl="images/issue2.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="250px" style="margin-top: 5px" Width="250px" />
+                                          <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71" Height="480px" HorizontalAlign="Center"  Width="480px">
+                                           <asp:Image ID="issue2" runat="server" ImageUrl="images/issue2.png" Height="450px" width="450px" style="margin-top: 5px" />
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                            <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
@@ -23,6 +23,17 @@
                                     </asp:TableRow>
                          </asp:Table>
                   <br />
+
+                  <div class="clear hideSkiplink">
+                                          <asp:Menu ID="NavigationMenu" runat="server" CssClass="sub_menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                                              <Items>
+                                                  <asp:MenuItem Text="Find" NavigateUrl="Customer_Find.aspx"></asp:MenuItem> 
+                                                   <asp:MenuItem  Text="Add"  NavigateUrl="Customer_Add.aspx"></asp:MenuItem>
+                                                  <asp:MenuItem Text="Update" NavigateUrl="Customer_Update.aspx"></asp:MenuItem> 
+                                                  <asp:MenuItem Text="Delete" NavigateUrl="Customer_Delete.aspx"></asp:MenuItem> 
+                                              </Items>
+                                           </asp:Menu>
+                                 </div>
 
 <uc1:ctrTroubleTicketReq_Add runat="server" id="ctrTroubleTicketReq_Add" />
 

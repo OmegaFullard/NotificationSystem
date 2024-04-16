@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrTroubleTicketReq_Update.ascx.cs" MasterPageFile="MasterPage.master" Inherits="ctrTroubleTicketReq_Update" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrTroubleTicketReq_Update.ascx.cs" Inherits="ctrTroubleTicketReq_Update" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
@@ -52,8 +52,7 @@
 							<H2>Trouble Ticket Update</h2><br/>
                          
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
-							  Request Date:&nbsp;&nbsp;<telerik:RadDatePicker  ID="pickRequestDate"  DateInput-EmptyMessage="Select"    DataFormatString="{0:MM/dd/yyyy}" Width="140px" Runat="server" >
-                                                          </telerik:RadDatePicker><br /><br />
+							 
           
                              <asp:Table ID="Table1" runat="server" Width="930px">
                                             <asp:TableRow><asp:TableCell ColumnSpan="2"> <div style="padding-bottom:20px;"> Required fields are marked with <span style="color: red">* </span> (red asterisk).
@@ -139,19 +138,6 @@
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
                                           </asp:TableRow>  
 										  
-										  
-										      
-										  
-										    <asp:TableRow> 
-                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true"> Due Date:</asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<Telerik:RadDatePicker ID="pickDueDate" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" runat="server" Height="20px" MaxLength="127"></Telerik:RadDatePicker>     
-                                                    </asp:TableCell>
-                                                </asp:TableRow> 
-                                                 <asp:TableRow  > 
-                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
-                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>													 													 												 
-                                                </asp:TableRow>  
 										  
 										  
                                    </asp:Table>     

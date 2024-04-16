@@ -49,6 +49,15 @@ public partial class TroubleTicketReq_Add
 	protected global::ctrTroubleTicketReq_Search ctrTroubleTicketReq_Search;
 
 	/// <summary>
+	/// NavigationMenu control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+
+	/// <summary>
 	/// ctrTroubleTicketReq_Add control.
 	/// </summary>
 	/// <remarks>
