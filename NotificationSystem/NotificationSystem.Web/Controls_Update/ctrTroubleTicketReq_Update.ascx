@@ -48,7 +48,7 @@
  </script>
 
 <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+   
 							<H2>Trouble Ticket Update</h2><br/>
                          
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />

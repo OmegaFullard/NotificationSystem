@@ -10,11 +10,11 @@
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
                      <h2>Create Ticket</h2><br />
 
-                       <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="400px" Width="400px" >
+                       <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="150px" Width="155px" >
 
  <asp:TableRow>
-                                          <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71" Height="480px" HorizontalAlign="Center"  Width="480px">
-                                           <asp:Image ID="issue2" runat="server" ImageUrl="images/issue2.png" Height="450px" width="450px" style="margin-top: 5px" />
+                                          <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71" Height="150px" HorizontalAlign="Center"  Width="150px">
+                                           <asp:Image ID="issue2" runat="server" ImageUrl="images/issue2.png" BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="170px" width="170px" style="margin-top: 5px" />
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                            <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
@@ -23,7 +23,7 @@
                                     </asp:TableRow>
                          </asp:Table>
                   <br />
-
+                  <br />
                   <div class="clear hideSkiplink">
                                           <asp:Menu ID="NavigationMenu" runat="server" CssClass="sub_menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                                               <Items>

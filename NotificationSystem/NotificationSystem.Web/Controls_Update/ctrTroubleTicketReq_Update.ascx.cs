@@ -107,13 +107,13 @@ using System.Data.SqlClient;
 
 
             this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-            this.cmbStatus.DataTextField = "Status";
+            this.cmbStatus.DataTextField = "Status"; cmbStatus.DataValueField = "Status";
             this.cmbStatus.DataBind();
-            this.cmbStatus.Text = "Open";
+           
 
 
             this.cmbType.DataSource = theNotificationSystem.GetTypeList();
-            this.cmbType.DataTextField = "Type";
+            this.cmbType.DataTextField = "Type"; cmbType.DataValueField = "Type";
             this.cmbType.DataBind();
 
 

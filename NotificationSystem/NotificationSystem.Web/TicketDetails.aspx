@@ -55,13 +55,17 @@
                      <div class="col-md-6">
                         <label>Request Date</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Request Date"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Request Date" TextMode="Date"></asp:TextBox>
+                            
+                            <ajaxToolkit:CalendarExtender ID="TextBox5_CalendarExtender" runat="server" BehaviorID="TextBox5_CalendarExtender" PopupPosition="TopRight" TargetControlID="TextBox5" />
+                            
                       </div>
                      </div>
                      <div class="col-md-6">
                         <label>Due Date</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Due Date"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Due Date" TextMode="Date"></asp:TextBox>
+                            <ajaxToolkit:CalendarExtender ID="TextBox6_CalendarExtender" runat="server" BehaviorID="TextBox6_CalendarExtender" PopupPosition="TopRight" TargetControlID="TextBox6" />
                         </div>
                      </div>
                   </div>

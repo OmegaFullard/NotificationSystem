@@ -71,8 +71,7 @@
                      <div class="col">
                         <label>Full Address</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2" AutoCompleteType="HomeStreetAddress" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
-                            <ajaxToolkit:CalendarExtender ID="TextBox5_CalendarExtender" runat="server" BehaviorID="TextBox5_CalendarExtender" TargetControlID="TextBox5" />
+                           <asp:TextBox CssClass="form-control" ID="Address" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2" AutoCompleteType="HomeStreetAddress" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
                         </div>
                      </div>
 

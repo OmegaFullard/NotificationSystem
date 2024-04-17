@@ -12,18 +12,20 @@
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
                      <h2>Add Agent</h2><br />
 
-                       <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
+                       <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="153px" Width="154px" >
 
  <asp:TableRow>
-                                          <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">
-                                                            <asp:Image ID="agent" runat="server" ImageUrl="images/person1.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="100px" style="margin-top: 5px" Width="100px" />
+                                          <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="150px" HorizontalAlign="Center"  Width="150px">
+                                                            <asp:Image ID="agent" runat="server" ImageUrl="images/person1.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="170px" style="margin-top: 5px" Width="170px" />
                                                        </asp:Panel> 
                                          </asp:TableCell>
+     
                                            <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
                                         <asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_Search runat="server" id="ctrAgent_Search" Visible="false" /></asp:TableCell>
                                                  
                                     </asp:TableRow>
                          </asp:Table>
+                  <br />
                   <br />
 
                     <div class="clear hideSkiplink">

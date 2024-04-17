@@ -10,7 +10,7 @@
     <div class="container-fluid">
 
       <div class="row">
-         <div class="col-md-5">
+         <div class="col-md-12">
             <div class="card">
                <div class="card-body">
                   </div>
@@ -18,8 +18,8 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                            <img src="images/handshake.png" />
-                          
+                     
+                          <asp:Image ID="users" runat="server" ImageUrl="images/handshake.png" BorderStyle="Solid" BorderWidth="1px" Height="250px" style="margin-top: 0px" Width="350px" />
                         </center>
                      </div>
                       <div class="row">

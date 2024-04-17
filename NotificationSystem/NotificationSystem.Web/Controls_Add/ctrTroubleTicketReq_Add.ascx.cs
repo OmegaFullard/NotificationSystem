@@ -38,26 +38,30 @@ using System.Net.Http;
         public TextBox txtTroubleTicketList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
-            var client = new HttpClient();
-            try
-            {
-                if ((Page.IsPostBack))
-                {
+        PopulateControls();
+
+        //What is this code supposed to do? 4/16/24
+
+            //clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+            //TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
+            //var client = new HttpClient();
+            //try
+            //{
+            //    if ((Page.IsPostBack))
+            //    {
 
 
-                    if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"] == "Add")
-                        AddTroubleTicket();
-                }
-                else
-                {
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            //        if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"] == "Add")
+            //            AddTroubleTicket();
+            //    }
+            //    else
+            //    {
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
         }
 
         public void AddTroubleTicket()
@@ -130,13 +134,13 @@ using System.Net.Http;
 
 
 		this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-		this.cmbStatus.DataTextField = "Status";
+		this.cmbStatus.DataTextField = "Status"; cmbStatus.DataValueField = "Status";
 		this.cmbStatus.DataBind();
-		this.cmbStatus.Text = "Open";
+		
 
 
 		this.cmbType.DataSource = theNotificationSystem.GetTypeList();
-		this.cmbType.DataTextField = "Type";
+		this.cmbType.DataTextField = "Type"; cmbType.DataValueField = "Type";
 		this.cmbType.DataBind();
 
 

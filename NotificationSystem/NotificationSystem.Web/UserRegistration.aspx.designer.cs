@@ -69,22 +69,13 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.TextBox TextBox4;
 
 		/// <summary>
-		/// TextBox5 control.
+		/// Address control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBox5;
-
-		/// <summary>
-		/// TextBox5_CalendarExtender control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::AjaxControlToolkit.CalendarExtender TextBox5_CalendarExtender;
+		protected global::System.Web.UI.WebControls.TextBox Address;
 
 		/// <summary>
 		/// TextBox6 control.
