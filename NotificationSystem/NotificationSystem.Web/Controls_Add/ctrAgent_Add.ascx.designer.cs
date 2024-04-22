@@ -31,15 +31,6 @@ public partial class ctrAgent_Add
 	protected global::System.Web.UI.WebControls.Table Table1;
 
 	/// <summary>
-	/// valFirstN control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valFirstN;
-
-	/// <summary>
 	/// txtfirstname control.
 	/// </summary>
 	/// <remarks>
@@ -47,6 +38,24 @@ public partial class ctrAgent_Add
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::System.Web.UI.WebControls.TextBox txtfirstname;
+
+	/// <summary>
+	/// valRequiredFieldFirstN control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldFirstN;
+
+	/// <summary>
+	/// Required_FirstN control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::AjaxControlToolkit.ValidatorCalloutExtender Required_FirstN;
 
 	/// <summary>
 	/// txtlastname control.
@@ -58,13 +67,22 @@ public partial class ctrAgent_Add
 	protected global::System.Web.UI.WebControls.TextBox txtlastname;
 
 	/// <summary>
-	/// valLastN control.
+	/// valRequiredFieldLastN control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valLastN;
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldLastN;
+
+	/// <summary>
+	/// Required_LastN control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::AjaxControlToolkit.ValidatorCalloutExtender Required_LastN;
 
 	/// <summary>
 	/// txttitle control.
@@ -112,15 +130,6 @@ public partial class ctrAgent_Add
 	protected global::System.Web.UI.WebControls.TextBox txtemailaddress;
 
 	/// <summary>
-	/// valEmailAddress control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valEmailAddress;
-
-	/// <summary>
 	/// valRegularExprEmailAddr control.
 	/// </summary>
 	/// <remarks>
@@ -128,6 +137,15 @@ public partial class ctrAgent_Add
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::System.Web.UI.WebControls.RegularExpressionValidator valRegularExprEmailAddr;
+
+	/// <summary>
+	/// CalloutEmailAddress control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::AjaxControlToolkit.ValidatorCalloutExtender CalloutEmailAddress;
 
 	/// <summary>
 	/// txtPhoneNumber control.

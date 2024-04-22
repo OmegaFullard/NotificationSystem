@@ -31,15 +31,6 @@ public partial class ctrCustomer_Update
 	protected global::System.Web.UI.WebControls.Table Table1;
 
 	/// <summary>
-	/// RequiredFieldValidator1 control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
-	/// <summary>
 	/// txtcustomerid control.
 	/// </summary>
 	/// <remarks>
@@ -49,13 +40,22 @@ public partial class ctrCustomer_Update
 	protected global::System.Web.UI.WebControls.TextBox txtcustomerid;
 
 	/// <summary>
-	/// valFirstN control.
+	/// valRequiredFieldID control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valFirstN;
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldID;
+
+	/// <summary>
+	/// Required_ID control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::AjaxControlToolkit.ValidatorCalloutExtender Required_ID;
 
 	/// <summary>
 	/// txtfirstname control.
@@ -67,6 +67,24 @@ public partial class ctrCustomer_Update
 	protected global::System.Web.UI.WebControls.TextBox txtfirstname;
 
 	/// <summary>
+	/// valRequiredFieldFirstN control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldFirstN;
+
+	/// <summary>
+	/// Require_FirstN control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::AjaxControlToolkit.ValidatorCalloutExtender Require_FirstN;
+
+	/// <summary>
 	/// txtlastname control.
 	/// </summary>
 	/// <remarks>
@@ -76,13 +94,22 @@ public partial class ctrCustomer_Update
 	protected global::System.Web.UI.WebControls.TextBox txtlastname;
 
 	/// <summary>
-	/// valLastN control.
+	/// valRequiredFieldLastN control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valLastN;
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldLastN;
+
+	/// <summary>
+	/// valRequiredLastN control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::AjaxControlToolkit.ValidatorCalloutExtender valRequiredLastN;
 
 	/// <summary>
 	/// txtusername control.
@@ -166,15 +193,6 @@ public partial class ctrCustomer_Update
 	protected global::System.Web.UI.WebControls.TextBox txtemailaddress;
 
 	/// <summary>
-	/// valEmailAddress control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valEmailAddress;
-
-	/// <summary>
 	/// valRegularExprEmailAddr control.
 	/// </summary>
 	/// <remarks>
@@ -182,6 +200,15 @@ public partial class ctrCustomer_Update
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::System.Web.UI.WebControls.RegularExpressionValidator valRegularExprEmailAddr;
+
+	/// <summary>
+	/// CalloutEmailAddress control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::AjaxControlToolkit.ValidatorCalloutExtender CalloutEmailAddress;
 
 	/// <summary>
 	/// txtPhoneNumber control.

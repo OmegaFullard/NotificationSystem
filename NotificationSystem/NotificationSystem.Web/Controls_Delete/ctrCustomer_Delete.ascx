@@ -38,9 +38,16 @@
                                              <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>Customer ID:<span style="color: red">*</span></b></div></asp:TableCell>
                                              <asp:TableCell HorizontalAlign="Left"> 
                                              
-                                                 <asp:RequiredFieldValidator  ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtcustomerid" ValidationGroup="Submit"  
-                                             ErrorMessage="Customer ID is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
                                               &nbsp;&nbsp; <asp:TextBox ID="txtcustomerid" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
+                                                  <asp:RequiredFieldValidator  ID="valRequiredFieldID" runat="server" ControlToValidate="txtcustomerid" ValidationGroup="Submit"  
+                                             ErrorMessage="Customer ID is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
+                                             
+
+                                                 <ajaxtoolkit:ValidatorCalloutExtender ID="Required_ID"  TargetControlID="valRequiredFieldID"  Width="250px"  
+                                                               HighlightCssClass="highlight" runat="server">
+                                                       </ajaxtoolkit:ValidatorCalloutExtender>
+
+
                                            </asp:TableCell>
                                  </asp:TableRow>
                                            <asp:TableRow  > 
@@ -52,9 +59,15 @@
                                              <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>First Name:<span style="color: red">*</span></b></div></asp:TableCell>
                                              <asp:TableCell HorizontalAlign="Left"> 
                                              
-                                                 <asp:RequiredFieldValidator  ID="valFirstN" runat="server" ControlToValidate="txtfirstname" ValidationGroup="Submit"  
-                                             ErrorMessage="First Name is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
-                                              &nbsp;&nbsp; <asp:TextBox ID="txtfirstname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
+                                                  &nbsp;&nbsp; <asp:TextBox ID="txtfirstname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
+                                                 <asp:RequiredFieldValidator  ID="valRequiredFieldFirstN" runat="server" ControlToValidate="txtfirstname" ValidationGroup="Submit"  
+                                             ErrorMessage="First Name is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
+                                             
+
+
+                                                 <ajaxtoolkit:ValidatorCalloutExtender ID="Require_FirstN"  TargetControlID="valRequiredFieldFirstN"  Width="250px"  
+                                                               HighlightCssClass="highlight" runat="server">
+                                                       </ajaxtoolkit:ValidatorCalloutExtender>
                                            </asp:TableCell>
              
                                           </asp:TableRow> 
@@ -68,7 +81,11 @@
                                              <asp:TableCell HorizontalAlign="Left"> 
                                                &nbsp;&nbsp; <asp:TextBox ID="txtlastname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
                                                  <asp:RequiredFieldValidator  ID="valLastN" runat="server" ControlToValidate="txtlastname" ValidationGroup="Submit"  
-                                             ErrorMessage="Last Name is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
+                                             ErrorMessage="Last Name is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
+
+                                                  <ajaxtoolkit:ValidatorCalloutExtender ID="valRequiredLastN"  TargetControlID="valRequiredFieldLastN"  Width="250px"  
+                                                               HighlightCssClass="highlight" runat="server">
+                                                       </ajaxtoolkit:ValidatorCalloutExtender>
                                             
                                            </asp:TableCell>
              
@@ -175,15 +192,15 @@
                                                         <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Email Address:<span style="color: red">*</span></asp:TableCell>
                                                         <asp:TableCell HorizontalAlign="Left">
                                                                 &nbsp;&nbsp;<asp:TextBox ID="txtemailaddress" runat="server" Height="20px" Width="300px"  MaxLength="50"></asp:TextBox>
-                                                                 <asp:RequiredFieldValidator  ID="valEmailAddress" runat="server" ControlToValidate="txtemailaddress" ValidationGroup="Submit" 
-                                                                                            ErrorMessage="Email Address cannot be blank!"><span style="color: red">!</span></asp:RequiredFieldValidator>
-
-                                                               
-                
                                                                 <asp:RegularExpressionValidator ID="valRegularExprEmailAddr" runat="server" ControlToValidate="txtemailaddress"
                                                                                              ErrorMessage="Email Address is in the wrong format" 
                                                                                              ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                                                                                              ValidationGroup="Submit">!</asp:RegularExpressionValidator>
+
+                                                            <ajaxtoolkit:ValidatorCalloutExtender ID="CalloutEmailAddress"  TargetControlID="valReqularExprEmailAddr"  Width="250px"  
+                                                               HighlightCssClass="highlight" runat="server">
+                                                       </ajaxtoolkit:ValidatorCalloutExtender> 
+                                                                
                                                                 
                                                             </asp:TableCell>                                         
                                                 </asp:TableRow>

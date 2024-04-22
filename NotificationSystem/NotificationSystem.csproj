@@ -1331,6 +1331,8 @@
     <Content Include="NotificationSystem.Web\images\Report1.png" />
     <Content Include="NotificationSystem.Web\images\Report2.png" />
     <Content Include="NotificationSystem.Web\images\site.webmanifest" />
+    <Content Include="NotificationSystem.Web\images\techbg2.png" />
+    <Content Include="NotificationSystem.Web\images\techbg3.png" />
     <Content Include="NotificationSystem.Web\images\twitter-logo-24.png" />
     <Content Include="NotificationSystem.Web\images\user-rectangle-solid-24.png" />
     <Content Include="NotificationSystem.Web\images\youtube-logo-24.png" />
