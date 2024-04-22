@@ -29,7 +29,7 @@ Width: 100%;
                                     <br />
                                     Version 1.0<br /> Date: April 22, 2024</asp:Panel>
                               </div>
-<div class="background-image">
+<div class="card card-transparent">
 
     
         <h4 class="card-title">Reviews</h4>

@@ -13,13 +13,14 @@ body {
      
 }
 
+/*
 background-img {
     background-image: url('images/techbg2.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     opacity: 0.4;
     filter: opacity(=60);
-}
+}*/
 
 @media only screen and (min-width: 481px) and (max-width: 720px) {
     body {
