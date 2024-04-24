@@ -18,7 +18,7 @@ Width: 100%;
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
   
-                            <div aria-dropeffect="move" style="padding-left:10px;padding-top:10px; padding-bottom:10px; height:500px; background:rgba(236, 236, 236, 1);">
+                            <div aria-dropeffect="move" style="padding-left:10px;padding-top:10px; padding-bottom:10px; height:500px;">
                                 <asp:Panel ID="Panel1" runat="server" BackColor="#884dff" BorderColor="#1e1e2f" BorderStyle="Solid" BorderWidth="1px" Font-Bold="True" Font-Size="Small" ForeColor="White" Height="450px" HorizontalAlign="Center" Width="250px">
                                     Created By: Omega Fullard<br />
                                     <br />
