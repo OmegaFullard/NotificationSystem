@@ -1,12 +1,26 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Agent_Update.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Update" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Update/ctrAgent_Update.ascx" TagPrefix="uc1" TagName="ctrAgent_Update" %>
-<%@ Register Src="Controls_Search/ctrAgent_Search.ascx" TagPrefix="uc1" TagName="ctrAgent_Search" %>
-<%@ Register Src="Controls_Add/ctrAgent_Add.ascx" TagPrefix="uc1" TagName="ctrAgent_Add" %>
+<%@ Register Src="Controls_Search/ctrSearch_Agent_Update.ascx" TagPrefix="uc1" TagName="ctrSearch_Agent_Update" %>
+
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
             </asp:Content>
            <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
+
+               <script type="text/javascript">
+                   function OnClientLoad0(sender, args) {
+                       $telerik.$(".k-input")[0].setAttribute("readonly", "true");
+                   }
+
+                   function OnClientLoad1(sender, args) {
+                       $telerik.$(".k-input")[2].setAttribute("readonly", "true");
+                   }
+
+               </script>
+
+
+                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
                      <h2>Update Agent</h2><br />
 
@@ -21,7 +35,7 @@
 
 
 
-<asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_Search runat="server" ID="ctrAgent_Search" /></asp:TableCell>
+<asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Agent_Update runat="server" ID="ctrSearch_Agent_Update" /></asp:TableCell>
 </asp:TableRow>
                          </asp:Table>
                   <br />

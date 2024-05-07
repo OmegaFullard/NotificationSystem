@@ -15,6 +15,15 @@ namespace NotificationSystem.NotificationSystem.Web
 	{
 
 		/// <summary>
+		/// ScriptManager1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+		/// <summary>
 		/// Table1 control.
 		/// </summary>
 		/// <remarks>
@@ -42,13 +51,13 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Image agent;
 
 		/// <summary>
-		/// ctrAgent_Search control.
+		/// ctrSearch_Agent_Update control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::ctrAgent_Search ctrAgent_Search;
+		protected global::NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Agent_Update ctrSearch_Agent_Update;
 
 		/// <summary>
 		/// NavigationMenu control.

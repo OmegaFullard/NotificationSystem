@@ -45,3 +45,18 @@
     padding: 20px 15px;
     line-height: 30px;
 }
+
+
+.grdHeader {
+    background-color: #ccc3a3;
+    font-size: 12px;
+}
+
+.grdAlternatingRow {
+    background-color: #f0ecde;
+}
+
+.grdRecords {
+    font-size: 11px;
+    color: #ffffff;
+}

@@ -36,7 +36,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
 			try
 			{
-				if ((Request.QueryString["Department"] == null))
+				if ((Request.QueryString["Agent"] == null))
 					return;
 
 				string[] arrAgents = Request.QueryString["agent"].Split(Convert.ToChar(":"));

@@ -134,3 +134,17 @@ input:invalid {
     border-color: #ff0000;
 }
 
+
+.grdHeader {
+    background-color: #ccc3a3;
+    font-size: 12px;
+}
+
+.grdAlternatingRow {
+    background-color: #f0ecde;
+}
+
+.grdRecords {
+    font-size: 11px;
+    color: #ffffff;
+}

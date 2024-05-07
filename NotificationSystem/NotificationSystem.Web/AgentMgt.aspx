@@ -130,8 +130,10 @@
                                         <asp:ControlParameter ControlID="TextBox1" PropertyName="Text" Name="AgentID"></asp:ControlParameter>
                                     </SelectParameters>
                                 </asp:SqlDataSource>
+        </div>	
+		
                             </div>
-                        </div>
+                        
 
 
                     </div>

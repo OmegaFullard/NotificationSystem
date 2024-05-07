@@ -34,34 +34,40 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
                 m_AgentID = value;
             }
         }
-    protected void Page_Load(object sender, EventArgs e)
-    {
 
-        if ((Page.IsPostBack))
+
+        protected void Page_Load(object sender, System.EventArgs e)
         {
-            if (((m_AgentID) > 0))
-                this.lblAgentID.Text = "ID" + m_AgentID;
-            if (this.lblAgentID.Text.Length == 2)
-                return;
+            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+            AgentDataTable tblAgent = new AgentDataTable();
 
             try
             {
-                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                AgentDataTable tblAgent = new AgentDataTable();
-                theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblAgentID.Text.Replace("ID", "")));
-                if (tblAgent.Count == 0)
-                    return;
+                if (Request.Form["ctl00$MainContent$ctrSearch_Agent_Find$btnSearch"] == "Search")
+                this.lblAgentID.Text = "ID" + m_AgentID;
 
-                this.grdAgent.DataSource = tblAgent;
+            if ((Page.IsPostBack) & this.lblAgentID.Text.Length > 0)
+                theNotificationSystem.GetAgentByID(Convert.ToInt32(this.lblAgentID.Text.Replace("ID", "")));
+            else
+                    tblAgent = (AgentDataTable)theNotificationSystem.GetAgents();
+
+
+                this.lblSearchResult.Text = tblAgent.Rows.Count.ToString();
+                this.grdAgent.DataSource = tblAgent.DefaultView;
                 this.grdAgent.DataBind();
             }
 
             catch (Exception ex)
             {
-                throw;
+                clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+                string NotificationBody = ex.Message + "  " + ex.StackTrace;
+                SendError.SendMailMessage(NotificationBody);
+                Response.Redirect("ErrorPage.aspx", false); 
             }
         }
-    }
+
+    
+
 
     private void grdAgent_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {

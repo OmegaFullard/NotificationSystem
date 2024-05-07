@@ -73,7 +73,7 @@
   
                   <div class="row">
                      <div class="col-6">
-                         <asp:Button ID="Button2" class="btn btn-lg btn-block btn-primary" runat="server" Width="150px" Height="25px" Style="color: #ffffff; background-color: #0000ff; border: medium solid #e6ffe6" Text="Search Invoice" />
+                         <asp:Button ID="Button2" class="btn btn-lg btn-block btn-primary" runat="server" Width="150px" Height="25px" Style="color: #ffffff; background-color: #0000ff; border: medium solid #e6ffe6" Text="Search Ticket" />
                      </div>
                      
                   </div>

@@ -151,8 +151,7 @@ div.RadMenuPopup,
     }
 
     .topnav a {
-        
-        background-color: #666699;           
+        background-color: #f0f0f5;
         border: 1px #884dff solid;
         color: #e6ecff;
         display: block;
@@ -215,6 +214,20 @@ div.sub_menu {
                 color: #1e1e2f;
                 text-decoration: none;
             }
+
+.grdHeader {
+    background-color: #ccc3a3;
+    font-size: 12px;
+}
+
+.grdAlternatingRow {
+    background-color: #f0ecde;
+}
+
+.grdRecords {
+    font-size: 11px;
+    color: #ffffff;
+}
 
 .MyCalendar .ajax__calendar_container {
     border: 1px solid #646464;

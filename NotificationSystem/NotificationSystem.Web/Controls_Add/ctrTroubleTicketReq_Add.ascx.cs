@@ -40,28 +40,7 @@ using System.Net.Http;
         {
         PopulateControls();
 
-        //What is this code supposed to do? 4/16/24
-
-            //clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            //TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
-            //var client = new HttpClient();
-            //try
-            //{
-            //    if ((Page.IsPostBack))
-            //    {
-
-
-            //        if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"] == "Add")
-            //            AddTroubleTicket();
-            //    }
-            //    else
-            //    {
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw;
-            //}
+        
         }
 
         public void AddTroubleTicket()
@@ -119,7 +98,9 @@ using System.Net.Http;
         {
             try
             {
-            }
+            cmbStatus.Value = string.Empty; cmbType.Text = string.Empty;
+           
+        }
 
 
             catch (Exception ex)

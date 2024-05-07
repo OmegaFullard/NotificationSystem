@@ -32,7 +32,7 @@ using NotificationSystem.NotificationSystem.Data.Classes;
 				{
 					if ((m_CustomerID) > 0)
 						this.lblCustomerID.Text = "ID" + m_CustomerID;
-					if (this.lblCustomerID.Text.Length == 2)
+					if (this.lblCustomerID.Text.Length == 3)
 						return;
 
 

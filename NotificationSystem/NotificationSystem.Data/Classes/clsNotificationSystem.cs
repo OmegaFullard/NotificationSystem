@@ -320,24 +320,26 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 		{
 			DataSet ds = new DataSet();
 			DataTable dt = new DataTable("GetData");
-		
+            DataRow dr;
 
 
 
-			dt.Columns.Add("ID", Type.GetType("System.Integer")).DefaultValue = string.Empty;
+			//dt.Columns.Add("ID", Type.GetType("System.Integer")).DefaultValue = string.Empty;
 			dt.Columns.Add("Type", Type.GetType("System.String")).DefaultValue = string.Empty;
 
             // Create and populate rows
-            DataRow dr = dt.NewRow();
-            dr["ID"] = 0; dr["Type"] = "Incident";
+            // DataRow dr = dt.NewRow();
+
+            dr = dt.NewRow();
+            dr["Type"] = "Incident";
             dt.Rows.Add(dr);
 
             dr = dt.NewRow();
-            dr["ID"] = 1; dr["Type"] = "Task";
+            dr["Type"] = "Task";
             dt.Rows.Add(dr);
 
             dr = dt.NewRow();
-            dr["ID"] = 2; dr["Type"] = "Problem";
+            dr["Type"] = "Problem";
             dt.Rows.Add(dr);
 
 
@@ -349,32 +351,32 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 		{
 			DataSet ds = new DataSet();
 			DataTable dt = new DataTable("GetData");
-
+            DataRow dr;
 
 			//Add columns with appropriate data types
 
 
-			dt.Columns.Add("TroubleTicketNo", Type.GetType("System.Integer")).DefaultValue = 0;
+			//dt.Columns.Add("TroubleTicketNo", Type.GetType("System.Integer")).DefaultValue = 0;
 			dt.Columns.Add("Status", Type.GetType("System.String")).DefaultValue = string.Empty;
 
 			//Create and populate rows
 
-		DataRow dr = dt.NewRow();
+		//DataRow dr = dt.NewRow();
 
 			dr = dt.NewRow();
-			dr["ID"] = "1"; dr["Status"] = "Open";
+			dr["Status"] = "Open";
 			dt.Rows.Add(dr);
 
 			dr = dt.NewRow();
-			dr["ID"] = "2"; dr["Status"] = "Pending";
+			dr["Status"] = "Pending";
 			dt.Rows.Add(dr);
 
 			dr = dt.NewRow();
-			dr["ID"] = "3"; dr["Status"] = "Resolved";
+			dr["Status"] = "Resolved";
 			dt.Rows.Add(dr);
 
 			dr = dt.NewRow();
-			dr["ID"] = "4"; dr["Status"] = "Closed";
+			dr["Status"] = "Closed";
 			dt.Rows.Add(dr);
 
 			return dt;

@@ -42,13 +42,13 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Image person1;
 
 		/// <summary>
-		/// ctrAgent_Search control.
+		/// ctrSearch_Agent_Find control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::ctrAgent_Search ctrAgent_Search;
+		protected global::NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Agent_Find ctrSearch_Agent_Find;
 
 		/// <summary>
 		/// NavigationMenu control.

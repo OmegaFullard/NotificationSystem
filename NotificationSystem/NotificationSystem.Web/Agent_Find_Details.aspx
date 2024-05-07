@@ -1,14 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="false" CodeBehind="Agent_Find_Details.aspx.cs" MasterPageFile="MasterPage.master" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Find_Details" %>
-	
-	<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="false" CodeBehind="Agent_Find_Details.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Find_Details" %>	
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
+<!DOCTYPE html>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
-            </asp:Content>
-  <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
-    <h1>Detailed Form</h1>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Detailed Form</title>
+    <link href="/Styles/base.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server" style="background:rgba(236, 236, 236, 1);">
 
 
                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -116,5 +118,7 @@
                              
                          </asp:Table>
                   </div>
-</asp:Content>
+    </form>
+</body>
+</html>
 

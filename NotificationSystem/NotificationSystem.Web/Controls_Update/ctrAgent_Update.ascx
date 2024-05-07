@@ -61,7 +61,7 @@
                                              <asp:TableCell HorizontalAlign="Left"> 
                                                &nbsp;&nbsp; <asp:TextBox ID="txtlastname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
                                                  <asp:RequiredFieldValidator  ID="valRequriedFieldLastN" runat="server" ControlToValidate="txtlastname" ValidationGroup="Submit"  
-                                             ErrorMessage="Last Name is Required Field!"><span style="color: red">!</span></asp:RequiredFieldValidator>
+                                             ErrorMessage="Last Name is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
                                             
                                                    <ajaxtoolkit:ValidatorCalloutExtender ID="Required_LastN"  TargetControlID="valRequiredFieldLastN"  Width="250px"  
                                                                HighlightCssClass="highlight" runat="server">

@@ -16,11 +16,11 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 			if (!(Page.IsPostBack))
 			{
 				cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-				cmbStatus.DataTextField = "Status";
+				cmbStatus.DataTextField = "Status"; cmbStatus.DataValueField = "Status";
 				cmbStatus.DataBind();
 
 				cmbStatus.DataSource = theNotificationSystem.GetTypeList();
-				cmbStatus.DataTextField = "Type";
+				cmbStatus.DataTextField = "Type"; cmbType.DataValueField = "Type";
 				cmbStatus.DataBind();
 			}
 		}
