@@ -127,14 +127,7 @@
                                                         <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Email Address:<span style="color: red">*</span></asp:TableCell>
                                                         <asp:TableCell HorizontalAlign="Left">
                                                                 &nbsp;&nbsp;<asp:TextBox ID="txtemailaddress" runat="server" Height="20px" Width="300px"  MaxLength="50"></asp:TextBox>
-                                                            <asp:RegularExpressionValidator ID="valRegularExprEmailAddr" runat="server" ControlToValidate="txtemailaddress"
-                                                                                             ErrorMessage="Email Address is in the wrong format" 
-                                                                                             ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
-                                                                                             ValidationGroup="Submit">!</asp:RegularExpressionValidator>
-
-                                                             <ajaxtoolkit:ValidatorCalloutExtender ID="CalloutEmailAddress"  TargetControlID="valReqularExprEmailAddr"  Width="250px"  
-                                                               HighlightCssClass="highlight" runat="server">
-                                                       </ajaxtoolkit:ValidatorCalloutExtender> 
+                                                        
                                                                
                 
                                                                 

@@ -16,9 +16,9 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 
             if (!(Page.IsPostBack))
             {
-                cmbAgent.DataSource = theAdtrack.GetAgentsList;
+                cmbAgent.DataSource = theNotificationSystem.GetAgents();
                 cmbAgent.DataTextField = "AgentID"; cmbAgent.DataValueField = "FirstN";
-                cmbDepartment.DataBind();
+                cmbAgent.DataBind();
             }
         }
         public void ClearControl()

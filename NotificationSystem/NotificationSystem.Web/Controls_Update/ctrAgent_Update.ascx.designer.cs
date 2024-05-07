@@ -69,13 +69,13 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.TextBox txtlastname;
 
 		/// <summary>
-		/// valRequriedFieldLastN control.
+		/// valRequiredFieldLastN control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequriedFieldLastN;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldLastN;
 
 		/// <summary>
 		/// Required_LastN control.
@@ -121,24 +121,6 @@ namespace NotificationSystem.NotificationSystem.Web
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox txtemailaddress;
-
-		/// <summary>
-		/// valRegularExprEmailAddr control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RegularExpressionValidator valRegularExprEmailAddr;
-
-		/// <summary>
-		/// CalloutEmailAddress control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::AjaxControlToolkit.ValidatorCalloutExtender CalloutEmailAddress;
 
 		/// <summary>
 		/// txtPhoneNumber control.

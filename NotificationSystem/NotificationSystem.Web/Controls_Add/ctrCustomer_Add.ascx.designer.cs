@@ -94,13 +94,13 @@ public partial class ctrCustomer_Add
 	protected global::System.Web.UI.WebControls.TextBox txtlastname;
 
 	/// <summary>
-	/// valLastN control.
+	/// valRequiredFieldLastN control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valLastN;
+	protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldLastN;
 
 	/// <summary>
 	/// valRequiredLastN control.
@@ -191,24 +191,6 @@ public partial class ctrCustomer_Add
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::System.Web.UI.WebControls.TextBox txtemailaddress;
-
-	/// <summary>
-	/// valRegularExprEmailAddr control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.RegularExpressionValidator valRegularExprEmailAddr;
-
-	/// <summary>
-	/// CalloutEmailAddress control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::AjaxControlToolkit.ValidatorCalloutExtender CalloutEmailAddress;
 
 	/// <summary>
 	/// txtPhoneNumber control.

@@ -130,24 +130,6 @@ public partial class ctrAgent_Add
 	protected global::System.Web.UI.WebControls.TextBox txtemailaddress;
 
 	/// <summary>
-	/// valRegularExprEmailAddr control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.RegularExpressionValidator valRegularExprEmailAddr;
-
-	/// <summary>
-	/// CalloutEmailAddress control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::AjaxControlToolkit.ValidatorCalloutExtender CalloutEmailAddress;
-
-	/// <summary>
 	/// txtPhoneNumber control.
 	/// </summary>
 	/// <remarks>

@@ -60,7 +60,7 @@
                                              <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>Last Name:<span style="color: red">*</span></b></div></asp:TableCell>
                                              <asp:TableCell HorizontalAlign="Left"> 
                                                &nbsp;&nbsp; <asp:TextBox ID="txtlastname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
-                                                 <asp:RequiredFieldValidator  ID="valREquiredFieldLastN" runat="server" ControlToValidate="txtlastname" ValidationGroup="Submit"  
+                                                 <asp:RequiredFieldValidator  ID="valRequiredFieldLastN" runat="server" ControlToValidate="txtlastname" ValidationGroup="Submit"  
                                              ErrorMessage="Last Name is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
 
                                                  <ajaxtoolkit:ValidatorCalloutExtender ID="Required_LastN"  TargetControlID="valRequiredFieldLastN"  Width="250px"  
@@ -117,14 +117,7 @@
                                                                 &nbsp;&nbsp;<asp:TextBox ID="txtemailaddress" runat="server" Height="20px" Width="300px"  MaxLength="50"></asp:TextBox>
                                                                  
                 
-                                                                <asp:RegularExpressionValidator ID="valRegularExprEmailAddr" runat="server" ControlToValidate="txtemailaddress"
-                                                                                             ErrorMessage="Email Address is in the wrong format" 
-                                                                                             ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
-                                                                                             ValidationGroup="Submit">!</asp:RegularExpressionValidator>
-                                                                
-                                                            <ajaxtoolkit:ValidatorCalloutExtender ID="CalloutEmailAddress"  TargetControlID="valReqularExprEmailAddr"  Width="250px"  
-                                                               HighlightCssClass="highlight" runat="server">
-                                                       </ajaxtoolkit:ValidatorCalloutExtender> 
+                                                              
                                                                
 
                                                             </asp:TableCell>                                         
