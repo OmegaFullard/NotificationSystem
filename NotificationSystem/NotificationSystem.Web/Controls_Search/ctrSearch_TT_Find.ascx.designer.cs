@@ -11,8 +11,17 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 {
 
 
-	public partial class ctrSearch_Customer_Update
+	public partial class ctrSearch_TT_Find
 	{
+
+		/// <summary>
+		/// ScriptManager2 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.ScriptManager ScriptManager2;
 
 		/// <summary>
 		/// Table1 control.
@@ -24,12 +33,21 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 		protected global::System.Web.UI.WebControls.Table Table1;
 
 		/// <summary>
-		/// cmbCustomer control.
+		/// txttroubleticketno control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::Telerik.Web.UI.RadMultiColumnComboBox cmbCustomer;
+		protected global::System.Web.UI.WebControls.TextBox txttroubleticketno;
+
+		/// <summary>
+		/// btnSearch control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button btnSearch;
 	}
 }

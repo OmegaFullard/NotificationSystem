@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NotificationSystem.NotificationSystem.Data.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,20 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
+			if (!(Page.IsPostBack))
+			{
+				cmbCustomer.DataSource = theNotificationSystem.GetCustomer();
+				cmbCustomer.DataTextField = "CustomerID"; cmbCustomer.DataValueField = "FirstN";
+				cmbCustomer.DataBind();
+			}
+		}
+
+		public void ClearControl()
+		{
+			this.cmbCustomer.Value = string.Empty; cmbCustomer.Text = "--";
 		}
 	}
+
 }

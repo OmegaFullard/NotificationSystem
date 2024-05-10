@@ -25,31 +25,29 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 		}
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if ((Page.IsPostBack))
-			{
-				try
+		
+			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+			TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
+			try
 				{
-					if (m_TroubleTicketNo > 0)
-						this.lblTroubleTicketNo.Text = "ID" + m_TroubleTicketNo;
-					if (this.lblTroubleTicketNo.Text.Length == 2)
-						return;
+			if ((Page.IsPostBack))
+				theNotificationSystem.GetTroubleTicketByNo(Convert.ToInt32(this.lblTroubleTicketNo.Text.Replace("TicketNo", "")));
+			else
+				tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
 
-					clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-					TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
-					theNotificationSystem.GetTroubleTicketByNo(Convert.ToInt32(this.lblTroubleTicketNo.Text.Replace("TicketNo", "")));
-					if (tblTroubleTicketReq.Count == 0)
-						return;
-
-					{
-						this.grdTroubleTicketReq.DataSource = tblTroubleTicketReq;
+			this.lblSearchResult.Text = tblTroubleTicketReq.Rows.Count.ToString();
+			this.grdTroubleTicketReq.DataSource = tblTroubleTicketReq.DefaultView;
 						this.grdTroubleTicketReq.DataBind();
-					}
+					
 				}
 				catch (Exception ex)
 				{
-					throw;
-				}
+				clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+				string NotificationBody = ex.Message + "  " + ex.StackTrace;
+				SendError.SendMailMessage(NotificationBody);
+				Response.Redirect("ErrorPage.aspx", false);
 			}
 		}
 	}
+
 
