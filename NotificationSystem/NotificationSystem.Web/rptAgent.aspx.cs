@@ -38,7 +38,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrAgent_Search.PopulateSearchControl();
-                    theSearch.ReportPath = "~/rptAgent.rdlc";
+                    theSearch.ReportPath = "rptAgent.rdlc";
                     theSearch.AgentID = ctrAgent_Search.AgentID;
                     ShowReport();
                 }
@@ -53,7 +53,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
                 ReportDataSource ReportDataSource = new ReportDataSource();
                 string strTitle = string.Empty;
-				Data.xsReports.AgentDataTable dtReport;
+                Data.xsReports.AgentDataTable dtReport;
 
                 ReportDataSource.Name = "DataSet1";
                 ReportDataSource.Name = "DataSet2";
@@ -61,23 +61,26 @@ namespace NotificationSystem.NotificationSystem.Web
 
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
                 ReportViewer1.LocalReport.ReportPath = Page.Server.MapPath(theSearch.ReportPath);
-                if (theSearch.AgentID is 0)
-                    theSearch.AgentID = 0;
-                if (IsNumeric((string)theSearch.AgentID))
-                    Int32.Parse((string)theSearch.AgentID);
 
+                if (theSearch.AgentID.ToString().Length == 0)
+                {
+					theSearch.AgentID = "XXXXXX";
+				}
 
-
-                int numAgentID = Int32.Parse((string)theSearch.AgentID);
+				int numAgentID = Int32.Parse((string)theSearch.AgentID);
                 dtReport = (Data.xsReports.AgentDataTable)theNotificationSystem.GetAgentByAgentID(numAgentID);
 
-                ReportDataSource.Value = dtReport;
 
+                //strTitle = "Agent Report: " + theSearch.TroubleTicketNo + " Activity by Agent ID ";
+
+
+
+                ReportDataSource.Value = dtReport;
+                //ReportParameter param1 = new ReportParameter("Title", strTitle);
+                //ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { param1 });
 
                 ReportViewer1.LocalReport.DataSources.Clear();
                 ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
-                //ReportViewer1.LocalReport.SubreportProcessing += this.SubreportProcessingEventHandler;
-
                 ReportViewer1.LocalReport.Refresh();
             }
 

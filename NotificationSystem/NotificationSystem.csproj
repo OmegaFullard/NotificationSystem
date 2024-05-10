@@ -1324,6 +1324,7 @@
     <Content Include="NotificationSystem.Web\Customer_Add.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Delete.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Find.aspx" />
+    <Content Include="NotificationSystem.Web\Customer_Find_Details.aspx" />
     <Content Include="NotificationSystem.Web\Customer_Update.aspx" />
     <Content Include="NotificationSystem.Web\ErrorPage.aspx" />
     <Content Include="NotificationSystem.Web\images\envelope-regular-24.png" />
@@ -4360,6 +4361,13 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\Customer_Find.aspx.designer.cs">
       <DependentUpon>Customer_Find.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Customer_Find_Details.aspx.cs">
+      <DependentUpon>Customer_Find_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Customer_Find_Details.aspx.designer.cs">
+      <DependentUpon>Customer_Find_Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Customer_Update.aspx.cs">
       <DependentUpon>Customer_Update.aspx</DependentUpon>
