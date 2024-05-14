@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" Runat="Server">
-    <link href="styles/default.css" rel="stylesheet" />
+    
     
 <link rel="Stylesheet" href="https://cdn.jsdeliver.net/gh/openlayers.github.io@master/en/v6.2.1/css/ol.css" />
 <style>
