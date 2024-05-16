@@ -33,22 +33,31 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Image customerreg;
 
 		/// <summary>
-		/// TextBox1 control.
+		/// CustomerID control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBox1;
+		protected global::System.Web.UI.WebControls.TextBox CustomerID;
 
 		/// <summary>
-		/// TextBox2 control.
+		/// FirstN control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBox2;
+		protected global::System.Web.UI.WebControls.TextBox FirstN;
+
+		/// <summary>
+		/// LastN control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox LastN;
 
 		/// <summary>
 		/// TextBox3 control.

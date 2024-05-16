@@ -24,6 +24,8 @@
                      </div>
                   </div>
                    </div>
+                </div>
+          
                   <div class="row">
                      <div class="col">
                       
@@ -38,19 +40,26 @@
                         <hr/>
                      </div>
                   </div>
+                           <div class="row">
+                     <div class="col-md-6">
+                        <label>Customer ID</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="CustomerID" runat="server" placeholder="Customer ID" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
+                        </div>
+                         </div>
+                               </div>
                   <div class="row">
                      <div class="col-md-6">
-                        <label>Full Name</label>
+                        <label>First Name</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Full Name" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="FirstN" runat="server" placeholder="First Name" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
+                        </div>
+                         <label>Last Name</label>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="LastN" runat="server" placeholder="Last Name" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
                         </div>
                      </div>
-                     <div class="col-md-6">
-                        <label>Registration Date</label>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Registration Date" ReadOnly="True"></asp:TextBox>
-                        </div>
-                     </div>
+                     
                   </div>
                   <div class="row">
                      <div class="col-md-6">
@@ -153,6 +162,7 @@
             
                     <br />
                     <br />
+             </div>
                   <div class="row">
                      <div class="col">
                         
@@ -193,7 +203,7 @@
                    </div>
                     <br />
                     <p>Already Have an Account?<a href="UserViewProfile.aspx">   Login</a></p>
-                    </div>                            
+                                               
             <br />
                 <br />
                </div>
@@ -219,7 +229,7 @@
              
             </div>
          </div>
-      </div>
+      
    
 </asp:Content>
 

@@ -15,10 +15,6 @@ namespace NotificationSystem.NotificationSystem.Web
 
         }
 
-		protected void Button2_Click(object sender, EventArgs e)
-		{
-         
-
-        }
+		
     }
 }
