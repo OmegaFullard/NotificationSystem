@@ -40,7 +40,7 @@
                                              <asp:TableCell HorizontalAlign="Left"> 
                                                &nbsp;&nbsp; <asp:TextBox ID="txtcustomerid" runat="server" Height="20px" Width="300px"  ReadOnly="True"></asp:TextBox>
                                                  <asp:RequiredFieldValidator  ID="valRequiredFieldID" runat="server" ControlToValidate="txtcustomerid" ValidationGroup="Submit"  
-                                             ErrorMessage="Customer ID is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
+                                             ErrorMessage="Customer ID is Required Field!"><span class="required"></span></asp:RequiredFieldValidator>
                                             
                                                  <ajaxtoolkit:ValidatorCalloutExtender ID="Required_ID"  TargetControlID="valRequiredFieldID"  Width="250px"  
                                                                HighlightCssClass="highlight" runat="server">
@@ -59,7 +59,7 @@
                                              
                                                    &nbsp;&nbsp; <asp:TextBox ID="txtfirstname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
                                                  <asp:RequiredFieldValidator  ID="valRequiredFieldFirstN" runat="server" ControlToValidate="txtfirstname" ValidationGroup="Submit"  
-                                             ErrorMessage="First Name is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
+                                             ErrorMessage="First Name is Required Field!"><span class="required"></span></asp:RequiredFieldValidator>
                                             
                                                  
                                                  <ajaxtoolkit:ValidatorCalloutExtender ID="Require_FirstN"  TargetControlID="valRequiredFieldFirstN"  Width="250px"  

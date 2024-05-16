@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Ticket Details" Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.Master" CodeBehind="TicketDetails.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.TicketDetails" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
-<%@ Register Src="Controls_Find/ctrTroubleTicketReq_Find.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Find" %>
+<%@ Register Src="ctrTroubleTicketReq.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq" %>
 <%@ Register Src="Controls_Search/ctrTroubleTicketReq_Search.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Search" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">  
@@ -73,7 +73,7 @@
   
                   <div class="row">
                      <div class="col-6">
-                         <asp:Button ID="Button2" class="btn btn-lg btn-block btn-primary" runat="server" Width="150px" Height="25px" Style="color: #ffffff; background-color: #0000ff; border: medium solid #e6ffe6" Text="Search Ticket" />
+                         <asp:Button ID="Button2" class="btn btn-lg btn-block btn-primary" runat="server" Width="150px" Height="31px" Style="color: #ffffff; background-color: #0000ff; border: medium solid #e6ffe6" Text="Search Date" />
                      </div>
                      
                   </div>
@@ -82,6 +82,6 @@
             <a href="Default.aspx"><< Back to Home</a><br/>
             <br/>
          </div>
-   	 <uc1:ctrTroubleTicketReq_Find runat="server" id="ctrTroubleTicketReq_Find" />
+   	 <uc1:ctrTroubleTicketReq runat="server" id="ctrTroubleTicketReq" />
 
 </asp:Content>

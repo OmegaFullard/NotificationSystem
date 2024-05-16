@@ -70,7 +70,7 @@
                             <div class="col-4 mx-auto">
                                <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                        <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="25px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6" Text="Login" OnClick="Button2_Click" />
+                        <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="35px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6; margin-bottom: 0px;" Text="Login" OnClick="Button2_Click" />
                 
 
        <br />

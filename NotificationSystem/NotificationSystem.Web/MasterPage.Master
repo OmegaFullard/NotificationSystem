@@ -80,32 +80,33 @@
                         </asp:MenuItem>
         
                    <asp:MenuItem Text="Customers">
-                   <asp:MenuItem Text="Customers" NavigateUrl="Customer_Find.aspx"></asp:MenuItem>                
-              <asp:MenuItem Text= "Customer Registration" NavigateUrl="UserRegistration.aspx"></asp:MenuItem>
-             <asp:MenuItem Text="Customer Login" NavigateUrl="UserViewProfile.aspx"></asp:MenuItem>
+                   <asp:MenuItem Text="Customer Find" NavigateUrl="Customer.aspx"></asp:MenuItem>    
+                         <asp:MenuItem Text="Customer Add" NavigateUrl="Customer_Add.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Customer Update" NavigateUrl="Customer_Update.aspx"></asp:MenuItem>
+              <asp:MenuItem Text="Customer Delete" NavigateUrl="Customer_Delete.aspx"></asp:MenuItem>
+             
              </asp:MenuItem>
 
                         <asp:MenuItem Text="Agents">
-                   <asp:MenuItem Text="Agents" NavigateUrl="Agent_Find.aspx"></asp:MenuItem>  
-                            <asp:MenuItem Text="Assigned Ticket" NavigateUrl="TicketDetails.aspx"></asp:MenuItem>      
+                   <asp:MenuItem Text="Agent Find" NavigateUrl="Agent.aspx"></asp:MenuItem>  
+                            <asp:MenuItem Text="Agent Add" NavigateUrl="Agent_Add.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Agent Update" NavigateUrl="Agent_Update.aspx"></asp:MenuItem>
+              <asp:MenuItem Text="Agent Delete" NavigateUrl="Agent_Delete.aspx"></asp:MenuItem>
+                                
              </asp:MenuItem>
 
             <asp:MenuItem Text="Admin">
-            <asp:MenuItem Text="Admin Login" NavigateUrl="AdminLogin.aspx"></asp:MenuItem>  
+            <asp:MenuItem Text="Admin Login" NavigateUrl="AdminLogin.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Admin Registration" NavigateUrl="AdminRegistration.aspx"></asp:MenuItem>
                 </asp:MenuItem>
                
                    <asp:MenuItem Text="Customer Mgt">                
-                <asp:MenuItem Text="Customer Add" NavigateUrl="Customer_Add.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Customer Update" NavigateUrl="Customer_Update.aspx"></asp:MenuItem>
-              <asp:MenuItem Text="Customer Delete" NavigateUrl="Customer_Delete.aspx"></asp:MenuItem>
-                   </asp:MenuItem>
-
-             
+              <asp:MenuItem Text= "Customer Registration" NavigateUrl="UserRegistration.aspx"></asp:MenuItem>
+             <asp:MenuItem Text="Customer Login" NavigateUrl="UserViewProfile.aspx"></asp:MenuItem> 
+                   </asp:MenuItem>             
                   
                 <asp:MenuItem Text="Agent Mgt">
-                     <asp:MenuItem Text="Agent Add" NavigateUrl="Agent_Add.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Agent Update" NavigateUrl="Agent_Update.aspx"></asp:MenuItem>
-              <asp:MenuItem Text="Agent Delete" NavigateUrl="Agent_Delete.aspx"></asp:MenuItem>
+                       <asp:MenuItem Text="Assigned Ticket" NavigateUrl="TicketDetails.aspx"></asp:MenuItem>
               </asp:MenuItem>
 
                      <asp:MenuItem Text="Reports">

@@ -85,6 +85,18 @@ namespace NotificationSystem.NotificationSystem.Web
             }
         }
 
+        public void ClearControls()
+        {
+            try
+            {
+            }
+
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
         public void UpdateAgent()
         {
             try

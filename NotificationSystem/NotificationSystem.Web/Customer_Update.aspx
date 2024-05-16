@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Customer_Update.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Customer_Update" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Search/ctrCustomer_Search.ascx" TagPrefix="uc1" TagName="ctrCustomer_Search" %>
+<%@ Register Src="Controls_Search/ctrSearch_Customer_Update.ascx" TagPrefix="uc1" TagName="ctrSearch_Customer_Update" %>
 <%@ Register Src="Controls_Add/ctrCustomer_Add.ascx" TagPrefix="uc1" TagName="ctrCustomer_Add" %>
 <%@ Register Src="Controls_Update/ctrCustomer_Update.ascx" TagPrefix="uc1" TagName="ctrCustomer_Update" %>
 
@@ -20,7 +21,7 @@
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
 
-<asp:TableCell VerticalAlign="Top"><uc1:ctrCustomer_Search runat="server" ID="ctrCustomer_Search" /></asp:TableCell>
+<asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Customer_Update runat="server" ID="ctrSearch_Customer_Update" /></asp:TableCell>
 </asp:TableRow>
                          </asp:Table>
              <br />

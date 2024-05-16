@@ -42,13 +42,13 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Image customer;
 
 		/// <summary>
-		/// ctrAgent_Search control.
+		/// ctrSearch_Customer_Update control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::ctrCustomer_Search ctrAgent_Search;
+		protected global::NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Customer_Update ctrSearch_Customer_Update;
 
 		/// <summary>
 		/// NavigationMenu control.

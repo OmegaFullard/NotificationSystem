@@ -40,13 +40,13 @@ public partial class TroubleTicketReq_Update
 	protected global::System.Web.UI.WebControls.Image issue1;
 
 	/// <summary>
-	/// ctrTroubleTicketReq_Search control.
+	/// ctrSearch_TTR_Update control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::ctrTroubleTicketReq_Search ctrTroubleTicketReq_Search;
+	protected global::NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_TTR_Update ctrSearch_TTR_Update;
 
 	/// <summary>
 	/// ctrTroubleTicketReq_Update control.

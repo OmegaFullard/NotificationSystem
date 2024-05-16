@@ -1,4 +1,4 @@
-﻿<%@ Page Title="User Registration" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="false" CodeBehind="UserRegistration.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.UserRegistration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminRegistration.aspx.cs" MasterPageFile="MasterPage.Master" Inherits="NotificationSystem.NotificationSystem.Web.AdminRegistration" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
@@ -6,7 +6,8 @@
   
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
      <div class="container-fluid">
       <div class="row">
          <div class="col-md-5">
@@ -19,7 +20,7 @@
                          <br />
                          <br />
                         <center>
-                                <asp:Image ID="customerreg" runat="server" ImageUrl="images/defaultuser.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
+                                <asp:Image ID="adminreg" runat="server" ImageUrl="images/admin.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="150px" style="margin-top: 5px" Width="150px" />
                         </center>
                      </div>
                   </div>
@@ -49,6 +50,7 @@
                         <label>Registration Date</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Registration Date" ReadOnly="True"></asp:TextBox>
+                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="TextBox2_CalendarExtender" TargetControlID="TextBox2" ID="TextBox2_CalendarExtender"></ajaxToolkit:CalendarExtender>
                         </div>
                      </div>
                   </div>
@@ -192,7 +194,7 @@
                   </div>
                    </div>
                     <br />
-                    <p>Already Have an Account?<a href="UserViewProfile.aspx">   Login</a></p>
+                    <p>Already Have an Account?<a href="AdminLogin.aspx">   Login</a></p>
                     </div>                            
             <br />
                 <br />
@@ -222,7 +224,6 @@
       </div>
    
 </asp:Content>
-
 
 
 

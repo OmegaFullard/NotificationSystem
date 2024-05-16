@@ -11,53 +11,71 @@ namespace NotificationSystem.NotificationSystem.Web
 {
 
 
-	public partial class TicketDetails
+	public partial class AdminRegistration
 	{
 
 		/// <summary>
-		/// issue2 control.
+		/// adminreg control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Image issue2;
+		protected global::System.Web.UI.WebControls.Image adminreg;
 
 		/// <summary>
-		/// Table1 control.
+		/// TextBox1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Table Table1;
+		protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
 		/// <summary>
-		/// ctrTroubleTicketReq_Search control.
+		/// TextBox2 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::ctrTroubleTicketReq_Search ctrTroubleTicketReq_Search;
+		protected global::System.Web.UI.WebControls.TextBox TextBox2;
 
 		/// <summary>
-		/// TextBox5 control.
+		/// TextBox2_CalendarExtender control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextBox5;
+		protected global::AjaxControlToolkit.CalendarExtender TextBox2_CalendarExtender;
 
 		/// <summary>
-		/// TextBox5_CalendarExtender control.
+		/// TextBox3 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::AjaxControlToolkit.CalendarExtender TextBox5_CalendarExtender;
+		protected global::System.Web.UI.WebControls.TextBox TextBox3;
+
+		/// <summary>
+		/// TextBox4 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox TextBox4;
+
+		/// <summary>
+		/// Address control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox Address;
 
 		/// <summary>
 		/// TextBox6 control.
@@ -69,13 +87,40 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.TextBox TextBox6;
 
 		/// <summary>
-		/// TextBox6_CalendarExtender control.
+		/// DropDownList1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::AjaxControlToolkit.CalendarExtender TextBox6_CalendarExtender;
+		protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
+		/// <summary>
+		/// TextBox11 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox TextBox11;
+
+		/// <summary>
+		/// TextBox8 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox TextBox8;
+
+		/// <summary>
+		/// TextBox9 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox TextBox9;
 
 		/// <summary>
 		/// Button2 control.
@@ -87,12 +132,12 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Button Button2;
 
 		/// <summary>
-		/// ctrTroubleTicketReq control.
+		/// logo control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::NotificationSystem.NotificationSystem.Web.ctrTroubleTicketReq ctrTroubleTicketReq;
+		protected global::System.Web.UI.WebControls.Image logo;
 	}
 }

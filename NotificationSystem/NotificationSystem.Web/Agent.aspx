@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master"AutoEventWireup="true" CodeBehind="Agent.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent" %>
 <%@ Register Src="ctrAgent.ascx" TagPrefix="uc1" TagName="ctrAgent" %>
-<%@ Register Src="Controls_Search/ctrSearch_Agent_Find.ascx" TagPrefix="uc1" TagName="ctrSearch_Agent_Find" %>
 <%@ Register Src="Controls_Search/ctrAgent_Search.ascx" TagPrefix="uc1" TagName="ctrAgent_Search" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
@@ -18,7 +17,7 @@
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
-                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Agent_Find runat="server" ID="ctrSearch_Agent_Find" /></asp:TableCell>
+                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_Search runat="server" ID="ctrAgent_Search" /></asp:TableCell>
                                     </asp:TableRow>
                              
                          </asp:Table>

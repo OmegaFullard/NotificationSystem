@@ -43,8 +43,9 @@ using System.Net.Http;
 
 
         public TextBox txtAgentList { get; set; }
+	public int AgentList { get; internal set; }
 
-        protected void Page_Load(object sender, EventArgs e)
+	protected void Page_Load(object sender, EventArgs e)
         {
             clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
             AgentDataTable tblAgent = new AgentDataTable();

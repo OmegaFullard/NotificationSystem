@@ -1,28 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrAgent_Find.ascx.cs" Inherits="ctrAgent_Find" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
-<script type="text/javascript">
-            function showDetails(param) {
 
-                var oWnd = window.radopen(null, "FormDetails");
-                oWnd.setUrl(oWnd.get_navigateUrl().split("?")[0] + '?' + param.toString());
-            }
-
-            function OnClientclose(radWindow) {
-                window.close;
-            }
-</script>
-
-   <telerik:RadWindowManager ID="Singleton" runat="server" >
-                              <Windows>
-                                  <telerik:RadWindow  ID="FormDetails" Behaviors="Close" 
-                                    VisibleStatusbar="false"
-                                     ReloadOnShow="true" OnClientClose="OnClientclose"
-                                     BackColor="Gray" Modal="true" runat="server"  Height="450px"  Width="900px"
-                                     NavigateUrl='<%# "../Agent_Find_Details.aspx" %>'>
-                                </telerik:RadWindow>
-                             </Windows>
-        </telerik:RadWindowManager>
 
 
  

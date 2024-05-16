@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Agent_Add.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Add" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
-<%@ Register Src="Controls_Search/ctrSearch_Agent_Find.ascx" TagPrefix="uc1" TagName="ctrSearch_Agent_Find" %>
+<%@ Register Src="Controls_Search/ctrAgent_Search.ascx" TagPrefix="uc1" TagName="ctrAgent_Search" %>
 <%@ Register Src="Controls_Add/ctrAgent_Add.ascx" TagPrefix="uc1" TagName="ctrAgent_Add" %>
 
 
@@ -31,7 +31,7 @@
                                          </asp:TableCell>
      
                                            <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
-                                        <asp:TableCell VerticalAlign="Top"></asp:TableCell>
+                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_search runat="server" id="ctrAgent_Search" Visible="false" /></asp:TableCell>
                                                  
                                     </asp:TableRow>
                          </asp:Table>

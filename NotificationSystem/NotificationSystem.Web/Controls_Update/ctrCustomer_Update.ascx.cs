@@ -86,7 +86,20 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
         }
     }
 
-        public void UpdateCustomer()
+    public void ClearControls()
+    {
+        try
+        {
+        }
+
+
+        catch (Exception ex)
+        {
+            throw;
+        }
+    }
+
+    public void UpdateCustomer()
         {
             try
             {
