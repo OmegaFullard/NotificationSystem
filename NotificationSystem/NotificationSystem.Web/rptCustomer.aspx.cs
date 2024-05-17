@@ -61,24 +61,25 @@ namespace NotificationSystem.NotificationSystem.Web
 
                 if (theSearch.CustomerID.ToString().Length == 0)
                 {
-                    theSearch.CustomerID = "XXXXXX";
+                    //theSearch.CustomerID = "XXXXXX";
+
+
+
+                    //implicit cast
+                    int numCustomerID = (theSearch.CustomerID);
+                    dtReport = (Data.xsReports.CustomerDataTable)theNotificationSystem.GetCustomerByCustomerID(numCustomerID);
+
+                    //strTitle = "Customer Report: " + theSearch.TroubleTicketNo + " Activity by Customer ID ";
+
+                    ReportDataSource.Value = dtReport;
+                    //ReportParameter param1 = new ReportParameter("Title", strTitle);
+                    //ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { param1 });
+
+                    ReportViewer1.LocalReport.DataSources.Clear();
+                    ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
+
+                    ReportViewer1.LocalReport.Refresh();
                 }
-
-
-                //implicit cast
-                int numCustomerID = Int32.Parse((string)theSearch.CustomerID);
-                dtReport = (Data.xsReports.CustomerDataTable)theNotificationSystem.GetCustomerByCustomerID(numCustomerID);
-
-                //strTitle = "Customer Report: " + theSearch.TroubleTicketNo + " Activity by Customer ID ";
-
-                ReportDataSource.Value = dtReport;
-                //ReportParameter param1 = new ReportParameter("Title", strTitle);
-                //ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { param1 });
-
-                ReportViewer1.LocalReport.DataSources.Clear();
-                ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
-           
-                ReportViewer1.LocalReport.Refresh();
             }
 
 

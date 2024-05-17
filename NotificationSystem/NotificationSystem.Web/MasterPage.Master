@@ -80,7 +80,7 @@
                         </asp:MenuItem>
         
                    <asp:MenuItem Text="Customers">
-                   <asp:MenuItem Text="Customer Find" NavigateUrl="Customer.aspx"></asp:MenuItem>    
+                   <asp:MenuItem Text="Customer Find" NavigateUrl="Customer_Find.aspx"></asp:MenuItem>    
                          <asp:MenuItem Text="Customer Add" NavigateUrl="Customer_Add.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Customer Update" NavigateUrl="Customer_Update.aspx"></asp:MenuItem>
               <asp:MenuItem Text="Customer Delete" NavigateUrl="Customer_Delete.aspx"></asp:MenuItem>
@@ -88,7 +88,7 @@
              </asp:MenuItem>
 
                         <asp:MenuItem Text="Agents">
-                   <asp:MenuItem Text="Agent Find" NavigateUrl="Agent.aspx"></asp:MenuItem>  
+                   <asp:MenuItem Text="Agent Find" NavigateUrl="Agent_Find.aspx"></asp:MenuItem>  
                             <asp:MenuItem Text="Agent Add" NavigateUrl="Agent_Add.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Agent Update" NavigateUrl="Agent_Update.aspx"></asp:MenuItem>
               <asp:MenuItem Text="Agent Delete" NavigateUrl="Agent_Delete.aspx"></asp:MenuItem>

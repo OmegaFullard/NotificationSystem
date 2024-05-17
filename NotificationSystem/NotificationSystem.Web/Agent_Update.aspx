@@ -9,17 +9,7 @@
             </asp:Content>
            <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
 
-               <script type="text/javascript">
-                   function OnClientLoad0(sender, args) {
-                       $telerik.$(".k-input")[0].setAttribute("readonly", "true");
-                   }
-
-                   function OnClientLoad1(sender, args) {
-                       $telerik.$(".k-input")[2].setAttribute("readonly", "true");
-                   }
-
-               </script>
-
+              
 
                  <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    

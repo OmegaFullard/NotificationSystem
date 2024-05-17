@@ -22,7 +22,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Page.Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrCustomer_Search.PopulateSearchControl();
-                    ctrCustomer_Search.CustomerID = ctrCustomer_Search.CustomerID;
+                    ctrCustomer.CustomerID = ctrCustomer_Search.CustomerID;
                 }
             }
         }

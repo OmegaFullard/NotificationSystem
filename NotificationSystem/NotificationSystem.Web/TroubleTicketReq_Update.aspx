@@ -10,6 +10,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
             </asp:Content>
            <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
+               <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
                      <h2>Update Ticket</h2><br />

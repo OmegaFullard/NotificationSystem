@@ -64,24 +64,25 @@ namespace NotificationSystem.NotificationSystem.Web
 
                 if (theSearch.AgentID.ToString().Length == 0)
                 {
-					theSearch.AgentID = "XXXXXX";
-				}
-
-				int numAgentID = Int32.Parse((string)theSearch.AgentID);
-                dtReport = (Data.xsReports.AgentDataTable)theNotificationSystem.GetAgentByAgentID(numAgentID);
+                    //theSearch.AgentID = "XXXXXX";
 
 
-                //strTitle = "Agent Report: " + theSearch.TroubleTicketNo + " Activity by Agent ID ";
+                    int numAgentID = (theSearch.AgentID);
+                    dtReport = (Data.xsReports.AgentDataTable)theNotificationSystem.GetAgentByAgentID(numAgentID);
+
+
+                    //strTitle = "Agent Report: " + theSearch.TroubleTicketNo + " Activity by Agent ID ";
 
 
 
-                ReportDataSource.Value = dtReport;
-                //ReportParameter param1 = new ReportParameter("Title", strTitle);
-                //ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { param1 });
+                    ReportDataSource.Value = dtReport;
+                    //ReportParameter param1 = new ReportParameter("Title", strTitle);
+                    //ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { param1 });
 
-                ReportViewer1.LocalReport.DataSources.Clear();
-                ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
-                ReportViewer1.LocalReport.Refresh();
+                    ReportViewer1.LocalReport.DataSources.Clear();
+                    ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
+                    ReportViewer1.LocalReport.Refresh();
+                }
             }
 
 

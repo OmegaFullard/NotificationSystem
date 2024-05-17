@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master"AutoEventWireup="true" CodeBehind="Agent.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent" %>
 <%@ Register Src="ctrAgent.ascx" TagPrefix="uc1" TagName="ctrAgent" %>
 <%@ Register Src="Controls_Search/ctrAgent_Search.ascx" TagPrefix="uc1" TagName="ctrAgent_Search" %>
-<%@ Register Src="Controls_Find/ctrAgent_Find.ascx" TagPrefix="uc1" TagName="ctrAgent_Find" %>
+
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
     <title>Agents</title>

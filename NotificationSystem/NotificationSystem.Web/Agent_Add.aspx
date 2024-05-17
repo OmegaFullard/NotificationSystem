@@ -49,7 +49,7 @@
                                            </asp:Menu>
                                  </div>
 
-<uc1:ctrAgent_Add runat="server" id="ctrAgent_Add" Visible="true" />
+<uc1:ctrAgent_Add runat="server" id="ctrAgent_Add" />
 
                      </div>                  
                 

@@ -69,7 +69,7 @@
                             <div class="col-4 mx-auto">
                                <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                        <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="35px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6; margin-bottom: 0px;" Text="Login" OnClick="Button2_Click" CommandArgument="&quot;SELECT UserName FROM Admin WHERE Username = @UserName and Password=@Password&quot;;" CommandName="LoginName" />
+                        <asp:Button class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="35px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6; margin-bottom: 0px;" Text="Login" CommandArgument="&quot;SELECT UserName FROM Admin WHERE Username = @UserName and Password=@Password&quot;;" CommandName="LoginName" ID="Button1" />
                 
 
        <br />

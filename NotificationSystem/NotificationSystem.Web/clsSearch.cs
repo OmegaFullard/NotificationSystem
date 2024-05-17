@@ -96,29 +96,29 @@ namespace NotificationSystem.NotificationSystem.Web
             }
         }
 
-		public object AgentID { get; internal set; }
-        //public int m_AgentID
-        //{
-        //    get
-        //    {
-        //        return m_AgentID;
-        //    }
-        //    set
-        //    {
-        //        m_AgentID = value;
-        //    }
-        //}
-        public object CustomerID { get; internal set; }
-        //public int m_CustomerID
-        //{
-        //    get
-        //    {
-        //        return m_CustomerID;
-        //    }
-        //    set
-        //    {
-        //        m_CustomerID = value;
-        //    }
-        //}
-    }
+        //public object AgentID { get; internal set; }
+        public int AgentID
+		{
+			get
+			{
+				return m_AgentID;
+			}
+			set
+			{
+				m_AgentID = value;
+			}
+		}
+		//public object CustomerID { get; internal set; }
+		public int CustomerID
+		{
+			get
+			{
+				return m_CustomerID;
+			}
+			set
+			{
+				m_CustomerID = value;
+			}
+		}
+	}
 }
