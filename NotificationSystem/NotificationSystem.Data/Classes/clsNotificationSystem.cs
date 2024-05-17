@@ -575,6 +575,22 @@ public int GetAgentByID(int AgentID)
 
 
 
+        public DataTable GetAdmin(string UserName)
+        {
+            try
+            {
+                AdminTableAdapter adpAdmin = new AdminTableAdapter();
+                NotificationSystem.AdminDataTable tblAdmin = adpAdmin.GetDataByUserName(UserName);
+
+                return tblAdmin;
+            }
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
 
 
         public void UpdateAdmin(clsAdmin thisAdmin)

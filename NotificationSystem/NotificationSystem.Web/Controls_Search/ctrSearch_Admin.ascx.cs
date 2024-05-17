@@ -9,9 +9,27 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 {
 	public partial class ctrSearch_Admin : System.Web.UI.UserControl
 	{
-		protected void Page_Load(object sender, EventArgs e)
+        private string m_UserName = string.Empty;
+
+        public string UserName
+        {
+            get
+            {
+                return m_UserName;
+            }
+            set
+            {
+                m_UserName = value;
+            }
+        }
+        protected void Page_Load(object sender, EventArgs e)
 		{
 
 		}
-	}
+        public void PopulateSearchControl()
+        {
+            m_UserName = txtUserName.Text;
+        }
+
+    }
 }

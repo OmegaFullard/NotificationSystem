@@ -31,7 +31,7 @@ namespace NotificationSystem.NotificationSystem.Web
                     if (ctrTroubleTicketReq_Search.TroubleTicketNo == 0)
                         return;
 
-					this.ctrTroubleTicketReq_Find.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
+					this.ctrSearch_TT_Find.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
 
                 }
             }

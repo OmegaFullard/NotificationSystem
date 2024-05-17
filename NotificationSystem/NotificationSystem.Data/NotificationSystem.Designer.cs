@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace NotificationSystem.NotificationSystem.Data {
     
     
@@ -1013,7 +1015,12 @@ namespace NotificationSystem.NotificationSystem.Data {
                 xs.Add(dsSchema);
                 return type;
             }
-        }
+
+			public static explicit operator AgentDataTable(int v)
+			{
+				throw new NotImplementedException();
+			}
+		}
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1456,7 +1463,12 @@ namespace NotificationSystem.NotificationSystem.Data {
                 xs.Add(dsSchema);
                 return type;
             }
-        }
+
+			public static explicit operator CustomerDataTable(int v)
+			{
+				throw new NotImplementedException();
+			}
+		}
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -9077,7 +9089,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT   UserName, Password, Email, First, Last\r\nFROM         Admin\r\nWHERE     (U" +
@@ -9085,6 +9097,16 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT   UserName, Password, Email, First, Last\r\nFROM         Admin\r\n";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT   UserName, Password, Email, First, Last\r\nFROM         Admin\r\nWHERE     (U" +
+                "serName = @username) ";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9129,6 +9151,66 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(password));
+            }
+            NotificationSystem.AdminDataTable dataTable = new NotificationSystem.AdminDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(NotificationSystem.AdminDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual NotificationSystem.AdminDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            NotificationSystem.AdminDataTable dataTable = new NotificationSystem.AdminDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUserName(NotificationSystem.AdminDataTable dataTable, string username) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((username == null)) {
+                throw new global::System.ArgumentNullException("username");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(username));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual NotificationSystem.AdminDataTable GetDataByUserName(string username) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((username == null)) {
+                throw new global::System.ArgumentNullException("username");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(username));
             }
             NotificationSystem.AdminDataTable dataTable = new NotificationSystem.AdminDataTable();
             this.Adapter.Fill(dataTable);
