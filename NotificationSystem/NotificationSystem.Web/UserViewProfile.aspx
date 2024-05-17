@@ -51,7 +51,7 @@
 
                       <br />
                         <br />
-                              <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Width="150px" Height="35px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6" Text="Login" />
+                              <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Width="150px" Height="35px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6" Text="Login" CommandArgument="&quot;SELECT UserName FROM Customer WHERE Username = @UserName and Password=@Password&quot;;" CommandName="LoginName" />
                            <br />
                             </div>
   

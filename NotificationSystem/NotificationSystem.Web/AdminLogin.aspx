@@ -3,10 +3,9 @@
 
 
 
-
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 
-
+    <link href="styles/default.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -59,7 +58,7 @@
                             <div class="col-md-6">
                                 <label>Password</label>
                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" AutoPostBack="True" CausesValidation="True" MaxLength="10"></asp:TextBox>
 
                                 </div>
                             </div>
@@ -70,7 +69,7 @@
                             <div class="col-4 mx-auto">
                                <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                        <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="35px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6; margin-bottom: 0px;" Text="Login" OnClick="Button2_Click" />
+                        <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Width="150px" Height="35px" style="color: #ffffff; background-color: #009900; border: medium solid #e6ffe6; margin-bottom: 0px;" Text="Login" OnClick="Button2_Click" CommandArgument="&quot;SELECT UserName FROM Admin WHERE Username = @UserName and Password=@Password&quot;;" CommandName="LoginName" />
                 
 
        <br />
@@ -103,5 +102,6 @@
     </div>
   
     </asp:Content>
+
 
 
