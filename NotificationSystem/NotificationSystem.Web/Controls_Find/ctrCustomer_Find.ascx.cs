@@ -76,7 +76,7 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
                 this.grdCustomer.PageIndex = e.NewPageIndex;
                 this.grdCustomer.DataBind();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -95,7 +95,7 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
                     this.grdCustomer.DataBind();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -148,7 +148,7 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
 
 
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

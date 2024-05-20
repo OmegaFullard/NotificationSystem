@@ -87,7 +87,7 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
             this.grdAgent.PageIndex = e.NewPageIndex;
             this.grdAgent.DataBind();
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             throw;
         }
@@ -106,7 +106,7 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
                 this.grdAgent.DataBind();
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             throw;
         }
@@ -159,7 +159,7 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
 
 
 
-        catch (Exception ex)
+        catch (Exception)
         {
             throw;
         }

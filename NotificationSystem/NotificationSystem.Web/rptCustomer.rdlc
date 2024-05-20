@@ -8,7 +8,6 @@
         <ConnectString>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NotificationSystem</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
-      <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>140e3832-3da5-48be-8108-6a43d1313b38</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -967,7 +966,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>5.62153in</Top>
+            <Top>5.19319in</Top>
             <Left>0.3125in</Left>
             <Height>0.25in</Height>
             <Width>3.40972in</Width>
@@ -1002,116 +1001,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>5.94097in</Top>
-            <Left>0.3125in</Left>
+            <Top>5.44319in</Top>
+            <Left>0.32639in</Left>
             <Height>0.25in</Height>
             <Width>3.40972in</Width>
             <ZIndex>28</ZIndex>
-            <Style>
-              <Border>
-                <Color>LightGrey</Color>
-                <Style>Solid</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox31">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Switch(
-    First(Fields!Status.Value, "DataSet2") = 1, "Open", 
-    First(Fields!Status.Value, "DataSet2") = 2, "Pending",
-    First(Fields!Status.Value, "DataSet2") = 3, "Resolved",
-    First(Fields!Status.Value, "DataSet2") = 4, "Closed")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>6.18055in</Top>
-            <Left>0.3125in</Left>
-            <Height>0.25in</Height>
-            <Width>3.40972in</Width>
-            <ZIndex>29</ZIndex>
-            <Style>
-              <Border>
-                <Color>LightGrey</Color>
-                <Style>Solid</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox32">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Switch(
-    First(Fields!Status.Value, "DataSet2") = 1, "Open", 
-    First(Fields!Status.Value, "DataSet2") = 2, "Pending",
-    First(Fields!Status.Value, "DataSet2") = 3, "Resolved",
-    First(Fields!Status.Value, "DataSet2") = 4, "Closed")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>6.43055in</Top>
-            <Left>0.3125in</Left>
-            <Height>0.25in</Height>
-            <Width>3.40972in</Width>
-            <ZIndex>30</ZIndex>
-            <Style>
-              <Border>
-                <Color>LightGrey</Color>
-                <Style>Solid</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox33">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Switch(
-    First(Fields!Status.Value, "DataSet2") = 1, "Open", 
-    First(Fields!Status.Value, "DataSet2") = 2, "Pending",
-    First(Fields!Status.Value, "DataSet2") = 3, "Resolved",
-    First(Fields!Status.Value, "DataSet2") = 4, "Closed")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>6.68055in</Top>
-            <Left>0.3125in</Left>
-            <Height>0.25in</Height>
-            <Width>3.40972in</Width>
-            <ZIndex>31</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -1143,11 +1037,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>5.61111in</Top>
+            <Top>5.19319in</Top>
             <Left>6.66667in</Left>
             <Height>0.25in</Height>
             <Width>3.40972in</Width>
-            <ZIndex>32</ZIndex>
+            <ZIndex>29</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -1177,79 +1071,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>5.93055in</Top>
+            <Top>5.44319in</Top>
             <Left>6.66667in</Left>
             <Height>0.25in</Height>
             <Width>3.40972in</Width>
-            <ZIndex>33</ZIndex>
-            <Style>
-              <Border>
-                <Color>LightGrey</Color>
-                <Style>Solid</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox36">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value> =Switch(
-    First(Fields!Type.Value, "DataSet2") = 1, "Incident", 
-    First(Fields!Type.Value, "DataSet2") = 2, "Task",
-    First(Fields!Type.Value, "DataSet2") = 3, "Problem")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>6.18055in</Top>
-            <Left>6.66667in</Left>
-            <Height>0.25in</Height>
-            <Width>3.40972in</Width>
-            <ZIndex>34</ZIndex>
-            <Style>
-              <Border>
-                <Color>LightGrey</Color>
-                <Style>Solid</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox37">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value> =Switch(
-    First(Fields!Type.Value, "DataSet2") = 1, "Incident", 
-    First(Fields!Type.Value, "DataSet2") = 2, "Task",
-    First(Fields!Type.Value, "DataSet2") = 3, "Problem")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>6.42014in</Top>
-            <Left>6.66667in</Left>
-            <Height>0.25in</Height>
-            <Width>3.40972in</Width>
-            <ZIndex>35</ZIndex>
+            <ZIndex>30</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>

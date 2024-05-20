@@ -119,7 +119,7 @@ public void DeleteAgent()
 
                 CleanupControls();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

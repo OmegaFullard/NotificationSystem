@@ -102,7 +102,7 @@ using System.Net.Http;
             }
 
 
-            catch (Exception ex)
+            catch (Exception )
             {
                 throw;
             }

@@ -39,8 +39,8 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 return tblCustomerList;
             }
 
-            catch (Exception ex)
-            {
+            catch (Exception)
+			{
                 throw;
             }
         }
@@ -55,7 +55,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 				return row.CustomerID;
 
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}
@@ -71,7 +71,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 return tblCustomer;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -87,7 +87,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 return tblCustomer;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -108,7 +108,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 }
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -141,7 +141,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 return row.CustomerID;
 
             }
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}
@@ -160,7 +160,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
                 return row.CustomerID;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -178,7 +178,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                     adpCustomer.DeleteQuery(withBlock.CustomerID);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -194,7 +194,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 return;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -210,7 +210,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 return tblTroubleTicketList;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -226,7 +226,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 				return row.TroubleTicketNo;
 
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}
@@ -242,7 +242,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 return tblTroubleTicketReq;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -258,7 +258,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 				return tblTroubleTicketReq;
 			}
 
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}
@@ -279,7 +279,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 				}
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -308,7 +308,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -395,7 +395,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 return tblAgentList;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -413,7 +413,7 @@ public int GetAgentByID(int AgentID)
                 AgentRow row = tblAgentList[0];
                 return row.AgentID;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -429,7 +429,7 @@ public int GetAgentByID(int AgentID)
                 return tblAgent;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -445,7 +445,7 @@ public int GetAgentByID(int AgentID)
                 return tblAgent;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -478,7 +478,7 @@ public int GetAgentByID(int AgentID)
 
             
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -497,7 +497,7 @@ public int GetAgentByID(int AgentID)
 
                 return row.AgentID;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -517,7 +517,7 @@ public int GetAgentByID(int AgentID)
                 }
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -533,7 +533,7 @@ public int GetAgentByID(int AgentID)
                     adpAgent.DeleteQuery(withBlock.AgentID);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -551,7 +551,7 @@ public int GetAgentByID(int AgentID)
                 return;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -567,7 +567,7 @@ public int GetAgentByID(int AgentID)
                 return tblAdmin;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -585,7 +585,7 @@ public int GetAgentByID(int AgentID)
                 return tblAdmin;
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -606,7 +606,7 @@ public int GetAgentByID(int AgentID)
                 }
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -635,7 +635,7 @@ public int GetAgentByID(int AgentID)
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

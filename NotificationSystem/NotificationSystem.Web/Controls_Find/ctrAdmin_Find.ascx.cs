@@ -84,7 +84,7 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
                 this.grdAdmin.PageIndex = e.NewPageIndex;
                 this.grdAdmin.DataBind();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -103,7 +103,7 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
                     this.grdAdmin.DataBind();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -156,7 +156,7 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
 
 
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

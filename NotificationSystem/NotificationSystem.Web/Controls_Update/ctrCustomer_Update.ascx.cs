@@ -93,7 +93,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
         }
 
 
-        catch (Exception ex)
+        catch (Exception)
         {
             throw;
         }
@@ -122,7 +122,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                     theNotificationSystem.UpdateCustomer(thisCustomer);
                     lblResult.Text = "Customer data has been updated";
                 }
-                catch (SqlException ex)
+                catch (SqlException)
                 {
                     //if (ex.Number == 2627)
                     //    lblResult.Text = "Customer already exist!";

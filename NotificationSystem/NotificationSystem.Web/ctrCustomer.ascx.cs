@@ -61,7 +61,7 @@ using Microsoft.VisualBasic;
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -85,7 +85,7 @@ using Microsoft.VisualBasic;
                 this.grdCustomers.PageIndex = e.NewPageIndex;
                 this.grdCustomers.DataBind();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -104,7 +104,7 @@ using Microsoft.VisualBasic;
                     this.grdCustomers.DataBind();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

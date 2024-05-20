@@ -27,7 +27,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 				return tblAgent;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}
@@ -41,7 +41,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 				return tblAgent;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}
@@ -57,7 +57,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 				return tblCustomer;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}
@@ -72,7 +72,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 				return tblCustomer;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}

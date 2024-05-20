@@ -92,7 +92,7 @@ namespace NotificationSystem.NotificationSystem.Web
             }
 
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

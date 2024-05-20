@@ -95,7 +95,7 @@ using System.Data.SqlClient;
             }
 
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -176,7 +176,7 @@ using System.Data.SqlClient;
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

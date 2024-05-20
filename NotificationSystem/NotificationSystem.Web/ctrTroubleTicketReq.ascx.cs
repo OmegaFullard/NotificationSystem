@@ -66,7 +66,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
 			}
 
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw;
 			}
@@ -89,7 +89,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 this.grdTroubleTicketReq.PageIndex = e.NewPageIndex;
                 this.grdTroubleTicketReq.DataBind();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -108,7 +108,7 @@ namespace NotificationSystem.NotificationSystem.Web
                     this.grdTroubleTicketReq.DataBind();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

@@ -127,7 +127,7 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
 
                 CleanupControls();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

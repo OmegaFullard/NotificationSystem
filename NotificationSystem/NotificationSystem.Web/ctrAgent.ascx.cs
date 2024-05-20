@@ -60,7 +60,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 this.grdAgents.DataBind();
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -85,7 +85,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 this.grdAgents.PageIndex = e.NewPageIndex;
                 this.grdAgents.DataBind();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -104,7 +104,7 @@ namespace NotificationSystem.NotificationSystem.Web
                     this.grdAgents.DataBind();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
