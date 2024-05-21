@@ -63,7 +63,7 @@ using System.Net.Http;
 
 
                     withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.Status = cmbStatus.Text; withBlock.Type = cmbType.Text; withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
-                   
+                
 
                 }
 			try
@@ -92,13 +92,18 @@ using System.Net.Http;
                 SendError.SendMailMessage(NotificationBody);
                 Response.Redirect("ErrorPage.aspx", false);
             }
+        return;
         }
 
         public void ClearControls()
         {
             try
             {
-            cmbStatus.Value = string.Empty; cmbType.Text = string.Empty;
+            pickRequestDate.Clear();
+            cmbStatus.Value = string.Empty;  
+            cmbStatus.Text = string.Empty;
+            cmbType.Value = string.Empty;
+            cmbType.Text = string.Empty;
            
         }
 

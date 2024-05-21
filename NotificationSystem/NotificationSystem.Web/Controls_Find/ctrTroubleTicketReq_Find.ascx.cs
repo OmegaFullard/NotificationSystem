@@ -8,40 +8,81 @@ using System.Web.UI.WebControls;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 
 
-	public partial class ctrTroubleTicketReq_Find : System.Web.UI.UserControl
+public partial class ctrTroubleTicketReq_Find : System.Web.UI.UserControl
+{
+	private int m_TroubleTicketNo = 0;
+	private int m_AgentID = 0;
+	private int m_CustomerID = 0;
+
+	public int TroubleTicketNo
 	{
-		private int m_TroubleTicketNo = 0;
-
-		public int TroubleTicketNo
+		get
 		{
-			get
-			{
-				return m_TroubleTicketNo;
-			}
-			set
-			{
-				m_TroubleTicketNo = value;
-			}
+			return m_TroubleTicketNo;
 		}
-		protected void Page_Load(object sender, EventArgs e)
+		set
 		{
+			m_TroubleTicketNo = value;
+		}
+	}
 		
-			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-			TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
-			try
-				{
-			if ((Page.IsPostBack))
-				theNotificationSystem.GetTroubleTicketByNo(Convert.ToInt32(this.lblTroubleTicketNo.Text.Replace("TicketNo", "")));
-			else
-				tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
+		
 
-			this.lblSearchResult.Text = tblTroubleTicketReq.Rows.Count.ToString();
-			this.grdTroubleTicketReq.DataSource = tblTroubleTicketReq.DefaultView;
-						this.grdTroubleTicketReq.DataBind();
-					
-				}
-				catch (Exception ex)
+			public int AgentID
+	{
+		get
+		{
+			return m_AgentID;
+		}
+		set
+		{
+			m_AgentID = value;
+		}
+
+	}
+
+	public int CustomerID
+	{
+		get
+		{
+			return m_CustomerID;
+		}
+		set
+		{
+			m_CustomerID = value;
+		}
+	}
+	protected void Page_Load(object sender, EventArgs e)
+	{
+
+		if ((Page.IsPostBack))
+		{
+			try
+			{
+				if (m_TroubleTicketNo > 0)
+					this.lblTroubleTicketNo.Text = "TicketNo" + m_TroubleTicketNo;
+				if (this.lblTroubleTicketNo.Text.Length == 2)
+					return;
+
+
+				clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+
+				TroubleTicketReqDataTable tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(Convert.ToInt32(this.lblTroubleTicketNo.Text.Replace("TicketNo", "")));
+				if (tblTroubleTicketReq.Count == 0)
+					return;
+
 				{
+					var withBlock = tblTroubleTicketReq[0];
+					lblRequestDate.Text = withBlock.RequestDate.ToString("MM/dd/yyyy");
+					lblDueDate.Text = withBlock.DueDate.ToString("MM/dd/yyyy");
+					//lblTroubleTicketNo.Text = theNotificationSystem.GetDataByTroubleTicketNo(Convert.ToInt32(m_TroubleTicketNo));
+					this.lblAgentID.Text = Convert.ToString(withBlock.AgentID);
+					this.lblCustomerID.Text = Convert.ToString(withBlock.CustomerID);
+
+				}
+			}
+			catch (Exception ex)
+			{
 				clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
 				string NotificationBody = ex.Message + "  " + ex.StackTrace;
 				SendError.SendMailMessage(NotificationBody);
@@ -49,5 +90,6 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 			}
 		}
 	}
+}
 
 

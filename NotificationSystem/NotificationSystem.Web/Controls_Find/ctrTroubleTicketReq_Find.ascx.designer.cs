@@ -22,20 +22,38 @@ public partial class ctrTroubleTicketReq_Find
 	protected global::System.Web.UI.WebControls.Label lblTroubleTicketNo;
 
 	/// <summary>
-	/// lblSearchResult control.
+	/// lblRequestDate control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.Label lblSearchResult;
+	protected global::Telerik.Web.UI.RadLabel lblRequestDate;
 
 	/// <summary>
-	/// grdTroubleTicketReq control.
+	/// lblDueDate control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.GridView grdTroubleTicketReq;
+	protected global::Telerik.Web.UI.RadLabel lblDueDate;
+
+	/// <summary>
+	/// lblAgentID control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::Telerik.Web.UI.RadLabel lblAgentID;
+
+	/// <summary>
+	/// lblCustomerID control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::Telerik.Web.UI.RadLabel lblCustomerID;
 }

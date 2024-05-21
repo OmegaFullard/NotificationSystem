@@ -124,7 +124,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 			CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
             GetCustomerIDTableAdapter adpGetCustomerID = new GetCustomerIDTableAdapter();
 
-			NotificationSystem.CustomerDataTable tblCustomer = new NotificationSystem.CustomerDataTable();
+			//NotificationSystem.CustomerDataTable tblCustomer = new NotificationSystem.CustomerDataTable();
 
 			Customer = false;
 
@@ -149,7 +149,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 		}
 
-        public int GetCustomer()
+        public int GetCustomerID()
         {
             GetCustomerIDTableAdapter adpGetCustomerID = new GetCustomerIDTableAdapter();
 
@@ -199,6 +199,11 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 throw;
             }
         }
+
+
+        
+
+
 
         public DataTable GetTroubleTicketList()
         {
@@ -294,8 +299,8 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
             TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
 
-            NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = new NotificationSystem.TroubleTicketReqDataTable();
-            TroubleTicket = false;
+            //NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = new NotificationSystem.TroubleTicketReqDataTable();
+            //TroubleTicket = false;
 
 
             try
@@ -316,7 +321,25 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
         }
 
-		public DataTable GetTypeList()
+        public int GetTroubleTicketNo()
+        {
+            GetTroubleTicketNoTableAdapter adpTroubleTicketNumber = new GetTroubleTicketNoTableAdapter();
+
+            try
+            {
+                GetTroubleTicketNoDataTable tblGetTroubleTicketNo = adpTroubleTicketNumber.GetData();
+                GetTroubleTicketNoRow row = tblGetTroubleTicketNo[0];
+
+                return row.TroubleTicketNo;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        public DataTable GetTypeList()
 		{
 			DataSet ds = new DataSet();
 			DataTable dt = new DataTable("GetData");
@@ -324,7 +347,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 
 
-			dt.Columns.Add("ID", Type.GetType("System.Integer")).DefaultValue = string.Empty;
+			dt.Columns.Add("ID", Type.GetType("System.String")).DefaultValue = string.Empty;
 			dt.Columns.Add("Type", Type.GetType("System.String")).DefaultValue = string.Empty;
 
             // Create and populate rows
@@ -342,13 +365,38 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             dr["ID"] = "3"; dr["Type"] = "Problem";
             dt.Rows.Add(dr);
 
-
-
-
             return dt;
 		}
 
-		public DataTable GetStatusList()
+
+   //     public void TypeListByID(string Type)
+   //     {
+			//switch (Type)
+   //         {
+			//	case 1:
+   //                 {
+   //                     Type = "Incident";
+   //                     break;
+   //                 }
+
+   //             case 2:
+   //                 {
+   //                     Type = "Task";
+   //                     break;
+   //                 }
+
+   //             case 3:
+   //                 {
+   //                     Type = "Problem";
+   //                     break;
+   //                 }
+
+   //                 //return Type;
+   //         }
+   //     }
+
+
+        public DataTable GetStatusList()
 		{
 			DataSet ds = new DataSet();
 			DataTable dt = new DataTable("GetData");
@@ -357,7 +405,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 			//Add columns with appropriate data types
 
 
-			dt.Columns.Add("ID", Type.GetType("System.Integer")).DefaultValue = 0;
+			dt.Columns.Add("ID", Type.GetType("System.String")).DefaultValue = 0;
 			dt.Columns.Add("Status", Type.GetType("System.String")).DefaultValue = string.Empty;
 
             //Create and populate rows
@@ -383,9 +431,40 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             return dt;
 		}
 
+        //public void StatusListByID(string Status)
+        //{
+        //    switch (Status)
+        //    {
+        //        case 1:
+        //            {
+        //                Status = "Open";
+        //                break;
+        //            }
+
+        //        case 2:
+        //            {
+        //                Status = "Pending";
+        //                break;
+        //            }
+
+        //        case 3:
+        //            {
+        //                Status = "Resolved";
+        //                break;
+        //            }
+
+        //        case 4:
+        //            {
+        //                Type = "Closed";
+        //                break;
+        //            }
+
+        //            return Status;
+        //    }
+        //}
 
 
-		public DataTable GetAgentList()
+        public DataTable GetAgentList()
         {
             try
             {
@@ -486,7 +565,7 @@ public int GetAgentByID(int AgentID)
         }
 
 
-        public int GetAgent()
+        public int GetAgentID()
         {
             GetAgentIDTableAdapter adpGetAgentID = new GetAgentIDTableAdapter();
 

@@ -85,24 +85,6 @@ public partial class ctrTroubleTicketReq_Add
 	protected global::Telerik.Web.UI.RadMultiColumnComboBox cmbStatus;
 
 	/// <summary>
-	/// valRequiredStatus control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredStatus;
-
-	/// <summary>
-	/// Required_cmbStatus control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::AjaxControlToolkit.ValidatorCalloutExtender Required_cmbStatus;
-
-	/// <summary>
 	/// cmbType control.
 	/// </summary>
 	/// <remarks>
@@ -110,24 +92,6 @@ public partial class ctrTroubleTicketReq_Add
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
 	protected global::Telerik.Web.UI.RadMultiColumnComboBox cmbType;
-
-	/// <summary>
-	/// valcmbType control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::System.Web.UI.WebControls.RequiredFieldValidator valcmbType;
-
-	/// <summary>
-	/// required_cmbType control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::AjaxControlToolkit.ValidatorCalloutExtender required_cmbType;
 
 	/// <summary>
 	/// pickRequestDate control.

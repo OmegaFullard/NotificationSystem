@@ -16,7 +16,20 @@ namespace NotificationSystem.NotificationSystem.Web
 {
     public partial class TicketReq : System.Web.UI.Page
     {
-      
+        private int m_TroubleTicketNo = 0;
+
+        public int TroubleTicketNo
+        {
+            get
+            {
+                return m_TroubleTicketNo;
+            }
+            set
+            {
+                m_TroubleTicketNo = value;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -25,10 +38,10 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Page.Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
                 {
 
+                    //ctrTroubleTicketReq_Search.PopulateSearchControl();
+                    //ctrTroubleTicketReq.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
 
-					//ctrTroubleTicketReq_Search.PopulateSearchControl();
-					//ctrTroubleTicketReq_Search.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
-				}
+                }
             }
         }
 
