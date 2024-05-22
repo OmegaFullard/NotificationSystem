@@ -116,8 +116,8 @@ namespace NotificationSystem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-            "Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=OIT-L-BY10S73\\SQLEXPRESS;Initial Catalog=NotificationSystem;Integrate" +
+            "d Security=True")]
         public string NotificationSystem {
             get {
                 return ((string)(this["NotificationSystem"]));

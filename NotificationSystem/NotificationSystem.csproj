@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NotificationSystem</RootNamespace>
     <AssemblyName>NotificationSystem</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44375</IISExpressSSLPort>
@@ -1351,10 +1351,6 @@
     <Content Include="NotificationSystem.Web\images\youtube-logo-24.png" />
     <Content Include="NotificationSystem.Web\MasterPage.Master" />
     <Content Include="NotificationSystem.Web\MasterPageSingleMenu.Master" />
-    <Content Include="NotificationSystem.Web\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="NotificationSystem.Web\obj\Debug\TelerikWebSite1.csproj.AssemblyReference.cache" />
-    <Content Include="NotificationSystem.Web\obj\Debug\TelerikWebSite1.csproj.CopyComplete" />
-    <Content Include="NotificationSystem.Web\obj\Debug\TelerikWebSite1.csproj.CoreCompileInputs.cache" />
     <Content Include="NotificationSystem.Data\xsReports.xsc">
       <DependentUpon>xsReports.xsd</DependentUpon>
     </Content>
@@ -3941,10 +3937,6 @@
     <Content Include="NotificationSystem.Web\Invoices.aspx" />
     <Content Include="NotificationSystem.Web\Logins.aspx" />
     <Content Include="NotificationSystem.Web\TicketMgt.aspx" />
-    <Content Include="NotificationSystem.Web\obj\Debug\Telerik.Web.dll" />
-    <Content Include="NotificationSystem.Web\obj\Debug\telerik.web.dll.licenses" />
-    <Content Include="NotificationSystem.Web\obj\Debug\Telerik.Web.pdb" />
-    <Content Include="NotificationSystem.Web\obj\Debug\TelerikWebSite1.csproj.FileListAbsolute.txt" />
     <Content Include="NotificationSystem.Web\ReportViewer_Item_Log.html" />
     <Content Include="NotificationSystem.Web\scripts\scripts.js" />
     <Content Include="NotificationSystem.Web\styles\base.css" />
@@ -4508,7 +4500,6 @@
     <Compile Include="NotificationSystem.Web\TicketMgt.aspx.designer.cs">
       <DependentUpon>TicketMgt.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NotificationSystem.Web\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="NotificationSystem.Web\styles\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="NotificationSystem.Web\Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
@@ -4574,7 +4565,7 @@
   <ItemGroup>
     <Folder Include="App_GlobalResources\" />
     <Folder Include="NotificationSystem.Web\images\Thumbnails\" />
-    <Folder Include="NotificationSystem.Web\obj\Debug\TempPE\" />
+    <Folder Include="NotificationSystem.Web\obj\" />
     <Folder Include="NotificationSystem.Web\styles\obj\Debug\TempPE\" />
     <Folder Include="NotificationSystem\bin\" />
     <Folder Include="NotificationSystem\obj\Debug\TempPE\" />
@@ -4626,7 +4617,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NETFramework.ReferenceAssemblies.net472.1.0.3\build\Microsoft.NETFramework.ReferenceAssemblies.net472.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NETFramework.ReferenceAssemblies.net472.1.0.3\build\Microsoft.NETFramework.ReferenceAssemblies.net472.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.NETFramework.ReferenceAssemblies.net472.1.0.3\build\Microsoft.NETFramework.ReferenceAssemblies.net472.targets" Condition="Exists('..\packages\Microsoft.NETFramework.ReferenceAssemblies.net472.1.0.3\build\Microsoft.NETFramework.ReferenceAssemblies.net472.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
