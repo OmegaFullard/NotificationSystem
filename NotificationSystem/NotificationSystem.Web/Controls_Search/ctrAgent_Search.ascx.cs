@@ -22,20 +22,24 @@ using Microsoft.VisualBasic;
 
     public partial class ctrAgent_Search : System.Web.UI.UserControl
     {
-        public int m_AgentID = 0;
 
-        public int AgentID
-        {
-            get
-            {
-                return m_AgentID;
-            }
-            set
-            {
-                m_AgentID = value;
-            }
-        }
-        protected void Page_Load(object sender, EventArgs e)
+	public int m_AgentID = 0;
+
+	public int AgentID
+	{
+		get
+		{
+			return m_AgentID;
+		}
+		set
+		{
+			m_AgentID = value;
+		}
+
+	}
+
+
+		protected void Page_Load(object sender, EventArgs e)
         {
 
         }

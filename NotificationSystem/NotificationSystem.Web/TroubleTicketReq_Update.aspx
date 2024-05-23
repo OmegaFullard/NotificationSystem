@@ -2,7 +2,6 @@
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Search/ctrTroubleTicketReq_Search.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Search" %>
-<%@ Register Src="Controls_Search/ctrSearch_TTR_Update.ascx" TagPrefix="uc1" TagName="ctrSearch_TTR_Update" %>
 <%@ Register Src="Controls_Add/ctrTroubleTicketReq_Add.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Add" %>
 <%@ Register Src="Controls_Update/ctrTroubleTicketReq_Update.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Update" %>
 
@@ -24,7 +23,7 @@
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
 
-<asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_TTR_Update runat="server" ID="ctrSearch_TTR_Update" /></asp:TableCell>
+<asp:TableCell VerticalAlign="Top"><uc1:ctrTroubleTicketReq_Search runat="server" ID="ctrTroubleTicketReq_Search" /></asp:TableCell>
 </asp:TableRow>
                          </asp:Table>
              <br />

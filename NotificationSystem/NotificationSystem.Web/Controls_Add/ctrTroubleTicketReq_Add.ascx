@@ -106,18 +106,23 @@
                                                      <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
                                           </asp:TableRow>  
-										  
-										  <asp:TableRow>
-										  <asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Status:</asp:TableCell>
+										 <asp:TableRow>
+										  <asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Status:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
                                                         <telerik:RadMultiColumnComboBox runat="server"  ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
-                                                                Placeholder="--Select" EnableEmbeddedSkins="True" ClientEvents-OnLoad="OnClientLoad3">
+                                                                Placeholder="--Select" EnableEmbeddedSkins="True">
                                                                 <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Status" Title="Status" Width="100px" />
                                                                 </ColumnsCollection>
                                                  </telerik:RadMultiColumnComboBox>  
                                                          
-                                                
+                                                         
+                                                 <asp:RequiredFieldValidator  ID="valRequiredStatus" runat="server" ClientEvents-OnLoad="OnClientLoad1" ControlToValidate="cmbStatus" ValidationGroup="Submit"  
+                                             ErrorMessage="Status is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
+                                              
+                                                  <ajaxtoolkit:ValidatorCalloutExtender ID="Required_cmbStatus"  TargetControlID="valRequiredStatus"  Width="250px"  
+                                                               HighlightCssClass="highlight" runat="server">
+                                                       </ajaxtoolkit:ValidatorCalloutExtender>
 
                                                      </asp:TableCell>
                                          
@@ -132,24 +137,27 @@
                                                      <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
                                           </asp:TableRow>  	
-
-                                 <asp:TableRow>
-									<asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Type:</asp:TableCell>
+                                <asp:TableRow>
+										  <asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Type:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
-                                                        <telerik:RadMultiColumnComboBox runat="server" ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true" 
-                                                            Placeholder="--Select" EnableEmbeddedSkins="True" ClientEvents-OnLoad="OnClientLoad4">    
-                                                            <ColumnsCollection>
+                                                        <telerik:RadMultiColumnComboBox runat="server"  ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
+                                                                Placeholder="--Select" EnableEmbeddedSkins="True">
+                                                                <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Type" Title="Type" Width="100px" />
                                                                 </ColumnsCollection>
-                                                 </telerik:RadMultiColumnComboBox>    
+                                                 </telerik:RadMultiColumnComboBox>  
                                                          
-
                                                          
-                                               
+                                                 <asp:RequiredFieldValidator  ID="valRequiredType" runat="server" ClientEvents-OnLoad="OnClientLoad1" ControlToValidate="cmbStatus" ValidationGroup="Submit"  
+                                             ErrorMessage="Type is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
+                                              
+                                                  <ajaxtoolkit:ValidatorCalloutExtender ID="Required_cmbType"  TargetControlID="valRequiredType"  Width="250px"  
+                                                               HighlightCssClass="highlight" runat="server">
+                                                       </ajaxtoolkit:ValidatorCalloutExtender>
 
                                                      </asp:TableCell>
                                          
-									</asp:TableRow>                                 							 
+									</asp:TableRow>  					 
 										  
 											<asp:TableRow  > 
                                                      <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
@@ -177,11 +185,13 @@
                                                  <asp:TableRow  > 
                                                      <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>													 													 												 
-                                                </asp:TableRow>  
+                                                </asp:TableRow>   
 										  
 										  
                                    </asp:Table>     
       <br />
+
+
                           </div>       
                 <br />
 <br />

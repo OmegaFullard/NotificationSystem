@@ -25,6 +25,7 @@ namespace NotificationSystem.NotificationSystem.Web
     public partial class ctrAgent : System.Web.UI.UserControl
     {
 
+
         private int m_AgentID = 0;
 
         public int AgentID
@@ -37,20 +38,23 @@ namespace NotificationSystem.NotificationSystem.Web
             {
                 m_AgentID = value;
             }
+
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
             AgentDataTable tblAgent = new AgentDataTable();
+
             int agentID = m_AgentID;
 
             try
             {
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
-                    this.lblSearchResult.Text = Convert.ToString(m_AgentID);
+                    ctrHiddebField.Value = Convert.ToString(m_AgentID);
+
 
                 if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
-                    tblAgent = (AgentDataTable)theNotificationSystem.GetAgentByID(agentID);
+					tblAgent = (AgentDataTable)theNotificationSystem.GetAgentByID(agentID);
                 else
                     tblAgent = (AgentDataTable)theNotificationSystem.GetAgents();
 

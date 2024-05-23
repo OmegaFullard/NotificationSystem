@@ -5,9 +5,10 @@
     <DataSource Name="NotificationSystem">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NotificationSystem</ConnectString>
+        <ConnectString>Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=NotificationSystem;Integrated Security=True</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>140e3832-3da5-48be-8108-6a43d1313b38</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -1089,7 +1090,11 @@
           </Textbox>
         </ReportItems>
         <Height>8.47917in</Height>
-        <Style />
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
       <Width>12.16146in</Width>
       <Page>
@@ -1134,10 +1139,14 @@
             </Border>
           </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>16in</PageHeight>
+        <PageWidth>11.2in</PageWidth>
+        <InteractiveHeight>16.5in</InteractiveHeight>
+        <InteractiveWidth>11.7in</InteractiveWidth>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
+        <TopMargin>0.5in</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

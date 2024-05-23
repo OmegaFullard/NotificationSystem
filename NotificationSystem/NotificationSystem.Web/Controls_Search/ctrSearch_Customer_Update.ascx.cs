@@ -16,7 +16,7 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 
 			if (!(Page.IsPostBack))
 			{
-				cmbCustomer.DataSource = theNotificationSystem.GetCustomer();
+				cmbCustomer.DataSource = theNotificationSystem.GetCustomers();
 				cmbCustomer.DataTextField = "CustomerID"; cmbCustomer.DataValueField = "FirstN";
 				cmbCustomer.DataBind();
 			}

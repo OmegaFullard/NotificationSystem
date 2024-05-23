@@ -2,28 +2,29 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="NotificationSystem">
+    <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=(localdb)\mssqllocaldb</ConnectString>
+        <ConnectString>Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=NotificationSystem</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
-      <rd:DataSourceID>14dd02e5-945e-4f01-a5c9-0efb07d949a5</rd:DataSourceID>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>aa802fac-4ac5-4078-b2e8-76e6e1c469a8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>NotificationSystem</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT * FROM AGENT</CommandText>
       </Query>
       <Fields>
         <Field Name="AgentID">
           <DataField>AgentID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="TroubleTickeNo">
-          <DataField>TroubleTickeNo</DataField>
+        <Field Name="TroubleTicketNo">
+          <DataField>TroubleTicketNo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Title">
@@ -36,7 +37,7 @@
         </Field>
         <Field Name="Salary">
           <DataField>Salary</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FirstN">
           <DataField>FirstN</DataField>
@@ -59,19 +60,11 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>NotificationSystem</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\NotificationSystem.xsd</rd:SchemaPath>
-        <rd:TableName>Agent</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>AgentTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
     </DataSet>
     <DataSet Name="DataSet2">
       <Query>
-        <DataSourceName>NotificationSystem</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT * FROM CUSTOMER</CommandText>
       </Query>
       <Fields>
         <Field Name="CustomerID">
@@ -86,40 +79,61 @@
           <DataField>TroubleTicketNo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Status">
-          <DataField>Status</DataField>
+        <Field Name="FirstN">
+          <DataField>FirstN</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DueDate">
-          <DataField>DueDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="LastN">
+          <DataField>LastN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RequestDate">
-          <DataField>RequestDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Type">
-          <DataField>Type</DataField>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip">
+          <DataField>Zip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Password">
+          <DataField>Password</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>NotificationSystem</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\NotificationSystem.xsd</rd:SchemaPath>
-        <rd:TableName>TroubleTicketReq</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>TroubleTicketReqTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
     </DataSet>
     <DataSet Name="DataSet3">
       <Query>
-        <DataSourceName>NotificationSystem</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT * FROM TROUBLETICKETREQ</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
         <Field Name="AgentID">
           <DataField>AgentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="TroubleTicketNo">
@@ -134,15 +148,15 @@
           <DataField>Type</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RequestDate">
+          <DataField>RequestDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
       </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>NotificationSystem</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\NotificationSystem.xsd</rd:SchemaPath>
-        <rd:TableName>TroubleTicketList</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>TroubleTicketListTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <ReportSections>
@@ -354,7 +368,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="TroubleTicket" &amp; Sum(Fields!TroubleTickeNo.Value, "DataSet1")</Value>
+                    <Value>="TroubleTicket" &amp; Sum(Fields!TroubleTicketNo.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -418,7 +432,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RequestDate.Value, "DataSet2")</Value>
+                    <Value>=First(Fields!RequestDate.Value, "DataSet3")</Value>
                     <Style>
                       <Format>MM/dd/yyyy</Format>
                     </Style>
@@ -1001,7 +1015,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!DueDate.Value, "DataSet2")</Value>
+                    <Value>=First(Fields!DueDate.Value, "DataSet3")</Value>
                     <Style>
                       <Format>MM/dd/yyyy</Format>
                     </Style>
@@ -1104,10 +1118,14 @@
             </Border>
           </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>16in</PageHeight>
+        <PageWidth>11in</PageWidth>
+        <InteractiveHeight>16.5in</InteractiveHeight>
+        <InteractiveWidth>11.7in</InteractiveWidth>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
+        <TopMargin>0.5in</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

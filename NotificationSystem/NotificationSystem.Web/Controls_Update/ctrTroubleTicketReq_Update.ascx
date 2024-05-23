@@ -150,4 +150,4 @@
                 <br />
 <br />
                  <div style="padding-left:700px;padding-bottom:10px;"  ><asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="150" Height="25px" OnClick="btnCancel_Click"  />&nbsp;&nbsp;
-                 <asp:Button ID="btnUpdate" runat="server" Text="Add" Width="150" Height="25px" ValidationGroup="Submit" /></div>
+                 <asp:Button ID="btnUpdate" runat="server" Text="Update" Width="150" Height="25px" ValidationGroup="Submit" /></div>
