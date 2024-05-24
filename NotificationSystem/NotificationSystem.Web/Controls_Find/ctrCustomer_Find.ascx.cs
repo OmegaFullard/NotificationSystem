@@ -118,7 +118,7 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
             {
                 Response.Clear();
                 Response.Buffer = true;
-                Response.AddHeader("content-disposition", "attachment;filename=Agent_Information.xls");
+                Response.AddHeader("content-disposition", "attachment;filename=Customer_Information.xls");
                 Response.Charset = "";
                 Response.ContentType = "application/vnd.ms-excel";
                 StringWriter sw = new StringWriter();

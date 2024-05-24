@@ -2,15 +2,63 @@
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 
+	<script type="text/javascript">
+            function showDetails(param) {
 
-<div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-                              <h2>Trouble Ticket</h2><br />
-                              <div> <asp:Label ID="lblTroubleTicketNo" runat="server" Text=""></asp:Label></div><br />
-                             Request Date:&nbsp;&nbsp;<telerik:RadLabel ID="lblRequestDate" BackColor="White"  text="--" Width="145px"  runat="server"></telerik:RadLabel><br /><br />
-							 Due Date:&nbsp;&nbsp;<telerik:RadLabel ID="lblDueDate" BackColor="White"  text="--" Width="145px"  runat="server"></telerik:RadLabel><br /><br />
-                              Agent ID:&nbsp;&nbsp;<telerik:RadLabel ID="lblAgentID" BackColor="White" text="--"  Width="145px"  runat="server"></telerik:RadLabel> &nbsp;&nbsp;&nbsp
-                               Customer ID:&nbsp;&nbsp;<telerik:RadLabel ID="lblCustomerID" BackColor="White" text="--"  Width="145px"  runat="server"></telerik:RadLabel>
-                    
-                 </div>
-                 
-                  
+                var oWnd = window.radopen(null, "FormDetails");
+                oWnd.setUrl(oWnd.get_navigateUrl().split("?")[0] + '?' + param.toString());
+            }
+
+            function OnClientclose(radWindow) {
+                window.close;
+            }
+    </script>
+
+   <telerik:RadWindowManager ID="Singleton" runat="server" >
+                              <Windows>
+                                  <telerik:RadWindow  ID="FormDetails" Behaviors="Close" 
+                                    VisibleStatusbar="false"
+                                     ReloadOnShow="true" OnClientClose="OnClientclose"
+                                     BackColor="Gray" Modal="true" runat="server"  Height="450px"  Width="900px"
+                                     NavigateUrl='<%# "../TroubleTicketReq_Find_Details.aspx" %>'>
+                                </telerik:RadWindow>
+                             </Windows>
+        </telerik:RadWindowManager>
+
+<div style="width: 1050px; height:800px;  overflow: auto; padding-left:30px" >
+           <h2>Ticket Details</h2><br />   
+           <div> <asp:Label ID="lblTroubleTicketNo" runat="server" Text=""></asp:Label></div><br />
+           <div style="padding-bottom:10px; font-weight:400"> <asp:Label ID="lblSearchResult" runat="server" Text=""></asp:Label></div>
+           <asp:GridView ID="grdTroubleTicketReq" runat="server" 
+                    AutoGenerateColumns="False" 
+                    ShowFooter="True"
+                    EmptyDataText="There are no records matching this search criteria."
+                    BackColor="White" ForeColor="Black" CssClass="grdRecords"
+                    HeaderStyle-CssClass="grdHeader"
+                    width="700px" AllowPaging="True" AllowSorting="True" PageSize="18">
+                    <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
+                          <Columns>
+                                <asp:TemplateField HeaderText="Ticket" SortExpression="TroubleTicketNo" ItemStyle-Width="100"    Visible="True">
+                                            <ItemTemplate>
+                                                <a onclick="javascript:showDetails('TroubleTicket=<%#Eval("TroubleTicketNo")%>;return false; href="#" id="a1"><%#Eval("TroubleTicketNo")%></a> 
+                                            </ItemTemplate>
+                                       </asp:TemplateField> 
+									   <asp:BoundField DataField="AgentID" HeaderText="Agent ID" HtmlEncode="False" 
+                                       ReadOnly="True"  Visible="True" />
+									   <asp:BoundField DataField="TroubleTicketNo" HeaderText="Trouble Ticket #" HtmlEncode="False" 
+                                       ReadOnly="True"  Visible="True" />									                                     
+                              <asp:BoundField DataField="FirstN" HeaderText="Customer ID" HtmlEncode="False" 
+                                       ReadOnly="True"  Visible="True" />
+                             
+                               <asp:BoundField DataField="RequestDate" HeaderText="RequestDate" HtmlEncode="False" 
+                                       ReadOnly="True"  Visible="True" DataFormatString="{0:MM/dd/yyyy}"/>
+									   <asp:BoundField DataField="DueDate" HeaderText="Due Date" HtmlEncode="False" 
+                                       ReadOnly="True"  Visible="True" DataFormatString="{0:MM/dd/yyyy}"/>
+									   
+                          </Columns>
+                        <FooterStyle BackColor ="#CCCCCC" ForeColor="black"/>
+                        <HeaderStyle  HorizontalAlign="Left" ForeColor="#303030" />
+                          <AlternatingRowStyle CssClass="grdAlternatingRow"></AlternatingRowStyle>
+               </asp:GridView>
+        </div>	
+		

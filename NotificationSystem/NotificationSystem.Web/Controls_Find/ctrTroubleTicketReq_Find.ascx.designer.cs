@@ -13,6 +13,24 @@ public partial class ctrTroubleTicketReq_Find
 {
 
 	/// <summary>
+	/// Singleton control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::Telerik.Web.UI.RadWindowManager Singleton;
+
+	/// <summary>
+	/// FormDetails control.
+	/// </summary>
+	/// <remarks>
+	/// Auto-generated field.
+	/// To modify move field declaration from designer file to code-behind file.
+	/// </remarks>
+	protected global::Telerik.Web.UI.RadWindow FormDetails;
+
+	/// <summary>
 	/// lblTroubleTicketNo control.
 	/// </summary>
 	/// <remarks>
@@ -22,38 +40,20 @@ public partial class ctrTroubleTicketReq_Find
 	protected global::System.Web.UI.WebControls.Label lblTroubleTicketNo;
 
 	/// <summary>
-	/// lblRequestDate control.
+	/// lblSearchResult control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblRequestDate;
+	protected global::System.Web.UI.WebControls.Label lblSearchResult;
 
 	/// <summary>
-	/// lblDueDate control.
+	/// grdTroubleTicketReq control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblDueDate;
-
-	/// <summary>
-	/// lblAgentID control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblAgentID;
-
-	/// <summary>
-	/// lblCustomerID control.
-	/// </summary>
-	/// <remarks>
-	/// Auto-generated field.
-	/// To modify move field declaration from designer file to code-behind file.
-	/// </remarks>
-	protected global::Telerik.Web.UI.RadLabel lblCustomerID;
+	protected global::System.Web.UI.WebControls.GridView grdTroubleTicketReq;
 }

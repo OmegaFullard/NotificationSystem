@@ -6,7 +6,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
-
+using Microsoft.VisualBasic;
+using System.Data;
+using System.IO;
 
 public partial class ctrTroubleTicketReq_Find : System.Web.UI.UserControl
 {
@@ -55,41 +57,114 @@ public partial class ctrTroubleTicketReq_Find : System.Web.UI.UserControl
 	protected void Page_Load(object sender, EventArgs e)
 	{
 
-		if ((Page.IsPostBack))
+		clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+		TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
+		try
 		{
-			try
-			{
-				if (m_TroubleTicketNo > 0)
-					this.lblTroubleTicketNo.Text = "TicketNo" + m_TroubleTicketNo;
-				if (this.lblTroubleTicketNo.Text.Length == 2)
-					return;
+			if (Request.Form["ctl00$MainContent$ctrSearch_TroubleTicketReq_Find$btnSearch"] == "Search")
+				this.lblTroubleTicketNo.Text = "Ticket" + m_TroubleTicketNo;
+
+			if ((Page.IsPostBack) & this.lblTroubleTicketNo.Text.Length > 0)
+				theNotificationSystem.GetTroubleTicketByNo(Convert.ToInt32(this.lblTroubleTicketNo.Text.Replace("Ticket", "")));
+
+			else
+				tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
 
 
-				clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+			this.lblSearchResult.Text = tblTroubleTicketReq.Rows.Count.ToString();
+			this.grdTroubleTicketReq.DataSource = tblTroubleTicketReq.DefaultView;
+			this.grdTroubleTicketReq.DataBind();
+		}
 
-				TroubleTicketReqDataTable tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(Convert.ToInt32(this.lblTroubleTicketNo.Text.Replace("TicketNo", "")));
-				if (tblTroubleTicketReq.Count == 0)
-					return;
 
-				{
-					var withBlock = tblTroubleTicketReq[0];
-					lblRequestDate.Text = withBlock.RequestDate.ToString("MM/dd/yyyy");
-					lblDueDate.Text = withBlock.DueDate.ToString("MM/dd/yyyy");
-					//lblTroubleTicketNo.Text = theNotificationSystem.GetDataByTroubleTicketNo(Convert.ToInt32(m_TroubleTicketNo));
-					this.lblAgentID.Text = Convert.ToString(withBlock.AgentID);
-					this.lblCustomerID.Text = Convert.ToString(withBlock.CustomerID);
+		catch (Exception ex)
+		{
 
-				}
-			}
-			catch (Exception ex)
-			{
-				clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
-				string NotificationBody = ex.Message + "  " + ex.StackTrace;
-				SendError.SendMailMessage(NotificationBody);
-				Response.Redirect("ErrorPage.aspx", false);
-			}
+			clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+			string NotificationBody = ex.Message + "  " + ex.StackTrace;
+			SendError.SendMailMessage(NotificationBody);
+			Response.Redirect("ErrorPage.aspx", false);
 		}
 	}
+
+	private void grdTroubleTicketReq_Sorting(object sender, GridViewSortEventArgs e)
+	{
+		try
+		{
+			DataView m_Dataview = (DataView)grdTroubleTicketReq.DataSource;
+
+			if (m_Dataview == null)
+			{
+				m_Dataview.Sort = e.SortExpression + " " + ConvertSortDirection(e);
+				this.grdTroubleTicketReq.DataSource = m_Dataview;
+				this.grdTroubleTicketReq.DataBind();
+			}
+		}
+		catch (Exception)
+		{
+			throw;
+		}
+	}
+
+	private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
+	{
+		ViewState.Add("columnname", e.SortExpression);
+
+		if ((ViewState["direction"] == null))
+			ViewState.Add("direction", "asc");
+		else
+			ViewState["direction"] = Interaction.IIf(ViewState["direction"].ToString().ToLower() == "desc", "asc", "desc");
+
+		return ViewState["direction"].ToString();
+	}
+	public void CreateExcelFiles()
+	{
+		try
+		{
+			Response.Clear();
+			Response.Buffer = true;
+			Response.AddHeader("content-disposition", "attachment;filename=Ticket_Information.xls");
+			Response.Charset = "";
+			Response.ContentType = "application/vnd.ms-excel";
+			StringWriter sw = new StringWriter();
+			HtmlTextWriter hw = new HtmlTextWriter(sw);
+			grdTroubleTicketReq.AllowPaging = false;
+			this.grdTroubleTicketReq.DataBind();
+
+			for (int y = 0; y <= 12; y++)
+				grdTroubleTicketReq.HeaderRow.Cells[y].Style.Add("background-color", "#cfdbe6");
+
+			for (int x = 0; x <= grdTroubleTicketReq.Rows.Count - 1; x++)
+			{
+				for (int y = 0; y <= 12; y++)
+				{
+					if (x % 2 > 0)
+						grdTroubleTicketReq.Rows[x].Cells[y].Style.Add("background-color", "#e0ebea");
+				}
+			}
+
+			grdTroubleTicketReq.Attributes.Add("style", "vnd.ms-excel.numberformat:@");
+			grdTroubleTicketReq.RenderControl(hw);
+			Response.Output.Write(sw.ToString());
+			Response.Flush();
+			Response.End();
+		}
+
+
+
+
+		catch (Exception)
+		{
+			throw;
+		}
+	}
+
+	private void btnSubmit_Click(object sender, EventArgs e)
+	{
+		CreateExcelFiles();
+	}
+
+
 }
 
 
