@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrAgent.ascx.cs" MasterPageFile="MasterPage.master" Inherits="NotificationSystem.NotificationSystem.Web.ctrAgent" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrAgent.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrAgent" %>
 
 <div style="width: 1200px; height:500px;  overflow: auto; padding-left:5px" >
            <div class="Heading" >Agent List</div>
