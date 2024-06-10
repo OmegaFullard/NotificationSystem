@@ -109,7 +109,7 @@
 										 <asp:TableRow>
 										  <asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Status:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
-                                                       <telerik:RadMultiColumnComboBox runat="server"  ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
+                                                       <telerik:RadMultiColumnComboBox runat="server" ClientEvents-OnLoad="OnClientLoad3" ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
                                                                 Placeholder="--Select" EnableEmbeddedSkins="True">
                                                                 <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Status" Title="Open" Width="100px" />
@@ -121,7 +121,7 @@
 							
                                                          
                                                          
-                                                 <asp:RequiredFieldValidator  ID="valRequiredStatus" runat="server" ClientEvents-OnLoad="OnClientLoad1" ControlToValidate="cmbStatus" ValidationGroup="Submit"  
+                                                 <asp:RequiredFieldValidator  ID="valRequiredStatus" runat="server" ControlToValidate="cmbStatus" ValidationGroup="Submit"  
                                              ErrorMessage="Status is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
                                               
                                                   <ajaxtoolkit:ValidatorCalloutExtender ID="Required_cmbStatus"  TargetControlID="valRequiredStatus"  Width="250px"  
@@ -144,7 +144,7 @@
                                 <asp:TableRow>
 										  <asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Type:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
-                                                        <telerik:RadMultiColumnComboBox runat="server"  ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
+                                                        <telerik:RadMultiColumnComboBox runat="server" ClientEvents-OnLoad="OnClientLoad1" ID="cmbType" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
                                                                 Placeholder="--Select" EnableEmbeddedSkins="True">
                                                                 <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Type" Title="Incident" Width="100px" />
@@ -154,7 +154,7 @@
                                                  </telerik:RadMultiColumnComboBox>  
                                                          
                                                          
-                                                 <asp:RequiredFieldValidator  ID="valRequiredType" runat="server" ClientEvents-OnLoad="OnClientLoad1" ControlToValidate="cmbStatus" ValidationGroup="Submit"  
+                                                 <asp:RequiredFieldValidator  ID="valRequiredType" runat="server" ControlToValidate="cmbStatus" ValidationGroup="Submit"  
                                              ErrorMessage="Type is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
                                               
                                                   <ajaxtoolkit:ValidatorCalloutExtender ID="Required_cmbType"  TargetControlID="valRequiredType"  Width="250px"  

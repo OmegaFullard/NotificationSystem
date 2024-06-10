@@ -8,7 +8,6 @@
         <ConnectString>Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=NotificationSystem</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
-      <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>aa802fac-4ac5-4078-b2e8-76e6e1c469a8</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -368,7 +367,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="TroubleTicket" &amp; Sum(Fields!TroubleTicketNo.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!TroubleTicketNo.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -865,11 +864,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Switch(
-    First(Fields!Status.Value, "DataSet3") = 1, "Open", 
-    First(Fields!Status.Value, "DataSet3") = 2, "Pending",
-    First(Fields!Status.Value, "DataSet3") = 3, "Resolved",
-    First(Fields!Status.Value, "DataSet3") = 4, "Closed")</Value>
+                    <Value>=First(Fields!Status.Value, "DataSet3")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -877,7 +872,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>5.70708in</Top>
+            <Top>5.72097in</Top>
             <Left>0.31125in</Left>
             <Height>0.25in</Height>
             <Width>3.40972in</Width>
@@ -936,10 +931,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Switch(
-    First(Fields!Type.Value, "DataSet3") = 1, "Incident", 
-    First(Fields!Type.Value, "DataSet3") = 2, "Task",
-    First(Fields!Type.Value, "DataSet3") = 3, "Problem")</Value>
+                    <Value>=First(Fields!Type.Value, "DataSet3")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
