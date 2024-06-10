@@ -4096,6 +4096,9 @@
     <Compile Include="NotificationSystem.Data\Classes\clsNotificationSystem.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsReports.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsTroubleTicketReq.cs" />
+    <Compile Include="NotificationSystem.Data\NotificationSystem.cs">
+      <DependentUpon>NotificationSystem.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NotificationSystem.Data\NotificationSystem.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
