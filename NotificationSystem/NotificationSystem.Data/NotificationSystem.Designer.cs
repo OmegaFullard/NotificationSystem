@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace NotificationSystem.NotificationSystem.Data {
     
     
@@ -1011,7 +1013,12 @@ namespace NotificationSystem.NotificationSystem.Data {
                 xs.Add(dsSchema);
                 return type;
             }
-        }
+
+			public static explicit operator AgentDataTable(int v)
+			{
+				throw new NotImplementedException();
+			}
+		}
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1449,7 +1456,12 @@ namespace NotificationSystem.NotificationSystem.Data {
                 xs.Add(dsSchema);
                 return type;
             }
-        }
+
+			public static explicit operator CustomerDataTable(int v)
+			{
+				throw new NotImplementedException();
+			}
+		}
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -6254,7 +6266,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT AgentID, Email, Fax, FirstN, LastN, Phone, Salary, StartDate, Title, Troub" +
-                "leTicketNo FROM Agent WHERE (AgentID = @AgentID)";
+                "leTicketNo\r\nFROM   Agent\r\nWHERE (AgentID = @AgentID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

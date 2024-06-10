@@ -45,17 +45,18 @@ namespace NotificationSystem.NotificationSystem.Web
             clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
             AgentDataTable tblAgent = new AgentDataTable();
 
-            int agentID = m_AgentID;
+           // int agentID = m_AgentID;
 
             try
             {
+
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                     ctrHiddebField.Value = Convert.ToString(m_AgentID);
 
 
                 if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
-					tblAgent = (AgentDataTable)theNotificationSystem.GetAgentByID(agentID);
-                else
+					tblAgent = (AgentDataTable)theNotificationSystem.GetAgentByID(m_AgentID);
+				else
                     tblAgent = (AgentDataTable)theNotificationSystem.GetAgents();
 
 
