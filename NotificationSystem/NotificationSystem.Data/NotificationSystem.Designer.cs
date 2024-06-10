@@ -10,8 +10,6 @@
 
 #pragma warning disable 1591
 
-using System;
-
 namespace NotificationSystem.NotificationSystem.Data {
     
     
@@ -633,13 +631,9 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             private global::System.Data.DataColumn columnAgentID;
             
-            private global::System.Data.DataColumn columnTroubleTickeNo;
-            
             private global::System.Data.DataColumn columnTitle;
             
             private global::System.Data.DataColumn columnStartDate;
-            
-            private global::System.Data.DataColumn columnSalary;
             
             private global::System.Data.DataColumn columnFirstN;
             
@@ -650,6 +644,10 @@ namespace NotificationSystem.NotificationSystem.Data {
             private global::System.Data.DataColumn columnPhone;
             
             private global::System.Data.DataColumn columnFax;
+            
+            private global::System.Data.DataColumn columnTroubleTicketNo;
+            
+            private global::System.Data.DataColumn columnSalary;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -694,14 +692,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TroubleTickeNoColumn {
-                get {
-                    return this.columnTroubleTickeNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn TitleColumn {
                 get {
                     return this.columnTitle;
@@ -713,14 +703,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             public global::System.Data.DataColumn StartDateColumn {
                 get {
                     return this.columnStartDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SalaryColumn {
-                get {
-                    return this.columnSalary;
                 }
             }
             
@@ -766,6 +748,22 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TroubleTicketNoColumn {
+                get {
+                    return this.columnTroubleTicketNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SalaryColumn {
+                get {
+                    return this.columnSalary;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -801,19 +799,19 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AgentRow AddAgentRow(int AgentID, int TroubleTickeNo, string Title, System.DateTime StartDate, int Salary, string FirstN, string LastN, string Email, string Phone, string Fax) {
+            public AgentRow AddAgentRow(int AgentID, string Title, System.DateTime StartDate, string FirstN, string LastN, string Email, string Phone, string Fax, int TroubleTicketNo, string Salary) {
                 AgentRow rowAgentRow = ((AgentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         AgentID,
-                        TroubleTickeNo,
                         Title,
                         StartDate,
-                        Salary,
                         FirstN,
                         LastN,
                         Email,
                         Phone,
-                        Fax};
+                        Fax,
+                        TroubleTicketNo,
+                        Salary};
                 rowAgentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAgentRow);
                 return rowAgentRow;
@@ -844,15 +842,15 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnAgentID = base.Columns["AgentID"];
-                this.columnTroubleTickeNo = base.Columns["TroubleTickeNo"];
                 this.columnTitle = base.Columns["Title"];
                 this.columnStartDate = base.Columns["StartDate"];
-                this.columnSalary = base.Columns["Salary"];
                 this.columnFirstN = base.Columns["FirstN"];
                 this.columnLastN = base.Columns["LastN"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnPhone = base.Columns["Phone"];
                 this.columnFax = base.Columns["Fax"];
+                this.columnTroubleTicketNo = base.Columns["TroubleTicketNo"];
+                this.columnSalary = base.Columns["Salary"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -860,14 +858,10 @@ namespace NotificationSystem.NotificationSystem.Data {
             private void InitClass() {
                 this.columnAgentID = new global::System.Data.DataColumn("AgentID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAgentID);
-                this.columnTroubleTickeNo = new global::System.Data.DataColumn("TroubleTickeNo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTroubleTickeNo);
                 this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTitle);
                 this.columnStartDate = new global::System.Data.DataColumn("StartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStartDate);
-                this.columnSalary = new global::System.Data.DataColumn("Salary", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalary);
                 this.columnFirstN = new global::System.Data.DataColumn("FirstN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFirstN);
                 this.columnLastN = new global::System.Data.DataColumn("LastN", typeof(string), null, global::System.Data.MappingType.Element);
@@ -878,19 +872,21 @@ namespace NotificationSystem.NotificationSystem.Data {
                 base.Columns.Add(this.columnPhone);
                 this.columnFax = new global::System.Data.DataColumn("Fax", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFax);
+                this.columnTroubleTicketNo = new global::System.Data.DataColumn("TroubleTicketNo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTroubleTicketNo);
+                this.columnSalary = new global::System.Data.DataColumn("Salary", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSalary);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAgentID}, true));
                 this.columnAgentID.AllowDBNull = false;
                 this.columnAgentID.Unique = true;
-                this.columnTroubleTickeNo.AllowDBNull = false;
                 this.columnTitle.MaxLength = 50;
-                this.columnFirstN.AllowDBNull = false;
                 this.columnFirstN.MaxLength = 50;
-                this.columnLastN.AllowDBNull = false;
                 this.columnLastN.MaxLength = 50;
                 this.columnEmail.MaxLength = 50;
                 this.columnPhone.MaxLength = 50;
                 this.columnFax.MaxLength = 50;
+                this.columnSalary.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1015,12 +1011,7 @@ namespace NotificationSystem.NotificationSystem.Data {
                 xs.Add(dsSchema);
                 return type;
             }
-
-			public static explicit operator AgentDataTable(int v)
-			{
-				throw new NotImplementedException();
-			}
-		}
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1324,17 +1315,12 @@ namespace NotificationSystem.NotificationSystem.Data {
                 this.columnCustomerID.Unique = true;
                 this.columnAgentID.AllowDBNull = false;
                 this.columnTroubleTicketNo.AllowDBNull = false;
-                this.columnFirstN.AllowDBNull = false;
                 this.columnFirstN.MaxLength = 50;
-                this.columnLastN.AllowDBNull = false;
                 this.columnLastN.MaxLength = 50;
                 this.columnEmail.MaxLength = 50;
                 this.columnPhone.MaxLength = 50;
-                this.columnAddress.AllowDBNull = false;
                 this.columnAddress.MaxLength = 50;
-                this.columnCity.AllowDBNull = false;
                 this.columnCity.MaxLength = 50;
-                this.columnState.AllowDBNull = false;
                 this.columnState.MaxLength = 50;
                 this.columnZip.MaxLength = 50;
                 this.columnUserName.MaxLength = 10;
@@ -1463,12 +1449,7 @@ namespace NotificationSystem.NotificationSystem.Data {
                 xs.Add(dsSchema);
                 return type;
             }
-
-			public static explicit operator CustomerDataTable(int v)
-			{
-				throw new NotImplementedException();
-			}
-		}
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1684,19 +1665,13 @@ namespace NotificationSystem.NotificationSystem.Data {
                 base.Columns.Add(this.columnType);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTroubleTicketNo}, true));
-                this.columnCustomerID.AllowDBNull = false;
-                this.columnAgentID.AllowDBNull = false;
                 this.columnTroubleTicketNo.AutoIncrement = true;
                 this.columnTroubleTicketNo.AutoIncrementSeed = -1;
                 this.columnTroubleTicketNo.AutoIncrementStep = -1;
                 this.columnTroubleTicketNo.AllowDBNull = false;
                 this.columnTroubleTicketNo.ReadOnly = true;
                 this.columnTroubleTicketNo.Unique = true;
-                this.columnStatus.AllowDBNull = false;
                 this.columnStatus.MaxLength = 10;
-                this.columnDueDate.AllowDBNull = false;
-                this.columnRequestDate.AllowDBNull = false;
-                this.columnType.AllowDBNull = false;
                 this.columnType.MaxLength = 10;
             }
             
@@ -2068,17 +2043,12 @@ namespace NotificationSystem.NotificationSystem.Data {
                                 this.columnCustomerID}, true));
                 this.columnCustomerID.AllowDBNull = false;
                 this.columnCustomerID.Unique = true;
-                this.columnFirstN.AllowDBNull = false;
                 this.columnFirstN.MaxLength = 50;
-                this.columnLastN.AllowDBNull = false;
                 this.columnLastN.MaxLength = 50;
                 this.columnEmail.MaxLength = 50;
                 this.columnPhone.MaxLength = 50;
-                this.columnAddress.AllowDBNull = false;
                 this.columnAddress.MaxLength = 50;
-                this.columnCity.AllowDBNull = false;
                 this.columnCity.MaxLength = 50;
-                this.columnState.AllowDBNull = false;
                 this.columnState.MaxLength = 50;
                 this.columnZip.MaxLength = 50;
             }
@@ -2379,16 +2349,13 @@ namespace NotificationSystem.NotificationSystem.Data {
                 base.Columns.Add(this.columnType);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTroubleTicketNo}, true));
-                this.columnAgentID.AllowDBNull = false;
                 this.columnTroubleTicketNo.AutoIncrement = true;
                 this.columnTroubleTicketNo.AutoIncrementSeed = -1;
                 this.columnTroubleTicketNo.AutoIncrementStep = -1;
                 this.columnTroubleTicketNo.AllowDBNull = false;
                 this.columnTroubleTicketNo.ReadOnly = true;
                 this.columnTroubleTicketNo.Unique = true;
-                this.columnStatus.AllowDBNull = false;
                 this.columnStatus.MaxLength = 10;
-                this.columnType.AllowDBNull = false;
                 this.columnType.MaxLength = 10;
             }
             
@@ -2523,8 +2490,6 @@ namespace NotificationSystem.NotificationSystem.Data {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class GetTypeListDataTable : global::System.Data.TypedTableBase<GetTypeListRow> {
             
-            private global::System.Data.DataColumn columnAgentID;
-            
             private global::System.Data.DataColumn columnTroubleTicketNo;
             
             private global::System.Data.DataColumn columnType;
@@ -2562,14 +2527,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             protected GetTypeListDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AgentIDColumn {
-                get {
-                    return this.columnAgentID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2633,10 +2590,9 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GetTypeListRow AddGetTypeListRow(int AgentID, string Type, string NotList) {
+            public GetTypeListRow AddGetTypeListRow(string Type, string NotList) {
                 GetTypeListRow rowGetTypeListRow = ((GetTypeListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        AgentID,
                         null,
                         Type,
                         NotList};
@@ -2669,7 +2625,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnAgentID = base.Columns["AgentID"];
                 this.columnTroubleTicketNo = base.Columns["TroubleTicketNo"];
                 this.columnType = base.Columns["Type"];
                 this.columnNotList = base.Columns["NotList"];
@@ -2678,8 +2633,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnAgentID = new global::System.Data.DataColumn("AgentID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAgentID);
                 this.columnTroubleTicketNo = new global::System.Data.DataColumn("TroubleTicketNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTroubleTicketNo);
                 this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2688,17 +2641,15 @@ namespace NotificationSystem.NotificationSystem.Data {
                 base.Columns.Add(this.columnNotList);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTroubleTicketNo}, true));
-                this.columnAgentID.AllowDBNull = false;
                 this.columnTroubleTicketNo.AutoIncrement = true;
                 this.columnTroubleTicketNo.AutoIncrementSeed = -1;
                 this.columnTroubleTicketNo.AutoIncrementStep = -1;
                 this.columnTroubleTicketNo.AllowDBNull = false;
                 this.columnTroubleTicketNo.ReadOnly = true;
                 this.columnTroubleTicketNo.Unique = true;
-                this.columnType.AllowDBNull = false;
                 this.columnType.MaxLength = 10;
                 this.columnNotList.ReadOnly = true;
-                this.columnNotList.MaxLength = 11;
+                this.columnNotList.MaxLength = 41;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2832,8 +2783,6 @@ namespace NotificationSystem.NotificationSystem.Data {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class GetStatusListDataTable : global::System.Data.TypedTableBase<GetStatusListRow> {
             
-            private global::System.Data.DataColumn columnAgentID;
-            
             private global::System.Data.DataColumn columnTroubleTicketNo;
             
             private global::System.Data.DataColumn columnStatus;
@@ -2871,14 +2820,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             protected GetStatusListDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AgentIDColumn {
-                get {
-                    return this.columnAgentID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2942,10 +2883,9 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GetStatusListRow AddGetStatusListRow(int AgentID, string Status, string TikList) {
+            public GetStatusListRow AddGetStatusListRow(string Status, string TikList) {
                 GetStatusListRow rowGetStatusListRow = ((GetStatusListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        AgentID,
                         null,
                         Status,
                         TikList};
@@ -2978,7 +2918,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnAgentID = base.Columns["AgentID"];
                 this.columnTroubleTicketNo = base.Columns["TroubleTicketNo"];
                 this.columnStatus = base.Columns["Status"];
                 this.columnTikList = base.Columns["TikList"];
@@ -2987,8 +2926,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnAgentID = new global::System.Data.DataColumn("AgentID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAgentID);
                 this.columnTroubleTicketNo = new global::System.Data.DataColumn("TroubleTicketNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTroubleTicketNo);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2997,14 +2934,12 @@ namespace NotificationSystem.NotificationSystem.Data {
                 base.Columns.Add(this.columnTikList);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTroubleTicketNo}, true));
-                this.columnAgentID.AllowDBNull = false;
                 this.columnTroubleTicketNo.AutoIncrement = true;
                 this.columnTroubleTicketNo.AutoIncrementSeed = -1;
                 this.columnTroubleTicketNo.AutoIncrementStep = -1;
                 this.columnTroubleTicketNo.AllowDBNull = false;
                 this.columnTroubleTicketNo.ReadOnly = true;
                 this.columnTroubleTicketNo.Unique = true;
-                this.columnStatus.AllowDBNull = false;
                 this.columnStatus.MaxLength = 10;
                 this.columnTikList.ReadOnly = true;
                 this.columnTikList.MaxLength = 11;
@@ -4069,9 +4004,10 @@ namespace NotificationSystem.NotificationSystem.Data {
                 this.columnUserName.MaxLength = 10;
                 this.columnPassword.AllowDBNull = false;
                 this.columnPassword.MaxLength = 10;
-                this.columnEmail.AllowDBNull = false;
                 this.columnEmail.MaxLength = 50;
+                this.columnFirst.AllowDBNull = false;
                 this.columnFirst.MaxLength = 10;
+                this.columnLast.AllowDBNull = false;
                 this.columnLast.MaxLength = 10;
             }
             
@@ -4226,17 +4162,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int TroubleTickeNo {
-                get {
-                    return ((int)(this[this.tableAgent.TroubleTickeNoColumn]));
-                }
-                set {
-                    this[this.tableAgent.TroubleTickeNoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Title {
                 get {
                     try {
@@ -4269,25 +4194,14 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Salary {
-                get {
-                    try {
-                        return ((int)(this[this.tableAgent.SalaryColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Salary\' in table \'Agent\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAgent.SalaryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string FirstN {
                 get {
-                    return ((string)(this[this.tableAgent.FirstNColumn]));
+                    try {
+                        return ((string)(this[this.tableAgent.FirstNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FirstN\' in table \'Agent\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableAgent.FirstNColumn] = value;
@@ -4298,7 +4212,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string LastN {
                 get {
-                    return ((string)(this[this.tableAgent.LastNColumn]));
+                    try {
+                        return ((string)(this[this.tableAgent.LastNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastN\' in table \'Agent\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableAgent.LastNColumn] = value;
@@ -4355,6 +4274,38 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TroubleTicketNo {
+                get {
+                    try {
+                        return ((int)(this[this.tableAgent.TroubleTicketNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TroubleTicketNo\' in table \'Agent\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAgent.TroubleTicketNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Salary {
+                get {
+                    try {
+                        return ((string)(this[this.tableAgent.SalaryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Salary\' in table \'Agent\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAgent.SalaryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTitleNull() {
                 return this.IsNull(this.tableAgent.TitleColumn);
             }
@@ -4379,14 +4330,26 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSalaryNull() {
-                return this.IsNull(this.tableAgent.SalaryColumn);
+            public bool IsFirstNNull() {
+                return this.IsNull(this.tableAgent.FirstNColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSalaryNull() {
-                this[this.tableAgent.SalaryColumn] = global::System.Convert.DBNull;
+            public void SetFirstNNull() {
+                this[this.tableAgent.FirstNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLastNNull() {
+                return this.IsNull(this.tableAgent.LastNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLastNNull() {
+                this[this.tableAgent.LastNColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4423,6 +4386,30 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFaxNull() {
                 this[this.tableAgent.FaxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTroubleTicketNoNull() {
+                return this.IsNull(this.tableAgent.TroubleTicketNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTroubleTicketNoNull() {
+                this[this.tableAgent.TroubleTicketNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSalaryNull() {
+                return this.IsNull(this.tableAgent.SalaryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSalaryNull() {
+                this[this.tableAgent.SalaryColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4477,7 +4464,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string FirstN {
                 get {
-                    return ((string)(this[this.tableCustomer.FirstNColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomer.FirstNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FirstN\' in table \'Customer\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomer.FirstNColumn] = value;
@@ -4488,7 +4480,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string LastN {
                 get {
-                    return ((string)(this[this.tableCustomer.LastNColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomer.LastNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastN\' in table \'Customer\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomer.LastNColumn] = value;
@@ -4531,7 +4528,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Address {
                 get {
-                    return ((string)(this[this.tableCustomer.AddressColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomer.AddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'Customer\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomer.AddressColumn] = value;
@@ -4542,7 +4544,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string City {
                 get {
-                    return ((string)(this[this.tableCustomer.CityColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomer.CityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'City\' in table \'Customer\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomer.CityColumn] = value;
@@ -4553,7 +4560,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string State {
                 get {
-                    return ((string)(this[this.tableCustomer.StateColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomer.StateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'State\' in table \'Customer\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomer.StateColumn] = value;
@@ -4610,6 +4622,30 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFirstNNull() {
+                return this.IsNull(this.tableCustomer.FirstNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFirstNNull() {
+                this[this.tableCustomer.FirstNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLastNNull() {
+                return this.IsNull(this.tableCustomer.LastNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLastNNull() {
+                this[this.tableCustomer.LastNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsEmailNull() {
                 return this.IsNull(this.tableCustomer.EmailColumn);
             }
@@ -4630,6 +4666,42 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPhoneNull() {
                 this[this.tableCustomer.PhoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAddressNull() {
+                return this.IsNull(this.tableCustomer.AddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAddressNull() {
+                this[this.tableCustomer.AddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCityNull() {
+                return this.IsNull(this.tableCustomer.CityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCityNull() {
+                this[this.tableCustomer.CityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStateNull() {
+                return this.IsNull(this.tableCustomer.StateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStateNull() {
+                this[this.tableCustomer.StateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4687,7 +4759,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int CustomerID {
                 get {
-                    return ((int)(this[this.tableTroubleTicketReq.CustomerIDColumn]));
+                    try {
+                        return ((int)(this[this.tableTroubleTicketReq.CustomerIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CustomerID\' in table \'TroubleTicketReq\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketReq.CustomerIDColumn] = value;
@@ -4698,7 +4775,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int AgentID {
                 get {
-                    return ((int)(this[this.tableTroubleTicketReq.AgentIDColumn]));
+                    try {
+                        return ((int)(this[this.tableTroubleTicketReq.AgentIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AgentID\' in table \'TroubleTicketReq\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketReq.AgentIDColumn] = value;
@@ -4720,7 +4802,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Status {
                 get {
-                    return ((string)(this[this.tableTroubleTicketReq.StatusColumn]));
+                    try {
+                        return ((string)(this[this.tableTroubleTicketReq.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'TroubleTicketReq\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketReq.StatusColumn] = value;
@@ -4731,7 +4818,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime DueDate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableTroubleTicketReq.DueDateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTroubleTicketReq.DueDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DueDate\' in table \'TroubleTicketReq\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketReq.DueDateColumn] = value;
@@ -4742,7 +4834,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime RequestDate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableTroubleTicketReq.RequestDateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTroubleTicketReq.RequestDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RequestDate\' in table \'TroubleTicketReq\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketReq.RequestDateColumn] = value;
@@ -4753,11 +4850,88 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Type {
                 get {
-                    return ((string)(this[this.tableTroubleTicketReq.TypeColumn]));
+                    try {
+                        return ((string)(this[this.tableTroubleTicketReq.TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'TroubleTicketReq\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketReq.TypeColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCustomerIDNull() {
+                return this.IsNull(this.tableTroubleTicketReq.CustomerIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCustomerIDNull() {
+                this[this.tableTroubleTicketReq.CustomerIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAgentIDNull() {
+                return this.IsNull(this.tableTroubleTicketReq.AgentIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAgentIDNull() {
+                this[this.tableTroubleTicketReq.AgentIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableTroubleTicketReq.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableTroubleTicketReq.StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDueDateNull() {
+                return this.IsNull(this.tableTroubleTicketReq.DueDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDueDateNull() {
+                this[this.tableTroubleTicketReq.DueDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRequestDateNull() {
+                return this.IsNull(this.tableTroubleTicketReq.RequestDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRequestDateNull() {
+                this[this.tableTroubleTicketReq.RequestDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTypeNull() {
+                return this.IsNull(this.tableTroubleTicketReq.TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTypeNull() {
+                this[this.tableTroubleTicketReq.TypeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4790,7 +4964,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string FirstN {
                 get {
-                    return ((string)(this[this.tableCustomerList.FirstNColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomerList.FirstNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FirstN\' in table \'CustomerList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomerList.FirstNColumn] = value;
@@ -4801,7 +4980,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string LastN {
                 get {
-                    return ((string)(this[this.tableCustomerList.LastNColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomerList.LastNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastN\' in table \'CustomerList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomerList.LastNColumn] = value;
@@ -4844,7 +5028,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Address {
                 get {
-                    return ((string)(this[this.tableCustomerList.AddressColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomerList.AddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'CustomerList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomerList.AddressColumn] = value;
@@ -4855,7 +5044,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string City {
                 get {
-                    return ((string)(this[this.tableCustomerList.CityColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomerList.CityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'City\' in table \'CustomerList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomerList.CityColumn] = value;
@@ -4866,7 +5060,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string State {
                 get {
-                    return ((string)(this[this.tableCustomerList.StateColumn]));
+                    try {
+                        return ((string)(this[this.tableCustomerList.StateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'State\' in table \'CustomerList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomerList.StateColumn] = value;
@@ -4891,6 +5090,30 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFirstNNull() {
+                return this.IsNull(this.tableCustomerList.FirstNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFirstNNull() {
+                this[this.tableCustomerList.FirstNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLastNNull() {
+                return this.IsNull(this.tableCustomerList.LastNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLastNNull() {
+                this[this.tableCustomerList.LastNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsEmailNull() {
                 return this.IsNull(this.tableCustomerList.EmailColumn);
             }
@@ -4911,6 +5134,42 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPhoneNull() {
                 this[this.tableCustomerList.PhoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAddressNull() {
+                return this.IsNull(this.tableCustomerList.AddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAddressNull() {
+                this[this.tableCustomerList.AddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCityNull() {
+                return this.IsNull(this.tableCustomerList.CityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCityNull() {
+                this[this.tableCustomerList.CityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStateNull() {
+                return this.IsNull(this.tableCustomerList.StateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStateNull() {
+                this[this.tableCustomerList.StateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4944,7 +5203,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int AgentID {
                 get {
-                    return ((int)(this[this.tableTroubleTicketList.AgentIDColumn]));
+                    try {
+                        return ((int)(this[this.tableTroubleTicketList.AgentIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AgentID\' in table \'TroubleTicketList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketList.AgentIDColumn] = value;
@@ -4966,7 +5230,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Status {
                 get {
-                    return ((string)(this[this.tableTroubleTicketList.StatusColumn]));
+                    try {
+                        return ((string)(this[this.tableTroubleTicketList.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'TroubleTicketList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketList.StatusColumn] = value;
@@ -4977,11 +5246,52 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Type {
                 get {
-                    return ((string)(this[this.tableTroubleTicketList.TypeColumn]));
+                    try {
+                        return ((string)(this[this.tableTroubleTicketList.TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'TroubleTicketList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableTroubleTicketList.TypeColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAgentIDNull() {
+                return this.IsNull(this.tableTroubleTicketList.AgentIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAgentIDNull() {
+                this[this.tableTroubleTicketList.AgentIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableTroubleTicketList.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableTroubleTicketList.StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTypeNull() {
+                return this.IsNull(this.tableTroubleTicketList.TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTypeNull() {
+                this[this.tableTroubleTicketList.TypeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5001,17 +5311,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int AgentID {
-                get {
-                    return ((int)(this[this.tableGetTypeList.AgentIDColumn]));
-                }
-                set {
-                    this[this.tableGetTypeList.AgentIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int TroubleTicketNo {
                 get {
                     return ((int)(this[this.tableGetTypeList.TroubleTicketNoColumn]));
@@ -5025,7 +5324,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Type {
                 get {
-                    return ((string)(this[this.tableGetTypeList.TypeColumn]));
+                    try {
+                        return ((string)(this[this.tableGetTypeList.TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'GetTypeList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableGetTypeList.TypeColumn] = value;
@@ -5046,6 +5350,18 @@ namespace NotificationSystem.NotificationSystem.Data {
                 set {
                     this[this.tableGetTypeList.NotListColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTypeNull() {
+                return this.IsNull(this.tableGetTypeList.TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTypeNull() {
+                this[this.tableGetTypeList.TypeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5077,17 +5393,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int AgentID {
-                get {
-                    return ((int)(this[this.tableGetStatusList.AgentIDColumn]));
-                }
-                set {
-                    this[this.tableGetStatusList.AgentIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int TroubleTicketNo {
                 get {
                     return ((int)(this[this.tableGetStatusList.TroubleTicketNoColumn]));
@@ -5101,7 +5406,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Status {
                 get {
-                    return ((string)(this[this.tableGetStatusList.StatusColumn]));
+                    try {
+                        return ((string)(this[this.tableGetStatusList.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'GetStatusList\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableGetStatusList.StatusColumn] = value;
@@ -5122,6 +5432,18 @@ namespace NotificationSystem.NotificationSystem.Data {
                 set {
                     this[this.tableGetStatusList.TikListColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableGetStatusList.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableGetStatusList.StatusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5306,7 +5628,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Email {
                 get {
-                    return ((string)(this[this.tableAdmin.EmailColumn]));
+                    try {
+                        return ((string)(this[this.tableAdmin.EmailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Email\' in table \'Admin\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableAdmin.EmailColumn] = value;
@@ -5317,12 +5644,7 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string First {
                 get {
-                    try {
-                        return ((string)(this[this.tableAdmin.FirstColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'First\' in table \'Admin\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableAdmin.FirstColumn]));
                 }
                 set {
                     this[this.tableAdmin.FirstColumn] = value;
@@ -5333,12 +5655,7 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Last {
                 get {
-                    try {
-                        return ((string)(this[this.tableAdmin.LastColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Last\' in table \'Admin\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableAdmin.LastColumn]));
                 }
                 set {
                     this[this.tableAdmin.LastColumn] = value;
@@ -5347,26 +5664,14 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFirstNull() {
-                return this.IsNull(this.tableAdmin.FirstColumn);
+            public bool IsEmailNull() {
+                return this.IsNull(this.tableAdmin.EmailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFirstNull() {
-                this[this.tableAdmin.FirstColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsLastNull() {
-                return this.IsNull(this.tableAdmin.LastColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetLastNull() {
-                this[this.tableAdmin.LastColumn] = global::System.Convert.DBNull;
+            public void SetEmailNull() {
+                this[this.tableAdmin.EmailColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5870,15 +6175,15 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Agent";
             tableMapping.ColumnMappings.Add("AgentID", "AgentID");
-            tableMapping.ColumnMappings.Add("TroubleTickeNo", "TroubleTickeNo");
             tableMapping.ColumnMappings.Add("Title", "Title");
             tableMapping.ColumnMappings.Add("StartDate", "StartDate");
-            tableMapping.ColumnMappings.Add("Salary", "Salary");
             tableMapping.ColumnMappings.Add("FirstN", "FirstN");
             tableMapping.ColumnMappings.Add("LastN", "LastN");
             tableMapping.ColumnMappings.Add("Email", "Email");
             tableMapping.ColumnMappings.Add("Phone", "Phone");
             tableMapping.ColumnMappings.Add("Fax", "Fax");
+            tableMapping.ColumnMappings.Add("TroubleTicketNo", "TroubleTicketNo");
+            tableMapping.ColumnMappings.Add("Salary", "Salary");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -5887,34 +6192,35 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Agent] ([AgentID], [TroubleTickeNo], [Title], [StartDate], [Salary]," +
-                " [FirstN], [LastN], [Email], [Phone], [Fax]) VALUES (@AgentID, @TroubleTickeNo, " +
-                "@Title, @StartDate, @Salary, @FirstN, @LastN, @Email, @Phone, @Fax)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Agent] ([TroubleTicketNo], [Title], [StartDate], [Salary], [FirstN]," +
+                " [LastN], [Email], [Phone], [Fax]) VALUES (@TroubleTicketNo, @Title, @StartDate," +
+                " @Salary, @FirstN, @LastN, @Email, @Phone, @Fax)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTickeNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTickeNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Salary", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Salary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Salary", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Salary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fax", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fax", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Agent] SET [AgentID] = @AgentID, [TroubleTickeNo] = @TroubleTickeNo, [Title] = @Title, [StartDate] = @StartDate, [Salary] = @Salary, [FirstN] = @FirstN, [LastN] = @LastN, [Email] = @Email, [Phone] = @Phone, [Fax] = @Fax WHERE (([AgentID] = @Original_AgentID))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Agent] SET [TroubleTicketNo] = @TroubleTicketNo, [Title] = @Title, [Start" +
+                "Date] = @StartDate, [Salary] = @Salary, [FirstN] = @FirstN, [LastN] = @LastN, [E" +
+                "mail] = @Email, [Phone] = @Phone, [Fax] = @Fax WHERE (([AgentID] = @Original_Age" +
+                "ntID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTickeNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTickeNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Salary", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Salary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Salary", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Salary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fax", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fax", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -5931,8 +6237,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AgentID, TroubleTickeNo, Title, StartDate, Salary, FirstN, LastN, Email, P" +
-                "hone, Fax\r\nFROM   Agent";
+            this._commandCollection[0].CommandText = "SELECT AgentID, TroubleTicketNo, Title, StartDate, Salary, FirstN, LastN, Email, " +
+                "Phone, Fax\r\nFROM   Agent";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -5941,14 +6247,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT AgentID, TroubleTickeNo, Title, StartDate, Salary, FirstN, LastN, Email, P" +
-                "hone, Fax\r\nFROM   Agent WHERE TroubleTickeNo = @TroubleTickeNo";
+            this._commandCollection[2].CommandText = "SELECT AgentID, Email, Fax, FirstN, LastN, Phone, Salary, StartDate, Title, Troub" +
+                "leTicketNo FROM Agent WHERE (TroubleTickeNo = @TroubleTickeNo)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTickeNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTickeNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT AgentID, TroubleTickeNo, Title, StartDate, Salary, FirstN, LastN, Email, P" +
-                "hone, Fax\r\nFROM   Agent WHERE AgentID = @AgentID";
+            this._commandCollection[3].CommandText = "SELECT AgentID, Email, Fax, FirstN, LastN, Phone, Salary, StartDate, Title, Troub" +
+                "leTicketNo FROM Agent WHERE (AgentID = @AgentID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -6084,56 +6390,60 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int AgentID, int TroubleTickeNo, string Title, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<int> Salary, string FirstN, string LastN, string Email, string Phone, string Fax) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AgentID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TroubleTickeNo));
-            if ((Title == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+        public virtual int Insert(global::System.Nullable<int> TroubleTicketNo, string Title, global::System.Nullable<global::System.DateTime> StartDate, string Salary, string FirstN, string LastN, string Email, string Phone, string Fax) {
+            if ((TroubleTicketNo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(TroubleTicketNo.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Title));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Title == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Title));
             }
             if ((StartDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(StartDate.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(StartDate.Value));
             }
             else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Salary == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Salary.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Salary.Value));
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Salary));
             }
             if ((FirstN == null)) {
-                throw new global::System.ArgumentNullException("FirstN");
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(FirstN));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FirstN));
             }
             if ((LastN == null)) {
-                throw new global::System.ArgumentNullException("LastN");
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(LastN));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(LastN));
             }
             if ((Email == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Email));
+            }
+            if ((Phone == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Email));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Phone));
             }
-            if ((Phone == null)) {
+            if ((Fax == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Phone));
-            }
-            if ((Fax == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Fax));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Fax));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6155,58 +6465,62 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int AgentID, int TroubleTickeNo, string Title, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<int> Salary, string FirstN, string LastN, string Email, string Phone, string Fax, int Original_AgentID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AgentID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TroubleTickeNo));
-            if ((Title == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+        public virtual int Update(global::System.Nullable<int> TroubleTicketNo, string Title, global::System.Nullable<global::System.DateTime> StartDate, string Salary, string FirstN, string LastN, string Email, string Phone, string Fax, int Original_AgentID) {
+            if ((TroubleTicketNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(TroubleTicketNo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Title));
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Title == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Title));
             }
             if ((StartDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(StartDate.Value));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(StartDate.Value));
             }
             else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Salary == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Salary.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Salary.Value));
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Salary));
             }
             if ((FirstN == null)) {
-                throw new global::System.ArgumentNullException("FirstN");
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(FirstN));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FirstN));
             }
             if ((LastN == null)) {
-                throw new global::System.ArgumentNullException("LastN");
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(LastN));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(LastN));
             }
             if ((Email == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Email));
+            }
+            if ((Phone == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Email));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Phone));
             }
-            if ((Phone == null)) {
+            if ((Fax == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Phone));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Fax));
             }
-            if ((Fax == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Fax));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_AgentID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_AgentID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6221,14 +6535,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int TroubleTickeNo, string Title, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<int> Salary, string FirstN, string LastN, string Email, string Phone, string Fax, int Original_AgentID) {
-            return this.Update(Original_AgentID, TroubleTickeNo, Title, StartDate, Salary, FirstN, LastN, Email, Phone, Fax, Original_AgentID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6398,36 +6704,34 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Customer] ([CustomerID], [AgentID], [TroubleTicketNo], [FirstN], [LastN], [Email], [Phone], [Address], [City], [State], [Zip], [UserName], [Password]) VALUES (@CustomerID, @AgentID, @TroubleTicketNo, @FirstN, @LastN, @Email, @Phone, @Address, @City, @State, @Zip, @UserName, @Password)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Customer] ([AgentID], [TroubleTicketNo], [FirstN], [LastN], [Email], [Phone], [Address], [City], [State], [Zip], [UserName], [Password]) VALUES (@AgentID, @TroubleTicketNo, @FirstN, @LastN, @Email, @Phone, @Address, @City, @State, @Zip, @UserName, @Password)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "City", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@State", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "State", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zip", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zip", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Customer] SET [CustomerID] = @CustomerID, [AgentID] = @AgentID, [TroubleTicketNo] = @TroubleTicketNo, [FirstN] = @FirstN, [LastN] = @LastN, [Email] = @Email, [Phone] = @Phone, [Address] = @Address, [City] = @City, [State] = @State, [Zip] = @Zip, [UserName] = @UserName, [Password] = @Password WHERE (([CustomerID] = @Original_CustomerID))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Customer] SET [AgentID] = @AgentID, [TroubleTicketNo] = @TroubleTicketNo, [FirstN] = @FirstN, [LastN] = @LastN, [Email] = @Email, [Phone] = @Phone, [Address] = @Address, [City] = @City, [State] = @State, [Zip] = @Zip, [UserName] = @UserName, [Password] = @Password WHERE (([CustomerID] = @Original_CustomerID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "City", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@State", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "State", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zip", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zip", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6446,8 +6750,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT   CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Addre" +
-                "ss, City, State, Zip, UserName, Password\r\nFROM         Customer";
+            this._commandCollection[0].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
+                ", City, State, Zip, UserName, Password\r\nFROM   Customer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -6470,9 +6774,9 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT   CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Addre" +
-                "ss, City, State, Zip, UserName, Password\r\nFROM         Customer\r\nWHERE UserName " +
-                "= @username and Password = @password";
+            this._commandCollection[4].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
+                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (UserName = @username" +
+                ") AND (Password = @password)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6657,69 +6961,68 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int CustomerID, int AgentID, int TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(CustomerID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AgentID));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(TroubleTicketNo));
+        public virtual int Insert(int AgentID, int TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AgentID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TroubleTicketNo));
             if ((FirstN == null)) {
-                throw new global::System.ArgumentNullException("FirstN");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FirstN));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FirstN));
             }
             if ((LastN == null)) {
-                throw new global::System.ArgumentNullException("LastN");
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(LastN));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(LastN));
             }
             if ((Email == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Email));
+            }
+            if ((Phone == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Email));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Phone));
             }
-            if ((Phone == null)) {
+            if ((Address == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Phone));
-            }
-            if ((Address == null)) {
-                throw new global::System.ArgumentNullException("Address");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Address));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Address));
             }
             if ((City == null)) {
-                throw new global::System.ArgumentNullException("City");
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(City));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(City));
             }
             if ((State == null)) {
-                throw new global::System.ArgumentNullException("State");
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(State));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(State));
             }
             if ((Zip == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Zip));
+            }
+            if ((UserName == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Zip));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(UserName));
             }
-            if ((UserName == null)) {
+            if ((Password == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(UserName));
-            }
-            if ((Password == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Password));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Password));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6741,71 +7044,70 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int CustomerID, int AgentID, int TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password, int Original_CustomerID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(CustomerID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AgentID));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(TroubleTicketNo));
+        public virtual int Update(int AgentID, int TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password, int Original_CustomerID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AgentID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TroubleTicketNo));
             if ((FirstN == null)) {
-                throw new global::System.ArgumentNullException("FirstN");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(FirstN));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FirstN));
             }
             if ((LastN == null)) {
-                throw new global::System.ArgumentNullException("LastN");
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(LastN));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(LastN));
             }
             if ((Email == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Email));
+            }
+            if ((Phone == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Email));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Phone));
             }
-            if ((Phone == null)) {
+            if ((Address == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Phone));
-            }
-            if ((Address == null)) {
-                throw new global::System.ArgumentNullException("Address");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Address));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Address));
             }
             if ((City == null)) {
-                throw new global::System.ArgumentNullException("City");
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(City));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(City));
             }
             if ((State == null)) {
-                throw new global::System.ArgumentNullException("State");
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(State));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(State));
             }
             if ((Zip == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Zip));
+            }
+            if ((UserName == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Zip));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(UserName));
             }
-            if ((UserName == null)) {
+            if ((Password == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(UserName));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Password));
             }
-            if ((Password == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Password));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_CustomerID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_CustomerID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6820,14 +7122,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int AgentID, int TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password, int Original_CustomerID) {
-            return this.Update(Original_CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address, City, State, Zip, UserName, Password, Original_CustomerID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6999,8 +7293,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -7011,8 +7305,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -7081,9 +7375,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(NotificationSystem.TroubleTicketReqDataTable dataTable, int CustomerID) {
+        public virtual int FillBy(NotificationSystem.TroubleTicketReqDataTable dataTable, global::System.Nullable<int> CustomerID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CustomerID));
+            if ((CustomerID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CustomerID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7095,9 +7394,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByCustID(int CustomerID) {
+        public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByCustID(global::System.Nullable<int> CustomerID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CustomerID));
+            if ((CustomerID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CustomerID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             NotificationSystem.TroubleTicketReqDataTable dataTable = new NotificationSystem.TroubleTicketReqDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7107,9 +7411,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(NotificationSystem.TroubleTicketReqDataTable dataTable, int AgentID) {
+        public virtual int FillBy1(NotificationSystem.TroubleTicketReqDataTable dataTable, global::System.Nullable<int> AgentID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID));
+            if ((AgentID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7121,9 +7430,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByAgentID(int AgentID) {
+        public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByAgentID(global::System.Nullable<int> AgentID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID));
+            if ((AgentID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             NotificationSystem.TroubleTicketReqDataTable dataTable = new NotificationSystem.TroubleTicketReqDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7210,19 +7524,39 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int CustomerID, int AgentID, string Status, System.DateTime DueDate, System.DateTime RequestDate, string Type) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(CustomerID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AgentID));
+        public virtual int Insert(global::System.Nullable<int> CustomerID, global::System.Nullable<int> AgentID, string Status, global::System.Nullable<global::System.DateTime> DueDate, global::System.Nullable<global::System.DateTime> RequestDate, string Type) {
+            if ((CustomerID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(CustomerID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((AgentID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AgentID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((Status == null)) {
-                throw new global::System.ArgumentNullException("Status");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Status));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DueDate));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(RequestDate));
+            if ((DueDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DueDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((RequestDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(RequestDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((Type == null)) {
-                throw new global::System.ArgumentNullException("Type");
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Type));
@@ -7247,19 +7581,39 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int CustomerID, int AgentID, string Status, System.DateTime DueDate, System.DateTime RequestDate, string Type, int Original_TroubleTicketNo) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(CustomerID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AgentID));
+        public virtual int Update(global::System.Nullable<int> CustomerID, global::System.Nullable<int> AgentID, string Status, global::System.Nullable<global::System.DateTime> DueDate, global::System.Nullable<global::System.DateTime> RequestDate, string Type, int Original_TroubleTicketNo) {
+            if ((CustomerID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(CustomerID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((AgentID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AgentID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((Status == null)) {
-                throw new global::System.ArgumentNullException("Status");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Status));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(DueDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(RequestDate));
+            if ((DueDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(DueDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((RequestDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(RequestDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((Type == null)) {
-                throw new global::System.ArgumentNullException("Type");
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Type));
@@ -7420,19 +7774,18 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Customer] SET [CustomerID] = @CustomerID, [FirstN] = @FirstN, [LastN] = @" +
-                "LastN, [Email] = @Email, [Phone] = @Phone, [Address] = @Address, [City] = @City," +
-                " [State] = @State, [Zip] = @Zip WHERE (([CustomerID] = @Original_CustomerID))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Customer] SET [FirstN] = @FirstN, [LastN] = @LastN, [Email] = @Email, [Ph" +
+                "one] = @Phone, [Address] = @Address, [City] = @City, [State] = @State, [Zip] = @" +
+                "Zip WHERE (([CustomerID] = @Original_CustomerID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "City", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@State", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "State", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zip", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zip", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -7454,8 +7807,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT CustomerID, FirstN, LastN, Email, Phone, Address, City, State, Zip\r\nFROM  " +
-                " Customer WHERE CustomerID = @CustomerID";
+            this._commandCollection[1].CommandText = "SELECT Address, City, CustomerID, Email, FirstN, LastN, Phone, State, Zip FROM Cu" +
+                "stomer WHERE (CustomerID = @CustomerID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -7565,57 +7918,56 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int CustomerID, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, int Original_CustomerID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(CustomerID));
+        public virtual int Update(string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, int Original_CustomerID) {
             if ((FirstN == null)) {
-                throw new global::System.ArgumentNullException("FirstN");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(FirstN));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(FirstN));
             }
             if ((LastN == null)) {
-                throw new global::System.ArgumentNullException("LastN");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LastN));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(LastN));
             }
             if ((Email == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Email));
+            }
+            if ((Phone == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Email));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Phone));
             }
-            if ((Phone == null)) {
+            if ((Address == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Phone));
-            }
-            if ((Address == null)) {
-                throw new global::System.ArgumentNullException("Address");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Address));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Address));
             }
             if ((City == null)) {
-                throw new global::System.ArgumentNullException("City");
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(City));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(City));
             }
             if ((State == null)) {
-                throw new global::System.ArgumentNullException("State");
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(State));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(State));
             }
             if ((Zip == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Zip));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Zip));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_CustomerID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_CustomerID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7630,14 +7982,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, int Original_CustomerID) {
-            return this.Update(Original_CustomerID, FirstN, LastN, Email, Phone, Address, City, State, Zip, Original_CustomerID);
         }
     }
     
@@ -7773,6 +8117,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                 "tNo))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [TroubleTicketReq] ([AgentID], [Status], [Type]) VALUES (@AgentID, @S" +
+                "tatus, @Type)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [TroubleTicketReq] SET [AgentID] = @AgentID, [Status] = @Status, [Type] = " +
@@ -7801,8 +8153,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT AgentID, TroubleTicketNo, Status,Type FROM TroubleTicketReq WHERE TroubleT" +
-                "icketNo = @TroubleTicketNo";
+            this._commandCollection[1].CommandText = "SELECT AgentID, Status, TroubleTicketNo, Type FROM TroubleTicketReq WHERE (Troubl" +
+                "eTicketNo = @TroubleTicketNo)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -7911,17 +8263,61 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int AgentID, string Status, string Type, int Original_TroubleTicketNo) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AgentID));
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> AgentID, string Status, string Type) {
+            if ((AgentID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AgentID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Status == null)) {
-                throw new global::System.ArgumentNullException("Status");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Status));
+            }
+            if ((Type == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Type));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> AgentID, string Status, string Type, int Original_TroubleTicketNo) {
+            if ((AgentID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AgentID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Status == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Status));
             }
             if ((Type == null)) {
-                throw new global::System.ArgumentNullException("Type");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Type));
@@ -8065,25 +8461,10 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "GetTypeList";
-            tableMapping.ColumnMappings.Add("AgentID", "AgentID");
             tableMapping.ColumnMappings.Add("TroubleTicketNo", "TroubleTicketNo");
             tableMapping.ColumnMappings.Add("Type", "Type");
             tableMapping.ColumnMappings.Add("NotList", "NotList");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [TroubleTicketReq] WHERE (([TroubleTicketNo] = @Original_TroubleTicke" +
-                "tNo))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [TroubleTicketReq] SET [AgentID] = @AgentID, [Type] = @Type WHERE (([Troub" +
-                "leTicketNo] = @Original_TroubleTicketNo))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8096,12 +8477,19 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AgentID, TroubleTicketNo, Type, + \'|\' + Type AS NotList FROM TroubleTicket" +
-                "Req ";
+            this._commandCollection[0].CommandText = "SELECT TroubleTicketNo, Type, CAST(TroubleTicketNo AS VARCHAR) + \'|\' + Type AS No" +
+                "tList\r\nFROM   TroubleTicketReq\r\nORDER BY TroubleTicketNo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT TroubleTicketNo, Type, CAST(TroubleTicketNo AS VARCHAR) + \'|\' + Type AS No" +
+                "tList\r\nFROM   TroubleTicketReq\r\nWHERE (TroubleTicketNo = @TroubleTicketNo)\r\nORDE" +
+                "R BY TroubleTicketNo";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8131,30 +8519,27 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NotificationSystem.GetTypeListDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTroubleTicketNo(NotificationSystem.GetTypeListDataTable dataTable, int TroubleTicketNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(NotificationSystem dataSet) {
-            return this.Adapter.Update(dataSet, "GetTypeList");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual NotificationSystem.GetTypeListDataTable GetDataByTroubleTicketNo(int TroubleTicketNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            NotificationSystem.GetTypeListDataTable dataTable = new NotificationSystem.GetTypeListDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
@@ -8279,7 +8664,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "GetStatusList";
-            tableMapping.ColumnMappings.Add("AgentID", "AgentID");
             tableMapping.ColumnMappings.Add("TroubleTicketNo", "TroubleTicketNo");
             tableMapping.ColumnMappings.Add("Status", "Status");
             tableMapping.ColumnMappings.Add("TikList", "TikList");
@@ -8290,12 +8674,16 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                 "tNo))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [TroubleTicketReq] ([Status]) VALUES (@Status)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [TroubleTicketReq] SET [AgentID] = @AgentID, [Status] = @Status WHERE (([T" +
-                "roubleTicketNo] = @Original_TroubleTicketNo))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [TroubleTicketReq] SET [Status] = @Status WHERE (([TroubleTicketNo] = @Ori" +
+                "ginal_TroubleTicketNo))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -8310,12 +8698,19 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AgentID, TroubleTicketNo, Status, + \'|\' + Type AS TikList FROM TroubleTick" +
-                "etReq ";
+            this._commandCollection[0].CommandText = "SELECT TroubleTicketNo, Status, CAST(TroubleTicketNo AS VARCHAR) + \' | \' + Status" +
+                " AS TikList\r\nFROM   TroubleTicketReq\r\nORDER BY TroubleTicketNo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT TroubleTicketNo, Status, CAST(TroubleTicketNo AS VARCHAR) + \' | \' + Status" +
+                " AS TikList\r\nFROM   TroubleTicketReq\r\nWHERE (TroubleTicketNo = @TroubleTicketNo)" +
+                "\r\nORDER BY TroubleTicketNo";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8337,6 +8732,32 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual NotificationSystem.GetStatusListDataTable GetDataByStatus() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            NotificationSystem.GetStatusListDataTable dataTable = new NotificationSystem.GetStatusListDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTroubleTicketNo(NotificationSystem.GetStatusListDataTable dataTable, int TroubleTicketNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual NotificationSystem.GetStatusListDataTable GetDataByTroubleTicketNo(int TroubleTicketNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
             NotificationSystem.GetStatusListDataTable dataTable = new NotificationSystem.GetStatusListDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8396,16 +8817,42 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int AgentID, string Status, int Original_TroubleTicketNo) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AgentID));
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string Status) {
             if ((Status == null)) {
-                throw new global::System.ArgumentNullException("Status");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Status));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Status));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_TroubleTicketNo));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Status, int Original_TroubleTicketNo) {
+            if ((Status == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Status));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_TroubleTicketNo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9051,11 +9498,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             tableMapping.ColumnMappings.Add("First", "First");
             tableMapping.ColumnMappings.Add("Last", "Last");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Admin] WHERE (([UserName] = @Original_UserName))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [Admin] ([UserName], [Password], [Email], [First], [Last]) VALUES (@U" +
@@ -9064,19 +9506,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Admin] SET [UserName] = @UserName, [Password] = @Password, [Email] = @Ema" +
-                "il, [First] = @First, [Last] = @Last WHERE (([UserName] = @Original_UserName))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "First", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9089,7 +9520,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT   UserName, Password, Email, First, Last\r\nFROM         Admin\r\nWHERE     (U" +
@@ -9103,10 +9534,20 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT   UserName, Password, Email, First, Last\r\nFROM         Admin\r\nWHERE     (U" +
-                "serName = @username) ";
+            this._commandCollection[2].CommandText = "SELECT Email, First, Last, Password, UserName FROM Admin WHERE (UserName = @usern" +
+                "ame)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE ADMIN\r\nSET UserName = @UserName, Password = @Password, Email = @Email, Fir" +
+                "st = @First, Last = @Last\r\nWHERE UserName = @UserName";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "First", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Last", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9249,33 +9690,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_UserName) {
-            if ((Original_UserName == null)) {
-                throw new global::System.ArgumentNullException("Original_UserName");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_UserName));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string UserName, string Password, string Email, string First, string Last) {
             if ((UserName == null)) {
@@ -9291,19 +9705,19 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Password));
             }
             if ((Email == null)) {
-                throw new global::System.ArgumentNullException("Email");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Email));
             }
             if ((First == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("First");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(First));
             }
             if ((Last == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Last");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Last));
@@ -9327,66 +9741,54 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string UserName, string Password, string Email, string First, string Last, string Original_UserName) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string UserName, string Password, string Email, string First, string Last) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((UserName == null)) {
                 throw new global::System.ArgumentNullException("UserName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(UserName));
+                command.Parameters[0].Value = ((string)(UserName));
             }
             if ((Password == null)) {
                 throw new global::System.ArgumentNullException("Password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Password));
+                command.Parameters[1].Value = ((string)(Password));
             }
             if ((Email == null)) {
-                throw new global::System.ArgumentNullException("Email");
+                command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Email));
+                command.Parameters[2].Value = ((string)(Email));
             }
             if ((First == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("First");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(First));
+                command.Parameters[3].Value = ((string)(First));
             }
             if ((Last == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Last");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Last));
+                command.Parameters[4].Value = ((string)(Last));
             }
-            if ((Original_UserName == null)) {
-                throw new global::System.ArgumentNullException("Original_UserName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_UserName));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
+                command.Connection.Open();
             }
+            int returnValue;
             try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
+                returnValue = command.ExecuteNonQuery();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
+                    command.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Password, string Email, string First, string Last, string Original_UserName) {
-            return this.Update(Original_UserName, Password, Email, First, Last, Original_UserName);
+            return returnValue;
         }
     }
     
@@ -9411,8 +9813,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         private CustomerListTableAdapter _customerListTableAdapter;
         
         private TroubleTicketListTableAdapter _troubleTicketListTableAdapter;
-        
-        private GetTypeListTableAdapter _getTypeListTableAdapter;
         
         private GetStatusListTableAdapter _getStatusListTableAdapter;
         
@@ -9508,20 +9908,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public GetTypeListTableAdapter GetTypeListTableAdapter {
-            get {
-                return this._getTypeListTableAdapter;
-            }
-            set {
-                this._getTypeListTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public GetStatusListTableAdapter GetStatusListTableAdapter {
             get {
                 return this._getStatusListTableAdapter;
@@ -9584,10 +9970,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                             && (this._troubleTicketListTableAdapter.Connection != null))) {
                     return this._troubleTicketListTableAdapter.Connection;
                 }
-                if (((this._getTypeListTableAdapter != null) 
-                            && (this._getTypeListTableAdapter.Connection != null))) {
-                    return this._getTypeListTableAdapter.Connection;
-                }
                 if (((this._getStatusListTableAdapter != null) 
                             && (this._getStatusListTableAdapter.Connection != null))) {
                     return this._getStatusListTableAdapter.Connection;
@@ -9622,9 +10004,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                     count = (count + 1);
                 }
                 if ((this._troubleTicketListTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._getTypeListTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._getStatusListTableAdapter != null)) {
@@ -9686,15 +10065,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._troubleTicketListTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._getTypeListTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.GetTypeList.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._getTypeListTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -9766,14 +10136,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._getTypeListTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.GetTypeList.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._getTypeListTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._getStatusListTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.GetStatusList.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -9813,14 +10175,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._getStatusListTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._getTypeListTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GetTypeList.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._getTypeListTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -9928,11 +10282,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._getTypeListTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._getTypeListTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._getStatusListTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._getStatusListTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -10018,15 +10367,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                     if (this._troubleTicketListTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._troubleTicketListTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._troubleTicketListTableAdapter.Adapter);
-                    }
-                }
-                if ((this._getTypeListTableAdapter != null)) {
-                    revertConnections.Add(this._getTypeListTableAdapter, this._getTypeListTableAdapter.Connection);
-                    this._getTypeListTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._getTypeListTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._getTypeListTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._getTypeListTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._getTypeListTableAdapter.Adapter);
                     }
                 }
                 if ((this._getStatusListTableAdapter != null)) {
@@ -10124,10 +10464,6 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
                 if ((this._troubleTicketListTableAdapter != null)) {
                     this._troubleTicketListTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._troubleTicketListTableAdapter]));
                     this._troubleTicketListTableAdapter.Transaction = null;
-                }
-                if ((this._getTypeListTableAdapter != null)) {
-                    this._getTypeListTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._getTypeListTableAdapter]));
-                    this._getTypeListTableAdapter.Transaction = null;
                 }
                 if ((this._getStatusListTableAdapter != null)) {
                     this._getStatusListTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._getStatusListTableAdapter]));

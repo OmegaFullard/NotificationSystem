@@ -18,11 +18,12 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         private string m_Email = string.Empty;
         private string m_Phone = string.Empty;
         private string m_Fax = string.Empty;
+        private string m_Salary = string.Empty;
 
         private int m_AgentID = 0;
         private int m_TroubleTicketNo = 0;
         private DateTime m_StartDate;
-        private int m_Salary;
+        
         public string Title
         {
             get
@@ -133,7 +134,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-        public int Salary
+        public string Salary
         {
             get
             {

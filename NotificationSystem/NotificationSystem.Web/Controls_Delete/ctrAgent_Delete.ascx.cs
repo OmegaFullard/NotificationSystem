@@ -55,7 +55,7 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
                     {
                         var withBlock = tblAgent[0];
 
-                        this.txttitle.Text = withBlock.Title; withBlock.Salary = int.Parse(txtsalary.Text); withBlock.AgentID = int.Parse(txtagentid.Text);
+                        this.txttitle.Text = withBlock.Title; withBlock.Salary = (txtsalary.Text); withBlock.AgentID = int.Parse(txtagentid.Text);
                         this.txtfirstname.Text = withBlock.FirstN; this.txtlastname.Text = withBlock.LastN; 
 
                         if (!string.IsNullOrEmpty(withBlock.Phone))

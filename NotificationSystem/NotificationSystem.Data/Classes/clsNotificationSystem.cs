@@ -104,7 +104,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             {
                 {
                     var withBlock = thisCustomer;
-                    adpCustomer.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.UserName, withBlock.Password, withBlock.Original_CustomerID);
+                    adpCustomer.Update(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.UserName, withBlock.Password, withBlock.Original_CustomerID);
                 }
             }
 
@@ -133,7 +133,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 			{
 				{
 					var withBlock = thisCustomer;
-					adpCustomer.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.UserName, withBlock.Password);
+					adpCustomer.Insert(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.UserName, withBlock.Password);
 				}
 
                 GetCustomerIDDataTable tblGetCustomerID = adpGetCustomerID.GetData();
@@ -546,7 +546,7 @@ public int GetAgentByID(int AgentID)
                
                 {
                     var withBlock = thisAgent;
-                    adpAgent.Insert(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax);
+                    adpAgent.Insert(withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax, withBlock.Salary);
 
                   
                 }
@@ -592,7 +592,7 @@ public int GetAgentByID(int AgentID)
             {
                 {
                     var withBlock = thisAgent;
-                    adpAgent.Update(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax, withBlock.Original_AgentID);
+                    adpAgent.Update(withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax, withBlock.Original_AgentID);
                 }
             }
 
@@ -681,7 +681,7 @@ public int GetAgentByID(int AgentID)
             {
                 {
                     var withBlock = thisAdmin;
-                    adpAdmin.Update(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
+                    adpAdmin.UpdateQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
                 }
             }
 
