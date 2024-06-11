@@ -43,9 +43,9 @@ namespace NotificationSystem.NotificationSystem.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            AgentDataTable tblAgent = new AgentDataTable();
+            AgentDataTable tblGetAgent = new AgentDataTable();
 
-           // int agentID = m_AgentID;
+           //int agentID = m_AgentID;
 
             try
             {
@@ -55,13 +55,13 @@ namespace NotificationSystem.NotificationSystem.Web
 
 
                 if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
-					tblAgent = (AgentDataTable)theNotificationSystem.GetAgentByID(m_AgentID);
+					tblGetAgent = (AgentDataTable)theNotificationSystem.GetAgentByID(m_AgentID);
 				else
-                    tblAgent = (AgentDataTable)theNotificationSystem.GetAgents();
+                    tblGetAgent = (AgentDataTable)theNotificationSystem.GetAgents();
 
 
-                this.lblSearchResult.Text = tblAgent.Rows.Count + " Result(s)";
-                this.grdAgents.DataSource = tblAgent.DefaultView;
+                this.lblSearchResult.Text = tblGetAgent.Rows.Count + " Result(s)";
+                this.grdAgents.DataSource = tblGetAgent.DefaultView;
                 this.grdAgents.DataBind();
             }
 

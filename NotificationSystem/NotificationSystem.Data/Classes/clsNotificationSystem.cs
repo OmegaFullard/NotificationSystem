@@ -45,23 +45,22 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-		public int GetCustomerListbyID(int CustomerID)
-		{
-			try
-			{
-				CustomerListTableAdapter adpCustomerList = new CustomerListTableAdapter();
-				CustomerListDataTable tblCustomerList = adpCustomerList.GetDataByID(CustomerID);
-				CustomerListRow row = tblCustomerList[0];
-				return row.CustomerID;
+        public DataTable GetCustomerListbyID(int numID)
+        {
+            try
+            {
+                CustomerListTableAdapter adpCustomerList = new CustomerListTableAdapter();
+                CustomerListDataTable tblCustomerList = adpCustomerList.GetDataByID(numID);
+        
+        return tblCustomerList;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-		}
-
-		public DataTable GetCustomers()
+        public DataTable GetCustomers()
         {
             try
             {
@@ -167,22 +166,22 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         }
 
 
-        public void DeleteCustomer(clsCustomer thisCustomer)
-        {
-            CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
+        //public void DeleteCustomer(clsCustomer thisCustomer)
+        //{
+        //    CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
 
-            try
-            {
-                {
-                    var withBlock = thisCustomer;
-                    adpCustomer.DeleteQuery(withBlock.CustomerID);
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        //    try
+        //    {
+        //        {
+        //            var withBlock = thisCustomer;
+        //            adpCustomer.DeleteQuery(withBlock.CustomerID);
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
         public void GetbyUserPW(string username, string password)
         {
@@ -280,7 +279,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             {
                 {
 					var withBlock = thisTroubleTicket;
-					adpTroubleTicket.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.Status, withBlock.DueDate, withBlock.RequestDate, withBlock.Type, withBlock.TroubleTicketNo);
+					adpTroubleTicket.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.Status, withBlock.Type, withBlock.DueDate, withBlock.RequestDate, withBlock.TroubleTicketNo);
 				}
             }
 
@@ -299,15 +298,15 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
             TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
 
-            //NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = new NotificationSystem.TroubleTicketReqDataTable();
-            //TroubleTicket = false;
+            NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = new NotificationSystem.TroubleTicketReqDataTable();
+            TroubleTicket = false;
 
 
             try
             {
                 {
 					var withBlock = thisTroubleTicket;
-					adpTroubleTicketReq.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.Status, withBlock.DueDate, withBlock.RequestDate, withBlock.Type);
+					adpTroubleTicketReq.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.Status, withBlock.Type, withBlock.DueDate, withBlock.RequestDate);
 				}
 
 
@@ -481,22 +480,22 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         }
 
 
-        
-public int GetAgentByID(int AgentID)
+
+        public DataTable GetAgentByID(int numID)
         {
             try
             {
                 AgentTableAdapter adpAgentList = new AgentTableAdapter();
-                NotificationSystem.AgentDataTable tblAgentList = adpAgentList.GetDataByAgentID(AgentID);
+                AgentDataTable tblGetAgent = adpAgentList.GetDataByAgentID(numID);
 
-                AgentRow row = tblAgentList[0];
-                return row.AgentID;
+                return tblGetAgent;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
         }
+
 
         public DataTable GetAgents()
         {
@@ -601,22 +600,22 @@ public int GetAgentByID(int AgentID)
                 throw;
             }
         }
-        public void DeleteAgent(clsAgent thisAgent)
-        {
-            AgentTableAdapter adpAgent = new AgentTableAdapter();
+        //public void DeleteAgent(clsAgent thisAgent)
+        //{
+        //    AgentTableAdapter adpAgent = new AgentTableAdapter();
 
-            try
-            {
-                {
-                    var withBlock = thisAgent;
-                    adpAgent.DeleteQuery(withBlock.AgentID);
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        //    try
+        //    {
+        //        {
+        //            var withBlock = thisAgent;
+        //            adpAgent.DeleteQuery(withBlock.AgentID);
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
 
 
@@ -672,24 +671,24 @@ public int GetAgentByID(int AgentID)
 
 
 
-        public void UpdateAdmin(clsAdmin thisAdmin)
-        {
-            AdminTableAdapter adpAdmin = new AdminTableAdapter();
+        //public void UpdateAdmin(clsAdmin thisAdmin)
+        //{
+        //    AdminTableAdapter adpAdmin = new AdminTableAdapter();
 
 
-            try
-            {
-                {
-                    var withBlock = thisAdmin;
-                    adpAdmin.UpdateQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
-                }
-            }
+        //    try
+        //    {
+        //        {
+        //            var withBlock = thisAdmin;
+        //            adpAdmin.UpdateQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
+        //        }
+        //    }
 
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
 
         public void AddAdmin(clsAdmin thisAdmin)
@@ -708,7 +707,7 @@ public int GetAgentByID(int AgentID)
             {
                 {
                     var withBlock = thisAdmin;
-                    adpAdmin.Insert(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
+                    adpAdmin.InsertQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
                 }
 
 

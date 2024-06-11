@@ -225,28 +225,6 @@
     <Content Include="NotificationSystem.Data\NotificationSystem.xsc">
       <DependentUpon>NotificationSystem.xsd</DependentUpon>
     </Content>
-    <Content Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Content>
-    <None Include="DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Content>
-    <Content Include="DataSource1.xsc">
-      <DependentUpon>DataSource1.xsd</DependentUpon>
-    </Content>
-    <None Include="DataSource1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSource1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="DataSource1.xss">
-      <DependentUpon>DataSource1.xsd</DependentUpon>
-    </Content>
     <None Include="NotificationSystem.Data\NotificationSystem.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -4112,16 +4090,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSource1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSource1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="NotificationSystem.Data\Classes\clsAdmin.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsAgent.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsCustomer.cs" />
@@ -4135,6 +4103,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NotificationSystem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Data\xsReports.cs">
+      <DependentUpon>xsReports.xsd</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Data\xsReports.Designer.cs">
       <AutoGen>True</AutoGen>

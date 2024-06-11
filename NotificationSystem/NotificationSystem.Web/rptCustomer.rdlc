@@ -2,19 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSource1">
+    <DataSource Name="xsReports">
       <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=NotificationSystem</ConnectString>
-        <IntegratedSecurity>true</IntegratedSecurity>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>230601de-ecac-4205-b71a-ac7685effdf6</rd:DataSourceID>
+      <rd:DataSourceID>76aa2517-cce5-4036-9ce1-95e45e98f45a</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DataSource1</DataSourceName>
+        <DataSourceName>xsReports</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -62,18 +61,10 @@
           <DataField>Zip</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="UserName">
-          <DataField>UserName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Password">
-          <DataField>Password</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSource1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\DataSource1.xsd</rd:SchemaPath>
+        <rd:DataSetName>xsReports</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\xsReports.xsd</rd:SchemaPath>
         <rd:TableName>Customer</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -82,7 +73,7 @@
     </DataSet>
     <DataSet Name="DataSet2">
       <Query>
-        <DataSourceName>DataSource1</DataSourceName>
+        <DataSourceName>xsReports</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -116,11 +107,11 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSource1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\DataSource1.xsd</rd:SchemaPath>
+        <rd:DataSetName>xsReports</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\xsReports.xsd</rd:SchemaPath>
         <rd:TableName>TroubleTicketReq</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterFillMethod>FillByTroubleTicketNo</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetDataByTroubleTicketNo</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>TroubleTicketReqTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
@@ -334,7 +325,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="ID" &amp; First(Fields!CustomerID.Value, "DataSet1")</Value>
+                    <Value>="ID" &amp; First(Fields!CustomerID.Value, "DataSet2")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -398,7 +389,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!TroubleTicketNo.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!TroubleTicketNo.Value, "DataSet2")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -505,7 +496,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First (Fields!FirstN.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!FirstN.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -794,7 +785,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!City.Value, "DataSet1" )</Value>
+                    <Value>=First(Fields!City.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
