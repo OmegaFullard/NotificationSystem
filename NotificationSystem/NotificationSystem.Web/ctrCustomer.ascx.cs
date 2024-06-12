@@ -38,7 +38,7 @@ using Microsoft.VisualBasic;
         protected void Page_Load(object sender, EventArgs e)
         {
             clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            CustomerListDataTable tblCustomer = new CustomerListDataTable();
+            CustomerDataTable tblCustomer = new CustomerDataTable();
         int customerID = m_CustomerID;
 
             try
@@ -47,12 +47,12 @@ using Microsoft.VisualBasic;
 				ctrHiddebField.Value = Convert.ToString(m_CustomerID);
 
 			if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
-				tblCustomer = (CustomerListDataTable)theNotificationSystem.GetCustomerListbyID(customerID);
+				tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomerListbyID(customerID);
 
 
 			else
 
-				tblCustomer = (CustomerListDataTable)theNotificationSystem.GetCustomers();
+				tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
 
 
 			this.lblSearchResult.Text = tblCustomer.Rows.Count + " Result(s)";

@@ -11,34 +11,52 @@ namespace NotificationSystem.NotificationSystem.Web
 {
 
 
-	public partial class ctrAdmin
+	public partial class Admin
 	{
 
 		/// <summary>
-		/// ctrHiddebField control.
+		/// Table1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.HiddenField ctrHiddebField;
+		protected global::System.Web.UI.WebControls.Table Table1;
 
 		/// <summary>
-		/// lblSearchResult control.
+		/// Panel1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblSearchResult;
+		protected global::System.Web.UI.WebControls.Panel Panel1;
 
 		/// <summary>
-		/// grdAdmin control.
+		/// admin control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.GridView grdAdmin;
+		protected global::System.Web.UI.WebControls.Image admin;
+
+		/// <summary>
+		/// ctrSearch_Admin control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Admin ctrSearch_Admin;
+
+		/// <summary>
+		/// ctrAdmin control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::NotificationSystem.NotificationSystem.Web.ctrAdmin ctrAdmin;
 	}
 }

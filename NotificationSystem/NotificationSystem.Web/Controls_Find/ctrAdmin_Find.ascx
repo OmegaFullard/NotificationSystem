@@ -19,14 +19,7 @@
                     width="700px" AllowPaging="True" AllowSorting="True" PageSize="18">
                     <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
                           <Columns>
-                              <asp:TemplateField HeaderText="Name" SortExpression="UserName" ItemStyle-Width="100"    Visible="True">
-                                            <ItemTemplate>
-                                                <a onclick="javascript:showDetails('Admin=<%#Eval("UserName")%>;return false; href="#" id="a1"><%#Eval("UserName")%></a> 
-                                            </ItemTemplate>
-                                       </asp:TemplateField> 
-                              
-									     
-                                       ReadOnly="True"  Visible="True" />                           
+                                                      
                               <asp:BoundField DataField="First" HeaderText="First Name" HtmlEncode="False" 
                                        ReadOnly="True"  Visible="True" />
                               <asp:BoundField DataField="Last" HeaderText="Last Name" HtmlEncode="False" 

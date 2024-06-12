@@ -1290,6 +1290,7 @@
     <None Include="NotificationSystem.Data\Web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+    <Content Include="NotificationSystem.Web\Admin.aspx" />
     <Content Include="NotificationSystem.Web\AdminRegistration.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Add.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Delete.aspx" />
@@ -4111,6 +4112,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>xsReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>

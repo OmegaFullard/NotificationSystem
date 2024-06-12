@@ -38,10 +38,26 @@ using System.Net.Http;
         public TextBox txtTroubleTicketList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-        PopulateControls();
 
-        
+        TroubleTicketReqDataTable tblTroubleTicket = new TroubleTicketReqDataTable();
+
+        try
+        {
+            if ((Page.IsPostBack))
+            {
+                if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"] == "Add")
+                    AddTroubleTicket();
+            }
+            else
+                PopulateControls();
         }
+        catch (Exception ex)
+        {
+            throw;
+        }
+
+
+    }
 
         public void AddTroubleTicket()
         {
@@ -120,13 +136,11 @@ using System.Net.Http;
 
 
 		this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-		this.cmbStatus.DataTextField = "Status"; cmbStatus.DataValueField = "Status";
+		this.cmbStatus.DataTextField = "Status";
 		this.cmbStatus.DataBind();
-		
-
 
 		this.cmbType.DataSource = theNotificationSystem.GetTypeList();
-		this.cmbType.DataTextField = "Type"; cmbType.DataValueField = "Type";
+        this.cmbType.DataTextField = "Type";
 		this.cmbType.DataBind();
 
 

@@ -19,11 +19,6 @@
                     width="700px" AllowPaging="True" AllowSorting="True" PageSize="18">
                     <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
                           <Columns>
-                              <asp:TemplateField HeaderText="ID" SortExpression="AgentID" ItemStyle-Width="100"    Visible="True">
-                                            <ItemTemplate>
-                                                <a onclick="javascript:showDetails('agent=<%#Eval("AgentID")%>;return false; href="#" id="a1"><%#Eval("AgentID")%></a> 
-                                            </ItemTemplate>
-                                       </asp:TemplateField> 
                               
 									     <asp:BoundField DataField="StartDate" HeaderText="Start Date" HtmlEncode="False" DataFormatString="{0:MM/dd/yyyy}"
                                        ReadOnly="True"  Visible="True" />

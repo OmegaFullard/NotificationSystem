@@ -481,12 +481,12 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 
 
-        public DataTable GetAgentByID(int numID)
+        public DataTable GetAgent(int AgentID)
         {
             try
             {
                 AgentTableAdapter adpAgentList = new AgentTableAdapter();
-                AgentDataTable tblGetAgent = adpAgentList.GetDataByAgentID(numID);
+                AgentDataTable tblGetAgent = adpAgentList.GetDataByAgentID(AgentID);
 
                 return tblGetAgent;
             }
@@ -624,7 +624,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             try
             {
                 AdminTableAdapter adpAdmin = new AdminTableAdapter();
-                AdminDataTable tblAdmin = adpAdmin.GetData(username, password);
+                AdminDataTable tblAdmin = adpAdmin.GetDataByUserNamePassword(username, password);
                 AdminRow row = tblAdmin[0];
                 return;
 
@@ -635,12 +635,12 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-        public DataTable GetAdmins(string username, string password)
+        public DataTable GetAdmins()
         {
             try
             {
                 AdminTableAdapter adpAdmin = new AdminTableAdapter();
-                NotificationSystem.AdminDataTable tblAdmin = adpAdmin.GetData(username, password);
+                NotificationSystem.AdminDataTable tblAdmin = adpAdmin.GetData();
 
                 return tblAdmin;
             }

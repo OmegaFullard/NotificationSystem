@@ -55,7 +55,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
 
                 if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
-					tblGetAgent = (AgentDataTable)theNotificationSystem.GetAgentByID(m_AgentID);
+					tblGetAgent = (AgentDataTable)theNotificationSystem.GetAgent(m_AgentID);
 				else
                     tblGetAgent = (AgentDataTable)theNotificationSystem.GetAgents();
 
@@ -126,5 +126,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
             return ViewState["direction"].ToString();
         }
-    }
+
+		
+	}
 }
