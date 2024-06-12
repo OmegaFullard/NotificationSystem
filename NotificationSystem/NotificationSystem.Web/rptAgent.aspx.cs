@@ -60,29 +60,22 @@ namespace NotificationSystem.NotificationSystem.Web
                 ReportDataSource.Name = "DataSet3";
 
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                ReportViewer1.LocalReport.ReportPath = Page.Server.MapPath(theSearch.ReportPath);
-
+                ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath);
                 if (theSearch.AgentID.ToString().Length == 0)
-                {
-                    //theSearch.AgentID = "XXXXXX";
+                    theSearch.AgentID = 0;
+            
 
 
-                    int numAgentID = (theSearch.AgentID);
-                    dtReport = (Data.xsReports.AgentDataTable)theNotificationSystem.GetAgentByAgentID(numAgentID);
+                int numAgentID = (theSearch.AgentID);
+                dtReport = (xsReports.AgentDataTable)theNotificationSystem.GetAgentByAgentID(numAgentID);
+                ReportDataSource.Value = dtReport;
 
 
-                    //strTitle = "Agent Report: " + theSearch.TroubleTicketNo + " Activity by Agent ID ";
+                ReportViewer1.LocalReport.DataSources.Clear();
+                ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
+              
 
-
-
-                    ReportDataSource.Value = dtReport;
-                    //ReportParameter param1 = new ReportParameter("Title", strTitle);
-                    //ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { param1 });
-
-                    ReportViewer1.LocalReport.DataSources.Clear();
-                    ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
-                    ReportViewer1.LocalReport.Refresh();
-                }
+                ReportViewer1.LocalReport.Refresh();
             }
 
 
@@ -92,8 +85,8 @@ namespace NotificationSystem.NotificationSystem.Web
             }
         }
 
-        private void ReportViewer1_Load(object sender, EventArgs e)
-        {
+		protected void ReportViewer1_Load(object sender, EventArgs e)
+		{
             // string exportOption = "Excel";
             // string exportOption = "Word";
             string exportOption = "PDF";
@@ -104,8 +97,6 @@ namespace NotificationSystem.NotificationSystem.Web
                 fieldInfo.SetValue(extension, false);
             }
         }
-
-
-    }
+	}
 
 }
