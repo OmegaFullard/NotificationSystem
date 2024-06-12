@@ -114,9 +114,9 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
 
                 try
                 {
-                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                    theNotificationSystem.DeleteCustomer(thisCustomer);
-                    lblResult.Text = "Customer data has been deleted";
+                    //clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                    //theNotificationSystem.DeleteCustomer(thisCustomer);
+                    //lblResult.Text = "Customer data has been deleted";
                 }
                 catch (SqlException ex)
                 {

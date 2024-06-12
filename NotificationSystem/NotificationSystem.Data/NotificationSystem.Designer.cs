@@ -10,6 +10,9 @@
 
 #pragma warning disable 1591
 
+using System;
+using System.Data;
+
 namespace NotificationSystem.NotificationSystem.Data {
     
     
@@ -1769,7 +1772,12 @@ namespace NotificationSystem.NotificationSystem.Data {
                 xs.Add(dsSchema);
                 return type;
             }
-        }
+
+			//public static explicit operator CustomerDataTable(DataTable v)
+			//{
+			//	throw new NotImplementedException();
+			//}
+		}
         
         /// <summary>
         ///Represents the strongly named DataTable class.

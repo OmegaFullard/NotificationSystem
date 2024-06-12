@@ -106,9 +106,9 @@ public void DeleteAgent()
 
                 try
                 {
-                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                    theNotificationSystem.DeleteAgent(thisAgent);
-                    lblResult.Text = "Agent data has been deleted";
+                //    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                //    theNotificationSystem.DeleteAgent(thisAgent);
+                //    lblResult.Text = "Agent data has been deleted";
                 }
                 catch (SqlException ex)
                 {
