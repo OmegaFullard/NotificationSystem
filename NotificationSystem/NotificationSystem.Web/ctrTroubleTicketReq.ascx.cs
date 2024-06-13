@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
@@ -17,6 +16,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
+using System.Data;
 
 namespace NotificationSystem.NotificationSystem.Web
 {
@@ -40,37 +40,29 @@ namespace NotificationSystem.NotificationSystem.Web
 		{
 
 
-			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-			TroubleTicketReqDataTable tblTTR = new TroubleTicketReqDataTable();
-			int troubleticketNo = m_TroubleTicketNo;
+            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+            TroubleTicketReqDataTable tblTTR = new TroubleTicketReqDataTable();
 
-			try
-			{
-				if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
-					this.lblSearchResult.Text = Convert.ToString(m_TroubleTicketNo);
-
-				if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
-
-					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(troubleticketNo);
+            try
+            {
+                if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
+                    this.ctrHiddebField.Value = Convert.ToString(m_TroubleTicketNo);
 
 
+                if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
+					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(m_TroubleTicketNo);
+                else
+                    tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
 
-				else
-
-					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketList();
-
-
-				this.lblSearchResult.Text = tblTTR.Rows.Count + " Result(s)";
-				this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;
-				this.grdTroubleTicketReq.DataBind();
-
-			}
-
-			catch (Exception)
-			{
-				throw;
-			}
-		}
+                this.lblSearchResult.Text = tblTTR.Rows.Count + " Result(s)";
+                this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;
+                this.grdTroubleTicketReq.DataBind();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 		
         private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
         {
