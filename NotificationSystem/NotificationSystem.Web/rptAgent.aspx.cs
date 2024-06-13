@@ -38,7 +38,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrAgent_Search.PopulateSearchControl();
-                    theSearch.ReportPath = "~/NotificationSystem.Web/rptAgent.rdlc";
+                    theSearch.ReportPath = "NotificationSystem.Web\rptAgent.rdlc";
                     theSearch.AgentID = ctrAgent_Search.AgentID;
                     ShowReport();
                 }
@@ -56,8 +56,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 Data.xsReports.AgentDataTable dtReport;
 
                 ReportDataSource.Name = "DataSet1";
-                ReportDataSource.Name = "DataSet2";
-                ReportDataSource.Name = "DataSet3";
+          
 
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
                 ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath);
@@ -86,6 +85,19 @@ namespace NotificationSystem.NotificationSystem.Web
         }
 
 		protected void ReportViewer1_Load(object sender, EventArgs e)
+		{
+            // string exportOption = "Excel";
+            // string exportOption = "Word";
+            string exportOption = "PDF";
+            RenderingExtension extension = ReportViewer1.LocalReport.ListRenderingExtensions().ToList().Find(x => x.Name.Equals(exportOption, StringComparison.CurrentCultureIgnoreCase));
+            if (extension != null)
+            {
+                System.Reflection.FieldInfo fieldInfo = extension.GetType().GetField("m_isVisible", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+                fieldInfo.SetValue(extension, false);
+            }
+        }
+
+		protected void ReportViewer1_Load1(object sender, EventArgs e)
 		{
             // string exportOption = "Excel";
             // string exportOption = "Word";

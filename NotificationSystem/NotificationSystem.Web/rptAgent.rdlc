@@ -8,34 +8,24 @@
         <ConnectString>Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=NotificationSystem</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
-      <rd:DataSourceID>aa802fac-4ac5-4078-b2e8-76e6e1c469a8</rd:DataSourceID>
+      <rd:DataSourceID>78abc14d-1c9e-4132-9ce8-c18d3cae4eee</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>SELECT * FROM AGENT</CommandText>
+        <CommandText>SELECT [Agent].AgentID, [Agent].Title, [Agent].FirstN, [Agent].LastN, [Agent].Email, [Agent].Phone, [Agent].Fax, [TroubleTicketReq].TroubleTicketNo, [TroubleTicketReq].Status, [TroubleTicketReq].Type, [TroubleTicketReq].RequestDate, [TroubleTicketReq].DueDate
+FROM [Agent] JOIN [TroubleTicketReq] 
+ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
       </Query>
       <Fields>
         <Field Name="AgentID">
           <DataField>AgentID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="TroubleTicketNo">
-          <DataField>TroubleTicketNo</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="Title">
           <DataField>Title</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StartDate">
-          <DataField>StartDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Salary">
-          <DataField>Salary</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FirstN">
@@ -58,83 +48,6 @@
           <DataField>Fax</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="DataSet2">
-      <Query>
-        <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>SELECT * FROM CUSTOMER</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="CustomerID">
-          <DataField>CustomerID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="AgentID">
-          <DataField>AgentID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TroubleTicketNo">
-          <DataField>TroubleTicketNo</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FirstN">
-          <DataField>FirstN</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LastN">
-          <DataField>LastN</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Email">
-          <DataField>Email</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Phone">
-          <DataField>Phone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Address">
-          <DataField>Address</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="City">
-          <DataField>City</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="State">
-          <DataField>State</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Zip">
-          <DataField>Zip</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="UserName">
-          <DataField>UserName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Password">
-          <DataField>Password</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="DataSet3">
-      <Query>
-        <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>SELECT * FROM TROUBLETICKETREQ</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-      <Fields>
-        <Field Name="AgentID">
-          <DataField>AgentID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="CustomerID">
-          <DataField>CustomerID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="TroubleTicketNo">
           <DataField>TroubleTicketNo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -147,12 +60,12 @@
           <DataField>Type</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DueDate">
-          <DataField>DueDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
         <Field Name="RequestDate">
           <DataField>RequestDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
@@ -431,7 +344,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RequestDate.Value, "DataSet3")</Value>
+                    <Value>=First(Fields!RequestDate.Value, "DataSet1")</Value>
                     <Style>
                       <Format>MM/dd/yyyy</Format>
                     </Style>
@@ -864,7 +777,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Status.Value, "DataSet3")</Value>
+                    <Value>=First(Fields!Status.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -931,7 +844,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Type.Value, "DataSet3")</Value>
+                    <Value>=First(Fields!Type.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1007,7 +920,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!DueDate.Value, "DataSet3")</Value>
+                    <Value>=First(Fields!DueDate.Value, "DataSet1")</Value>
                     <Style>
                       <Format>MM/dd/yyyy</Format>
                     </Style>

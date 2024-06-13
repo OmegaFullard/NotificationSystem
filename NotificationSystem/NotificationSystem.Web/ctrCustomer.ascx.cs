@@ -67,48 +67,7 @@ using Microsoft.VisualBasic;
             }
         }
 
-        private void grdCustomers_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            try
-            {
-                if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
-                {
-                    DataView m_DataView = (DataView)this.grdCustomers.DataSource;
-
-                    if (m_DataView == null)
-                    {
-                        m_DataView.Sort = ViewState["columnname"].ToString() + " " + ViewState["direction"].ToString();
-                        this.grdCustomers.DataSource = m_DataView;
-                    }
-                }
-
-                this.grdCustomers.PageIndex = e.NewPageIndex;
-                this.grdCustomers.DataBind();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        private void grdCustomers_Sorting(object sender, GridViewSortEventArgs e)
-        {
-            try
-            {
-                DataView m_Dataview = (DataView)grdCustomers.DataSource;
-
-                if (m_Dataview == null)
-                {
-                    m_Dataview.Sort = e.SortExpression + " " + ConvertSortDirection(e);
-                    this.grdCustomers.DataSource = m_Dataview;
-                    this.grdCustomers.DataBind();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        
 
         private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
         {
@@ -121,4 +80,47 @@ using Microsoft.VisualBasic;
 
             return ViewState["direction"].ToString();
         }
+
+    protected void grdCustomers_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
+            {
+                DataView m_DataView = (DataView)this.grdCustomers.DataSource;
+
+                if (m_DataView == null)
+                {
+                    m_DataView.Sort = ViewState["columnname"].ToString() + " " + ViewState["direction"].ToString();
+                    this.grdCustomers.DataSource = m_DataView;
+                }
+            }
+
+            this.grdCustomers.PageIndex = e.NewPageIndex;
+            this.grdCustomers.DataBind();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
+
+	protected void grdCustomers_Sorting(object sender, GridViewSortEventArgs e)
+	{
+        try
+        {
+            DataView m_Dataview = (DataView)grdCustomers.DataSource;
+
+            if (m_Dataview == null)
+            {
+                m_Dataview.Sort = e.SortExpression + " " + ConvertSortDirection(e);
+                this.grdCustomers.DataSource = m_Dataview;
+                this.grdCustomers.DataBind();
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+}
