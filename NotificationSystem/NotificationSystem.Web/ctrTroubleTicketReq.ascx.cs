@@ -50,7 +50,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
 
                 if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
-					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(m_TroubleTicketNo);
+					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
                 else
                     tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
 
