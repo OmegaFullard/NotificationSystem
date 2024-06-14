@@ -10,8 +10,6 @@
 
 #pragma warning disable 1591
 
-using System;
-
 namespace NotificationSystem.NotificationSystem.Data {
     
     
@@ -2119,12 +2117,7 @@ namespace NotificationSystem.NotificationSystem.Data {
                 xs.Add(dsSchema);
                 return type;
             }
-
-			public static explicit operator TroubleTicketReqDataTable(int v)
-			{
-				throw new NotImplementedException();
-			}
-		}
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -10101,19 +10094,16 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TroubleTicketNo, Type, CAST(TroubleTicketNo AS VARCHAR)  + \'|\' + Type AS N" +
-                "otList\r\nFROM   TroubleTicketReq\r\nWHERE (TroubleTicketNo = @TroubleTicketNo)\r\nORD" +
-                "ER BY TroubleTicketNo";
+                "otList\r\nFROM   TroubleTicketReq\r\n\r\nORDER BY TroubleTicketNo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(NotificationSystem.GetTypeListDataTable dataTable, int TroubleTicketNo) {
+        public virtual int Fill(NotificationSystem.GetTypeListDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -10125,9 +10115,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual NotificationSystem.GetTypeListDataTable GetDataByType(int TroubleTicketNo) {
+        public virtual NotificationSystem.GetTypeListDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
             NotificationSystem.GetTypeListDataTable dataTable = new NotificationSystem.GetTypeListDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -10399,19 +10388,16 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TroubleTicketNo, Status, CAST(TroubleTicketNo AS VARCHAR) + \' | \' + Status" +
-                " AS TikList\r\nFROM TroubleTicketReq\r\nWHERE (TroubleTicketNo = @TroubleTicketNo)\r\n" +
-                "ORDER BY TroubleTicketNo\r\n";
+                " AS TikList\r\nFROM TroubleTicketReq\r\n\r\nORDER BY TroubleTicketNo\r\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(NotificationSystem.GetStatusListDataTable dataTable, int TroubleTicketNo) {
+        public virtual int Fill(NotificationSystem.GetStatusListDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -10423,9 +10409,8 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual NotificationSystem.GetStatusListDataTable GetDataByStatus(int TroubleTicketNo) {
+        public virtual NotificationSystem.GetStatusListDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
             NotificationSystem.GetStatusListDataTable dataTable = new NotificationSystem.GetStatusListDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

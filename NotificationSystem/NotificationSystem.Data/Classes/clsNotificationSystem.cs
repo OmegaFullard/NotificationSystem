@@ -220,7 +220,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-		public int GetTroubleTicketListbyID(int TroubleTicketNo)
+		public int GetTroubleTicketByNo(int TroubleTicketNo)
 		{
 			try
 			{
@@ -252,7 +252,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-		public DataTable GetTroubleTicketByNo(int TroubleTicketNo)
+		public DataTable GetTroubleTicket(int TroubleTicketNo)
 		{
 			try
 			{

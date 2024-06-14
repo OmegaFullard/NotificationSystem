@@ -39,7 +39,7 @@
                                                   <asp:MenuItem Text="Find" NavigateUrl="Customer_Find.aspx"></asp:MenuItem> 
                                                    <asp:MenuItem  Text="Add"  NavigateUrl="Customer_Add.aspx"></asp:MenuItem>
                                                   <asp:MenuItem Text="Update" NavigateUrl="Customer_Update.aspx"></asp:MenuItem> 
-                                                  <asp:MenuItem Text="Delete" NavigateUrl="Customer_Delete.aspx"></asp:MenuItem> 
+                                              
                                               </Items>
                                            </asp:Menu>
                                  </div>

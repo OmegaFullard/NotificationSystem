@@ -12,6 +12,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
     {
 		internal int Original_TroubleTicketNo;
 		private string m_Status = string.Empty;
+        private string m_Type = string.Empty;
         private int m_CustomerID = 0;
         private int m_AgentID = 0;
         private int m_TroubleTicketNo = 0;
@@ -30,6 +31,17 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
+        public string Type
+        {
+            get
+            {
+                return m_Type;
+            }
+            set
+            {
+                m_Type = value;
+            }
+        }
         public int CustomerID
         {
             get
@@ -92,6 +104,6 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-		public string Type { get; internal set; }
+		
 	}
 }

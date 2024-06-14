@@ -2,28 +2,29 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
-<style type="text/css">
+<script>
+     function OnClientLoad0(sender, args) {
 
-    div.RadCalendarFastNavPopup {
-        width: 105px !important;
-        overflow: hidden;
-    }
+         $telerik.$(".k-input")[0].setAttribute("readonly", "true");
+     }
+     function OnClientLoad1(sender, args) {
 
-    table.RadCalendarMonthView_Default {
-        width: 210px !important;
-        margin-left: -105px;
-    }
+         $telerik.$(".k-input")[1].setAttribute("readonly", "true");
+     }
+     function OnClientLoad2(sender, args) {
 
-    table.RadCalendarMonthView_Default tr:nth-child(7) td.rcButtons
-    {
-        text-align: right !important;
-    }
+         $telerik.$(".k-input")[2].setAttribute("readonly", "true");
+     }
+     function OnClientLoad3(sender, args) {
 
-    .rcOkButton {
-        margin-left: 20px;
-    }
-</style>
+         $telerik.$(".k-input")[3].setAttribute("readonly", "true");
+     }
+     function OnClientLoad4(sender, args) {
 
+         $telerik.$(".k-input")[4].setAttribute("readonly", "true");
+     }
+
+</script>
 
 <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
    
@@ -75,7 +76,7 @@
 										  <asp:TableRow>
 										  <asp:TableCell HorizontalAlighn="Right" Font-Bold="true">Status:<span style="color: red">*</span></asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
-                                                         <telerik:RadMultiColumnComboBox runat="server"  ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
+                                                         <telerik:RadMultiColumnComboBox runat="server" ClientEvents-OnLoad="OnClientLoad0" ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
                                                                 Placeholder="--Select" EnableEmbeddedSkins="True">
                                                                 <ColumnsCollection>
                                                                     <telerik:MultiColumnComboBoxColumn Field="Status" Title="Status" Width="100px" />

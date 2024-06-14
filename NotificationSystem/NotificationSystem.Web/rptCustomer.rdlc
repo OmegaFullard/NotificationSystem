@@ -8,7 +8,6 @@
         <ConnectString>Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=NotificationSystem</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
-      <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>76aa2517-cce5-4036-9ce1-95e45e98f45a</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -79,6 +78,14 @@ ON [Customer].CustomerID = TroubleTicketReq.CustomerID</CommandText>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>xsReports</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\omega.fullard\source\repos\NotificationSystem1\NotificationSystem\NotificationSystem.Data\xsReports.xsd</rd:SchemaPath>
+        <rd:TableName>rptCustomer</rd:TableName>
+        <rd:TableAdapterFillMethod>FillrptCustomer</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetDatarptCustomer</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>rptCustomerTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <ReportSections>

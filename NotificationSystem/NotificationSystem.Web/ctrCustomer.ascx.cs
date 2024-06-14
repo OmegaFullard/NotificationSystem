@@ -81,8 +81,10 @@ using Microsoft.VisualBasic;
             return ViewState["direction"].ToString();
         }
 
-    protected void grdCustomers_PageIndexChanging(object sender, GridViewPageEventArgs e)
-    {
+  
+
+	protected void grdCustomers_PageIndexChanging(object sender, GridViewPageEventArgs e)
+	{
         try
         {
             if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))

@@ -30,55 +30,36 @@ using System.Data.SqlClient;
         public TextBox txtTroubleTicketList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
-
+        if ((Page.IsPostBack))
+        {
+            if (m_TroubleTicketNo > 0)
+                this.lblResult.Text = "Ticket" + m_TroubleTicketNo;
+            if (this.lblResult.Text.Length == 2)
+                return;
 
             try
             {
+                if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Update$btnUpdate"] == "Update")
+                    UpdateTroubleTicket();
 
-                if ((Page.IsPostBack))
-                {
+                else if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
+            {
+                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
-
-
-
-                    if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Update$btnUpdate"] == "Update")
-                        UpdateTroubleTicket();
-
+                    TroubleTicketReqDataTable tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
 
                     {
-                        if (m_TroubleTicketNo == 0)
-
-
-                            return;
-
-
-                        tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicketByNo(m_TroubleTicketNo);
-                        if (tblTroubleTicketReq.Count == 0)
-                            return;
-
-                        {
-                            var withBlock = tblTroubleTicketReq[0];
-                            withBlock.AgentID = int.Parse(this.txtAgentID.Text); withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
-                            cmbStatus.Text = withBlock.Status;
-                            cmbType.Text = withBlock.Type;
-                            withBlock.RequestDate = DateTime.Now;
-                            withBlock.DueDate = DateTime.Now;
-                        }
-
-                        this.btnUpdate.Enabled = true;
+                        var withBlock = tblTroubleTicketReq[0];
+                        withBlock.AgentID = int.Parse(this.txtAgentID.Text); withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
+                        cmbStatus.Text = withBlock.Status;
+                        cmbType.Text = withBlock.Type;
+                        withBlock.RequestDate = DateTime.Now;
+                        withBlock.DueDate = DateTime.Now;
                     }
-
-
-
                 }
-                else
 
-                    PopulateControls();
+                PopulateControls();
             }
-
-
             catch (Exception ex)
             {
                 clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
@@ -87,6 +68,7 @@ using System.Data.SqlClient;
                 Response.Redirect("ErrorPage.aspx", false);
             }
         }
+    }
 
         public void ClearControls()
         {

@@ -27,27 +27,17 @@ public partial class TroubleTicketReq_Update : System.Web.UI.Page
     }
     protected void Page_Load(object sender, EventArgs e)
         {
-        try
+        if ((Page.IsPostBack))
         {
-            if ((Page.IsPostBack))
+            if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
             {
-                string strTroubleTicketReq = (Request.Form["ctl00_MainContent_ctrTroubleTicketReq_Update_TroubleTicketNo_ClientState"]
-                    .Replace("\"", "")
-                    .Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&"));
+                ctrTroubleTicketReq_Search.PopulateSearchControl();
 
-                if (strTroubleTicketReq.Length > 6)
-                {
-                    string[] arrTroubleTicketReq = strTroubleTicketReq.Split(Convert.ToChar(":"));
-                    this.ctrTroubleTicketReq_Update.TroubleTicketNo = int.Parse(arrTroubleTicketReq[1]); this.ctrTroubleTicketReq_Update.TroubleTicketNo = int.Parse(arrTroubleTicketReq[2]);
-                }
+                if (ctrTroubleTicketReq_Search.TroubleTicketNo == 0)
+                    return;
+                this.ctrTroubleTicketReq_Update.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
+
             }
-        }
-        catch (Exception ex)
-        {
-            clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
-            string NotificationBody = ex.Message + Constants.vbCrLf + ex.StackTrace;
-            SendError.SendMailMessage(NotificationBody);
-            Response.Redirect("ErrorPage.aspx", false);
         }
     }
     }

@@ -39,24 +39,7 @@ using System.Net.Http;
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        TroubleTicketReqDataTable tblTroubleTicket = new TroubleTicketReqDataTable();
-
-        try
-        {
-            if ((Page.IsPostBack))
-            {
-                if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"] == "Add")
-                    AddTroubleTicket();
-            }
-            else
-                PopulateControls();
-        }
-        catch (Exception ex)
-        {
-            throw;
-        }
-
-
+        PopulateControls();
     }
 
         public void AddTroubleTicket()

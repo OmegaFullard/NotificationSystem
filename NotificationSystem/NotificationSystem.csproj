@@ -1292,6 +1292,7 @@
     </None>
     <Content Include="NotificationSystem.Web\Admin.aspx" />
     <Content Include="NotificationSystem.Web\AdminRegistration.aspx" />
+    <Content Include="NotificationSystem.Web\Admin_Find.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Add.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Delete.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Find.aspx" />
@@ -4096,7 +4097,9 @@
     <Compile Include="NotificationSystem.Data\Classes\clsCustomer.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsNotificationSystem.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsReports.cs" />
+    <Compile Include="NotificationSystem.Data\Classes\clsStatusList.cs" />
     <Compile Include="NotificationSystem.Data\Classes\clsTroubleTicketReq.cs" />
+    <Compile Include="NotificationSystem.Data\Classes\clsTypeList.cs" />
     <Compile Include="NotificationSystem.Data\NotificationSystem.cs">
       <DependentUpon>NotificationSystem.xsd</DependentUpon>
     </Compile>
@@ -4133,6 +4136,13 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\AdminRegistration.aspx.designer.cs">
       <DependentUpon>AdminRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin_Find.aspx.cs">
+      <DependentUpon>Admin_Find.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin_Find.aspx.designer.cs">
+      <DependentUpon>Admin_Find.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\AgentMgt.aspx.cs">
       <DependentUpon>AgentMgt.aspx</DependentUpon>
