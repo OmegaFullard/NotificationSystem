@@ -68,8 +68,24 @@ namespace NotificationSystem.NotificationSystem.Web
             }
         }
 
-        private void grdAdmin_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        
+
+       
+
+        private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
         {
+            ViewState.Add("columnname", e.SortExpression);
+
+            if ((ViewState["direction"] == null))
+                ViewState.Add("direction", "asc");
+            else
+                ViewState["direction"] = Interaction.IIf(ViewState["direction"].ToString().ToLower() == "desc", "asc", "desc");
+
+            return ViewState["direction"].ToString();
+        }
+
+		protected void grdAdmin_PageIndexChanging(object sender, GridViewPageEventArgs e)
+		{
             try
             {
                 if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
@@ -92,8 +108,8 @@ namespace NotificationSystem.NotificationSystem.Web
             }
         }
 
-        private void grdAdmin_Sorting(object sender, GridViewSortEventArgs e)
-        {
+		protected void grdAdmin_Sorting(object sender, GridViewSortEventArgs e)
+		{
             try
             {
                 DataView m_Dataview = (DataView)grdAdmin.DataSource;
@@ -110,17 +126,5 @@ namespace NotificationSystem.NotificationSystem.Web
                 throw;
             }
         }
-
-        private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
-        {
-            ViewState.Add("columnname", e.SortExpression);
-
-            if ((ViewState["direction"] == null))
-                ViewState.Add("direction", "asc");
-            else
-                ViewState["direction"] = Interaction.IIf(ViewState["direction"].ToString().ToLower() == "desc", "asc", "desc");
-
-            return ViewState["direction"].ToString();
-        }
-    }
+	}
 }
