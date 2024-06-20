@@ -31,7 +31,7 @@
                         SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor=""
                         ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
                         ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px"
-                        ToolBarItemPressedHoverBackColor="153, 187, 226" Width="100%" OnLoad="ReportViewer1_Load1" AsyncRendering="False">
+                        ToolBarItemPressedHoverBackColor="153, 187, 226" Width="100%" OnLoad="ReportViewer1_Load" AsyncRendering="False">
                         <LocalReport ReportPath="">
                             <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="" Name="" />
