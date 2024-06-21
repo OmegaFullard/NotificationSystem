@@ -43,7 +43,7 @@ public partial class ctrTroubleTicketReq_Search : System.Web.UI.UserControl
 
         public void PopulateSearchControl()
         {
-            m_TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
+            m_TroubleTicketNo = int.Parse(txttroubleticketno.Text);
         }
     }
 

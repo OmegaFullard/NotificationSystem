@@ -10,10 +10,9 @@
                                                <telerik:RadMultiColumnComboBox    runat="server" ClearButton="false" ClientEvents-OnLoad="OnClientLoad0" ID="cmbStatus" DropDownWidth="300px"  Height="200px" Width="180px" AutoPostBack="true"
                                                        Placeholder="--Select" EnableViewState="true">
                                                 <ColumnsCollection> 
-                                                      <telerik:MultiColumnComboBoxColumn Field="Status" Title="Open" Width="150px" />
-                                                      <telerik:MultiColumnComboBoxColumn Field="Status" Title="Pending" Width="150px" />
-                                                    <telerik:MultiColumnComboBoxColumn Field="Status" Title="Resolved" Width="150px" />
-                                                    <telerik:MultiColumnComboBoxColumn Field="Status" Title="Closed" Width="150px" />
+                                                      <telerik:MultiColumnComboBoxColumn Field="TroubleTicketNo" Title="TroubleTicketNo" Width="150px" />
+                                                      <telerik:MultiColumnComboBoxColumn Field="Status" Title="Status" Width="150px" />
+                                                      
                                                 </ColumnsCollection></telerik:RadMultiColumnComboBox> &nbsp;&nbsp;&nbsp
                                         </asp:TableCell>
                               </asp:TableRow>
@@ -24,9 +23,8 @@
                                                <telerik:RadMultiColumnComboBox    runat="server" ClearButton="false" ClientEvents-OnLoad="OnClientLoad0" ID="cmbType" DropDownWidth="300px"  Height="200px" Width="180px" AutoPostBack="true"
                                                        Placeholder="--Select" EnableViewState="true">
                                                 <ColumnsCollection> 
-                                                      <telerik:MultiColumnComboBoxColumn Field="Type" Title="Incident" Width="150px" />
-                                                      <telerik:MultiColumnComboBoxColumn Field="Type" Title="Task" Width="150px" />
-                                                    <telerik:MultiColumnComboBoxColumn Field="Type" Title="Problem" Width="150px" />
+                                                      <telerik:MultiColumnComboBoxColumn Field="TroubleTicketNo" Title="TroubleTicketNo" Width="150px" />
+                                                        <telerik:MultiColumnComboBoxColumn Field="Type" Title="Type" Width="150px" />
                                                 </ColumnsCollection></telerik:RadMultiColumnComboBox> &nbsp;&nbsp;&nbsp
                                         </asp:TableCell>
                               </asp:TableRow>

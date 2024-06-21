@@ -29,7 +29,7 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 
         public void PopulateSearchControl()
         {
-            m_TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
+            m_TroubleTicketNo = int.Parse(txttroubleticketno.Text);
         }
     }
 }

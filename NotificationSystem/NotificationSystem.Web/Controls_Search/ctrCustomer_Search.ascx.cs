@@ -41,7 +41,7 @@ using Microsoft.VisualBasic;
 
         public void PopulateSearchControl()
         {
-            m_CustomerID = int.Parse(this.txtcustomerid.Text);
+            m_CustomerID = int.Parse(txtcustomerid.Text);
         }
     }
 

@@ -40,9 +40,9 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                 else
                 {
                     if (m_CustomerID > 0)
-                        this.lblResult.Text = "ID" + m_CustomerID;
+                        lblResult.Text = "ID" + m_CustomerID;
 
-                    if (this.lblResult.Text.Length == 0)
+                    if (lblResult.Text.Length == 0)
                         return;
 
                     tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
@@ -52,8 +52,8 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                     {
                         var withBlock = tblCustomer[0];
 
-                        withBlock.AgentID = int.Parse(this.txtAgentID.Text); withBlock.CustomerID = int.Parse(this.txtcustomerid.Text);
-                        withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); this.txtfirstname.Text = withBlock.FirstN; this.txtlastname.Text = withBlock.LastN;
+                        withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.CustomerID = int.Parse(txtcustomerid.Text);
+                        withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); txtfirstname.Text = withBlock.FirstN; txtlastname.Text = withBlock.LastN;
                         withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
                         withBlock.UserName = txtusername.Text; withBlock.Password = txtpassword.Text;
 
@@ -71,7 +71,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                     }
 
                 }
-                this.btnUpdate.Enabled = true;
+                btnUpdate.Enabled = true;
             }
         }
 
@@ -111,7 +111,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                         return;
 
 
-                withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; 
+                withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; 
                 withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
                 withBlock.UserName = txtusername.Text; withBlock.Password = txtpassword.Text;
             }

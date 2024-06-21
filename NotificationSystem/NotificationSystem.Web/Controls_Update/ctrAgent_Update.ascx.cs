@@ -41,9 +41,9 @@ namespace NotificationSystem.NotificationSystem.Web
                     else
                     {
                         if (m_AgentID > 0)
-                            this.lblResult.Text = "ID" + m_AgentID;
+                            lblResult.Text = "ID" + m_AgentID;
 
-                        if (this.lblResult.Text.Length == 0)
+                        if (lblResult.Text.Length == 0)
                             return;
 
                         tblAgent = (AgentDataTable)theNotificationSystem.GetAgentList();
@@ -52,7 +52,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
                         {
                             var withBlock = tblAgent[0];
-                            this.txttitle.Text = withBlock.Title; withBlock.Salary = (txtsalary.Text);
+                            txttitle.Text = withBlock.Title; withBlock.Salary = (txtsalary.Text);
                                 withBlock.AgentID = int.Parse(this.txtagentid.Text);
 
 
@@ -70,7 +70,7 @@ namespace NotificationSystem.NotificationSystem.Web
                         }
 
                     }
-                    this.btnUpdate.Enabled = true;
+                    btnUpdate.Enabled = true;
                 }
             }
 

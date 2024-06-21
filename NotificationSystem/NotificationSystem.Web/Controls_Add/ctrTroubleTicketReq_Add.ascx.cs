@@ -118,16 +118,19 @@ using System.Net.Http;
 		clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
 
-		this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-		this.cmbStatus.DataTextField = "Status";
-		this.cmbStatus.DataBind();
 
-		this.cmbType.DataSource = theNotificationSystem.GetTypeList();
-        this.cmbType.DataTextField = "Type";
-		this.cmbType.DataBind();
+        cmbStatus.DataSource = theNotificationSystem.GetStatusList();
+        cmbStatus.DataTextField = "TroubleTicketNo"; cmbStatus.DataValueField = "Status";
+        cmbStatus.DataBind();
 
 
-	}
+
+        cmbType.DataSource = theNotificationSystem.GetTypeList();
+        cmbType.DataTextField = "TroubleTicketNo"; cmbType.DataValueField = "Type";
+        cmbType.DataBind();
+
+
+    }
 	protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("TroubleTicketReq_Find.aspx", false);

@@ -25,6 +25,17 @@
                                     </asp:TableRow>
                          </asp:Table>
                   <br />
+
+                  <div class="clear hideSkiplink">
+                                          <asp:Menu ID="NavigationMenu" runat="server" CssClass="sub_menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                                              <Items>
+                                                  <asp:MenuItem Text="Find" NavigateUrl="TroubleTicketReq_Find.aspx"></asp:MenuItem> 
+                                                   <asp:MenuItem  Text="Add"  NavigateUrl="TroubleTicketReq_Add.aspx"></asp:MenuItem>
+                                                  <asp:MenuItem Text="Update" NavigateUrl="TroubleTicketReq_Update.aspx"></asp:MenuItem> 
+                                                  
+                                              </Items>
+                                           </asp:Menu>
+                                 </div>
                           <uc1:ctrTroubleTicketReq_Find runat="server" id="ctrTroubleTicketReq_Find" />
                          
                   </div>

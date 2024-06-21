@@ -9,8 +9,8 @@
     <Shape ID="DesignTable:Agent" ZOrder="4" X="72" Y="72" Height="425" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="304" />
     <Shape ID="DesignTable:Customer" ZOrder="3" X="418" Y="85" Height="452" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
     <Shape ID="DesignTable:TroubleTicketReq" ZOrder="5" X="751" Y="81" Height="371" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="223" />
-    <Shape ID="DesignTable:rptCustomer" ZOrder="2" X="1442" Y="111" Height="425" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
-    <Shape ID="DesignTable:rptAgent" ZOrder="1" X="1085" Y="94" Height="425" Width="292" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
+    <Shape ID="DesignTable:rptCustomer" ZOrder="2" X="1442" Y="111" Height="452" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
+    <Shape ID="DesignTable:rptAgent" ZOrder="1" X="1085" Y="94" Height="452" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

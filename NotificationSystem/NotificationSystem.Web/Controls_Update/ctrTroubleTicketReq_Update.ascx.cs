@@ -88,15 +88,15 @@ using System.Data.SqlClient;
             clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
 
-            this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-        this.cmbStatus.DataTextField = "Status";
-            this.cmbStatus.DataBind();
+            cmbStatus.DataSource = theNotificationSystem.GetStatusList();
+            cmbStatus.DataTextField = "TroubleTicketNo";  cmbStatus.DataValueField ="Status";
+            cmbStatus.DataBind();
            
 
 
-            this.cmbType.DataSource = theNotificationSystem.GetTypeList();
-            this.cmbType.DataTextField = "Type"; 
-            this.cmbType.DataBind();
+            cmbType.DataSource = theNotificationSystem.GetTypeList();
+            cmbType.DataTextField = "TroubleTicketNo"; cmbType.DataValueField = "Type"; 
+            cmbType.DataBind();
 
 
         }

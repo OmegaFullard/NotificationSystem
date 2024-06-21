@@ -46,7 +46,7 @@ using Microsoft.VisualBasic;
 
         public void PopulateSearchControl()
         {
-            m_AgentID = int.Parse(this.txtagentid.Text);
+            m_AgentID = int.Parse(txtagentid.Text);
        
         }
     }

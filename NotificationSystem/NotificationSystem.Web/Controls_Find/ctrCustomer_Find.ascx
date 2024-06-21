@@ -13,7 +13,7 @@
                     EmptyDataText="There are no records matching this search criteria."
                     BackColor="White" ForeColor="Black" CssClass="grdRecords"
                     HeaderStyle-CssClass="grdHeader"
-                    width="700px" AllowPaging="True" AllowSorting="True" PageSize="18">
+                    width="700px" AllowPaging="True" AllowSorting="True" PageSize="18" OnPageIndexChanging="grdCustomer_PageIndexChanging" OnSorting="grdCustomer_Sorting">
                     <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
                           <Columns>
                                 <asp:TemplateField HeaderText="ID" SortExpression="CustomerID" ItemStyle-Width="100"    Visible="True">

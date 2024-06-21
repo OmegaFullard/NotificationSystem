@@ -44,18 +44,18 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
 			try
 			{
 				if (Request.Form["ctl00$MainContent$ctrSearch_Admin_Find$btnSearch"] == "Search")
-					this.lblUserName.Text = "UserName" + m_UserName;
+					lblUserName.Text = "UserName" + m_UserName;
 
-				if ((Page.IsPostBack) & this.lblUserName.Text.Length > 0)
-					theNotificationSystem.GetAdmin((this.lblUserName.Text.Replace("UserName", "")));
+				if ((Page.IsPostBack) & lblUserName.Text.Length > 0)
+					theNotificationSystem.GetAdmin((lblUserName.Text.Replace("UserName", "")));
 
 				else
 					tblAdmin = (AdminDataTable)theNotificationSystem.GetAdmins();
 
 
-				this.lblSearchResult.Text = tblAdmin.Rows.Count.ToString();
-				this.grdAdmin.DataSource = tblAdmin.DefaultView;
-				this.grdAdmin.DataBind();
+				lblSearchResult.Text = tblAdmin.Rows.Count.ToString();
+				grdAdmin.DataSource = tblAdmin.DefaultView;
+				grdAdmin.DataBind();
 			}
 
 			catch (Exception ex)
@@ -72,17 +72,17 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
 				{
 					if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
 					{
-						DataView m_DataView = (DataView)this.grdAdmin.DataSource;
+						DataView m_DataView = (DataView)grdAdmin.DataSource;
 
 						if (m_DataView == null)
 						{
 							m_DataView.Sort = ViewState["columnname"].ToString() + " " + ViewState["direction"].ToString();
-							this.grdAdmin.DataSource = m_DataView;
+							grdAdmin.DataSource = m_DataView;
 						}
 					}
 
-					this.grdAdmin.PageIndex = e.NewPageIndex;
-					this.grdAdmin.DataBind();
+					grdAdmin.PageIndex = e.NewPageIndex;
+					grdAdmin.DataBind();
 				}
 				catch (Exception)
 				{
@@ -99,8 +99,8 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
 					if (m_Dataview == null)
 					{
 						m_Dataview.Sort = e.SortExpression + " " + ConvertSortDirection(e);
-						this.grdAdmin.DataSource = m_Dataview;
-						this.grdAdmin.DataBind();
+						grdAdmin.DataSource = m_Dataview;
+						grdAdmin.DataBind();
 					}
 				}
 				catch (Exception)
@@ -132,7 +132,7 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
 					StringWriter sw = new StringWriter();
 					HtmlTextWriter hw = new HtmlTextWriter(sw);
 					grdAdmin.AllowPaging = false;
-					this.grdAdmin.DataBind();
+					grdAdmin.DataBind();
 
 					for (int y = 0; y <= 12; y++)
 						grdAdmin.HeaderRow.Cells[y].Style.Add("background-color", "#cfdbe6");

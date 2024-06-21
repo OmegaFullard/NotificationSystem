@@ -38,7 +38,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrAgent_Search.PopulateSearchControl();
-                    theSearch.ReportPath = "~/NotificationSystem.Web/rptAgent.rdlc";
+                    theSearch.ReportPath = "rptAgent.rdlc";
                     theSearch.AgentID = ctrAgent_Search.AgentID;
                     ShowReport();
                 }

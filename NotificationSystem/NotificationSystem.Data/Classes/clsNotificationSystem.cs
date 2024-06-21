@@ -361,38 +361,11 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             dt.Rows.Add(dr);
 
             dr = dt.NewRow();
-            dr["ID"] = "3"; dr["Type"] = "Problem";
+            dr["ID"] = "2"; dr["Type"] = "Problem";
             dt.Rows.Add(dr);
 
             return dt;
 		}
-
-
-   //     public void TypeListByID(string Type)
-   //     {
-			//switch (Type)
-   //         {
-			//	case 1:
-   //                 {
-   //                     Type = "Incident";
-   //                     break;
-   //                 }
-
-   //             case 2:
-   //                 {
-   //                     Type = "Task";
-   //                     break;
-   //                 }
-
-   //             case 3:
-   //                 {
-   //                     Type = "Problem";
-   //                     break;
-   //                 }
-
-   //                 //return Type;
-   //         }
-   //     }
 
 
         public DataTable GetStatusList()
@@ -420,7 +393,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             dt.Rows.Add(dr);
 
             dr = dt.NewRow();
-            dr["ID"] = "3"; dr["Status"] = "Resolved";
+            dr["ID"] = "2"; dr["Status"] = "Resolved";
             dt.Rows.Add(dr);
             dr = dt.NewRow();
             dr["ID"] = "4"; dr["Status"] = "Closed";
@@ -430,38 +403,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             return dt;
 		}
 
-        //public void StatusListByID(string Status)
-        //{
-        //    switch (Status)
-        //    {
-        //        case 1:
-        //            {
-        //                Status = "Open";
-        //                break;
-        //            }
-
-        //        case 2:
-        //            {
-        //                Status = "Pending";
-        //                break;
-        //            }
-
-        //        case 3:
-        //            {
-        //                Status = "Resolved";
-        //                break;
-        //            }
-
-        //        case 4:
-        //            {
-        //                Type = "Closed";
-        //                break;
-        //            }
-
-        //            return Status;
-        //    }
-        //}
-
+        
 
         public DataTable GetAgentList()
         {
@@ -671,27 +613,27 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 
 
-        //public void UpdateAdmin(clsAdmin thisAdmin)
-        //{
-        //    AdminTableAdapter adpAdmin = new AdminTableAdapter();
+		//public void UpdateAdmin(clsAdmin thisAdmin)
+		//{
+		//	AdminTableAdapter adpAdmin = new AdminTableAdapter();
 
 
-        //    try
-        //    {
-        //        {
-        //            var withBlock = thisAdmin;
-        //            adpAdmin.UpdateQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
-        //        }
-        //    }
+		//	try
+		//	{
+		//		{
+		//			var withBlock = thisAdmin;
+		//			adpAdmin.UpdateQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
+		//		}
+		//	}
 
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
+		//	catch (Exception)
+		//	{
+		//		throw;
+		//	}
+		//}
 
 
-        public void AddAdmin(clsAdmin thisAdmin)
+		public void AddAdmin(clsAdmin thisAdmin)
         {
 
             //add Admin to table and save

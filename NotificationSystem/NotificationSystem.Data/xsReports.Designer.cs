@@ -5745,7 +5745,7 @@ namespace NotificationSystem.NotificationSystem.Data.xsReportsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT Customer.CustomerID, Customer.FirstN, Customer.LastN, Customer.Email, Customer.Phone, Customer.Address, Customer.City, Customer.State, Customer.Zip, TroubleTicketReq.TroubleTicketNo, TroubleTicketReq.Status, TroubleTicketReq.Type, TroubleTicketReq.RequestDate, 
@@ -5753,6 +5753,16 @@ namespace NotificationSystem.NotificationSystem.Data.xsReportsTableAdapters {
 FROM   Customer INNER JOIN
              TroubleTicketReq ON Customer.CustomerID = TroubleTicketReq.CustomerID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT Customer.CustomerID, Customer.FirstN, Customer.LastN, Customer.Email, Customer.Phone, Customer.Address, Customer.City, Customer.State, Customer.Zip, TroubleTicketReq.TroubleTicketNo, TroubleTicketReq.Status, TroubleTicketReq.Type, TroubleTicketReq.RequestDate, 
+             TroubleTicketReq.DueDate
+FROM   Customer INNER JOIN
+             TroubleTicketReq ON Customer.CustomerID = TroubleTicketReq.CustomerID
+
+WHERE (Customer.CustomerID = @CustomerID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5774,6 +5784,32 @@ FROM   Customer INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual xsReports.rptCustomerDataTable GetDatarptCustomer() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            xsReports.rptCustomerDataTable dataTable = new xsReports.rptCustomerDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCustomerID(xsReports.rptCustomerDataTable dataTable, int CustomerID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CustomerID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual xsReports.rptCustomerDataTable GetDataByCustomerID(int CustomerID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CustomerID));
             xsReports.rptCustomerDataTable dataTable = new xsReports.rptCustomerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5926,13 +5962,21 @@ FROM   Customer INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT Agent.AgentID, Agent.Title, Agent.FirstN, Agent.LastN, Agent.Email, Agent.Phone, Agent.Fax, TroubleTicketReq.TroubleTicketNo, TroubleTicketReq.Status, TroubleTicketReq.Type, TroubleTicketReq.RequestDate, TroubleTicketReq.DueDate
 FROM   Agent INNER JOIN
              TroubleTicketReq ON Agent.AgentID = TroubleTicketReq.AgentID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT Agent.AgentID, Agent.Title, Agent.FirstN, Agent.LastN, Agent.Email, Agent.Phone, Agent.Fax, TroubleTicketReq.TroubleTicketNo, TroubleTicketReq.Status, TroubleTicketReq.Type, TroubleTicketReq.RequestDate, TroubleTicketReq.DueDate
+FROM   Agent INNER JOIN
+             TroubleTicketReq ON Agent.AgentID = TroubleTicketReq.AgentID
+WHERE (Agent.AgentID = @AgentID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5954,6 +5998,32 @@ FROM   Agent INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual xsReports.rptAgentDataTable GetDatarptAgent() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            xsReports.rptAgentDataTable dataTable = new xsReports.rptAgentDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAgentID(xsReports.rptAgentDataTable dataTable, int AgentID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual xsReports.rptAgentDataTable GetDataByAgentID(int AgentID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID));
             xsReports.rptAgentDataTable dataTable = new xsReports.rptAgentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
