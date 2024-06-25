@@ -16,7 +16,7 @@
                     EmptyDataText="There are no records matching this search criteria."
                     BackColor="White" ForeColor="Black" CssClass="grdRecords"
                     HeaderStyle-CssClass="grdHeader"
-                    width="700px" AllowPaging="True" AllowSorting="True" PageSize="18">
+                    width="700px" AllowPaging="True" AllowSorting="True" PageSize="18" OnLoad="Page_Load" OnPageIndexChanging="grdAgent_PageIndexChanging" OnSorting="grdAgent_Sorting">
                     <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
                           <Columns>
                               

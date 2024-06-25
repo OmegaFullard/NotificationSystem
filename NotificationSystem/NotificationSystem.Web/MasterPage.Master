@@ -88,7 +88,7 @@
              </asp:MenuItem>
 
                         <asp:MenuItem Text="Agents">
-                   <asp:MenuItem Text="Agent Find" NavigateUrl="Agent.aspx"></asp:MenuItem>  
+                   <asp:MenuItem Text="Agent Find" NavigateUrl="Agent_Find.aspx"></asp:MenuItem>  
                             <asp:MenuItem Text="Agent Add" NavigateUrl="Agent_Add.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Agent Update" NavigateUrl="Agent_Update.aspx"></asp:MenuItem>
               
