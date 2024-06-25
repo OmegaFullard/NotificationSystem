@@ -54,7 +54,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         
         return tblCustomerList;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -432,7 +432,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
                 return tblGetAgent;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -577,25 +577,28 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-        public DataTable GetAdmins()
-        {
-            try
-            {
-                AdminTableAdapter adpAdmin = new AdminTableAdapter();
-                NotificationSystem.AdminDataTable tblAdmin = adpAdmin.GetData();
-
-                return tblAdmin;
-            }
-
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+		public DataTable GetAdmins()
 
 
+		//exception error ? 6/25/24 
 
-        public DataTable GetAdmin(string UserName)
+		{
+			try
+			{
+
+				AdminTableAdapter adpAdmin = new AdminTableAdapter();
+				AdminDataTable tblAdmin = adpAdmin.GetDataBy2();
+				return tblAdmin;
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+
+
+		public DataTable GetAdmin(string UserName)
         {
             try
             {

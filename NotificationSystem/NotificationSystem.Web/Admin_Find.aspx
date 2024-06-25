@@ -25,7 +25,16 @@
                          </asp:Table>
                   <br />
                   
-
+                  <div class="clear hideSkiplink">
+                                          <asp:Menu ID="NavigationMenu" runat="server" CssClass="sub_menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                                              <Items>
+                                                  <asp:MenuItem Text="Find" NavigateUrl="Admin_Find.aspx"></asp:MenuItem> 
+                                                   <asp:MenuItem  Text="Add"  NavigateUrl="Admin_Add.aspx"></asp:MenuItem>
+                                                  <asp:MenuItem Text="Update" NavigateUrl="Admin_Update.aspx"></asp:MenuItem> 
+                                                 
+                                              </Items>
+                                           </asp:Menu>
+                                 </div>
                           <uc1:ctrAdmin_Find runat="server" id="ctrAdmin_Find" />
                          
                   </div>

@@ -44,18 +44,18 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
 			try
 			{
 				if (Request.Form["ctl00$MainContent$ctrSearch_Admin_Find$btnSearch"] == "Search")
-					lblUserName.Text = "UserName" + m_UserName;
+					this.lblUserName.Text = "UserName" + m_UserName;
 
-				if ((Page.IsPostBack) & lblUserName.Text.Length > 0)
+				if ((Page.IsPostBack) & this.lblUserName.Text.Length > 0)
 					theNotificationSystem.GetAdmin((lblUserName.Text.Replace("UserName", "")));
 
 				else
 					tblAdmin = (AdminDataTable)theNotificationSystem.GetAdmins();
 
 
-				lblSearchResult.Text = tblAdmin.Rows.Count.ToString();
-				grdAdmin.DataSource = tblAdmin.DefaultView;
-				grdAdmin.DataBind();
+				this.lblSearchResult.Text = tblAdmin.Rows.Count.ToString();
+				this.grdAdmin.DataSource = tblAdmin.DefaultView;
+				this.grdAdmin.DataBind();
 			}
 
 			catch (Exception ex)
@@ -66,49 +66,9 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
 				Response.Redirect("ErrorPage.aspx", false);
 			}
 		}
-		private void grdAdmin_PageIndexChanging(object sender, GridViewPageEventArgs e)
-			{
-				try
-				{
-					if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
-					{
-						DataView m_DataView = (DataView)grdAdmin.DataSource;
+		
 
-						if (m_DataView == null)
-						{
-							m_DataView.Sort = ViewState["columnname"].ToString() + " " + ViewState["direction"].ToString();
-							grdAdmin.DataSource = m_DataView;
-						}
-					}
-
-					grdAdmin.PageIndex = e.NewPageIndex;
-					grdAdmin.DataBind();
-				}
-				catch (Exception)
-				{
-					throw;
-				}
-			}
-
-			private void grdAdmin_Sorting(object sender, GridViewSortEventArgs e)
-			{
-				try
-				{
-					DataView m_Dataview = (DataView)grdAdmin.DataSource;
-
-					if (m_Dataview == null)
-					{
-						m_Dataview.Sort = e.SortExpression + " " + ConvertSortDirection(e);
-						grdAdmin.DataSource = m_Dataview;
-						grdAdmin.DataBind();
-					}
-				}
-				catch (Exception)
-				{
-					throw;
-				}
-			}
-
+			
 			private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
 			{
 				ViewState.Add("columnname", e.SortExpression);
@@ -166,5 +126,49 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Find
 			{
 				CreateExcelFiles();
 			}
+
+		protected void grdAdmin_PageIndexChanging(object sender, GridViewPageEventArgs e)
+		{
+			try
+			{
+				if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
+				{
+					DataView m_DataView = (DataView)grdAdmin.DataSource;
+
+					if (m_DataView == null)
+					{
+						m_DataView.Sort = ViewState["columnname"].ToString() + " " + ViewState["direction"].ToString();
+						grdAdmin.DataSource = m_DataView;
+					}
+				}
+
+				grdAdmin.PageIndex = e.NewPageIndex;
+				grdAdmin.DataBind();
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+		protected void grdAdmin_Sorting(object sender, GridViewSortEventArgs e)
+		{
+
+			try
+			{
+				DataView m_Dataview = (DataView)grdAdmin.DataSource;
+
+				if (m_Dataview == null)
+				{
+					m_Dataview.Sort = e.SortExpression + " " + ConvertSortDirection(e);
+					grdAdmin.DataSource = m_Dataview;
+					grdAdmin.DataBind();
+				}
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
 	}
 }

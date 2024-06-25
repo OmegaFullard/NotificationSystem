@@ -56,6 +56,8 @@ namespace NotificationSystem.NotificationSystem.Web
 
                 if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
                     tblGetAdmin = (AdminDataTable)theNotificationSystem.GetAdmin(m_UserName);
+                else
+                   tblGetAdmin = (AdminDataTable)theNotificationSystem.GetAdmins();
 
                 this.lblSearchResult.Text = tblGetAdmin.Rows.Count + " Result(s)";
                 this.grdAdmin.DataSource = tblGetAdmin.DefaultView;
