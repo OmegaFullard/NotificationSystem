@@ -8,6 +8,7 @@ using System.Data;
 using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
+using Microsoft.VisualBasic;
 
 namespace NotificationSystem.NotificationSystem.Web
 {
@@ -15,17 +16,36 @@ namespace NotificationSystem.NotificationSystem.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Page.IsPostBack))
+            try
             {
-                if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+                if ((Page.IsPostBack))
                 {
-                    ctrCustomer_Search.PopulateSearchControl();
-                    if (((ctrCustomer_Search.CustomerID) == 0))
-                        return;
-                    // this.ctrCustomer_Find.ClearControls()
-                    this.ctrCustomer_Find.CustomerID = ctrCustomer_Search.CustomerID;
+                    if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+                    {
+                        ctrCustomer_Search.PopulateSearchControl();
+                        this.ctrCustomer_Find.CustomerID = ctrCustomer_Search.CustomerID;
 
+                    }
                 }
+            }
+
+            catch (Exception ex)
+            {
+                clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+                string NotificationBody = ex.Message + Constants.vbCrLf + ex.StackTrace;
+                SendError.SendMailMessage(NotificationBody);
+                Response.Redirect("ErrorPage.aspx", false);
+            }
+        }
+
+        public override bool EnableEventValidation
+        {
+            get
+            {
+                return false;
+            }
+            set
+            {
             }
         }
     }

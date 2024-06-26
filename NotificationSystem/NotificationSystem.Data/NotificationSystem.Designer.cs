@@ -1643,9 +1643,9 @@ namespace NotificationSystem.NotificationSystem.Data {
                 this.columnCustomerID.AllowDBNull = false;
                 this.columnCustomerID.ReadOnly = true;
                 this.columnCustomerID.Unique = true;
-                this.columnAgentID.AllowDBNull = false;
-                this.columnTroubleTicketNo.AllowDBNull = false;
+                this.columnFirstN.AllowDBNull = false;
                 this.columnFirstN.MaxLength = 50;
+                this.columnLastN.AllowDBNull = false;
                 this.columnLastN.MaxLength = 50;
                 this.columnEmail.MaxLength = 2147483647;
                 this.columnPhone.MaxLength = 10;
@@ -4729,7 +4729,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int AgentID {
                 get {
-                    return ((int)(this[this.tableCustomer.AgentIDColumn]));
+                    try {
+                        return ((int)(this[this.tableCustomer.AgentIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AgentID\' in table \'Customer\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomer.AgentIDColumn] = value;
@@ -4740,7 +4745,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int TroubleTicketNo {
                 get {
-                    return ((int)(this[this.tableCustomer.TroubleTicketNoColumn]));
+                    try {
+                        return ((int)(this[this.tableCustomer.TroubleTicketNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TroubleTicketNo\' in table \'Customer\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCustomer.TroubleTicketNoColumn] = value;
@@ -4751,12 +4761,7 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string FirstN {
                 get {
-                    try {
-                        return ((string)(this[this.tableCustomer.FirstNColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FirstN\' in table \'Customer\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableCustomer.FirstNColumn]));
                 }
                 set {
                     this[this.tableCustomer.FirstNColumn] = value;
@@ -4767,12 +4772,7 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string LastN {
                 get {
-                    try {
-                        return ((string)(this[this.tableCustomer.LastNColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LastN\' in table \'Customer\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableCustomer.LastNColumn]));
                 }
                 set {
                     this[this.tableCustomer.LastNColumn] = value;
@@ -4909,26 +4909,26 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFirstNNull() {
-                return this.IsNull(this.tableCustomer.FirstNColumn);
+            public bool IsAgentIDNull() {
+                return this.IsNull(this.tableCustomer.AgentIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFirstNNull() {
-                this[this.tableCustomer.FirstNColumn] = global::System.Convert.DBNull;
+            public void SetAgentIDNull() {
+                this[this.tableCustomer.AgentIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsLastNNull() {
-                return this.IsNull(this.tableCustomer.LastNColumn);
+            public bool IsTroubleTicketNoNull() {
+                return this.IsNull(this.tableCustomer.TroubleTicketNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetLastNNull() {
-                this[this.tableCustomer.LastNColumn] = global::System.Convert.DBNull;
+            public void SetTroubleTicketNoNull() {
+                this[this.tableCustomer.TroubleTicketNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7519,29 +7519,29 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
-                ", City, State, Zip, UserName, Password FROM dbo.Customer\r\nWHERE (CustomerID = @C" +
-                "ustomerID)";
+                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (CustomerID = @Cu" +
+                "stomerID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
-                ", City, State, Zip, UserName, Password FROM dbo.Customer\r\n\r\nWHERE TroubleTicketN" +
-                "o = @TroubleTicketNo";
+                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (TroubleTicketNo " +
+                "= @TroubleTicketNo)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
-                ", City, State, Zip, UserName, Password FROM dbo.Customer\r\nWHERE (CustomerID = @C" +
-                "ustomerID)";
+                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (CustomerID = @Cu" +
+                "stomerID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
-                ", City, State, Zip, UserName, Password FROM dbo.Customer\r\n\r\nWHERE UserName = @us" +
-                "ername and Password = @password";
+                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (UserName = @user" +
+                "name) AND (Password = @password)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7601,9 +7601,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(NotificationSystem.CustomerDataTable dataTable, int TroubleTicketNo) {
+        public virtual int FillBy1(NotificationSystem.CustomerDataTable dataTable, global::System.Nullable<int> TroubleTicketNo) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            if ((TroubleTicketNo.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7615,9 +7620,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual NotificationSystem.CustomerDataTable GetDataByTroubleTicket(int TroubleTicketNo) {
+        public virtual NotificationSystem.CustomerDataTable GetDataByTroubleTicket(global::System.Nullable<int> TroubleTicketNo) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            if ((TroubleTicketNo.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             NotificationSystem.CustomerDataTable dataTable = new NotificationSystem.CustomerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7752,17 +7762,27 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int AgentID, int TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AgentID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TroubleTicketNo));
+        public virtual int Insert(global::System.Nullable<int> AgentID, global::System.Nullable<int> TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password) {
+            if ((AgentID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AgentID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((TroubleTicketNo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TroubleTicketNo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((FirstN == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("FirstN");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FirstN));
             }
             if ((LastN == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("LastN");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(LastN));
@@ -7835,17 +7855,27 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int AgentID, int TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password, int Original_CustomerID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AgentID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TroubleTicketNo));
+        public virtual int Update(global::System.Nullable<int> AgentID, global::System.Nullable<int> TroubleTicketNo, string FirstN, string LastN, string Email, string Phone, string Address, string City, string State, string Zip, string UserName, string Password, int Original_CustomerID) {
+            if ((AgentID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AgentID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((TroubleTicketNo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TroubleTicketNo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((FirstN == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("FirstN");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FirstN));
             }
             if ((LastN == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("LastN");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(LastN));

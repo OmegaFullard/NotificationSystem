@@ -57,6 +57,6 @@ namespace NotificationSystem.NotificationSystem.Web
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::ctrCustomer ctrCustomer;
+		protected global::NotificationSystem.NotificationSystem.Web.ctrCustomer ctrCustomer;
 	}
 }

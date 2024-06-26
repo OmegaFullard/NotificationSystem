@@ -18,73 +18,74 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-
+namespace NotificationSystem.NotificationSystem.Web
+{ 
     public partial class ctrCustomer : System.Web.UI.UserControl
     {
 
-        private int m_CustomerID = 0;
+    private int m_CustomerID = 0;
 
-        public int CustomerID
+    public int CustomerID
+    {
+        get
         {
-            get
-            {
-                return m_CustomerID;
-            }
-            set
-            {
-                m_CustomerID = value;
-            }
+            return m_CustomerID;
         }
-        protected void Page_Load(object sender, EventArgs e)
+        set
         {
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            CustomerListDataTable tblCustomer = new CustomerListDataTable();
-        int customerID = m_CustomerID;
-
-            try
-		{
-			if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
-				ctrHiddebField.Value = Convert.ToString(m_CustomerID);
-
-			if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
-				tblCustomer = (CustomerListDataTable)theNotificationSystem.GetCustomerListbyID(customerID);
-
-
-			else
-
-				tblCustomer = (CustomerListDataTable)theNotificationSystem.GetCustomersList();
-
-
-			this.lblSearchResult.Text = tblCustomer.Rows.Count + " Result(s)";
-                this.grdCustomers.DataSource = tblCustomer.DefaultView;
-                this.grdCustomers.DataBind();
-
-            }
-
-            catch (Exception)
-            {
-                throw;
-            }
+            m_CustomerID = value;
         }
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+			CustomerDataTable tblCustomer = new CustomerDataTable();
+			////int customerID = m_CustomerID;
 
-        
+			try
+			{
+				if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
+					ctrHiddebField.Value = Convert.ToString(m_CustomerID);
 
-        private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
-        {
-            ViewState.Add("columnname", e.SortExpression);
+				if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
+					tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomer(m_CustomerID);
 
-            if ((ViewState["direction"] == null))
-                ViewState.Add("direction", "asc");
-            else
-                ViewState["direction"] = Interaction.IIf(ViewState["direction"].ToString().ToLower() == "desc", "asc", "desc");
 
-            return ViewState["direction"].ToString();
-        }
+				else
 
-  
+					tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
 
-	protected void grdCustomers_PageIndexChanging(object sender, GridViewPageEventArgs e)
-	{
+
+				this.lblSearchResult.Text = tblCustomer.Rows.Count + " Result(s)";
+				this.grdCustomers.DataSource = tblCustomer.DefaultView;
+				this.grdCustomers.DataBind();
+
+			}
+
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+
+
+    private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
+    {
+        ViewState.Add("columnname", e.SortExpression);
+
+        if ((ViewState["direction"] == null))
+            ViewState.Add("direction", "asc");
+        else
+            ViewState["direction"] = Interaction.IIf(ViewState["direction"].ToString().ToLower() == "desc", "asc", "desc");
+
+        return ViewState["direction"].ToString();
+    }
+
+
+
+    protected void grdCustomers_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
         try
         {
             if (!(Information.IsNothing(ViewState["columnname"]) | Information.IsNothing(ViewState["direction"])))
@@ -107,8 +108,8 @@ using Microsoft.VisualBasic;
         }
     }
 
-	protected void grdCustomers_Sorting(object sender, GridViewSortEventArgs e)
-	{
+    protected void grdCustomers_Sorting(object sender, GridViewSortEventArgs e)
+    {
         try
         {
             DataView m_Dataview = (DataView)grdCustomers.DataSource;
@@ -125,4 +126,5 @@ using Microsoft.VisualBasic;
             throw;
         }
     }
+}
 }

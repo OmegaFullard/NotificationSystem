@@ -1,13 +1,15 @@
-﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="False" CodeBehind="Customer.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Customer" %>
-<%@ Register Src="Controls_Search/ctrCustomer_Search.ascx" TagPrefix="uc1" TagName="ctrCustomer_Search" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="Customer.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Customer" %>
+
 <%@ Register Src="ctrCustomer.ascx" TagPrefix="uc1" TagName="ctrCustomer" %>
+<%@ Register Src="Controls_Search/ctrCustomer_Search.ascx" TagPrefix="uc1" TagName="ctrCustomer_Search" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
+    <title>Customers</title>
 </asp:Content>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
-                   <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
+                   <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="22px" Width="483px" >
                                    
                                      <asp:TableRow>
                                           <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">

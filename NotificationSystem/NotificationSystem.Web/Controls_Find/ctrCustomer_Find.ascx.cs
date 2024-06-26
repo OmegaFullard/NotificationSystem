@@ -36,8 +36,9 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
             if (Request.Form["ctl00$MainContent$ctrSearch_Customer_Find$btnSearch"] == "Search")
                 this.lblCustomerID.Text = "ID" + m_CustomerID;
 
-            if ((Page.IsPostBack) & this.lblCustomerID.Text.Length > 0)
-                theNotificationSystem.GetCustomerListbyID(Convert.ToInt32(this.lblCustomerID.Text.Replace("ID", "")));
+            if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
+                
+                tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomer(int.Parse(this.lblSearchResult.Text.Replace("ID", "")));
 
            else
                     tblCustomer = (CustomerDataTable)theNotificationSystem.GetCustomers();
@@ -161,5 +162,7 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
             throw;
         }
     }
+
+	
 }
 

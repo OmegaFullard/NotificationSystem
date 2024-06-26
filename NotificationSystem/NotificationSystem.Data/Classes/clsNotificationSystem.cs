@@ -29,30 +29,30 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         public bool Salary { get; private set; }
 		public bool Admin { get; private set; }
 
-		public DataTable GetCustomersList()
+		//public DataTable GetCustomersList()
+  //      {
+  //          try
+  //          {
+  //              CustomerTableAdapter adpCustomerList = new CustomerTableAdapter();
+  //              NotificationSystem.CustomerDataTable tblCustomerList = adpCustomerList.GetData();
+
+  //              return tblCustomerList;
+  //          }
+
+  //          catch (Exception)
+		//	{
+  //              throw;
+  //          }
+  //      }
+
+        public DataTable GetCustomer(int CustomerID)
         {
             try
             {
-                CustomerListTableAdapter adpCustomerList = new CustomerListTableAdapter();
-                NotificationSystem.CustomerListDataTable tblCustomerList = adpCustomerList.GetData();
-
-                return tblCustomerList;
-            }
-
-            catch (Exception)
-			{
-                throw;
-            }
-        }
-
-        public DataTable GetCustomerListbyID(int numID)
-        {
-            try
-            {
-                CustomerListTableAdapter adpCustomerList = new CustomerListTableAdapter();
-                CustomerListDataTable tblCustomerList = adpCustomerList.GetDataByID(numID);
+                CustomerTableAdapter adpCustomerList = new CustomerTableAdapter();
+                CustomerDataTable tblCustomerList = adpCustomerList.GetDataByID(CustomerID);
         
-        return tblCustomerList;
+            return tblCustomerList;
             }
             catch (Exception)
             {

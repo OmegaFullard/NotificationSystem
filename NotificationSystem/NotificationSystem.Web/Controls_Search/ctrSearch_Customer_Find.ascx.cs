@@ -24,6 +24,11 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
         }
         protected void Page_Load(object sender, EventArgs e)
 		{
+           
+        }
+
+        public void PopulateSearchControl()
+		{
             m_CustomerID = int.Parse(txtCustomerID.Text);
         }
 	}

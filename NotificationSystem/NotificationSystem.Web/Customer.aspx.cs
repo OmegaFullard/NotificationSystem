@@ -19,7 +19,7 @@ namespace NotificationSystem.NotificationSystem.Web
         {
             if ((Page.IsPostBack))
             {
-                if (Page.Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
+                if (Page.Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
                 {
                     ctrCustomer_Search.PopulateSearchControl();
                     ctrCustomer.CustomerID = ctrCustomer_Search.CustomerID;
