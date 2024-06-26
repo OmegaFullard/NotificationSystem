@@ -28,10 +28,9 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
                 {
                     ctrTroubleTicketReq_Search.PopulateSearchControl();
-                    if (ctrTroubleTicketReq_Search.TroubleTicketNo == 0)
-                        return;
+               
 
-					this.ctrTroubleTicketReq.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
+					ctrTroubleTicketReq.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
 
                 }
             }

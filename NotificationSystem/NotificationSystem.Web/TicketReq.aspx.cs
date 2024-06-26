@@ -40,7 +40,6 @@ namespace NotificationSystem.NotificationSystem.Web
 
                     //ctrTroubleTicketReq_Search.PopulateSearchControl();
                     //ctrTroubleTicketReq.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
-
                 }
             }
         }

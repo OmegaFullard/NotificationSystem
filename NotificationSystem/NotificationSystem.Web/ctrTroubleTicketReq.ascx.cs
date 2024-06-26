@@ -58,7 +58,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;
                 this.grdTroubleTicketReq.DataBind();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
