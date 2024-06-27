@@ -47,8 +47,24 @@ using System.Net.Http;
 
 	protected void Page_Load(object sender, EventArgs e)
         {
-        PopulateControls();
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+        AgentDataTable tblAgent = new AgentDataTable();
+
+        try
+        {
+            if ((Page.IsPostBack))
+            {
+                if (Request.Form["ctl00$MainContent$ctrAgent_Add$btnAdd"] == "Add")
+                    AddAgent();
+            }
+            else
+                PopulateControls();
         }
+        catch (Exception ex)
+        {
+            throw;
+        }
+    }
 
         public void AddAgent()
         {

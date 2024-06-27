@@ -30,8 +30,8 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 		public bool Admin { get; private set; }
 
         private string m_ReportPath = string.Empty;
-        private string m_RequestDate = string.Empty;
-        private string m_DueDate = string.Empty;     
+        private DateTime m_RequestDate;
+        private DateTime m_StartDate;
         private int m_AgentID = 0;
         private int m_CustomerID = 0;
 
@@ -180,7 +180,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 			CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
             GetCustomerIDTableAdapter adpGetCustomerID = new GetCustomerIDTableAdapter();
 
-			//NotificationSystem.CustomerDataTable tblCustomer = new NotificationSystem.CustomerDataTable();
+			NotificationSystem.CustomerDataTable tblCustomer = new NotificationSystem.CustomerDataTable();
 
 			Customer = false;
 
@@ -547,40 +547,40 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 
 
-        public int AddAgent(clsAgent thisAgent)
-        {
-           
-            AgentTableAdapter adpAgent = new AgentTableAdapter();
-            GetAgentIDTableAdapter adpGetAgentID = new GetAgentIDTableAdapter();
+		public int AddAgent(clsAgent thisAgent)
+		{
 
-            NotificationSystem.AgentDataTable tblAgent = new NotificationSystem.AgentDataTable();
-            Agent = false;
+			AgentTableAdapter adpAgent = new AgentTableAdapter();
+			GetAgentIDTableAdapter adpGetAgentID = new GetAgentIDTableAdapter();
 
-            try
-            {
-               
-                {
-                    var withBlock = thisAgent;
-                    adpAgent.Insert(withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax, withBlock.Salary);
+			NotificationSystem.AgentDataTable tblAgent = new NotificationSystem.AgentDataTable();
+			Agent = false;
 
-                  
-                }
+			try
+			{
 
-                GetAgentIDDataTable tblGetAgentID = adpGetAgentID.GetData();
-                GetAgentIDRow row = tblGetAgentID[0];
-                return row.AgentID;
-
-            
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-         
-        }
+				{
+					var withBlock = thisAgent;
+					adpAgent.InsertQuery(withBlock.TroubleTicketNo, withBlock.Title, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax);
 
 
-        public int GetAgentID()
+				}
+
+				GetAgentIDDataTable tblGetAgentID = adpGetAgentID.GetData();
+				GetAgentIDRow row = tblGetAgentID[0];
+				return row.AgentID;
+
+
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+
+		}
+
+
+		public int GetAgentID()
         {
             GetAgentIDTableAdapter adpGetAgentID = new GetAgentIDTableAdapter();
 
@@ -607,7 +607,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             {
                 {
                     var withBlock = thisAgent;
-                    adpAgent.Update(withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax, withBlock.Original_AgentID);
+                    adpAgent.UpdateQuery(withBlock.TroubleTicketNo, withBlock.Title, withBlock.Salary, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax, withBlock.Original_AgentID);
                 }
             }
 

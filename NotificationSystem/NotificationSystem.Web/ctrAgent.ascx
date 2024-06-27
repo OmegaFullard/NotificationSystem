@@ -20,9 +20,7 @@
                                      <asp:BoundField DataField="TroubleTicketNo" HeaderText="TicketNo" HtmlEncode="False"  ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />
                                      <asp:BoundField DataField="Title" HeaderText="Title" HtmlEncode="False"  ItemStyle-Width="100"
-                                       ReadOnly="True"  Visible="True" />
-                                     <asp:BoundField DataField="StartDate" HeaderText="Start Date" HtmlEncode="False" ItemStyle-Width="100"
-                                       ReadOnly="True"  Visible="True" />
+                                       ReadOnly="True"  Visible="True" />                                    
                                       <asp:BoundField DataField="Salary" HeaderText="Salary" HtmlEncode="False" ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />
                                       <asp:BoundField DataField="FirstN" HeaderText="First Name" HtmlEncode="False" ItemStyle-Width="100"

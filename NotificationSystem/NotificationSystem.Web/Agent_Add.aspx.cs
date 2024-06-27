@@ -49,7 +49,7 @@ namespace NotificationSystem.NotificationSystem.Web
                     ctrAgent_Search.PopulateSearchControl();
                     if (((ctrAgent_Search.AgentID) == 0))
                         return;
-                    this.ctrAgent_Add.ClearControls(); this.ctrAgent_Add.AgentID = ctrAgent_Search.AgentID;
+                    this.ctrAgent_Add.ClearControls(); this.ctrAgent_Add.AgentList = ctrAgent_Search.AgentID;
                 }
                 else if (Request.Form["ctl00$MainContent$ctrAgent_Add$btnCreate"] == "Add")
                 {
