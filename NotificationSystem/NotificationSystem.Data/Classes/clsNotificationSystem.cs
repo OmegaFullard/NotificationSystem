@@ -29,21 +29,78 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         public bool Salary { get; private set; }
 		public bool Admin { get; private set; }
 
-		//public DataTable GetCustomersList()
-  //      {
-  //          try
-  //          {
-  //              CustomerTableAdapter adpCustomerList = new CustomerTableAdapter();
-  //              NotificationSystem.CustomerDataTable tblCustomerList = adpCustomerList.GetData();
+        private string m_ReportPath = string.Empty;
+        private string m_RequestDate = string.Empty;
+        private string m_DueDate = string.Empty;     
+        private int m_AgentID = 0;
+        private int m_CustomerID = 0;
 
-  //              return tblCustomerList;
-  //          }
+        public int AgentID
+        {
+            get
+            {
+                return m_AgentID;
+            }
+            set
+            {
+                m_AgentID = value;
+            }
+        }
+        //public object CustomerID { get; internal set; }
+        public int CustomerID
+        {
+            get
+            {
+                return m_CustomerID;
+            }
+            set
+            {
+                m_CustomerID = value;
+            }
+        }
 
-  //          catch (Exception)
-		//	{
-  //              throw;
-  //          }
-  //      }
+        public string ReportPath
+        {
+            get
+            {
+                return m_ReportPath;
+            }
+            set
+            {
+                m_ReportPath = value;
+            }
+        }
+
+        //public DataTable GetCustomersList()
+        //      {
+        //          try
+        //          {
+        //              CustomerTableAdapter adpCustomerList = new CustomerTableAdapter();
+        //              NotificationSystem.CustomerDataTable tblCustomerList = adpCustomerList.GetData();
+
+        //              return tblCustomerList;
+        //          }
+
+        //          catch (Exception)
+        //	{
+        //              throw;
+        //          }
+        //      }
+
+        public DataTable GetCustReport()
+        {
+            try
+            {
+                CustomerTableAdapter adpCustomers = new CustomerTableAdapter();
+                CustomerDataTable tblCustomer = adpCustomers.GetData();
+
+                return tblCustomer;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public DataTable GetCustomer(int CustomerID)
         {
@@ -454,6 +511,23 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
                 throw;
             }
         }
+
+
+        public DataTable GetAgReport()
+        {
+            try
+            {
+                AgentTableAdapter adpAgents = new AgentTableAdapter();
+                AgentDataTable tblAgent = adpAgents.GetData();
+
+                return tblAgent;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
         public DataTable GetAgentByTicket(ref int TroubleTicketNo)
         {

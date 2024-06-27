@@ -25,8 +25,8 @@ namespace NotificationSystem.NotificationSystem.Web
 {
 	public partial class rptAgent : System.Web.UI.Page
 	{
-        
-        private clsSearch theSearch = new clsSearch();
+
+        private clsNotificationSystem theNotificationSystem = new clsNotificationSystem(); 
         public bool IsNumeric(string value)
 		{
             return value.All(char.IsNumber);
@@ -38,42 +38,40 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
                     ctrAgent_Search.PopulateSearchControl();
-                    theSearch.ReportPath = "rptAgent.rdlc";
-                    theSearch.AgentID = ctrAgent_Search.AgentID;
-                    ShowReport();
+                    theNotificationSystem.ReportPath = "~NotificationSystem.Web/rptAgent.rdlc";
+                    theNotificationSystem.AgentID = ctrAgent_Search.AgentID;
+                    ShowAgReport();
                 }
             }
         }
 
-        private void ShowReport()
+        private void ShowAgReport()
         {
             try
             {
-                clsReports theNotificationSystem = new clsReports();
+                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
                 ReportDataSource ReportDataSource = new ReportDataSource();
                 string strTitle = string.Empty;
-                Data.xsReports.AgentDataTable dtReport;
+                Data.NotificationSystem.AgentDataTable dtReport;
 
                 ReportDataSource.Name = "DataSet1";
           
 
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath);
-                if (theSearch.AgentID.ToString().Length == 0)
-                    theSearch.AgentID = 0;
+                ReportViewer1.LocalReport.ReportPath = Server.MapPath(theNotificationSystem.ReportPath);
+                if (theNotificationSystem.AgentID.ToString().Length == 0)
+                    theNotificationSystem.AgentID = int.Parse("xxxxxx");
             
 
 
-                int numAgentID = (theSearch.AgentID);
-                dtReport = (xsReports.AgentDataTable)theNotificationSystem.GetAgentByAgentID(numAgentID);
+                
+                dtReport = (Data.NotificationSystem.AgentDataTable)theNotificationSystem.GetAgent(theNotificationSystem.AgentID);
                 ReportDataSource.Value = dtReport;
 
 
                 ReportViewer1.LocalReport.DataSources.Clear();
                 ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
-              
-
                 ReportViewer1.LocalReport.Refresh();
             }
 

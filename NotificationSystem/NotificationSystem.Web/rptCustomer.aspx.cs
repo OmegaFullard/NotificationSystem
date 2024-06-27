@@ -23,7 +23,7 @@ namespace NotificationSystem.NotificationSystem.Web
 {
 	public partial class rptCustomer : System.Web.UI.Page
 	{
-		private clsSearch theSearch = new clsSearch();
+		private clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
 		public bool IsNumeric(string value)
 		{
@@ -36,38 +36,38 @@ namespace NotificationSystem.NotificationSystem.Web
 				if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
 				{
 					ctrCustomer_Search.PopulateSearchControl();
-					theSearch.ReportPath = "rptCustomer.rdlc";
-					theSearch.CustomerID = ctrCustomer_Search.CustomerID;
-					ShowReport();
+					theNotificationSystem.ReportPath = "~NotificationSystem.Web/rptCustomer.rdlc";
+					theNotificationSystem.CustomerID = ctrCustomer_Search.CustomerID;
+					ShowCustReport();
 				}
 			}
 		}
 
-        private void ShowReport()
+        private void ShowCustReport()
         {
             try
             {
-                clsReports theNotificationSystem = new clsReports();
+                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
                 ReportDataSource ReportDataSource = new ReportDataSource();
                 string strTitle = string.Empty;
-                Data.xsReports.CustomerDataTable dtReport;
+				Data.NotificationSystem.CustomerDataTable dtReport;
 
                 ReportDataSource.Name = "DataSet1";
                 
 
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                ReportViewer1.LocalReport.ReportPath = Page.Server.MapPath(theSearch.ReportPath);
+                ReportViewer1.LocalReport.ReportPath = Page.Server.MapPath(theNotificationSystem.ReportPath);
 
-                if (theSearch.CustomerID.ToString().Length == 0)
+                if (theNotificationSystem.CustomerID.ToString().Length == 0)
                 {
-                    //theSearch.CustomerID = "XXXXXX";
+                    theNotificationSystem.CustomerID = int.Parse("XXXXXX");
 
 
 
                     //implicit cast
-                    int numCustomerID = (theSearch.CustomerID);
-                    dtReport = (Data.xsReports.CustomerDataTable)theNotificationSystem.GetCustomerByCustomerID(numCustomerID);
+                    //int numCustomerID = (theSearch.CustomerID);
+                    dtReport = (Data.NotificationSystem.CustomerDataTable)theNotificationSystem.GetCustomer(theNotificationSystem.CustomerID);
 
                     //strTitle = "Customer Report: " + theSearch.TroubleTicketNo + " Activity by Customer ID ";
 

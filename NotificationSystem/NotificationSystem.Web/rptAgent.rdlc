@@ -288,7 +288,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!TroubleTicketNo.Value, "DataSet1")</Value>
+                    <Value>=Fields!TroubleTicketNo.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -352,7 +352,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RequestDate.Value, "DataSet1")</Value>
+                    <Value>=Fields!RequestDate.Value</Value>
                     <Style>
                       <Format>MM/dd/yyyy</Format>
                     </Style>
@@ -397,7 +397,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Title.Value, "DataSet1" )</Value>
+                    <Value>=Fields!Title.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -428,7 +428,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!FirstN.Value, "DataSet1")</Value>
+                    <Value>=Fields!FirstN.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -493,7 +493,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Email.Value, "DataSet1")</Value>
+                    <Value>=Fields!Email.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -524,7 +524,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!LastN.Value, "DataSet1")</Value>
+                    <Value>=Fields!LastN.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -623,7 +623,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Phone.Value, "DataSet1")</Value>
+                    <Value>=Fields!Phone.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -654,7 +654,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Fax.Value, "DataSet1")</Value>
+                    <Value>=Fields!Fax.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -718,7 +718,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="ID" &amp; First(Fields!AgentID.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!AgentID.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -785,7 +785,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Status.Value, "DataSet1")</Value>
+                    <Value>=Fields!Status.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -852,7 +852,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Type.Value, "DataSet1")</Value>
+                    <Value>=Fields!Type.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -928,7 +928,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!DueDate.Value, "DataSet1")</Value>
+                    <Value>=Fields!DueDate.Value</Value>
                     <Style>
                       <Format>MM/dd/yyyy</Format>
                     </Style>

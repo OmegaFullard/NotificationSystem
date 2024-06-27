@@ -18,7 +18,9 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 {
 	class clsReports
 	{
-		public DataTable GetAgentID()
+
+
+		public DataTable GetAgReport()
 		{
 			try
 			{
@@ -32,12 +34,12 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 				throw;
 			}
 		}
-		public DataTable GetAgentByAgentID(int numAgentID)
+		public DataTable GetAgentByAgentID(int AgentID)
 		{
 			try
 			{
 				AgentTableAdapter adpAgents = new AgentTableAdapter();
-				AgentDataTable tblAgent = adpAgents.GetDataByAgentID(numAgentID);
+				AgentDataTable tblAgent = adpAgents.GetDataByAgentID(AgentID);
 
 				return tblAgent;
 			}
@@ -48,7 +50,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 		}
 
 
-		public DataTable GetCustomerID()
+		public DataTable GetCustReport()
 		{
 			try
 			{
@@ -63,12 +65,12 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 			}
 		}
 
-		public DataTable GetCustomerByCustomerID(int numCustomerID)
+		public DataTable GetCustomerByCustomerID(int CustomerID)
 		{
 			try
 			{
 				CustomerTableAdapter adpCustomers = new CustomerTableAdapter();
-				CustomerDataTable tblCustomer = adpCustomers.GetDataByCustomerID(numCustomerID);
+				CustomerDataTable tblCustomer = adpCustomers.GetDataByCustomerID(CustomerID);
 
 				return tblCustomer;
 			}
