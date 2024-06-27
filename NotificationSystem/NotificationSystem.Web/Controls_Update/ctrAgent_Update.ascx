@@ -1,4 +1,4 @@
-﻿ <%@ Control Language="c#" AutoEventWireup="false" CodeBehind="ctrAgent_Update.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrAgent_Update" %>
+﻿ <%@ Control Language="c#" AutoEventWireup="false" CodeBehind="ctrAgent_Update.ascx.cs" Inherits="ctrAgent_Update" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
@@ -27,7 +27,7 @@
  
 
   <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-                         <div class="Heading" >Update Agent</div>
+            <h2>Update Agent</h2><br />             
       <br />
                               <div> <asp:Label ID="lblResult" runat="server" Text=""></asp:Label></div><br />
           
@@ -35,7 +35,19 @@
                                             <asp:TableRow><asp:TableCell ColumnSpan="2"> <div style="padding-bottom:20px;"> Required fields are marked with <span style="color: red">* </span> (red asterisk).
                                                 </div> </asp:TableCell>
                                             </asp:TableRow>
-     
+                                     <asp:TableRow> 
+                                             <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>Agent ID:<span style="color: red">*</span></b></div></asp:TableCell>
+                                             <asp:TableCell HorizontalAlign="Left"> 
+                                               &nbsp;&nbsp; <asp:TextBox ID="txtagentid" runat="server" Height="20px" Width="300px"  ReadOnly="True"></asp:TextBox>
+                                                 <asp:RequiredFieldValidator  ID="valRequiredFieldID" runat="server" ControlToValidate="txtagentid" ValidationGroup="Submit"  
+                                             ErrorMessage="Agent ID is Required Field!"><span class="required"></span></asp:RequiredFieldValidator>
+                                            
+                                                 <ajaxtoolkit:ValidatorCalloutExtender ID="Required_ID"  TargetControlID="valRequiredFieldID"  Width="250px"  
+                                                               HighlightCssClass="highlight" runat="server">
+                                                       </ajaxtoolkit:ValidatorCalloutExtender>
+
+                                           </asp:TableCell>
+                                   </asp:TableRow  > 
                                            <asp:TableRow> 
                                              <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>First Name:<span style="color: red">*</span></b></div></asp:TableCell>
                                              <asp:TableCell HorizontalAlign="Left"> 
@@ -98,16 +110,11 @@
                                                      <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
                                              </asp:TableRow> 
-                                             <asp:TableRow> 
-                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Agent ID:</asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<asp:TextBox ID="txtagentid" runat="server" Height="20px" Width="300px"  MaxLength="127"></asp:TextBox>     
-                                                    </asp:TableCell>
-                                                </asp:TableRow> 
-                                   <asp:TableRow  > 
-                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
-                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
-                                             </asp:TableRow> 
+                                           
+                                     <asp:TableRow>                
+                                            <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                             <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                     </asp:TableRow> 
 											 
 											 
                                                 <asp:TableRow>            
@@ -127,10 +134,10 @@
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Phone:</asp:TableCell>
                                                       <asp:TableCell HorizontalAlign="Left" Font-Bold="true">
                                                         &nbsp;&nbsp;<asp:textbox ID="txtPhoneNumber" SelectionOnFocus="CaretToBeginning" Height="20px" Width="200px" RenderMode="Lightweight" Runat="server" Mask="(###)-#######"  ValidationGroup="Submit">
-                                                         </asp:textbox>&nbsp;&nbsp;Fax:
-                                                        
-														
-														<asp:textbox ID="txtFaxNumber" SelectionOnFocus="CaretToBeginning" Height="20px" Width="200px" RenderMode="Lightweight" Runat="server" Mask="(###)-#######" ValidationGroup="Submit">
+                                                         </asp:textbox>
+                                                          
+                                                          &nbsp;&nbsp;Fax:
+											<asp:textbox ID="txtFaxNumber" SelectionOnFocus="CaretToBeginning" Height="20px" Width="200px" RenderMode="Lightweight" Runat="server" Mask="(###)-#######" ValidationGroup="Submit">
                                                          </asp:textbox>
                                                        </asp:TableCell>    
                                                 </asp:TableRow>

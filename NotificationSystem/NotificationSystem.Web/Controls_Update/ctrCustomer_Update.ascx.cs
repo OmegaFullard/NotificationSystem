@@ -54,7 +54,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
 
                         withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.CustomerID = int.Parse(txtcustomerid.Text);
                         withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); txtfirstname.Text = withBlock.FirstN; txtlastname.Text = withBlock.LastN;
-                        withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
+                        withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = cmbStates.Text; withBlock.Zip = txtzip.Text;
                         withBlock.UserName = txtusername.Text; withBlock.Password = txtpassword.Text;
 
 
@@ -71,7 +71,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                     }
 
                 }
-                btnUpdate.Enabled = true;
+                this.btnUpdate.Enabled = true;
             }
         }
 
@@ -112,7 +112,7 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
 
 
                 withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.FirstN = txtfirstname.Text; withBlock.LastN = txtlastname.Text; withBlock.Email = txtemailaddress.Text; withBlock.Phone = txtPhoneNumber.Text; 
-                withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = txtstate.Text; withBlock.Zip = txtzip.Text;
+                withBlock.Address = txtaddress.Text; withBlock.City = txtcity.Text; withBlock.State = cmbStates.Text; withBlock.Zip = txtzip.Text;
                 withBlock.UserName = txtusername.Text; withBlock.Password = txtpassword.Text;
             }
 
@@ -139,8 +139,23 @@ public partial class ctrCustomer_Update : System.Web.UI.UserControl
                 SendError.SendMailMessage(NotificationBody);
                 Response.Redirect("ErrorPage.aspx", false);
             }
+        PopulateControls();
+
 
         }
+
+    private void PopulateControls()
+    {
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+
+
+        this.cmbStates.DataSource = theNotificationSystem.GetStatesList();
+        this.cmbStates.DataTextField = "States";
+        this.cmbStates.DataBind();
+
+
+
+    }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {

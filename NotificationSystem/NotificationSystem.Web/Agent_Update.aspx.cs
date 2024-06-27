@@ -41,6 +41,7 @@ namespace NotificationSystem.NotificationSystem.Web
                     {
                         string[] arrAgents = strAgent.Split(Convert.ToChar(":"));
                         this.ctrAgent_Update.AgentID = int.Parse(arrAgents[1]); this.ctrAgent_Update.AgentID = int.Parse(arrAgents[2]);
+                        //this.ctrSearch_Agent_Update.ClearControl();
                     }
                 }
             }

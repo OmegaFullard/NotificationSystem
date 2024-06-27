@@ -75,6 +75,6 @@ namespace NotificationSystem.NotificationSystem.Web
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::NotificationSystem.NotificationSystem.Web.ctrAgent_Update ctrAgent_Update;
+		protected global::ctrAgent_Update ctrAgent_Update;
 	}
 }

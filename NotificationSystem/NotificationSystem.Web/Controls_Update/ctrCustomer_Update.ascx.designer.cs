@@ -148,13 +148,13 @@ public partial class ctrCustomer_Update
 	protected global::System.Web.UI.WebControls.TextBox txtcity;
 
 	/// <summary>
-	/// txtstate control.
+	/// cmbStates control.
 	/// </summary>
 	/// <remarks>
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::System.Web.UI.WebControls.TextBox txtstate;
+	protected global::Telerik.Web.UI.RadMultiColumnComboBox cmbStates;
 
 	/// <summary>
 	/// txtzip control.

@@ -147,10 +147,15 @@
 
                                 
                                    <asp:TableRow> 
-                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">State:</asp:TableCell>
-                                                    <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<asp:TextBox ID="txtstate" runat="server" Height="20px" Width="300px"  MaxLength="25"></asp:TextBox>     
-                                                    </asp:TableCell>
+                                                   <asp:TableCell HorizontalAlign="Right" Font-Bold="true">State:</asp:TableCell>
+                                          <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;
+                                              <telerik:RadMultiColumnComboBox runat="server" ID="cmbStates" DropDownWidth="100px" Height="200px"  Width="150px" Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
+                                                            Placeholder="--Select" >
+                                                            <ColumnsCollection>
+                                                                <telerik:MultiColumnComboBoxColumn Field="State" Title="States" Width="100px" />
+                                                            </ColumnsCollection>
+                                                </telerik:RadMultiColumnComboBox>
+                                           </asp:TableCell>
                                                 </asp:TableRow> 
                                  <asp:TableRow  > 
                                                      <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>

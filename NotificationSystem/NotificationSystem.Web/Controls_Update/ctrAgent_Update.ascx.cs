@@ -10,10 +10,8 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 using System.Data.SqlClient;
 
-namespace NotificationSystem.NotificationSystem.Web
+public partial class ctrAgent_Update : System.Web.UI.UserControl
 {
-    public partial class ctrAgent_Update : System.Web.UI.UserControl
-    {
         private int m_AgentID = 0;
 
         public int AgentID
@@ -46,13 +44,13 @@ namespace NotificationSystem.NotificationSystem.Web
                         if (lblResult.Text.Length == 0)
                             return;
 
-                        tblAgent = (AgentDataTable)theNotificationSystem.GetAgentList();
+                        tblAgent = (AgentDataTable)theNotificationSystem.GetAgents();
                         if (tblAgent.Count == 0)
                             return;
 
                         {
                             var withBlock = tblAgent[0];
-                            txttitle.Text = withBlock.Title; withBlock.Salary = (txtsalary.Text);
+                            txtfirstname.Text = withBlock.FirstN; txtlastname.Text = withBlock.LastN; txttitle.Text = withBlock.Title; withBlock.Salary = (txtsalary.Text);
                                 withBlock.AgentID = int.Parse(this.txtagentid.Text);
 
 
@@ -70,7 +68,7 @@ namespace NotificationSystem.NotificationSystem.Web
                         }
 
                     }
-                    btnUpdate.Enabled = true;
+                    this.btnUpdate.Enabled = true;
                 }
             }
 
@@ -116,7 +114,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 try
                 {
                     clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                    theNotificationSystem.AddAgent(thisAgent);
+                    theNotificationSystem.UpdateAgent(thisAgent);
                     lblResult.Text = "Agent data has been added";
                 }
                 catch (SqlException ex)
@@ -141,7 +139,6 @@ namespace NotificationSystem.NotificationSystem.Web
         {
             Response.Redirect("Agent_Find.aspx", false);
         }
-    }
 }
 
 
