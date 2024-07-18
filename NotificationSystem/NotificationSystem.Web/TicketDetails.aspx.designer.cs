@@ -87,12 +87,12 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Button Button2;
 
 		/// <summary>
-		/// ctrTroubleTicketReq control.
+		/// ctrTroubleTicketReq_Find control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::NotificationSystem.NotificationSystem.Web.ctrTroubleTicketReq ctrTroubleTicketReq;
+		protected global::ctrTroubleTicketReq_Find ctrTroubleTicketReq_Find;
 	}
 }

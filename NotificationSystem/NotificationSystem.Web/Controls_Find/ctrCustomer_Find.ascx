@@ -38,6 +38,10 @@
                                        ReadOnly="True"  Visible="True" />
                                   <asp:BoundField DataField="Zip" HeaderText="Zip" HtmlEncode="False" 
                                        ReadOnly="True"  Visible="True" />
+                               <asp:BoundField DataField="UserName" HeaderText="User Name" HtmlEncode="False" 
+                                       ReadOnly="True"  Visible="True" />
+                                  <asp:BoundField DataField="Password" HeaderText="Password" HtmlEncode="False" 
+                                       ReadOnly="True"  Visible="True" />
                           </Columns>
                         <FooterStyle BackColor ="#CCCCCC" ForeColor="black"/>
                         <HeaderStyle  HorizontalAlign="Left" ForeColor="#303030" />

@@ -10,40 +10,35 @@ using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 using NotificationSystem.NotificationSystem.Data.Classes;
 using System.Data.SqlClient;
 
-    public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
+public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
+{
+
+    private int m_TroubleTicketNo = 0;
+
+    public int TroubleTicketNo
     {
-
-        private int m_TroubleTicketNo = 0;
-
-        public int TroubleTicketNo
+        get
         {
-            get
-            {
-                return m_TroubleTicketNo;
-            }
-            set
-            {
-                m_TroubleTicketNo = value;
-            }
+            return m_TroubleTicketNo;
         }
-
-        public TextBox txtTroubleTicketList { get; set; }
-        protected void Page_Load(object sender, EventArgs e)
+        set
         {
+            m_TroubleTicketNo = value;
+        }
+    }
+
+    public TextBox txtTroubleTicketList { get; set; }
+    protected void Page_Load(object sender, EventArgs e)
+    {
         if ((Page.IsPostBack))
         {
-            if (m_TroubleTicketNo > 0)
-                this.lblResult.Text = "Ticket" + m_TroubleTicketNo;
-            if (this.lblResult.Text.Length == 2)
-                return;
-
             try
             {
                 if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Update$btnUpdate"] == "Update")
                     UpdateTroubleTicket();
 
                 else if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
-            {
+                {
                     clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
                     TroubleTicketReqDataTable tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
@@ -52,7 +47,7 @@ using System.Data.SqlClient;
                         var withBlock = tblTroubleTicketReq[0];
                         withBlock.AgentID = int.Parse(this.txtAgentID.Text); withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
                         cmbStatus.Text = withBlock.Status;
-                        cmbType.Text = withBlock.Type;
+                        cmbType.Text = withBlock.Type;                      
                         withBlock.RequestDate = DateTime.Now;
                         withBlock.DueDate = DateTime.Now;
                     }
@@ -70,104 +65,95 @@ using System.Data.SqlClient;
         }
     }
 
-        public void ClearControls()
+    public void ClearControls()
+    {
+        try
         {
-            try
-            {
-            }
-
-
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
-        private void PopulateControls()
+
+        catch (Exception)
         {
-            clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-
-
-            cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-            cmbStatus.DataTextField = "TroubleTicketNo";  cmbStatus.DataValueField ="Status";
-            cmbStatus.DataBind();
-           
-
-
-            cmbType.DataSource = theNotificationSystem.GetTypeList();
-            cmbType.DataTextField = "TroubleTicketNo"; cmbType.DataValueField = "Type"; 
-            cmbType.DataBind();
-
-
+            throw;
         }
+    }
 
-        public void UpdateTroubleTicket()
+
+    public void UpdateTroubleTicket()
+    {
+        try
         {
-            try
+            clsTroubleTicketReq thisTroubleTicket = new clsTroubleTicketReq();
+
             {
-                clsTroubleTicketReq thisTroubleTicket = new clsTroubleTicketReq();
+                var withBlock = thisTroubleTicket;
+                if (txttroubleticketno.Text.Length == 0)
 
-                {
-                    var withBlock = thisTroubleTicket;
-                    if (txttroubleticketno.Text.Length == 0)
-
-                        //if (pickRequestDate.SelectedDate == null)
-                        //    withBlock.RequestDate = DateTime.Now;
-                        //else
-                        //    withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
+                    //if (pickRequestDate.SelectedDate == null)
+                    //    withBlock.RequestDate = DateTime.Now;
+                    //else
+                    //    withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
                     if (cmbType.Text == string.Empty)
                         return;
 
-                    withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text);
-                    if (!string.IsNullOrEmpty(cmbStatus.Text))
-                    {
-                        withBlock.Status = cmbStatus.Text;
-                    }
-                    else
-                    {
-                        withBlock.Status = "****";
-                    }
+                withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text);
+                withBlock.Type = cmbType.Text; withBlock.Status = cmbStatus.Text;
+                withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
 
-                    if (!string.IsNullOrEmpty(cmbType.Text))
-                    {
-                        withBlock.Type = cmbType.Text;
-                    }
-                    else
-                    {
-                        withBlock.Type = "****"; // Default value
-                    }
-
-
-
-                    withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
-
-
-                }
-                try
-
-                {
-                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                    theNotificationSystem.UpdateTroubleTicket(thisTroubleTicket);
-                    lblResult.Text = "Trouble Ticket data has been updated";
-
-                }
-                catch (SqlException ex)
-                {
-                    throw new ApplicationException(ex.Message);
-                }
 
             }
+            try
 
-            catch (Exception)
             {
-                throw;
+                clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                theNotificationSystem.UpdateTroubleTicket(thisTroubleTicket);
+                lblResult.Text = "Trouble Ticket data has been updated";
+
             }
+            catch (SqlException ex)
+            {
+
+                if (ex.Number == 2627)
+                    lblResult.Text = "Ticket already exist!";
+                else
+                    throw new ApplicationException(ex.Message);
+
+            }
+
         }
+        catch (Exception ex)
+        {
+            clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+            string NotificationBody = ex.Message + "  " + ex.StackTrace;
+            SendError.SendMailMessage(NotificationBody);
+            Response.Redirect("ErrorPage.aspx", false);
+        }
+        PopulateControls();
+
+    }
 
 
+
+    private void PopulateControls()
+    {
+        clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+
+
+        cmbStatus.DataSource = theNotificationSystem.GetStatusList();
+        cmbStatus.DataTextField = cmbStatus.DataValueField = "Status";
+        cmbStatus.DataBind();
+
+
+
+        cmbType.DataSource = theNotificationSystem.GetTypeList();
+        cmbType.DataTextField = cmbType.DataValueField = "Type";
+        cmbType.DataBind();
+
+    }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("TroubleTicketReq_Find.aspx", false);
         }
     }
+        
 

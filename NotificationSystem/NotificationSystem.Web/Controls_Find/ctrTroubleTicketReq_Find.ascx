@@ -16,9 +16,7 @@
                     width="700px" AllowPaging="True" AllowSorting="True" PageSize="18" OnPageIndexChanging="grdTroubleTicketReq_PageIndexChanging" OnSorting="grdTroubleTicketReq_Sorting">
                     <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
                           <Columns>
-                                <asp:TemplateField HeaderText="Ticket" SortExpression="TroubleTicketNo" ItemStyle-Width="100"    Visible="True">
-                                           
-                                       </asp:TemplateField> 
+                              
 									   <asp:BoundField DataField="AgentID" HeaderText="Agent ID" HtmlEncode="False" 
                                        ReadOnly="True"  Visible="True" />
 									   <asp:BoundField DataField="TroubleTicketNo" HeaderText="Trouble Ticket #" HtmlEncode="False" 

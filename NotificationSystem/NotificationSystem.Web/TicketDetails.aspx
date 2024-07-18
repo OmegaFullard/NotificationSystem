@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Ticket Details" Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.Master" CodeBehind="TicketDetails.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.TicketDetails" %>
-
 <%@ Register Src="ctrTroubleTicketReq.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq" %>
 <%@ Register Src="Controls_Search/ctrTroubleTicketReq_Search.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Search" %>
+<%@ Register Src="Controls_Find/ctrTroubleTicketReq_Find.ascx" TagPrefix="uc1" TagName="ctrTroubleTicketReq_Find" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">  
 </asp:Content>
@@ -82,6 +82,6 @@
             <a href="Default.aspx"><< Back to Home</a><br/>
             <br/>
          </div>
-   	 <uc1:ctrTroubleTicketReq runat="server" id="ctrTroubleTicketReq" />
+   	 <uc1:ctrTroubleTicketReq_Find runat="server" id="ctrTroubleTicketReq_Find" />
 
 </asp:Content>

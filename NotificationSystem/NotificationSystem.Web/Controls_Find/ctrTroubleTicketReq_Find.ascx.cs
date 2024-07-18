@@ -61,14 +61,14 @@ public partial class ctrTroubleTicketReq_Find : System.Web.UI.UserControl
 		TroubleTicketReqDataTable tblTroubleTicketReq = new TroubleTicketReqDataTable();
 		try
 		{
-			if (Request.Form["ctl00$MainContent$ctrSearch_TroubleTicketReq_Find$btnSearch"] == "Search")
-				this.lblTroubleTicketNo.Text = "Ticket" + m_TroubleTicketNo;
+			if (Request.Form["ctl00$MainContent$ctrSearch_TT_Find$btnSearch"] == "Search")
+				this.lblSearchResult.Text = "Ticket" + m_TroubleTicketNo;
 
-			if ((Page.IsPostBack) & this.lblTroubleTicketNo.Text.Length > 0)
-				theNotificationSystem.GetTroubleTicketByNo(Convert.ToInt32(this.lblTroubleTicketNo.Text.Replace("Ticket", "")));
+			if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
+				tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket(int.Parse(this.lblSearchResult.Text.Replace("Ticket", "")));
 
 			else
-				tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
+				tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTT();
 
 
 			this.lblSearchResult.Text = tblTroubleTicketReq.Rows.Count.ToString();

@@ -3,7 +3,7 @@
                         You can use a partial Admin Name in your search
                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
                              <asp:TableRow>
-                                          <asp:TableCell>Admin Name:&nbsp;&nbsp;</asp:TableCell>
+                                          <asp:TableCell>Admin:&nbsp;&nbsp;</asp:TableCell>
                                           <asp:TableCell>
                                                <asp:TextBox ID="txtUserName" runat="server" Width="180"></asp:TextBox>
                                            </asp:TableCell>

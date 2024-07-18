@@ -23,7 +23,7 @@
                                                <telerik:RadMultiColumnComboBox    runat="server" ClearButton="false" ClientEvents-OnLoad="OnClientLoad0" ID="cmbType" DropDownWidth="300px"  Height="200px" Width="180px" AutoPostBack="true"
                                                        Placeholder="--Select" EnableViewState="true">
                                                 <ColumnsCollection> 
-                                                      <telerik:MultiColumnComboBoxColumn Field="TroubleTicketNo" Title="TroubleTicketNo" Width="150px" />
+                                                     
                                                         <telerik:MultiColumnComboBoxColumn Field="Type" Title="Type" Width="150px" />
                                                 </ColumnsCollection></telerik:RadMultiColumnComboBox> &nbsp;&nbsp;&nbsp
                                         </asp:TableCell>

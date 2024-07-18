@@ -233,7 +233,7 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
             <Top>0.99875in</Top>
-            <Left>7.87375in</Left>
+            <Left>7.86333in</Left>
             <Height>0.3125in</Height>
             <Width>2.57292in</Width>
             <ZIndex>4</ZIndex>

@@ -120,13 +120,13 @@ using System.Net.Http;
 
 
         cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-        cmbStatus.DataTextField = "TroubleTicketNo"; cmbStatus.DataValueField = "Status";
+        cmbStatus.DataTextField = "Status";
         cmbStatus.DataBind();
 
 
 
         cmbType.DataSource = theNotificationSystem.GetTypeList();
-        cmbType.DataTextField = "TroubleTicketNo"; cmbType.DataValueField = "Type";
+        cmbType.DataTextField = "Type";
         cmbType.DataBind();
 
 
