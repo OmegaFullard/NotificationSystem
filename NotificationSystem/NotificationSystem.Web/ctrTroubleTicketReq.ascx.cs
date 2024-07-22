@@ -52,7 +52,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
 					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
                 else
-                    tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket();
+                    tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTT();
 
                 this.lblSearchResult.Text = tblTTR.Rows.Count + " Result(s)";
                 this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;

@@ -24,21 +24,12 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 		protected global::System.Web.UI.WebControls.Table Table1;
 
 		/// <summary>
-		/// cmbStatus control.
+		/// cmbTicket control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::Telerik.Web.UI.RadMultiColumnComboBox cmbStatus;
-
-		/// <summary>
-		/// cmbType control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::Telerik.Web.UI.RadMultiColumnComboBox cmbType;
+		protected global::Telerik.Web.UI.RadMultiColumnComboBox cmbTicket;
 	}
 }

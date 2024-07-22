@@ -15,24 +15,25 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Search
 			clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 			if (!(Page.IsPostBack))
 			{
-				cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-				cmbStatus.DataTextField = "TroubleTicket"; 
-				cmbStatus.DataValueField = "Status";
-				cmbStatus.DataBind();
+				cmbTicket.DataSource = theNotificationSystem.GetTT();
+				cmbTicket.DataTextField = "TroubleTicketNo"; 
+				cmbTicket.DataValueField = "Status";
+				cmbTicket.DataValueField = "Type";
+				cmbTicket.DataBind();
 
-				cmbStatus.DataSource = theNotificationSystem.GetTypeList();
-				cmbStatus.DataTextField = "TroubleTicket";
-				cmbType.DataValueField = "Type";
-				cmbStatus.DataBind();
+			//	cmbType.DataSource = theNotificationSystem.GetTypeList();
+			//	cmbType.DataTextField = "TroubleTicket";
+			//	cmbType.DataValueField = "Type";
+			//	cmbType.DataBind();
 			}
 		}
 
 		public void ClearControl()
 		{
-			this.cmbStatus.Value = string.Empty; 
-			cmbStatus.Text = "--";
-			this.cmbType.Value = string.Empty; 
-			cmbType.Text = "--";
+			this.cmbTicket.Value = string.Empty; 
+			cmbTicket.Text = "--";
+			//this.cmbType.Value = string.Empty; 
+			//cmbType.Text = "--";
 		}
 	}
 }

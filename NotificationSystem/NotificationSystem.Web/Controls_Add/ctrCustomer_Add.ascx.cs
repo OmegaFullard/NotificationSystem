@@ -109,7 +109,14 @@ using System.Net.Http;
 
     private void PopulateControls()
 	{
+        //clsNotificationSystem theCustomer = new clsNotificationSystem();
 
+        //this.cmbStates.DataSource = theCustomer.GetStatesList();
+        //this.cmbStates.DataTextField = "State";
+        //this.cmbStates.DataBind();
+        //this.cmbStates.Text = "PA";
+
+        //txtcity.Text = "Philadelphia";
 	}
         public void ClearControls()
         {

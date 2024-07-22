@@ -47,7 +47,10 @@
 
                                            </asp:TableCell>
                                  </asp:TableRow>
-     
+                    <asp:TableRow  > 
+                                                     <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
+                                                     <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
+                                          </asp:TableRow> 
 
                                            <asp:TableRow> 
                                              <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>First Name:<span style="color: red">*</span></b></div></asp:TableCell>
@@ -117,10 +120,6 @@
                                              </asp:TableRow>
 
 
-
-
-
-
                                   <asp:TableRow> 
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Address:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
@@ -137,22 +136,15 @@
                                                     <asp:TableCell HorizontalAlign="Left">
                                                         &nbsp;&nbsp;<asp:TextBox ID="txtcity" runat="server" Height="20px" Width="300px"  MaxLength="50"></asp:TextBox>     
                                                     </asp:TableCell>
-                                                </asp:TableRow> 
-                                   <asp:TableRow  > 
+                                            
+                                   
                                                      <asp:TableCell HorizontalAlign="Right">&nbsp;&nbsp;</asp:TableCell>
                                                      <asp:TableCell HorizontalAlign="Left">&nbsp;&nbsp;</asp:TableCell>
-                                             </asp:TableRow> 
-
-                                
-                                   <asp:TableRow> 
-                                                    <asp:TableCell HorizontalAlign="Right" Font-Bold="true">State:</asp:TableCell>
+            <asp:TableCell HorizontalAlign="Right" Font-Bold="true">State:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
-                                                        &nbsp;&nbsp;<asp:TextBox ID="txtstate" runat="server" Height="20px" Width="300px"  MaxLength="25"></asp:TextBox>     
+                                                        &nbsp;&nbsp;<asp:TextBox ID="txtstate" runat="server" Height="20px" Width="300px"  MaxLength="50"></asp:TextBox>     
                                                     </asp:TableCell>
-                                                </asp:TableRow> 
-                                 
 
-                                   <asp:TableRow> 
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Zip:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
                                                         &nbsp;&nbsp;<asp:TextBox ID="txtzip" runat="server" Height="20px" Width="300px"  MaxLength="10"></asp:TextBox>     

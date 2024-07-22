@@ -38,8 +38,39 @@ using System.Net.Http;
         public TextBox txtTroubleTicketList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+        if ((Page.IsPostBack))
+        {
+            try
+            {
+                if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"] == "Add")
+                    AddTroubleTicket();
 
-        PopulateControls();
+                else if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
+                {
+                    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+
+                    TroubleTicketReqDataTable tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
+
+                    {
+                        var withBlock = tblTroubleTicketReq[0];
+                        withBlock.AgentID = int.Parse(this.txtAgentID.Text); withBlock.CustomerID = int.Parse(this.txtcustomerid.Text); withBlock.TroubleTicketNo = int.Parse(this.txttroubleticketno.Text);
+                        cmbStatus.Text = withBlock.Status;
+                        cmbType.Text = withBlock.Type;
+                        withBlock.RequestDate = DateTime.Now;
+                        withBlock.DueDate = DateTime.Now;
+                    }
+                }
+
+                PopulateControls();
+            }
+            catch (Exception ex)
+            {
+                clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+                string NotificationBody = ex.Message + "  " + ex.StackTrace;
+                SendError.SendMailMessage(NotificationBody);
+                Response.Redirect("ErrorPage.aspx", false);
+            }
+        }
     }
 
         public void AddTroubleTicket()
@@ -52,20 +83,24 @@ using System.Net.Http;
                     var withBlock = thisTroubleTicket;
                     if (txttroubleticketno.Text.Length == 0)
 
-                        if (pickRequestDate.SelectedDate == null)
-                            withBlock.RequestDate = DateTime.Now;
-                        else
-                            withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
+                        //if (pickRequestDate.SelectedDate == null)
+                        //    withBlock.RequestDate = DateTime.Now;
+                        //else
+                        //    withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
                     if (cmbType.Text == string.Empty)
                         return;
 
 
 
-                    withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text); withBlock.Status = cmbStatus.Text; withBlock.Type = cmbType.Text; withBlock.DueDate = DateTime.Now; withBlock.RequestDate = DateTime.Now;
-                
+                    withBlock.CustomerID = int.Parse(txtcustomerid.Text); withBlock.AgentID = int.Parse(txtAgentID.Text); withBlock.TroubleTicketNo = int.Parse(txttroubleticketno.Text);
+                    cmbStatus.Text = withBlock.Status; 
+                    cmbType.Text = withBlock.Type; 
+                    withBlock.DueDate = DateTime.Now; 
+                    withBlock.RequestDate = DateTime.Now;
 
-                }
-			try
+
+            }
+            try
 
                 {
 

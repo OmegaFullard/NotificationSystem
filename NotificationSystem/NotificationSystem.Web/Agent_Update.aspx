@@ -14,7 +14,6 @@
 
               
 
-                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
               <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
                   
 
@@ -29,7 +28,7 @@
 
 
 
-<asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Agent_Update runat="server" ID="ctrSearch_Agent_Update" /></asp:TableCell>
+<asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_Search runat="server" ID="ctrAgent_Search" /></asp:TableCell>
 </asp:TableRow>
                          </asp:Table>
                   <br />
