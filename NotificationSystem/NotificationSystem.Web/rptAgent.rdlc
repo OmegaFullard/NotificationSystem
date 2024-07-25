@@ -8,6 +8,7 @@
         <ConnectString>Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=NotificationSystem</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>78abc14d-1c9e-4132-9ce8-c18d3cae4eee</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -1043,30 +1044,10 @@ ON [Agent].AgentID = [TroubleTicketReq].AgentID</CommandText>
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParameters>
-    <ReportParameter Name="AgentID">
-      <DataType>Integer</DataType>
-      <Prompt>ReportParameter1</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>DataSet1</DataSetName>
-          <ValueField>AgentID</ValueField>
-          <LabelField>AgentID</LabelField>
-        </DataSetReference>
-      </ValidValues>
-    </ReportParameter>
-  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
-      <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>AgentID</ParameterName>
-        </CellDefinition>
-      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <EmbeddedImages>

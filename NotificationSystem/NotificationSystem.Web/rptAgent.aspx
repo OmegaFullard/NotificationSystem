@@ -7,20 +7,11 @@
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
             </asp:Content>
+
            <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
+               <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <div aria-dropeffect="move" style="padding-left:10px; height:600px;overflow: auto; background:rgba(236, 236, 236, 1);">   
                      <h2>Reports:Agents</h2><br />
-                         <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
-                                   
-                                     <asp:TableRow>
-                                        <asp:TableCell> <asp:Panel ID="Panel1" runat="server" BackColor="#465c71"   Height="90px" HorizontalAlign="Center"  Width="90px">
-                                                            <asp:Image ID="Image1" runat="server" ImageUrl="Images/Report2.png"  BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px" Height="80px" style="margin-top: 5px" Width="80px" />
-                                                       </asp:Panel> 
-                                         </asp:TableCell>
-                                          <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
-                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_Search runat="server" id="ctrAgent_Search" /></asp:TableCell>
-                                    </asp:TableRow>
-                         </asp:Table>
                    
                         
 
