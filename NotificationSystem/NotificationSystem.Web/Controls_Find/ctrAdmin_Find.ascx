@@ -25,9 +25,7 @@
                               <asp:BoundField DataField="Last" HeaderText="Last Name" HtmlEncode="False" 
                                        ReadOnly="True"  Visible="True" />
                               <asp:BoundField DataField="Email" HeaderText="Email" HtmlEncode="False" 
-                                       ReadOnly="True"  Visible="True" />
-                              <asp:BoundField DataField="UserName" HeaderText="User Name" HtmlEncode="False" 
-                                       ReadOnly="True"  Visible="True" />
+                                       ReadOnly="True"  Visible="True" />                           
                               <asp:BoundField DataField="PassWord" HeaderText="PassWord" HtmlEncode="False" 
                                        ReadOnly="True"  Visible="True" />
                              

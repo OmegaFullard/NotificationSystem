@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrSearch_Admin.ascx.cs" Inherits="ctrSearch_Admin" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrSearch_Admin.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Admin" %>
 
 <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >

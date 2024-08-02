@@ -100,7 +100,7 @@ public partial class ctrTroubleTicketReq_Add
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::Telerik.Web.UI.RadDatePicker pickRequestDate;
+	protected global::System.Web.UI.WebControls.Calendar pickRequestDate;
 
 	/// <summary>
 	/// pickDueDate control.
@@ -109,7 +109,7 @@ public partial class ctrTroubleTicketReq_Add
 	/// Auto-generated field.
 	/// To modify move field declaration from designer file to code-behind file.
 	/// </remarks>
-	protected global::Telerik.Web.UI.RadDatePicker pickDueDate;
+	protected global::System.Web.UI.WebControls.Calendar pickDueDate;
 
 	/// <summary>
 	/// btnCancel control.

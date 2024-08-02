@@ -18,9 +18,7 @@
                           <Columns>
                               
 									   <asp:BoundField DataField="AgentID" HeaderText="Agent ID" HtmlEncode="False" 
-                                       ReadOnly="True"  Visible="True" />
-									   <asp:BoundField DataField="TroubleTicketNo" HeaderText="Trouble Ticket #" HtmlEncode="False" 
-                                       ReadOnly="True"  Visible="True" />									                                     
+                                       ReadOnly="True"  Visible="True" />									  							                                     
                               <asp:BoundField DataField="FirstN" HeaderText="Customer ID" HtmlEncode="False" 
                                        ReadOnly="True"  Visible="True" />
                              

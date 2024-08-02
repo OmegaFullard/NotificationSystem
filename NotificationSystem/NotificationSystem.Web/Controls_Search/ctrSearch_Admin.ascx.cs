@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
-	public partial class ctrSearch_Admin : System.Web.UI.UserControl
-	{
+namespace NotificationSystem.NotificationSystem.Web.Controls_Search
+{
+    public partial class ctrSearch_Admin : System.Web.UI.UserControl
+    {
         private string m_UserName = string.Empty;
 
         public string UserName
@@ -22,12 +23,13 @@ using System.Web.UI.WebControls;
             }
         }
         protected void Page_Load(object sender, EventArgs e)
-		{
+        {
 
-		}
+        }
         public void PopulateSearchControl()
         {
             m_UserName = txtUserName.Text;
         }
 
     }
+}
