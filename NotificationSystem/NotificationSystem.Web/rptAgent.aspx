@@ -13,7 +13,15 @@
                 <div aria-dropeffect="move" style="padding-left:10px; height:600px;overflow: auto; background:rgba(236, 236, 236, 1);">   
                      <h2>Reports:Agents</h2><br />
                    
-                        
+                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
+                                   
+                                     <asp:TableRow>
+                                    
+                                          <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
+                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_Search runat="server" id="ctrAgent_Search" /></asp:TableCell>
+                                    </asp:TableRow>
+                         </asp:Table>
+
 
                       <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="#CCCCFF"  ZoomPercent= "75" ClientIDMode="AutoID" HighlightBackgroundColor="" 
                                 InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor=""

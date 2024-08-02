@@ -24,6 +24,24 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.ScriptManager ScriptManager1;
 
 		/// <summary>
+		/// Table1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Table Table1;
+
+		/// <summary>
+		/// ctrAgent_Search control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::ctrAgent_Search ctrAgent_Search;
+
+		/// <summary>
 		/// ReportViewer1 control.
 		/// </summary>
 		/// <remarks>
