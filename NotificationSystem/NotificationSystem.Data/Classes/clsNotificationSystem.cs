@@ -22,7 +22,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         public bool Agent { get; private set; }
 		public bool TroubleTicket { get; private set; }
 
-        public bool TroubleTicketNo { get; private set; }
+   
         public bool Title { get; private set; }
         public bool StartDate { get; private set; }
 
@@ -30,10 +30,12 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 		public bool Admin { get; private set; }
 
         private string m_ReportPath = string.Empty;
+        private string m_UserName = string.Empty;
         private DateTime m_RequestDate;
         private DateTime m_StartDate;
         private int m_AgentID = 0;
         private int m_CustomerID = 0;
+        private int m_TroubleTicketNo = 0;
 
         public int AgentID
         {
@@ -56,6 +58,30 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             set
             {
                 m_CustomerID = value;
+            }
+        }
+
+        public int TroubleTicketNo
+        {
+            get
+            {
+                return m_TroubleTicketNo;
+            }
+            set
+            {
+                m_TroubleTicketNo = value;
+            }
+        }
+
+        public string UserName
+        {
+            get
+            {
+                return m_UserName;
+            }
+            set
+            {
+                m_UserName = value;
             }
         }
 

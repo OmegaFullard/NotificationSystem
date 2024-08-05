@@ -16,23 +16,11 @@ namespace NotificationSystem.NotificationSystem.Web
 {
     public partial class TicketReq : System.Web.UI.Page
     {
-        private int m_TroubleTicketNo = 0;
-
-        public int TroubleTicketNo
-        {
-            get
-            {
-                return m_TroubleTicketNo;
-            }
-            set
-            {
-                m_TroubleTicketNo = value;
-            }
-        }
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             if ((Page.IsPostBack))
             {
                 if (Page.Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")

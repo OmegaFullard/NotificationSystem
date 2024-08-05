@@ -37,7 +37,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                 {
 					ctrAgent_Search.PopulateSearchControl();
-					theNotificationSystem.ReportPath = "~NotificationSystem.Web/rptAgent.rdlc";
+					theNotificationSystem.ReportPath = "NotificationSystem.Web\rptAgent.rdlc";
 					theNotificationSystem.AgentID = ctrAgent_Search.AgentID;
 					ShowAgReport();
 				}
@@ -46,11 +46,14 @@ namespace NotificationSystem.NotificationSystem.Web
 
         private void ShowAgReport()
         {
+            
             try
             {
                 clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+                AgentDataTable dt = new AgentDataTable();
 
-                ReportDataSource ReportDataSource = new ReportDataSource();
+              
+                ReportDataSource ReportDataSource = new ReportDataSource("DataSet1");
                 string strTitle = string.Empty;
                 AgentDataTable dtReport;    
                 
@@ -58,7 +61,7 @@ namespace NotificationSystem.NotificationSystem.Web
           
 
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath);
+                ReportViewer1.LocalReport.ReportPath = Server.MapPath("NotificationSystem.Web\rptAgent.rdlc");
 
                 //if (theNotificationSystem.AgentID.ToString().Length == 0)
                   //  theNotificationSystem.AgentID = int.Parse("xxxxxx");        

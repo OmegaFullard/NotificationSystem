@@ -16,12 +16,12 @@
                     <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
                           <Columns>
 
+                               <asp:BoundField DataField="TroubleTicketNo" HeaderText="TicketNo" HtmlEncode="False"  ItemStyle-Width="100"
+                                       ReadOnly="True"  Visible="True" />       
                                      <asp:BoundField DataField="CustomerID" HeaderText="Customer ID" HtmlEncode="False" SortExpression="CustomerID" ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />  
 									<asp:BoundField DataField="AgentID" HeaderText="Agent ID" HtmlEncode="False"  ItemStyle-Width="100"
-                                       ReadOnly="True"  Visible="True" />									   
-                                     <asp:BoundField DataField="TroubleTicketNo" HeaderText="TicketNo" HtmlEncode="False"  ItemStyle-Width="100"
-                                       ReadOnly="True"  Visible="True" />                                    
+                                       ReadOnly="True"  Visible="True" />									                                                                  
                                       <asp:BoundField DataField="Status" HeaderText="Status" HtmlEncode="False" ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />
                                       <asp:BoundField DataField="DueDate" HeaderText="Due Date" HtmlEncode="False" ItemStyle-Width="100"

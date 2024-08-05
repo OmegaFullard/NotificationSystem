@@ -21,7 +21,11 @@
                                         <asp:TableCell VerticalAlign="Top"><uc1:ctrAgent_Search runat="server" id="ctrAgent_Search" /></asp:TableCell>
                                     </asp:TableRow>
                          </asp:Table>
-
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:NotificationSystemConnectionString1 %>' SelectCommand="SELECT * FROM [Agent] WHERE ([AgentID] = @AgentID)">
+                        <SelectParameters>
+                            <asp:Parameter Name="AgentID" Type="Int32"></asp:Parameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
 
                       <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="#CCCCFF"  ZoomPercent= "75" ClientIDMode="AutoID" HighlightBackgroundColor="" 
                                 InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor=""
@@ -31,13 +35,13 @@
                                 ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
                                 ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px"
                                 ToolBarItemPressedHoverBackColor="153, 187, 226" Width="100%" OnLoad="ReportViewer1_Load" BorderStyle="None">
-                              <LocalReport ReportPath="">
-                                  <DataSources>
-                                      <rsweb:ReportDataSource DataSourceId="" Name="" />
-                                  
+                          <LocalReport ReportPath="NotificationSystem.Web\rptAgent.rdlc">
+                              <DataSources>
+                                  <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="DataSet1" />
 
-                                  </DataSources>
-                                </LocalReport>
+                              </DataSources>
+
+                          </LocalReport>
                         </rsweb:ReportViewer>
                 </div>
           

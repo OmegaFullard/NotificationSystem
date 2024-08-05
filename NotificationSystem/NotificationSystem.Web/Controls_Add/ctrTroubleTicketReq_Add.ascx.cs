@@ -133,7 +133,7 @@ using System.Net.Http;
         {
             try
             {
-            pickRequestDate.Clear();
+            //pickRequestDate.Clear();
             cmbStatus.Value = string.Empty;  
             cmbStatus.Text = string.Empty;
             cmbType.Value = string.Empty;
