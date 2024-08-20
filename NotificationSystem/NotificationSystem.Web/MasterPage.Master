@@ -30,6 +30,8 @@
     <link href="http://localhost:64954/Content/DataTables/css/dataTables.jqueryui.min.css" rel="stylesheet" />
 
     <link href="http://localhost:64954/css/font-awesome.css" rel="stylesheet" />
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
     <script src="http://localhost:64954/Scripts/jquery-3.4.1.slim.min.js"></script>
 
@@ -130,12 +132,33 @@
             </asp:ContentPlaceHolder>
         </div>
     </div>
+     <br />
 
+   
+  <div class="card-footer text-muted">
+     
+
+             <center>  <p><strong>Please be sure to follow us on Social Media!</strong></p>
+            <br /> 
+                  <center><a href="#" class="btn btn-primary">Follow Us!</a>  </center>
+                 <br />
+            <div style="height: 66px">
+                <br />
+
+            <!-- Add font awesome icons -->
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-linkedin"></a>
+<a href="#" class="fa fa-youtube"></a>
+<a href="#" class="fa fa-instagram"></a>
+
+        </div>
+<br />
     <!-- Footer -->
     <div class="row">
         <div class="col-md-12">
             <hr />
-            Footer: © 2024 - Royal City Inc. 13 Majesty Way Royal City, PA 19106
+            © 2024 - Royal City Inc. 13 Majesty Way Royal City, PA 19106
         </div>
     </div>
 </div>
