@@ -14,9 +14,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using NotificationSystem.NotificationSystem.Data.Classes;
-using NotificationSystem.NotificationSystem.Data.xsReportsTableAdapters;
-using static NotificationSystem.NotificationSystem.Data.xsReports;
 using Microsoft.Reporting.WebForms;
+using NotificationSystem.NotificationSystem.Data;
 using static NotificationSystem.NotificationSystem.Data.NotificationSystem;
 
 namespace NotificationSystem.NotificationSystem.Web
@@ -36,7 +35,7 @@ namespace NotificationSystem.NotificationSystem.Web
 				if (Request.Form["ctl00$MainContent$ctrCustomer_Search$btnSearch"] == "Search")
 				{
 					ctrCustomer_Search.PopulateSearchControl();
-					theNotificationSystem.ReportPath = "~NotificationSystem.Web/rptCustomer.rdlc";
+					theNotificationSystem.ReportPath = "~/NotificationSystem.Web/rptCustomer.rdlc";
 					theNotificationSystem.CustomerID = ctrCustomer_Search.CustomerID;
 					ShowCustReport();
 				}
@@ -51,7 +50,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
                 ReportDataSource ReportDataSource = new ReportDataSource();
                 string strTitle = string.Empty;
-				Data.NotificationSystem.CustomerDataTable dtReport;
+				CustomerDataTable dtReport;
 
                 ReportDataSource.Name = "DataSet1";
                 
@@ -66,8 +65,8 @@ namespace NotificationSystem.NotificationSystem.Web
 
 
                     //implicit cast
-                    //int numCustomerID = (theSearch.CustomerID);
-                    dtReport = (Data.NotificationSystem.CustomerDataTable)theNotificationSystem.GetCustomer(theNotificationSystem.CustomerID);
+                    int numCustomerID = (theNotificationSystem.CustomerID);
+                    dtReport = (CustomerDataTable)theNotificationSystem.GetCustomer(theNotificationSystem.CustomerID);
 
                     //strTitle = "Customer Report: " + theSearch.TroubleTicketNo + " Activity by Customer ID ";
 
@@ -75,9 +74,8 @@ namespace NotificationSystem.NotificationSystem.Web
                     //ReportParameter param1 = new ReportParameter("Title", strTitle);
                     //ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { param1 });
 
-                    ReportViewer1.LocalReport.DataSources.Clear();
+                    //ReportViewer1.LocalReport.DataSources.Clear();
                     ReportViewer1.LocalReport.DataSources.Add(ReportDataSource);
-
                     ReportViewer1.LocalReport.Refresh();
                 }
             }

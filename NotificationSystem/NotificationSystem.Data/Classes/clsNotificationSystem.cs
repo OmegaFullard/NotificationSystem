@@ -565,12 +565,12 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         }
 
 
-        public DataTable GetAgReport()
+        public DataTable GetAgReport(int AgentID)
         {
             try
             {
                 AgentTableAdapter adpAgents = new AgentTableAdapter();
-                AgentDataTable tblAgent = adpAgents.GetData();
+                AgentDataTable tblAgent = adpAgents.GetAgentReport(AgentID);
 
                 return tblAgent;
             }

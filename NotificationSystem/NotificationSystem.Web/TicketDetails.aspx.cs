@@ -26,7 +26,7 @@ namespace NotificationSystem.NotificationSystem.Web
             {
                 if ((Page.IsPostBack))
                 {
-                    if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search_Search$btnSearch"] == "Search")
+                    if (Request.Form["ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"] == "Search")
                     {
                         ctrTroubleTicketReq_Search.PopulateSearchControl();
                         this.ctrTroubleTicketReq_Find.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;

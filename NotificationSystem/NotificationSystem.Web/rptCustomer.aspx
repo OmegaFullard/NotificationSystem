@@ -21,7 +21,7 @@
                          </asp:Table>
 
                
-                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="" ZoomPercent="75" ClientIDMode="AutoID" HighlightBackgroundColor=""
+                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="#CCCCFF" ZoomPercent="75" ClientIDMode="AutoID" HighlightBackgroundColor=""
                         InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor=""
                         LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor=""
                         PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor=""
@@ -29,7 +29,7 @@
                         ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
                         ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px"
                         ToolBarItemPressedHoverBackColor="153, 187, 226" Width="100%" OnLoad="ReportViewer1_Load">
-                        <LocalReport ReportPath="">
+                        <LocalReport ReportPath="NotificationSystem.Web\rptCustomer.rdlc">
                             <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="" Name="" />
                             </DataSources>
