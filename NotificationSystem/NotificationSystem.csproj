@@ -1446,6 +1446,8 @@
     </None>
     <Content Include="NotificationSystem.Web\Admin.aspx" />
     <Content Include="NotificationSystem.Web\AdminRegistration.aspx" />
+    <Content Include="NotificationSystem.Web\Admin_Add.aspx" />
+    <Content Include="NotificationSystem.Web\Admin_Delete.aspx" />
     <Content Include="NotificationSystem.Web\Admin_Find.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Add.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Delete.aspx" />
@@ -1458,6 +1460,7 @@
     <Content Include="NotificationSystem.Web\Controls_Add\ctrAgent_Add.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Add\ctrCustomer_Add.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Add\ctrTroubleTicketReq_Add.ascx" />
+    <Content Include="NotificationSystem.Web\Controls_Delete\ctrAdmin_Delete.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Delete\ctrAgent_Delete.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Delete\ctrCustomer_Delete.ascx" />
     <Content Include="NotificationSystem.Web\Controls_Delete\ctrTroubleTicketReq_Delete.ascx" />
@@ -4280,6 +4283,20 @@
     <Compile Include="NotificationSystem.Web\AdminRegistration.aspx.designer.cs">
       <DependentUpon>AdminRegistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NotificationSystem.Web\Admin_Add.aspx.cs">
+      <DependentUpon>Admin_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin_Add.aspx.designer.cs">
+      <DependentUpon>Admin_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin_Delete.aspx.cs">
+      <DependentUpon>Admin_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin_Delete.aspx.designer.cs">
+      <DependentUpon>Admin_Delete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NotificationSystem.Web\Admin_Find.aspx.cs">
       <DependentUpon>Admin_Find.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4363,6 +4380,13 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Add\ctrTroubleTicketReq_Add.ascx.designer.cs">
       <DependentUpon>ctrTroubleTicketReq_Add.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Controls_Delete\ctrAdmin_Delete.ascx.cs">
+      <DependentUpon>ctrAdmin_Delete.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Controls_Delete\ctrAdmin_Delete.ascx.designer.cs">
+      <DependentUpon>ctrAdmin_Delete.ascx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\Controls_Delete\ctrAgent_Delete.ascx.cs">
       <DependentUpon>ctrAgent_Delete.ascx</DependentUpon>

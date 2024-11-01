@@ -1,10 +1,11 @@
 ﻿/*normalize*/
-html, 
-body, 
+html,
+body,
 form {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  
 }
 
 body {
@@ -14,30 +15,15 @@ body {
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #E8E3D8;
+
 }
 
-/*
-background-img {
-   background: rgba(255, 255, 255, 0.8);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    z-index: -1;
-    background-image: url('images/techbg2.png');
-    opacity: 0.4;
-    filter: opacity(=60);
-}*/
+
 
 @media only screen and (min-width: 481px) and (max-width: 720px) {
     body {
         font-size: 18px;
+
     }
 }
 
