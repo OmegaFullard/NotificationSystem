@@ -42,13 +42,13 @@ namespace NotificationSystem.NotificationSystem.Web.Controls_Add
 		protected global::System.Web.UI.WebControls.TextBox txtfirstname;
 
 		/// <summary>
-		/// valRequiredFieldFirstN control.
+		/// valRequiredFieldFirst control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldFirstN;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequiredFieldFirst;
 
 		/// <summary>
 		/// Required_First control.

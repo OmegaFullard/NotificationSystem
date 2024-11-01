@@ -1788,19 +1788,11 @@ namespace NotificationSystem.NotificationSystem.Data {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TroubleTicketReqDataTable : global::System.Data.TypedTableBase<TroubleTicketReqRow> {
             
-            private global::System.Data.DataColumn columnAgentID;
-            
-            private global::System.Data.DataColumn columnCustomerID;
-            
             private global::System.Data.DataColumn columnTroubleTicketNo;
             
             private global::System.Data.DataColumn columnStatus;
             
-            private global::System.Data.DataColumn columnType;
-            
-            private global::System.Data.DataColumn columnDueDate;
-            
-            private global::System.Data.DataColumn columnRequestDate;
+            private global::System.Data.DataColumn columnTikList;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1837,22 +1829,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AgentIDColumn {
-                get {
-                    return this.columnAgentID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CustomerIDColumn {
-                get {
-                    return this.columnCustomerID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn TroubleTicketNoColumn {
                 get {
                     return this.columnTroubleTicketNo;
@@ -1869,25 +1845,9 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TypeColumn {
+            public global::System.Data.DataColumn TikListColumn {
                 get {
-                    return this.columnType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DueDateColumn {
-                get {
-                    return this.columnDueDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RequestDateColumn {
-                get {
-                    return this.columnRequestDate;
+                    return this.columnTikList;
                 }
             }
             
@@ -1928,16 +1888,12 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TroubleTicketReqRow AddTroubleTicketReqRow(int AgentID, int CustomerID, string Status, string Type, System.DateTime DueDate, System.DateTime RequestDate) {
+            public TroubleTicketReqRow AddTroubleTicketReqRow(string Status, string TikList) {
                 TroubleTicketReqRow rowTroubleTicketReqRow = ((TroubleTicketReqRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        AgentID,
-                        CustomerID,
                         null,
                         Status,
-                        Type,
-                        DueDate,
-                        RequestDate};
+                        TikList};
                 rowTroubleTicketReqRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTroubleTicketReqRow);
                 return rowTroubleTicketReqRow;
@@ -1967,32 +1923,20 @@ namespace NotificationSystem.NotificationSystem.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnAgentID = base.Columns["AgentID"];
-                this.columnCustomerID = base.Columns["CustomerID"];
                 this.columnTroubleTicketNo = base.Columns["TroubleTicketNo"];
                 this.columnStatus = base.Columns["Status"];
-                this.columnType = base.Columns["Type"];
-                this.columnDueDate = base.Columns["DueDate"];
-                this.columnRequestDate = base.Columns["RequestDate"];
+                this.columnTikList = base.Columns["TikList"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnAgentID = new global::System.Data.DataColumn("AgentID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAgentID);
-                this.columnCustomerID = new global::System.Data.DataColumn("CustomerID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCustomerID);
                 this.columnTroubleTicketNo = new global::System.Data.DataColumn("TroubleTicketNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTroubleTicketNo);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
-                this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnType);
-                this.columnDueDate = new global::System.Data.DataColumn("DueDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDueDate);
-                this.columnRequestDate = new global::System.Data.DataColumn("RequestDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRequestDate);
+                this.columnTikList = new global::System.Data.DataColumn("TikList", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTikList);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTroubleTicketNo}, true));
                 this.columnTroubleTicketNo.AutoIncrement = true;
@@ -2002,7 +1946,8 @@ namespace NotificationSystem.NotificationSystem.Data {
                 this.columnTroubleTicketNo.ReadOnly = true;
                 this.columnTroubleTicketNo.Unique = true;
                 this.columnStatus.MaxLength = 10;
-                this.columnType.MaxLength = 10;
+                this.columnTikList.ReadOnly = true;
+                this.columnTikList.MaxLength = 43;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5044,38 +4989,6 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int AgentID {
-                get {
-                    try {
-                        return ((int)(this[this.tableTroubleTicketReq.AgentIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AgentID\' in table \'TroubleTicketReq\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTroubleTicketReq.AgentIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CustomerID {
-                get {
-                    try {
-                        return ((int)(this[this.tableTroubleTicketReq.CustomerIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CustomerID\' in table \'TroubleTicketReq\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTroubleTicketReq.CustomerIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int TroubleTicketNo {
                 get {
                     return ((int)(this[this.tableTroubleTicketReq.TroubleTicketNoColumn]));
@@ -5103,74 +5016,18 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Type {
+            public string TikList {
                 get {
                     try {
-                        return ((string)(this[this.tableTroubleTicketReq.TypeColumn]));
+                        return ((string)(this[this.tableTroubleTicketReq.TikListColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'TroubleTicketReq\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TikList\' in table \'TroubleTicketReq\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTroubleTicketReq.TypeColumn] = value;
+                    this[this.tableTroubleTicketReq.TikListColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime DueDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableTroubleTicketReq.DueDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DueDate\' in table \'TroubleTicketReq\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTroubleTicketReq.DueDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime RequestDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableTroubleTicketReq.RequestDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RequestDate\' in table \'TroubleTicketReq\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTroubleTicketReq.RequestDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAgentIDNull() {
-                return this.IsNull(this.tableTroubleTicketReq.AgentIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAgentIDNull() {
-                this[this.tableTroubleTicketReq.AgentIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCustomerIDNull() {
-                return this.IsNull(this.tableTroubleTicketReq.CustomerIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCustomerIDNull() {
-                this[this.tableTroubleTicketReq.CustomerIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5187,38 +5044,14 @@ namespace NotificationSystem.NotificationSystem.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTypeNull() {
-                return this.IsNull(this.tableTroubleTicketReq.TypeColumn);
+            public bool IsTikListNull() {
+                return this.IsNull(this.tableTroubleTicketReq.TikListColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTypeNull() {
-                this[this.tableTroubleTicketReq.TypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDueDateNull() {
-                return this.IsNull(this.tableTroubleTicketReq.DueDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDueDateNull() {
-                this[this.tableTroubleTicketReq.DueDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsRequestDateNull() {
-                return this.IsNull(this.tableTroubleTicketReq.RequestDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetRequestDateNull() {
-                this[this.tableTroubleTicketReq.RequestDateColumn] = global::System.Convert.DBNull;
+            public void SetTikListNull() {
+                this[this.tableTroubleTicketReq.TikListColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6621,9 +6454,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Last", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE Admin SET UserName, Password, Email, First, Last WHERE UserName = @UserNam" +
-                "e";
+            this._commandCollection[5].CommandText = "UPDATE [dbo].[Admin] SET [UserName] = @UserName, [First] = @First, [Last] = @Last" +
+                ", [Email] = @Email WHERE (([UserName] = @Original_UserName))";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "First", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Last", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6815,8 +6653,38 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery() {
+        public virtual int UpdateQuery(string UserName, string First, string Last, string Email, string Original_UserName) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((UserName == null)) {
+                throw new global::System.ArgumentNullException("UserName");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserName));
+            }
+            if ((First == null)) {
+                throw new global::System.ArgumentNullException("First");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(First));
+            }
+            if ((Last == null)) {
+                throw new global::System.ArgumentNullException("Last");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Last));
+            }
+            if ((Email == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Email));
+            }
+            if ((Original_UserName == null)) {
+                throw new global::System.ArgumentNullException("Original_UserName");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(Original_UserName));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8273,44 +8141,30 @@ WHERE (Agent.AgentID = @AgentID)";
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "TroubleTicketReq";
-            tableMapping.ColumnMappings.Add("AgentID", "AgentID");
-            tableMapping.ColumnMappings.Add("CustomerID", "CustomerID");
             tableMapping.ColumnMappings.Add("TroubleTicketNo", "TroubleTicketNo");
             tableMapping.ColumnMappings.Add("Status", "Status");
-            tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("DueDate", "DueDate");
-            tableMapping.ColumnMappings.Add("RequestDate", "RequestDate");
+            tableMapping.ColumnMappings.Add("TikList", "TikList");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TroubleTicketReq] WHERE (([TroubleTicketNo] = @Original_Troubl" +
-                "eTicketNo))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [TroubleTicketReq] WHERE (([TroubleTicketNo] = @Original_TroubleTicke" +
+                "tNo))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TroubleTicketReq] ([AgentID], [CustomerID], [Status], [Type], " +
-                "[DueDate], [RequestDate]) VALUES (@AgentID, @CustomerID, @Status, @Type, @DueDat" +
-                "e, @RequestDate)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [TroubleTicketReq] ([TroubleTicketNo], [Status]) VALUES (@TroubleTick" +
+                "etNo, @Status)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[TroubleTicketReq] SET [AgentID] = @AgentID, [CustomerID] = @Custome" +
-                "rID, [Status] = @Status, [Type] = @Type, [DueDate] = @DueDate, [RequestDate] = @" +
-                "RequestDate WHERE (([TroubleTicketNo] = @Original_TroubleTicketNo))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [TroubleTicketReq] SET [TroubleTicketNo] = @TroubleTicketNo, [Status] = @S" +
+                "tatus WHERE (([TroubleTicketNo] = @Original_TroubleTicketNo))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -8327,46 +8181,37 @@ WHERE (Agent.AgentID = @AgentID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AgentID, CustomerID, TroubleTicketNo, Status, Type, DueDate, RequestDate F" +
-                "ROM dbo.TroubleTicketReq";
+            this._commandCollection[0].CommandText = "SELECT TroubleTicketNo, Status, CAST(TroubleTicketNo AS VARCHAR) + \' | \' + Status" +
+                " AS TikList\r\nFROM   TroubleTicketReq\r\nORDER BY TroubleTicketNo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT AgentID, CustomerID, TroubleTicketNo, Status, Type, DueDate, RequestDate F" +
-                "ROM dbo.TroubleTicketReq\r\nWHERE (CustomerID = @CustomerID)";
+            this._commandCollection[1].CommandText = "SELECT Status, TroubleTicketNo FROM TroubleTicketReq WHERE (CustomerID = @Custome" +
+                "rID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT AgentID, CustomerID, TroubleTicketNo, Status, Type, DueDate, RequestDate F" +
-                "ROM dbo.TroubleTicketReq\r\nWHERE (AgentID = @AgentID)";
+            this._commandCollection[2].CommandText = "SELECT Status, TroubleTicketNo FROM TroubleTicketReq WHERE (AgentID = @AgentID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT AgentID, CustomerID, TroubleTicketNo, Status, Type, DueDate, RequestDate F" +
-                "ROM dbo.TroubleTicketReq\r\nWHERE (TroubleTicketNo = @TroubleTicketNo)";
+            this._commandCollection[3].CommandText = "SELECT Status, TroubleTicketNo FROM TroubleTicketReq WHERE (TroubleTicketNo = @Tr" +
+                "oubleTicketNo)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "INSERT INTO [dbo].[TroubleTicketReq] ([AgentID], [CustomerID], [Status], [Type], " +
-                "[DueDate], [RequestDate]) VALUES (@AgentID, @CustomerID, @Status, @Type, @DueDat" +
-                "e, @RequestDate)";
+            this._commandCollection[4].CommandText = "SELECT Status, TroubleTicketNo FROM TroubleTicketReq ORDER BY TroubleTicketNo";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "RequestDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(NotificationSystem.TroubleTicketReqDataTable dataTable) {
+        public virtual int FillByStatus(NotificationSystem.TroubleTicketReqDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8379,7 +8224,7 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual NotificationSystem.TroubleTicketReqDataTable GetData() {
+        public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByStatus() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             NotificationSystem.TroubleTicketReqDataTable dataTable = new NotificationSystem.TroubleTicketReqDataTable();
             this.Adapter.Fill(dataTable);
@@ -8426,14 +8271,9 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(NotificationSystem.TroubleTicketReqDataTable dataTable, global::System.Nullable<int> AgentID) {
+        public virtual int FillBy1(NotificationSystem.TroubleTicketReqDataTable dataTable, int AgentID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((AgentID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8445,14 +8285,9 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByAgentID(global::System.Nullable<int> AgentID) {
+        public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByAgentID(int AgentID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((AgentID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AgentID));
             NotificationSystem.TroubleTicketReqDataTable dataTable = new NotificationSystem.TroubleTicketReqDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8479,6 +8314,30 @@ WHERE (Agent.AgentID = @AgentID)";
         public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByTroubleTicketNo(int TroubleTicketNo) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            NotificationSystem.TroubleTicketReqDataTable dataTable = new NotificationSystem.TroubleTicketReqDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByType(NotificationSystem.TroubleTicketReqDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual NotificationSystem.TroubleTicketReqDataTable GetDataByType() {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             NotificationSystem.TroubleTicketReqDataTable dataTable = new NotificationSystem.TroubleTicketReqDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8539,42 +8398,13 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> AgentID, global::System.Nullable<int> CustomerID, string Status, string Type, global::System.Nullable<global::System.DateTime> DueDate, global::System.Nullable<global::System.DateTime> RequestDate) {
-            if ((AgentID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AgentID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((CustomerID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CustomerID.Value));
-            }
-            else {
+        public virtual int Insert(int TroubleTicketNo, string Status) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            if ((Status == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Status == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Status));
-            }
-            if ((Type == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Type));
-            }
-            if ((DueDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DueDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((RequestDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(RequestDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Status));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8596,44 +8426,15 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> AgentID, global::System.Nullable<int> CustomerID, string Status, string Type, global::System.Nullable<global::System.DateTime> DueDate, global::System.Nullable<global::System.DateTime> RequestDate, int Original_TroubleTicketNo) {
-            if ((AgentID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AgentID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((CustomerID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CustomerID.Value));
-            }
-            else {
+        public virtual int Update(int TroubleTicketNo, string Status, int Original_TroubleTicketNo) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(TroubleTicketNo));
+            if ((Status == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Status));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Status));
             }
-            if ((Type == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Type));
-            }
-            if ((DueDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DueDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((RequestDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(RequestDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_TroubleTicketNo));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_TroubleTicketNo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8653,60 +8454,9 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(global::System.Nullable<int> AgentID, global::System.Nullable<int> CustomerID, string Status, string Type, string DueDate, string RequestDate) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
-            if ((AgentID.HasValue == true)) {
-                command.Parameters[0].Value = ((int)(AgentID.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((CustomerID.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(CustomerID.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Status == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Status));
-            }
-            if ((Type == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(Type));
-            }
-            if ((DueDate == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[4].Value = ((string)(DueDate));
-            }
-            if ((RequestDate == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[5].Value = ((string)(RequestDate));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Status, int Original_TroubleTicketNo) {
+            return this.Update(Original_TroubleTicketNo, Status, Original_TroubleTicketNo);
         }
     }
     

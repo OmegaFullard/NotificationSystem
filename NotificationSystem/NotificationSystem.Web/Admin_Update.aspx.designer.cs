@@ -11,8 +11,17 @@ namespace NotificationSystem.NotificationSystem.Web
 {
 
 
-	public partial class Admin_Add
+	public partial class Admin_Update
 	{
+
+		/// <summary>
+		/// ScriptManager1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.ScriptManager ScriptManager1;
 
 		/// <summary>
 		/// Table1 control.
@@ -42,13 +51,13 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Image admin;
 
 		/// <summary>
-		/// ctrSearch_Admin control.
+		/// ctrSearch_Admin_Update control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Admin ctrSearch_Admin;
+		protected global::NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Admin_Update ctrSearch_Admin_Update;
 
 		/// <summary>
 		/// NavigationMenu control.
@@ -60,12 +69,12 @@ namespace NotificationSystem.NotificationSystem.Web
 		protected global::System.Web.UI.WebControls.Menu NavigationMenu;
 
 		/// <summary>
-		/// ctrAdmin_Add control.
+		/// ctrAdmin_Update control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::NotificationSystem.NotificationSystem.Web.Controls_Add.ctrAdmin_Add ctrAdmin_Add;
+		protected global::NotificationSystem.NotificationSystem.Web.Controls_Update.ctrAdmin_Update ctrAdmin_Update;
 	}
 }

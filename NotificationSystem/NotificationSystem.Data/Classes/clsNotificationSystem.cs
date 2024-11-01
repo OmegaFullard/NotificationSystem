@@ -742,27 +742,43 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 
 
-		//public void UpdateAdmin(clsAdmin thisAdmin)
-		//{
-		//	AdminTableAdapter adpAdmin = new AdminTableAdapter();
+		public void UpdateAdmin(clsAdmin thisAdmin)
+		{
+			AdminTableAdapter adpAdmin = new AdminTableAdapter();
 
 
-		//	try
-		//	{
-		//		{
-		//			var withBlock = thisAdmin;
-		//			adpAdmin.UpdateQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
-		//		}
-		//	}
+			try
+			{
+				{
+					var withBlock = thisAdmin;
+					adpAdmin.UpdateQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last);
+				}
+			}
 
-		//	catch (Exception)
-		//	{
-		//		throw;
-		//	}
-		//}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
 
+        //public void DeleteAdmin(clsAgent thisAdmin)
+        //{
+        //    AdminTableAdapter adpAdmin = new AdminTableAdapter();
 
-		public void AddAdmin(clsAdmin thisAdmin)
+        //    try
+        //    {
+        //        {
+        //            var withBlock = thisAdmin;
+        //            adpAdmin.DeleteQuery(withBlock.UserName);
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+
+        public void AddAdmin(clsAdmin thisAdmin)
         {
 
             //add Admin to table and save

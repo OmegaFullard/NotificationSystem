@@ -39,7 +39,7 @@
                                              <asp:TableCell HorizontalAlign="Right" Width="150px"><div class="containerText"><b>First Name:<span style="color: red">*</span></b></div></asp:TableCell>
                                              <asp:TableCell HorizontalAlign="Left"> 
                                               &nbsp;&nbsp; <asp:TextBox ID="txtfirstname" runat="server" Height="20px" Width="300px"  ></asp:TextBox>
-                                                 <asp:RequiredFieldValidator  ID="valRequiredFieldFirstN" runat="server" ControlToValidate="txtfirstname" ValidationGroup="Submit"  
+                                                 <asp:RequiredFieldValidator  ID="valRequiredFieldFirst" runat="server" ControlToValidate="txtfirstname" ValidationGroup="Submit"  
                                              ErrorMessage="First Name is Required Field!"><span class="required">!</span></asp:RequiredFieldValidator>
                                              
 

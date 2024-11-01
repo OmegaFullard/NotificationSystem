@@ -1449,6 +1449,7 @@
     <Content Include="NotificationSystem.Web\Admin_Add.aspx" />
     <Content Include="NotificationSystem.Web\Admin_Delete.aspx" />
     <Content Include="NotificationSystem.Web\Admin_Find.aspx" />
+    <Content Include="NotificationSystem.Web\Admin_Update.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Add.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Delete.aspx" />
     <Content Include="NotificationSystem.Web\Agent_Find.aspx" />
@@ -4303,6 +4304,13 @@
     </Compile>
     <Compile Include="NotificationSystem.Web\Admin_Find.aspx.designer.cs">
       <DependentUpon>Admin_Find.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin_Update.aspx.cs">
+      <DependentUpon>Admin_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationSystem.Web\Admin_Update.aspx.designer.cs">
+      <DependentUpon>Admin_Update.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotificationSystem.Web\AgentMgt.aspx.cs">
       <DependentUpon>AgentMgt.aspx</DependentUpon>
