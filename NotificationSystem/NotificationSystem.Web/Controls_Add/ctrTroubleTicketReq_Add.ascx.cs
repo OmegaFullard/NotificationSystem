@@ -49,7 +49,7 @@ using System.Net.Http;
                 {
                     clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
-                    TroubleTicketReqDataTable tblTroubleTicketReq = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
+                    TroubleTicketListDataTable tblTroubleTicketReq = (TroubleTicketListDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
 
                     {
                         var withBlock = tblTroubleTicketReq[0];

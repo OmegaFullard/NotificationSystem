@@ -323,8 +323,8 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         {
             try
             {
-                TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
-                NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = adpTroubleTicketReq.GetData();
+                TroubleTicketListTableAdapter adpTroubleTicket = new TroubleTicketListTableAdapter();
+                NotificationSystem.TroubleTicketListDataTable tblTroubleTicketReq = adpTroubleTicket.GetData();
 
                 return tblTroubleTicketReq;
             }
@@ -355,7 +355,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
 		public void UpdateTroubleTicket(clsTroubleTicketReq thisTroubleTicket)
         {
-            TroubleTicketReqTableAdapter adpTroubleTicket = new TroubleTicketReqTableAdapter();
+            TroubleTicketListTableAdapter adpTroubleTicket = new TroubleTicketListTableAdapter();
 
 
             try
@@ -379,7 +379,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             //add TroubleTicket to table and save
 
 
-            TroubleTicketReqTableAdapter adpTroubleTicketReq = new TroubleTicketReqTableAdapter();
+            TroubleTicketListTableAdapter adpTroubleTicketReq = new TroubleTicketListTableAdapter();
 
             NotificationSystem.TroubleTicketReqDataTable tblTroubleTicketReq = new NotificationSystem.TroubleTicketReqDataTable();
             TroubleTicket = false;
