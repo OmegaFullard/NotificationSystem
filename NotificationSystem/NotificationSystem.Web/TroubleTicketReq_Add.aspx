@@ -7,7 +7,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
             </asp:Content>
            <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-              <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
+              <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#eee9f7">    
                      <h2>Create Ticket</h2><br />
 
                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="150px" Width="155px" >

@@ -26,7 +26,7 @@ namespace NotificationSystem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("relay.rc.notifications")]
-        public string EmailSmtpClient {
+        public string Em {
             get {
                 return ((string)(this["EmailSmtpClient"]));
             }

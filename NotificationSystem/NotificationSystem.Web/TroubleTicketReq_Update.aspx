@@ -18,7 +18,7 @@
 
                </script>
                  <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-              <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#b6b7bc">    
+              <div aria-dropeffect="move" style="padding-left:10px; padding-right:10px; height:850px;overflow: auto; background:#eee9f7">    
                      <h2>Update Ticket</h2><br />
 
                           <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Height="400px" Width="400px" >
