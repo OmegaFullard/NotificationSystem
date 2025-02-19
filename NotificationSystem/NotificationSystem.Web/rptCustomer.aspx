@@ -10,7 +10,7 @@
             <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
                 <div aria-dropeffect="move" style="padding-left:10px; height:600px;overflow: auto; background:rgba(236, 236, 236, 1);">   
                   
-                     <h2>Reports:Customers</h2><br />
+                     <h2>Report: Customers</h2><br />
                          <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
                                    
                                      <asp:TableRow>
@@ -29,7 +29,7 @@
                         ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
                         ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px"
                         ToolBarItemPressedHoverBackColor="153, 187, 226" Width="100%" OnLoad="ReportViewer1_Load">
-                        <LocalReport ReportPath="NotificationSystem.Web\rptCustomer.rdlc">
+                        <LocalReport ReportPath="">
                             <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="" Name="" />
                             </DataSources>

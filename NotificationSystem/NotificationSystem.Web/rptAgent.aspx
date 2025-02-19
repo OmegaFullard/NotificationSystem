@@ -11,7 +11,7 @@
            <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceholder1">
                
                 <div aria-dropeffect="move" style="padding-left:10px; height:600px;overflow: auto; background:rgba(236, 236, 236, 1);">   
-                     <h2>Reports:Agents</h2><br />
+                     <h2>Report: Agents</h2><br />
                    
                         <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
                                    

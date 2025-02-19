@@ -3,7 +3,7 @@
 <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
                              <asp:TableRow>
-                                          <asp:TableCell>Customers:&nbsp;&nbsp;</asp:TableCell>
+                                          <asp:TableCell>Customer ID:&nbsp;&nbsp;</asp:TableCell>
                                           <asp:TableCell>
                                                <asp:TextBox ID="txtcustomerid" runat="server" Width="180"></asp:TextBox>
                                           </asp:TableCell>
