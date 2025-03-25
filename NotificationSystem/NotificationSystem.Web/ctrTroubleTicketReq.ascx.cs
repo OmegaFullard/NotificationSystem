@@ -41,7 +41,7 @@ namespace NotificationSystem.NotificationSystem.Web
 
 
             clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-            TroubleTicketListDataTable tblTTR = new TroubleTicketListDataTable();
+            TroubleTicketReqDataTable tblTTR = new TroubleTicketReqDataTable();
 
             try
             {
@@ -50,9 +50,9 @@ namespace NotificationSystem.NotificationSystem.Web
 
 
                 if ((Page.IsPostBack) & this.ctrHiddebField.Value.Length > 0)
-					tblTTR = (TroubleTicketListDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
+					tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo);
                 else
-                    tblTTR = (TroubleTicketListDataTable)theNotificationSystem.GetTT();
+                    tblTTR = (TroubleTicketReqDataTable)theNotificationSystem.GetTT();
 
                 this.lblSearchResult.Text = tblTTR.Rows.Count + " Result(s)";
                 this.grdTroubleTicketReq.DataSource = tblTTR.DefaultView;

@@ -50,7 +50,13 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
 
                         {
                             var withBlock = tblAgent[0];
-                            txtfirstname.Text = withBlock.FirstN; txtlastname.Text = withBlock.LastN; txttitle.Text = withBlock.Title; withBlock.Salary = (txtsalary.Text);
+                        txttitle.Text = withBlock.Title;
+                        withBlock.Salary = int.Parse(txtsalary.Text);
+                        txtfirstname.Text = withBlock.FirstN;
+                        txtlastname.Text = withBlock.LastN;
+                        txttitle.Text = withBlock.Title;
+                        withBlock.Salary = int.Parse(txtsalary.Text);
+                        withBlock.AgentID = int.Parse(this.txtagentid.Text);
                                 withBlock.AgentID = int.Parse(this.txtagentid.Text);
 
 

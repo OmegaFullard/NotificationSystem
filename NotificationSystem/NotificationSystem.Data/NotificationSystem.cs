@@ -2,7 +2,7 @@
 {
 
 
-	partial class NotificationSystem
-	{
-	}
+    partial class NotificationSystem
+    {
+    }
 }

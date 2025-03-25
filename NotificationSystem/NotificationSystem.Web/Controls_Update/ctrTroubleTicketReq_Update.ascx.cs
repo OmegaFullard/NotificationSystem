@@ -31,7 +31,7 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
     protected void Page_Load(object sender, EventArgs e)
     {
         clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-        TroubleTicketListDataTable tblTT = new TroubleTicketListDataTable();
+        TroubleTicketReqDataTable tblTT = new TroubleTicketReqDataTable();
         try
         {
             if (Page.IsPostBack)
@@ -48,7 +48,7 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
                     if (lblResult.Text.Length == 0)
                         return;
 
-                    tblTT = (TroubleTicketListDataTable)theNotificationSystem.GetTT();
+                    tblTT = (TroubleTicketReqDataTable)theNotificationSystem.GetTT();
                     if (tblTT.Count == 0)
                         return;
                     {

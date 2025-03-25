@@ -21,7 +21,7 @@ using Microsoft.VisualBasic;
 
     public partial class ctrCustomer_Search : System.Web.UI.UserControl
     {
-        private int m_CustomerID = 0;
+        public int m_CustomerID = 0;
 
         public int CustomerID
         {

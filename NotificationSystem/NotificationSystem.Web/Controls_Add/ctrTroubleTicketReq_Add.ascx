@@ -102,7 +102,7 @@
                                                        <telerik:RadMultiColumnComboBox runat="server" ClientEvents-OnLoad="OnClientLoad0" ID="cmbStatus" DropDownWidth="100px" Height="200px"  Width="100px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
                                                                 Placeholder="--Select" EnableEmbeddedSkins="True">
                                                                 <ColumnsCollection>
-                                                                    
+                                                                   
                                                                     <telerik:MultiColumnComboBoxColumn Field="Status" Title="Status" Width="100px" />
                                                                   
                                                                 </ColumnsCollection>
@@ -122,7 +122,7 @@
                                                         <telerik:RadMultiColumnComboBox runat="server" ClientEvents-OnLoad="OnClientLoad0" ID="cmbType" DropDownWidth="100px" Height="200px"  Width="150px"  Filter="Contains" MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" AutoPostBack="true"
                                                                 Placeholder="--Select" EnableEmbeddedSkins="True">
                                                                 <ColumnsCollection>
-                                                                    
+                                                                   
                                                                     <telerik:MultiColumnComboBoxColumn Field="Type" Title="Type" Width="100px" />
                                                                    
                                                                 </ColumnsCollection>
