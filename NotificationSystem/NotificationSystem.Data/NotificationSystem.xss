@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ex:showrelationlabel="False" ViewPortX="288" ViewPortY="241" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Admin" ZOrder="7" X="2701" Y="326" Height="416" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="205" />
-    <Shape ID="DesignTable:Agent" ZOrder="4" X="327" Y="292" Height="581" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="370" />
+    <Shape ID="DesignTable:Agent" ZOrder="4" X="327" Y="292" Height="581" Width="473" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="370" />
     <Shape ID="DesignTable:Customer" ZOrder="6" X="674" Y="288" Height="647" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="436" />
     <Shape ID="DesignTable:TroubleTicketReq" ZOrder="5" X="2100" Y="338" Height="482" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="271" />
     <Shape ID="DesignTable:GetCustomerID" ZOrder="3" X="777" Y="1049" Height="152" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="74" />
