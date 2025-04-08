@@ -34,7 +34,7 @@ public partial class ctrAgent_Update : System.Web.UI.UserControl
                 if (Page.IsPostBack)
                 {
 
-                    if (Request.Form["ct100$MainContent$ctrAgent_Update$btnUpdate"] == "Update")
+                    if (Request.Form["ctl00$MainContent$ctrAgent_Update$btnUpdate"] == "Update")
                         UpdateAgent();
                     else
                     {

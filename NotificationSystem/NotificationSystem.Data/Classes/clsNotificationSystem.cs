@@ -420,65 +420,92 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
         public DataTable GetTypeList()
 		{
-			DataSet ds = new DataSet();
-			DataTable dt = new DataTable("GetData");
-            DataRow dr;
 
-			dt.Columns.Add("Type", Type.GetType("System.String")).DefaultValue = string.Empty;
+            try
+            {
+                TypeTableAdapter adpType = new TypeTableAdapter();
+                TypeDataTable tblType = adpType.GetData();
 
-            // Create and populate rows
-            // DataRow dr = dt.NewRow();
+                return tblType;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
-            dr = dt.NewRow();
-            dr["Type"] = "Incident";
-            dt.Rows.Add(dr);
 
-            dr = dt.NewRow();
-            dr["Type"] = "Task";
-            dt.Rows.Add(dr);
 
-            dr = dt.NewRow();
-            dr["Type"] = "Problem";
-            dt.Rows.Add(dr);
+            //DataSet ds = new DataSet();
+            //DataTable dt = new DataTable("GetData");
+            //         DataRow dr;
 
-            return dt;
-		}
+            //dt.Columns.Add("Type", Type.GetType("System.String")).DefaultValue = string.Empty;
+
+            //         // Create and populate rows
+            //         // DataRow dr = dt.NewRow();
+
+            //         dr = dt.NewRow();
+            //         dr["Type"] = "Incident";
+            //         dt.Rows.Add(dr);
+
+            //         dr = dt.NewRow();
+            //         dr["Type"] = "Task";
+            //         dt.Rows.Add(dr);
+
+            //         dr = dt.NewRow();
+            //         dr["Type"] = "Problem";
+            //         dt.Rows.Add(dr);
+
+            //         return dt;
+        }
 
 
         public DataTable GetStatusList()
 		{
-			DataSet ds = new DataSet();
-			DataTable dt = new DataTable("GetData");
-            DataRow dr;
 
-			//Add columns with appropriate data types
+            try
+            {
+                StatusTableAdapter adpStatus = new StatusTableAdapter();
+                StatusDataTable tblStatus = adpStatus.GetData();
 
+                return tblStatus;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            //DataSet ds = new DataSet();
+            //DataTable dt = new DataTable("GetData");
+            //         DataRow dr;
 
-			//dt.Columns.Add("ID", Type.GetType("System.String")).DefaultValue = 0;
-			dt.Columns.Add("Status", Type.GetType("System.String")).DefaultValue = string.Empty;
-
-            //Create and populate rows
-
-            //DataRow dr = dt.NewRow();
-
-            dr = dt.NewRow();
-            dr["Status"] = "Open";
-            dt.Rows.Add(dr);
-
-            dr = dt.NewRow();
-            dr["Status"] = "Pending";
-            dt.Rows.Add(dr);
-
-            dr = dt.NewRow();
-            dr["Status"] = "Resolved";
-            dt.Rows.Add(dr);
-            dr = dt.NewRow();
-            dr["Status"] = "Closed";
-            dt.Rows.Add(dr);
+            ////Add columns with appropriate data types
 
 
-            return dt;
-		}
+            ////dt.Columns.Add("ID", Type.GetType("System.String")).DefaultValue = 0;
+            //dt.Columns.Add("Status", Type.GetType("System.String")).DefaultValue = string.Empty;
+
+            //         //Create and populate rows
+
+            //         //DataRow dr = dt.NewRow();
+
+            //         dr = dt.NewRow();
+            //         dr["Status"] = "Open";
+            //         dt.Rows.Add(dr);
+
+            //         dr = dt.NewRow();
+            //         dr["Status"] = "Pending";
+            //         dt.Rows.Add(dr);
+
+            //         dr = dt.NewRow();
+            //         dr["Status"] = "Resolved";
+            //         dt.Rows.Add(dr);
+            //         dr = dt.NewRow();
+            //         dr["Status"] = "Closed";
+            //         dt.Rows.Add(dr);
+
+
+            //         return dt;
+        }
 
         public DataTable GetStatesList()
         {

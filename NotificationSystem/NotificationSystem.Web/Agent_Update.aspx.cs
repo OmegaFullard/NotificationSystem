@@ -33,17 +33,39 @@ namespace NotificationSystem.NotificationSystem.Web
             {
                 if ((Page.IsPostBack))
                 {
-                    string strAgent = (Request.Form["ctl00_MainContent_ctrAgent_Update_AgentID_ClientState"]
-                        .Replace("\"", "")
-                        .Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&"));
-
-                    if (strAgent.Length > 2)
+                    try
                     {
-                        string[] arrAgents = strAgent.Split(Convert.ToChar(":"));
-                        this.ctrAgent_Update.AgentID = int.Parse(arrAgents[1]); this.ctrAgent_Update.AgentID = int.Parse(arrAgents[2]);
-                        //this.ctrSearch_Agent_Update.ClearControl();
+                        string strAgent = Request.Form["ctl00_MainContent_ctrAgent_Update_AgentID_ClientState"];
+                        if (strAgent == "Search")
+                        {
+                            strAgent = strAgent
+                                .Replace("\"", "")
+                                .Replace("{", "")
+                                .Replace("}", "")
+                                .Replace(",", "")
+                                .Replace("text", "")
+                                .Replace("value", "")
+                                .Replace("%20", " ")
+                                .Replace("%26", "&");
+
+                            if (strAgent.Length > 2)
+                            {
+                                string[] arrAgents = strAgent.Split(Convert.ToChar(":"));
+                                this.ctrAgent_Update.AgentID = int.Parse(arrAgents[1]);
+                                this.ctrAgent_Update.AgentID = int.Parse(arrAgents[2]);
+                                //this.ctrSearch_Agent_Update.ClearControl();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        clsNotificationSystem_Web SendError = new clsNotificationSystem_Web();
+                        string NotificationBody = ex.Message + Constants.vbCrLf + ex.StackTrace;
+                        SendError.SendMailMessage(NotificationBody);
+                        Response.Redirect("ErrorPage.aspx", false);
                     }
                 }
+                
             }
             catch (Exception ex)
             {

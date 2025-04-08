@@ -148,15 +148,15 @@ public partial class ctrTroubleTicketReq_Update : System.Web.UI.UserControl
         clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 
 
-        cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-        cmbStatus.DataTextField = "Status";  cmbStatus.DataValueField = "Status";
-        cmbStatus.DataBind();
+        this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
+        cmbStatus.DataTextField = "Status";  this.cmbStatus.DataValueField = "Status";
+        this.cmbStatus.DataBind();
 
 
 
-        cmbType.DataSource = theNotificationSystem.GetTypeList();
-        cmbType.DataTextField = "Type";  cmbType.DataValueField = "Type";
-        cmbType.DataBind();
+        this.cmbType.DataSource = theNotificationSystem.GetTypeList();
+        this.cmbType.DataTextField = "Type";  this.cmbType.DataValueField = "Type";
+        this.cmbType.DataBind();
 
     }
         protected void btnCancel_Click(object sender, EventArgs e)

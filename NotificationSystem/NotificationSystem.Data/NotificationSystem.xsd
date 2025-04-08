@@ -64,7 +64,7 @@
               <Mapping SourceColumn="Last" DataSetColumn="Last" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="NotificationSystemConnectionString2 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString2 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[Admin] WHERE (([UserName] = @Original_UserName))</CommandText>
@@ -100,7 +100,7 @@ WHERE     (UserName = @username) AND (Password = @password)
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString2 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString2 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[Admin] ([UserName], [Password], [Email], [First], [Last]) VALUES (@UserName, @Password, @Email, @First, @Last)</CommandText>
@@ -114,7 +114,7 @@ WHERE     (UserName = @username) AND (Password = @password)
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString2 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString2 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Admin] SET [UserName] = @UserName, [Password] = @Password, [Email] = @Email, [First] = @First, [Last] = @Last WHERE (([UserName] = @Original_UserName))</CommandText>
@@ -196,7 +196,7 @@ WHERE     (UserName = @username) AND (Password = @password)
               <Mapping SourceColumn="Fax" DataSetColumn="Fax" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="NotificationSystemConnectionString3 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString3 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[Agent] WHERE (([AgentID] = @Original_AgentID))</CommandText>
@@ -245,7 +245,7 @@ WHERE (Agent.AgentID = @AgentID)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString3 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString3 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[Agent] ([TroubleTicketNo], [Title], [StartDate], [Salary], [FirstN], [LastN], [Email], [Phone], [Fax]) VALUES (@TroubleTicketNo, @Title, @StartDate, @Salary, @FirstN, @LastN, @Email, @Phone, @Fax)</CommandText>
@@ -263,7 +263,7 @@ WHERE (Agent.AgentID = @AgentID)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString3 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString3 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Agent] SET [TroubleTicketNo] = @TroubleTicketNo, [Title] = @Title, [StartDate] = @StartDate, [Salary] = @Salary, [FirstN] = @FirstN, [LastN] = @LastN, [Email] = @Email, [Phone] = @Phone, [Fax] = @Fax WHERE (([AgentID] = @Original_AgentID))</CommandText>
@@ -358,7 +358,7 @@ WHERE (Agent.AgentID = @AgentID)</CommandText>
               <Mapping SourceColumn="Password" DataSetColumn="Password" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="NotificationSystemConnectionString4 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString4 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[Customer] WHERE (([CustomerID] = @Original_CustomerID))</CommandText>
@@ -430,7 +430,7 @@ WHERE UserName = @username and Password = @password
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString4 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString4 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[Customer] ([AgentID], [TroubleTicketNo], [FirstN], [LastN], [Email], [Phone], [Address], [City], [State], [Zip], [UserName], [Password]) VALUES (@AgentID, @TroubleTicketNo, @FirstN, @LastN, @Email, @Phone, @Address, @City, @State, @Zip, @UserName, @Password)</CommandText>
@@ -451,7 +451,7 @@ WHERE UserName = @username and Password = @password
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString4 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString4 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Customer] SET [AgentID] = @AgentID, [TroubleTicketNo] = @TroubleTicketNo, [FirstN] = @FirstN, [LastN] = @LastN, [Email] = @Email, [Phone] = @Phone, [Address] = @Address, [City] = @City, [State] = @State, [Zip] = @Zip, [UserName] = @UserName, [Password] = @Password WHERE (([CustomerID] = @Original_CustomerID))</CommandText>
@@ -531,7 +531,7 @@ WHERE UserName = @username and Password = @password
               <Mapping SourceColumn="Type" DataSetColumn="Type" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="NotificationSystemConnectionString5 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString5 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[TroubleTicketReq] WHERE (([TroubleTicketNo] = @Original_TroubleTicketNo))</CommandText>
@@ -591,7 +591,7 @@ FROM   TroubleTicketReq
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString5 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString5 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[TroubleTicketReq] ([CustomerID], [AgentID], [Status], [DueDate], [RequestDate], [Type]) VALUES (@CustomerID, @AgentID, @Status, @DueDate, @RequestDate, @Type)</CommandText>
@@ -606,7 +606,7 @@ FROM   TroubleTicketReq
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString5 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="NotificationSystemConnectionString5 (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[TroubleTicketReq] SET [CustomerID] = @CustomerID, [AgentID] = @AgentID, [Status] = @Status, [DueDate] = @DueDate, [RequestDate] = @RequestDate, [Type] = @Type WHERE (([TroubleTicketNo] = @Original_TroubleTicketNo))</CommandText>
@@ -626,18 +626,11 @@ FROM   TroubleTicketReq
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetCustomerIDTableAdapter" GeneratorDataComponentClassName="GetCustomerIDTableAdapter" Name="GetCustomerID" UserDataComponentName="GetCustomerIDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString5 (NotificationSystem)" DbObjectName="NotificationSystem.dbo.Customer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [Customer] WHERE (([CustomerID] = @Original_CustomerID))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CustomerID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustomerID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
+              <DbSource ConnectionRef="NotificationSystemConnectionString5 (NotificationSystem)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT CustomerID FROM Customer</CommandText>
+                    <CommandText>SELECT MAX(CustomerID) AS CustomerID
+FROM   Customer</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -650,18 +643,11 @@ FROM   TroubleTicketReq
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetAgentIDTableAdapter" GeneratorDataComponentClassName="GetAgentIDTableAdapter" Name="GetAgentID" UserDataComponentName="GetAgentIDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString5 (NotificationSystem)" DbObjectName="NotificationSystem.dbo.Agent" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [Agent] WHERE (([AgentID] = @Original_AgentID))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_AgentID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AgentID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
+              <DbSource ConnectionRef="NotificationSystemConnectionString5 (NotificationSystem)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT AgentID FROM Agent</CommandText>
+                    <CommandText>SELECT MAX(AgentID) AS AgentID
+FROM   Agent</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -674,18 +660,11 @@ FROM   TroubleTicketReq
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetTroubleTicketNoTableAdapter" GeneratorDataComponentClassName="GetTroubleTicketNoTableAdapter" Name="GetTroubleTicketNo" UserDataComponentName="GetTroubleTicketNoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="NotificationSystemConnectionString5 (NotificationSystem)" DbObjectName="NotificationSystem.dbo.TroubleTicketReq" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [TroubleTicketReq] WHERE (([TroubleTicketNo] = @Original_TroubleTicketNo))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TroubleTicketNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TroubleTicketNo" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
+              <DbSource ConnectionRef="NotificationSystemConnectionString5 (NotificationSystem)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT TroubleTicketNo from TroubleTicketReq</CommandText>
+                    <CommandText>SELECT MAX(TroubleTicketNo) AS TroubleTicketNo
+FROM   TroubleTicketReq</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -696,46 +675,84 @@ FROM   TroubleTicketReq
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TypeTableAdapter" GeneratorDataComponentClassName="TypeTableAdapter" Name="Type" UserDataComponentName="TypeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NotificationSystemConnectionString5 (NotificationSystem)" DbObjectName="NotificationSystem.dbo.TroubleTicketReq" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT Type
+FROM   TroubleTicketReq
+WHERE (Type IS NOT NULL)
+ORDER BY Type</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StatusTableAdapter" GeneratorDataComponentClassName="StatusTableAdapter" Name="Status" UserDataComponentName="StatusTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NotificationSystemConnectionString5 (NotificationSystem)" DbObjectName="NotificationSystem.dbo.TroubleTicketReq" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT Status
+FROM   TroubleTicketReq
+WHERE (Status IS NOT NULL)
+ORDER BY Status</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="NotificationSystem" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="NotificationSystem" msprop:Generator_DataSetName="NotificationSystem">
+  <xs:element name="NotificationSystem" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="NotificationSystem" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NotificationSystem">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Admin" msprop:Generator_RowEvHandlerName="AdminRowChangeEventHandler" msprop:Generator_RowDeletedName="AdminRowDeleted" msprop:Generator_RowDeletingName="AdminRowDeleting" msprop:Generator_RowEvArgName="AdminRowChangeEvent" msprop:Generator_TablePropName="Admin" msprop:Generator_RowChangedName="AdminRowChanged" msprop:Generator_RowChangingName="AdminRowChanging" msprop:Generator_TableClassName="AdminDataTable" msprop:Generator_RowClassName="AdminRow" msprop:Generator_TableVarName="tableAdmin" msprop:Generator_UserTableName="Admin">
+        <xs:element name="Admin" msprop:Generator_RowClassName="AdminRow" msprop:Generator_RowEvHandlerName="AdminRowChangeEventHandler" msprop:Generator_RowDeletedName="AdminRowDeleted" msprop:Generator_RowDeletingName="AdminRowDeleting" msprop:Generator_RowEvArgName="AdminRowChangeEvent" msprop:Generator_TablePropName="Admin" msprop:Generator_RowChangedName="AdminRowChanged" msprop:Generator_UserTableName="Admin" msprop:Generator_RowChangingName="AdminRowChanging" msprop:Generator_TableClassName="AdminDataTable" msprop:Generator_TableVarName="tableAdmin">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="UserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_UserColumnName="UserName">
+              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Password" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_UserColumnName="Password">
+              <xs:element name="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnVarNameInTable="columnPassword">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email">
+              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="First" msprop:Generator_ColumnPropNameInRow="First" msprop:Generator_ColumnPropNameInTable="FirstColumn" msprop:Generator_ColumnVarNameInTable="columnFirst" msprop:Generator_UserColumnName="First" minOccurs="0">
+              <xs:element name="First" msprop:Generator_UserColumnName="First" msprop:Generator_ColumnPropNameInTable="FirstColumn" msprop:Generator_ColumnPropNameInRow="First" msprop:Generator_ColumnVarNameInTable="columnFirst" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Last" msprop:Generator_ColumnPropNameInRow="Last" msprop:Generator_ColumnPropNameInTable="LastColumn" msprop:Generator_ColumnVarNameInTable="columnLast" msprop:Generator_UserColumnName="Last" minOccurs="0">
+              <xs:element name="Last" msprop:Generator_UserColumnName="Last" msprop:Generator_ColumnPropNameInTable="LastColumn" msprop:Generator_ColumnPropNameInRow="Last" msprop:Generator_ColumnVarNameInTable="columnLast" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -745,49 +762,49 @@ FROM   TroubleTicketReq
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Agent" msprop:Generator_RowEvHandlerName="AgentRowChangeEventHandler" msprop:Generator_RowDeletedName="AgentRowDeleted" msprop:Generator_RowDeletingName="AgentRowDeleting" msprop:Generator_RowEvArgName="AgentRowChangeEvent" msprop:Generator_TablePropName="Agent" msprop:Generator_RowChangedName="AgentRowChanged" msprop:Generator_RowChangingName="AgentRowChanging" msprop:Generator_TableClassName="AgentDataTable" msprop:Generator_RowClassName="AgentRow" msprop:Generator_TableVarName="tableAgent" msprop:Generator_UserTableName="Agent">
+        <xs:element name="Agent" msprop:Generator_RowClassName="AgentRow" msprop:Generator_RowEvHandlerName="AgentRowChangeEventHandler" msprop:Generator_RowDeletedName="AgentRowDeleted" msprop:Generator_RowDeletingName="AgentRowDeleting" msprop:Generator_RowEvArgName="AgentRowChangeEvent" msprop:Generator_TablePropName="Agent" msprop:Generator_RowChangedName="AgentRowChanged" msprop:Generator_UserTableName="Agent" msprop:Generator_RowChangingName="AgentRowChanging" msprop:Generator_TableClassName="AgentDataTable" msprop:Generator_TableVarName="tableAgent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AgentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="AgentID" msprop:Generator_ColumnPropNameInTable="AgentIDColumn" msprop:Generator_ColumnVarNameInTable="columnAgentID" msprop:Generator_UserColumnName="AgentID" type="xs:int" />
-              <xs:element name="TroubleTicketNo" msprop:Generator_ColumnPropNameInRow="TroubleTicketNo" msprop:Generator_ColumnPropNameInTable="TroubleTicketNoColumn" msprop:Generator_ColumnVarNameInTable="columnTroubleTicketNo" msprop:Generator_UserColumnName="TroubleTicketNo" type="xs:int" />
-              <xs:element name="Title" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_UserColumnName="Title" minOccurs="0">
+              <xs:element name="AgentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="AgentID" msprop:Generator_ColumnPropNameInTable="AgentIDColumn" msprop:Generator_ColumnPropNameInRow="AgentID" msprop:Generator_ColumnVarNameInTable="columnAgentID" type="xs:int" />
+              <xs:element name="TroubleTicketNo" msprop:Generator_UserColumnName="TroubleTicketNo" msprop:Generator_ColumnPropNameInTable="TroubleTicketNoColumn" msprop:Generator_ColumnPropNameInRow="TroubleTicketNo" msprop:Generator_ColumnVarNameInTable="columnTroubleTicketNo" type="xs:int" />
+              <xs:element name="Title" msprop:Generator_UserColumnName="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="StartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Salary" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnVarNameInTable="columnSalary" msprop:Generator_UserColumnName="Salary" type="xs:int" minOccurs="0" />
-              <xs:element name="FirstN" msprop:Generator_ColumnPropNameInRow="FirstN" msprop:Generator_ColumnPropNameInTable="FirstNColumn" msprop:Generator_ColumnVarNameInTable="columnFirstN" msprop:Generator_UserColumnName="FirstN">
+              <xs:element name="StartDate" msprop:Generator_UserColumnName="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Salary" msprop:Generator_UserColumnName="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_ColumnVarNameInTable="columnSalary" type="xs:int" minOccurs="0" />
+              <xs:element name="FirstN" msprop:Generator_UserColumnName="FirstN" msprop:Generator_ColumnPropNameInTable="FirstNColumn" msprop:Generator_ColumnPropNameInRow="FirstN" msprop:Generator_ColumnVarNameInTable="columnFirstN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LastN" msprop:Generator_ColumnPropNameInRow="LastN" msprop:Generator_ColumnPropNameInTable="LastNColumn" msprop:Generator_ColumnVarNameInTable="columnLastN" msprop:Generator_UserColumnName="LastN">
+              <xs:element name="LastN" msprop:Generator_UserColumnName="LastN" msprop:Generator_ColumnPropNameInTable="LastNColumn" msprop:Generator_ColumnPropNameInRow="LastN" msprop:Generator_ColumnVarNameInTable="columnLastN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Phone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_UserColumnName="Phone" minOccurs="0">
+              <xs:element name="Phone" msprop:Generator_UserColumnName="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Fax" msprop:Generator_ColumnPropNameInRow="Fax" msprop:Generator_ColumnPropNameInTable="FaxColumn" msprop:Generator_ColumnVarNameInTable="columnFax" msprop:Generator_UserColumnName="Fax" minOccurs="0">
+              <xs:element name="Fax" msprop:Generator_UserColumnName="Fax" msprop:Generator_ColumnPropNameInTable="FaxColumn" msprop:Generator_ColumnPropNameInRow="Fax" msprop:Generator_ColumnVarNameInTable="columnFax" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -797,76 +814,76 @@ FROM   TroubleTicketReq
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Customer" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowEvArgName="CustomerRowChangeEvent" msprop:Generator_TablePropName="Customer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_RowClassName="CustomerRow" msprop:Generator_TableVarName="tableCustomer" msprop:Generator_UserTableName="Customer">
+        <xs:element name="Customer" msprop:Generator_RowClassName="CustomerRow" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowEvArgName="CustomerRowChangeEvent" msprop:Generator_TablePropName="Customer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_UserTableName="Customer" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_TableVarName="tableCustomer">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CustomerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_UserColumnName="CustomerID" type="xs:int" />
-              <xs:element name="AgentID" msprop:Generator_ColumnPropNameInRow="AgentID" msprop:Generator_ColumnPropNameInTable="AgentIDColumn" msprop:Generator_ColumnVarNameInTable="columnAgentID" msprop:Generator_UserColumnName="AgentID" type="xs:int" />
-              <xs:element name="TroubleTicketNo" msprop:Generator_ColumnPropNameInRow="TroubleTicketNo" msprop:Generator_ColumnPropNameInTable="TroubleTicketNoColumn" msprop:Generator_ColumnVarNameInTable="columnTroubleTicketNo" msprop:Generator_UserColumnName="TroubleTicketNo" type="xs:int" />
-              <xs:element name="FirstN" msprop:Generator_ColumnPropNameInRow="FirstN" msprop:Generator_ColumnPropNameInTable="FirstNColumn" msprop:Generator_ColumnVarNameInTable="columnFirstN" msprop:Generator_UserColumnName="FirstN">
+              <xs:element name="CustomerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" type="xs:int" />
+              <xs:element name="AgentID" msprop:Generator_UserColumnName="AgentID" msprop:Generator_ColumnPropNameInTable="AgentIDColumn" msprop:Generator_ColumnPropNameInRow="AgentID" msprop:Generator_ColumnVarNameInTable="columnAgentID" type="xs:int" />
+              <xs:element name="TroubleTicketNo" msprop:Generator_UserColumnName="TroubleTicketNo" msprop:Generator_ColumnPropNameInTable="TroubleTicketNoColumn" msprop:Generator_ColumnPropNameInRow="TroubleTicketNo" msprop:Generator_ColumnVarNameInTable="columnTroubleTicketNo" type="xs:int" />
+              <xs:element name="FirstN" msprop:Generator_UserColumnName="FirstN" msprop:Generator_ColumnPropNameInTable="FirstNColumn" msprop:Generator_ColumnPropNameInRow="FirstN" msprop:Generator_ColumnVarNameInTable="columnFirstN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LastN" msprop:Generator_ColumnPropNameInRow="LastN" msprop:Generator_ColumnPropNameInTable="LastNColumn" msprop:Generator_ColumnVarNameInTable="columnLastN" msprop:Generator_UserColumnName="LastN">
+              <xs:element name="LastN" msprop:Generator_UserColumnName="LastN" msprop:Generator_ColumnPropNameInTable="LastNColumn" msprop:Generator_ColumnPropNameInRow="LastN" msprop:Generator_ColumnVarNameInTable="columnLastN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Phone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_UserColumnName="Phone" minOccurs="0">
+              <xs:element name="Phone" msprop:Generator_UserColumnName="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Address" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_UserColumnName="Address">
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnVarNameInTable="columnAddress">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="City" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_UserColumnName="City">
+              <xs:element name="City" msprop:Generator_UserColumnName="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnVarNameInTable="columnCity">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="State" msprop:Generator_ColumnPropNameInRow="State" msprop:Generator_ColumnPropNameInTable="StateColumn" msprop:Generator_ColumnVarNameInTable="columnState" msprop:Generator_UserColumnName="State">
+              <xs:element name="State" msprop:Generator_UserColumnName="State" msprop:Generator_ColumnPropNameInTable="StateColumn" msprop:Generator_ColumnPropNameInRow="State" msprop:Generator_ColumnVarNameInTable="columnState">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Zip" msprop:Generator_ColumnPropNameInRow="Zip" msprop:Generator_ColumnPropNameInTable="ZipColumn" msprop:Generator_ColumnVarNameInTable="columnZip" msprop:Generator_UserColumnName="Zip" minOccurs="0">
+              <xs:element name="Zip" msprop:Generator_UserColumnName="Zip" msprop:Generator_ColumnPropNameInTable="ZipColumn" msprop:Generator_ColumnPropNameInRow="Zip" msprop:Generator_ColumnVarNameInTable="columnZip" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_UserColumnName="UserName" minOccurs="0">
+              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Password" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_UserColumnName="Password" minOccurs="0">
+              <xs:element name="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -876,21 +893,55 @@ FROM   TroubleTicketReq
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TroubleTicketReq" msprop:Generator_RowEvHandlerName="TroubleTicketReqRowChangeEventHandler" msprop:Generator_RowDeletedName="TroubleTicketReqRowDeleted" msprop:Generator_RowDeletingName="TroubleTicketReqRowDeleting" msprop:Generator_RowEvArgName="TroubleTicketReqRowChangeEvent" msprop:Generator_TablePropName="TroubleTicketReq" msprop:Generator_RowChangedName="TroubleTicketReqRowChanged" msprop:Generator_RowChangingName="TroubleTicketReqRowChanging" msprop:Generator_TableClassName="TroubleTicketReqDataTable" msprop:Generator_RowClassName="TroubleTicketReqRow" msprop:Generator_TableVarName="tableTroubleTicketReq" msprop:Generator_UserTableName="TroubleTicketReq">
+        <xs:element name="TroubleTicketReq" msprop:Generator_RowClassName="TroubleTicketReqRow" msprop:Generator_RowEvHandlerName="TroubleTicketReqRowChangeEventHandler" msprop:Generator_RowDeletedName="TroubleTicketReqRowDeleted" msprop:Generator_RowDeletingName="TroubleTicketReqRowDeleting" msprop:Generator_RowEvArgName="TroubleTicketReqRowChangeEvent" msprop:Generator_TablePropName="TroubleTicketReq" msprop:Generator_RowChangedName="TroubleTicketReqRowChanged" msprop:Generator_UserTableName="TroubleTicketReq" msprop:Generator_RowChangingName="TroubleTicketReqRowChanging" msprop:Generator_TableClassName="TroubleTicketReqDataTable" msprop:Generator_TableVarName="tableTroubleTicketReq">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_UserColumnName="CustomerID" type="xs:int" />
-              <xs:element name="AgentID" msprop:Generator_ColumnPropNameInRow="AgentID" msprop:Generator_ColumnPropNameInTable="AgentIDColumn" msprop:Generator_ColumnVarNameInTable="columnAgentID" msprop:Generator_UserColumnName="AgentID" type="xs:int" />
-              <xs:element name="TroubleTicketNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="TroubleTicketNo" msprop:Generator_ColumnPropNameInTable="TroubleTicketNoColumn" msprop:Generator_ColumnVarNameInTable="columnTroubleTicketNo" msprop:Generator_UserColumnName="TroubleTicketNo" type="xs:int" />
-              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" minOccurs="0">
+              <xs:element name="CustomerID" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" type="xs:int" />
+              <xs:element name="AgentID" msprop:Generator_UserColumnName="AgentID" msprop:Generator_ColumnPropNameInTable="AgentIDColumn" msprop:Generator_ColumnPropNameInRow="AgentID" msprop:Generator_ColumnVarNameInTable="columnAgentID" type="xs:int" />
+              <xs:element name="TroubleTicketNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="TroubleTicketNo" msprop:Generator_ColumnPropNameInTable="TroubleTicketNoColumn" msprop:Generator_ColumnPropNameInRow="TroubleTicketNo" msprop:Generator_ColumnVarNameInTable="columnTroubleTicketNo" type="xs:int" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DueDate" msprop:Generator_ColumnPropNameInRow="DueDate" msprop:Generator_ColumnPropNameInTable="DueDateColumn" msprop:Generator_ColumnVarNameInTable="columnDueDate" msprop:Generator_UserColumnName="DueDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="RequestDate" msprop:Generator_ColumnPropNameInRow="RequestDate" msprop:Generator_ColumnPropNameInTable="RequestDateColumn" msprop:Generator_ColumnVarNameInTable="columnRequestDate" msprop:Generator_UserColumnName="RequestDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DueDate" msprop:Generator_UserColumnName="DueDate" msprop:Generator_ColumnPropNameInTable="DueDateColumn" msprop:Generator_ColumnPropNameInRow="DueDate" msprop:Generator_ColumnVarNameInTable="columnDueDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequestDate" msprop:Generator_UserColumnName="RequestDate" msprop:Generator_ColumnPropNameInTable="RequestDateColumn" msprop:Generator_ColumnPropNameInRow="RequestDate" msprop:Generator_ColumnVarNameInTable="columnRequestDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GetCustomerID" msprop:Generator_RowClassName="GetCustomerIDRow" msprop:Generator_RowEvHandlerName="GetCustomerIDRowChangeEventHandler" msprop:Generator_RowDeletedName="GetCustomerIDRowDeleted" msprop:Generator_RowDeletingName="GetCustomerIDRowDeleting" msprop:Generator_RowEvArgName="GetCustomerIDRowChangeEvent" msprop:Generator_TablePropName="GetCustomerID" msprop:Generator_RowChangedName="GetCustomerIDRowChanged" msprop:Generator_UserTableName="GetCustomerID" msprop:Generator_RowChangingName="GetCustomerIDRowChanging" msprop:Generator_TableClassName="GetCustomerIDDataTable" msprop:Generator_TableVarName="tableGetCustomerID">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GetAgentID" msprop:Generator_RowClassName="GetAgentIDRow" msprop:Generator_RowEvHandlerName="GetAgentIDRowChangeEventHandler" msprop:Generator_RowDeletedName="GetAgentIDRowDeleted" msprop:Generator_RowDeletingName="GetAgentIDRowDeleting" msprop:Generator_RowEvArgName="GetAgentIDRowChangeEvent" msprop:Generator_TablePropName="GetAgentID" msprop:Generator_RowChangedName="GetAgentIDRowChanged" msprop:Generator_UserTableName="GetAgentID" msprop:Generator_RowChangingName="GetAgentIDRowChanging" msprop:Generator_TableClassName="GetAgentIDDataTable" msprop:Generator_TableVarName="tableGetAgentID">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AgentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="AgentID" msprop:Generator_ColumnPropNameInTable="AgentIDColumn" msprop:Generator_ColumnPropNameInRow="AgentID" msprop:Generator_ColumnVarNameInTable="columnAgentID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GetTroubleTicketNo" msprop:Generator_RowClassName="GetTroubleTicketNoRow" msprop:Generator_RowEvHandlerName="GetTroubleTicketNoRowChangeEventHandler" msprop:Generator_RowDeletedName="GetTroubleTicketNoRowDeleted" msprop:Generator_RowDeletingName="GetTroubleTicketNoRowDeleting" msprop:Generator_RowEvArgName="GetTroubleTicketNoRowChangeEvent" msprop:Generator_TablePropName="GetTroubleTicketNo" msprop:Generator_RowChangedName="GetTroubleTicketNoRowChanged" msprop:Generator_UserTableName="GetTroubleTicketNo" msprop:Generator_RowChangingName="GetTroubleTicketNoRowChanging" msprop:Generator_TableClassName="GetTroubleTicketNoDataTable" msprop:Generator_TableVarName="tableGetTroubleTicketNo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TroubleTicketNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="TroubleTicketNo" msprop:Generator_ColumnPropNameInTable="TroubleTicketNoColumn" msprop:Generator_ColumnPropNameInRow="TroubleTicketNo" msprop:Generator_ColumnVarNameInTable="columnTroubleTicketNo" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Type" msprop:Generator_RowEvHandlerName="TypeRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeRowDeleted" msprop:Generator_RowDeletingName="TypeRowDeleting" msprop:Generator_RowEvArgName="TypeRowChangeEvent" msprop:Generator_TablePropName="Type" msprop:Generator_RowChangedName="TypeRowChanged" msprop:Generator_RowChangingName="TypeRowChanging" msprop:Generator_TableClassName="TypeDataTable" msprop:Generator_RowClassName="TypeRow" msprop:Generator_TableVarName="tableType" msprop:Generator_UserTableName="Type">
+          <xs:complexType>
+            <xs:sequence>
               <xs:element name="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_UserColumnName="Type" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -901,24 +952,16 @@ FROM   TroubleTicketReq
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GetCustomerID" msprop:Generator_RowEvHandlerName="GetCustomerIDRowChangeEventHandler" msprop:Generator_RowDeletedName="GetCustomerIDRowDeleted" msprop:Generator_RowDeletingName="GetCustomerIDRowDeleting" msprop:Generator_RowEvArgName="GetCustomerIDRowChangeEvent" msprop:Generator_TablePropName="GetCustomerID" msprop:Generator_RowChangedName="GetCustomerIDRowChanged" msprop:Generator_RowChangingName="GetCustomerIDRowChanging" msprop:Generator_TableClassName="GetCustomerIDDataTable" msprop:Generator_RowClassName="GetCustomerIDRow" msprop:Generator_TableVarName="tableGetCustomerID" msprop:Generator_UserTableName="GetCustomerID">
+        <xs:element name="Status" msprop:Generator_RowEvHandlerName="StatusRowChangeEventHandler" msprop:Generator_RowDeletedName="StatusRowDeleted" msprop:Generator_RowDeletingName="StatusRowDeleting" msprop:Generator_RowEvArgName="StatusRowChangeEvent" msprop:Generator_TablePropName="Status" msprop:Generator_RowChangedName="StatusRowChanged" msprop:Generator_RowChangingName="StatusRowChanging" msprop:Generator_TableClassName="StatusDataTable" msprop:Generator_RowClassName="StatusRow" msprop:Generator_TableVarName="tableStatus" msprop:Generator_UserTableName="Status">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CustomerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_UserColumnName="CustomerID" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="GetAgentID" msprop:Generator_RowEvHandlerName="GetAgentIDRowChangeEventHandler" msprop:Generator_RowDeletedName="GetAgentIDRowDeleted" msprop:Generator_RowDeletingName="GetAgentIDRowDeleting" msprop:Generator_RowEvArgName="GetAgentIDRowChangeEvent" msprop:Generator_TablePropName="GetAgentID" msprop:Generator_RowChangedName="GetAgentIDRowChanged" msprop:Generator_RowChangingName="GetAgentIDRowChanging" msprop:Generator_TableClassName="GetAgentIDDataTable" msprop:Generator_RowClassName="GetAgentIDRow" msprop:Generator_TableVarName="tableGetAgentID" msprop:Generator_UserTableName="GetAgentID">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="AgentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="AgentID" msprop:Generator_ColumnPropNameInTable="AgentIDColumn" msprop:Generator_ColumnVarNameInTable="columnAgentID" msprop:Generator_UserColumnName="AgentID" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="GetTroubleTicketNo" msprop:Generator_RowEvHandlerName="GetTroubleTicketNoRowChangeEventHandler" msprop:Generator_RowDeletedName="GetTroubleTicketNoRowDeleted" msprop:Generator_RowDeletingName="GetTroubleTicketNoRowDeleting" msprop:Generator_RowEvArgName="GetTroubleTicketNoRowChangeEvent" msprop:Generator_TablePropName="GetTroubleTicketNo" msprop:Generator_RowChangedName="GetTroubleTicketNoRowChanged" msprop:Generator_RowChangingName="GetTroubleTicketNoRowChanging" msprop:Generator_TableClassName="GetTroubleTicketNoDataTable" msprop:Generator_RowClassName="GetTroubleTicketNoRow" msprop:Generator_TableVarName="tableGetTroubleTicketNo" msprop:Generator_UserTableName="GetTroubleTicketNo">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TroubleTicketNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="TroubleTicketNo" msprop:Generator_ColumnPropNameInTable="TroubleTicketNoColumn" msprop:Generator_ColumnVarNameInTable="columnTroubleTicketNo" msprop:Generator_UserColumnName="TroubleTicketNo" type="xs:int" />
+              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

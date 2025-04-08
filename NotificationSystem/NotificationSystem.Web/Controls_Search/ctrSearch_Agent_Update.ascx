@@ -7,7 +7,7 @@
                              <asp:TableRow>
                                      
                                          <asp:TableCell VerticalAlign="Top">
-                                               <telerik:RadMultiColumnComboBox    runat="server" ClearButton="false" ClientEvents-OnLoad="OnClientLoad0" ID="cmbAgent" DropDownWidth="300px"  Height="200px" Width="180px" AutoPostBack="true"
+                                               <telerik:RadMultiColumnComboBox runat="server" ClearButton="false" ClientEvents-OnLoad="OnClientLoad0" ID="cmbAgent" DropDownWidth="300px"  Height="200px" Width="180px" AutoPostBack="true"
                                                        Placeholder="--Select" EnableViewState="true">
                                                 <ColumnsCollection> 
                                                       <telerik:MultiColumnComboBoxColumn Field="AgentID" Title="AgentID" Width="150px" />

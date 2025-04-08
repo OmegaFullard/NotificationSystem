@@ -154,15 +154,15 @@ using System.Net.Http;
 
 
 
-        cmbStatus.DataSource = theNotificationSystem.GetStatusList();
-        cmbStatus.DataTextField = "Status"; cmbStatus.DataValueField = "Status";
-        cmbStatus.DataBind();
+        this.cmbStatus.DataSource = theNotificationSystem.GetStatusList();
+        this.cmbStatus.DataTextField = "Status"; cmbStatus.DataValueField = "Status";
+        this.cmbStatus.DataBind();
 
 
 
-        cmbType.DataSource = theNotificationSystem.GetTypeList();
-        cmbType.DataTextField = "Type"; cmbType.DataValueField = "Type";
-        cmbType.DataBind();
+        this.cmbType.DataSource = theNotificationSystem.GetTypeList();
+        this.cmbType.DataTextField = "Type"; cmbType.DataValueField = "Type";
+        this.cmbType.DataBind();
 
 
     }
