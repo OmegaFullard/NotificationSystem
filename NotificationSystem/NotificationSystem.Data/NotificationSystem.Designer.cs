@@ -5367,7 +5367,11 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString;
+            if (this._commandCollection == null)
+            {
+                this.InitCommandCollection();
+            }
+            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB; Initial Catalog=NotificationSystem; Integrated Security=True;";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7557,7 +7561,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+                "Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7725,7 +7729,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+                "Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7893,7 +7897,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+                "Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8061,7 +8065,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+                "Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8230,7 +8234,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+                "Security=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
