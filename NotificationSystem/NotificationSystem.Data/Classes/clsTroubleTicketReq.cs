@@ -10,8 +10,13 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 {
     public class clsTroubleTicketReq
     {
-		internal int Original_TroubleTicketNo;
-		private string m_Status = string.Empty;
+		internal int Original_TroubleTicketNo { get; set; } = 0;
+
+        public clsTroubleTicketReq()
+        {
+            Original_TroubleTicketNo = 1; // Assign a meaningful value here
+        }   
+        private string m_Status = string.Empty;
         private string m_Type = string.Empty;
         private int m_CustomerID = 0;
         private int m_AgentID = 0;
