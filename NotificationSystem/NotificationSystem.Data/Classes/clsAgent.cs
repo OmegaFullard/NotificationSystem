@@ -11,14 +11,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
     public class clsAgent
     {
-        internal int Original_AgentID { get; set; } = 0;
-       
-
-        // Example of assigning a value to Original_AgentID in the constructor
-        public clsAgent()
-        {
-            Original_AgentID = 1; // Assign a meaningful value here
-        }
+		internal int Original_AgentID;
 		private string m_Title = string.Empty;
         private string m_FirstN = string.Empty;
         private string m_LastN = string.Empty;

@@ -117,7 +117,7 @@ namespace NotificationSystem.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-            "Security=True;Encrypt=False;Trust Server Certificate=True;User Instance=True")]
+            "Security=True;Encrypt=False;Trust Server Certificate=True;User Instance=False")]
         public string NotificationSystem {
             get {
                 return ((string)(this["NotificationSystem"]));

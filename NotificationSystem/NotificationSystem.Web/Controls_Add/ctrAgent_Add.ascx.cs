@@ -25,7 +25,7 @@ using System.Net.Http;
     public partial class ctrAgent_Add : System.Web.UI.UserControl
     {
 
-       
+        private SqlDataReader dr;
 
         private int m_AgentID = 0;
 
@@ -60,7 +60,7 @@ using System.Net.Http;
             else
                 PopulateControls();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             throw;
         }

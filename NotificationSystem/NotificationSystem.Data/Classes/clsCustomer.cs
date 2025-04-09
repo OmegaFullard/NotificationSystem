@@ -6,16 +6,10 @@ using NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters
 
 namespace NotificationSystem.NotificationSystem.Data.Classes
 {
-  
     public class clsCustomer
     {
-        internal int Original_CustomerID { get; set; } = 0;
-
-        public clsCustomer()
-        {
-            Original_CustomerID = 1; // Assign a meaningful value here
-        }
-        private string m_FirstN = string.Empty;
+		internal int Original_CustomerID;
+		private string m_FirstN = string.Empty;
         private string m_LastN = string.Empty;
         private string m_Email = string.Empty;
         private string m_Phone = string.Empty;

@@ -5326,14 +5326,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Agent] WHERE (([AgentID] = @Original_AgentID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Agent] WHERE (([AgentID] = @Original_AgentID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Agent] ([TroubleTicketNo], [Title], [StartDate], [Salary], [FirstN]," +
-                " [LastN], [Email], [Phone], [Fax]) VALUES (@TroubleTicketNo, @Title, @StartDate," +
-                " @Salary, @FirstN, @LastN, @Email, @Phone, @Fax)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Agent] ([TroubleTicketNo], [Title], [StartDate], [Salary], [Fi" +
+                "rstN], [LastN], [Email], [Phone], [Fax]) VALUES (@TroubleTicketNo, @Title, @Star" +
+                "tDate, @Salary, @FirstN, @LastN, @Email, @Phone, @Fax)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5346,10 +5346,10 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fax", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Agent] SET [TroubleTicketNo] = @TroubleTicketNo, [Title] = @Title, [Start" +
-                "Date] = @StartDate, [Salary] = @Salary, [FirstN] = @FirstN, [LastN] = @LastN, [E" +
-                "mail] = @Email, [Phone] = @Phone, [Fax] = @Fax WHERE (([AgentID] = @Original_Age" +
-                "ntID))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Agent] SET [TroubleTicketNo] = @TroubleTicketNo, [Title] = @Title, " +
+                "[StartDate] = @StartDate, [Salary] = @Salary, [FirstN] = @FirstN, [LastN] = @Las" +
+                "tN, [Email] = @Email, [Phone] = @Phone, [Fax] = @Fax WHERE (([AgentID] = @Origin" +
+                "al_AgentID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5367,7 +5367,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString2"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5377,15 +5377,15 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT AgentID, TroubleTicketNo, Title, StartDate, Salary, FirstN, LastN, Email, " +
-                "Phone, Fax\r\nFROM   Agent";
+                "Phone, Fax FROM dbo.Agent";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString);
-            this._commandCollection[1].CommandText = "DELETE FROM Agent\r\nWHERE (AgentID = @Original_AgentID)";
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Agent] WHERE (([AgentID] = @Original_AgentID))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString);
+            this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        [Agent].AgentID AS AgentID, [Agent].Title, [Agent].StartDate AS StartDate, [Agent].Salary AS Salary, [Agent].FirstN, [Agent].LastN, TroubleTicketReq.TroubleTicketNo AS TroubleTicketNo, TroubleTicketReq.AgentID AS AgentID, 
                          TroubleTicketReq.CustomerID AS CustomerID, TroubleTicketReq.Status As Status, TroubleTicketReq.DueDate AS DueDate, TroubleTicketReq.RequestDate AS RequestDate
 FROM            
@@ -5396,7 +5396,7 @@ WHERE        ([Agent].AgentID = @AgentID)
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString);
+            this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"SELECT Agent.AgentID, Agent.Title, Agent.FirstN, Agent.LastN, Agent.Email, Agent.Phone, Agent.Fax, TroubleTicketReq.TroubleTicketNo, TroubleTicketReq.Status, TroubleTicketReq.Type, TroubleTicketReq.RequestDate, TroubleTicketReq.DueDate
 FROM   Agent INNER JOIN
              TroubleTicketReq ON Agent.AgentID = TroubleTicketReq.AgentID
@@ -5404,13 +5404,13 @@ WHERE (Agent.AgentID = @AgentID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString);
+            this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT AgentID, Email, Fax, FirstN, LastN, Phone, Salary, StartDate, Title, Troub" +
                 "leTicketNo FROM Agent WHERE (TroubleTicketNo = @TroubleTicketNo)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString);
+            this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "INSERT INTO [dbo].[Agent] ([TroubleTicketNo], [Title], [StartDate], [Salary], [Fi" +
                 "rstN], [LastN], [Email], [Phone], [Fax]) VALUES (@TroubleTicketNo, @Title, @Star" +
                 "tDate, @Salary, @FirstN, @LastN, @Email, @Phone, @Fax)";
@@ -5425,7 +5425,7 @@ WHERE (Agent.AgentID = @AgentID)";
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fax", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString);
+            this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "UPDATE [dbo].[Agent] SET [TroubleTicketNo] = @TroubleTicketNo, [Title] = @Title, " +
                 "[StartDate] = @StartDate, [Salary] = @Salary, [FirstN] = @FirstN, [LastN] = @Las" +
                 "tN, [Email] = @Email, [Phone] = @Phone, [Fax] = @Fax WHERE (([AgentID] = @Origin" +
@@ -6086,7 +6086,7 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString2"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6099,19 +6099,19 @@ WHERE (Agent.AgentID = @AgentID)";
                 ", City, State, Zip, UserName, Password FROM dbo.Customer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString);
+            this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Customer] WHERE (([CustomerID] = @Original_CustomerID))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString);
-            this._commandCollection[2].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
-                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (AgentID = @AgentID) " +
-                "ORDER BY CustomerID";
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
+                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (AgentID = @Agent" +
+                "ID)\r\nORDER BY CustomerID";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString);
+            this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"	SELECT        [Customer].CustomerID AS CustomerID, [Customer].AgentID, [Customer].FirstN, [Customer].LastN, [Customer].Email AS Email, [Customer].Phone AS Phone, [Customer].Address AS Address, [Customer].City AS City, [Customer].State AS State, [Customer].Zip AS Zip, TroubleTicketReq.TroubleTicketNo AS TroubleTicketNo, TroubleTicketReq.AgentID AS AgentID, 
                          TroubleTicketReq.CustomerID AS CustomerID, TroubleTicketReq.Status As Status, TroubleTicketReq.DueDate AS DueDate, TroubleTicketReq.RequestDate AS RequestDate
 FROM            
@@ -6122,29 +6122,29 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString);
-            this._commandCollection[4].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
-                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (CustomerID = @Custom" +
-                "erID)";
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
+                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (CustomerID = @Cu" +
+                "stomerID)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString);
-            this._commandCollection[5].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
-                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (TroubleTicketNo = @T" +
-                "roubleTicketNo)";
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
+                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (TroubleTicketNo " +
+                "= @TroubleTicketNo)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString);
-            this._commandCollection[6].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
-                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (UserName = @username" +
-                ") AND (Password = @password)";
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "\r\nSELECT   CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Add" +
+                "ress, City, State, Zip, UserName, Password\r\nFROM         Customer\r\nWHERE UserNam" +
+                "e = @username and Password = @password\r\n";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[7].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString);
+            this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = @"INSERT INTO [dbo].[Customer] ([AgentID], [TroubleTicketNo], [FirstN], [LastN], [Email], [Phone], [Address], [City], [State], [Zip], [UserName], [Password]) VALUES (@AgentID, @TroubleTicketNo, @FirstN, @LastN, @Email, @Phone, @Address, @City, @State, @Zip, @UserName, @Password)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6160,7 +6160,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[8].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString);
+            this._commandCollection[8].Connection = this.Connection;
             this._commandCollection[8].CommandText = @"UPDATE [dbo].[Customer] SET [AgentID] = @AgentID, [TroubleTicketNo] = @TroubleTicketNo, [FirstN] = @FirstN, [LastN] = @LastN, [Email] = @Email, [Phone] = @Phone, [Address] = @Address, [City] = @City, [State] = @State, [Zip] = @Zip, [UserName] = @UserName, [Password] = @Password WHERE (([CustomerID] = @Original_CustomerID))";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6899,15 +6899,15 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [TroubleTicketReq] WHERE (([TroubleTicketNo] = @Original_TroubleTicke" +
-                "tNo))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TroubleTicketReq] WHERE (([TroubleTicketNo] = @Original_Troubl" +
+                "eTicketNo))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [TroubleTicketReq] ([CustomerID], [AgentID], [Status], [DueDate], [Re" +
-                "questDate], [Type]) VALUES (@CustomerID, @AgentID, @Status, @DueDate, @RequestDa" +
-                "te, @Type)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TroubleTicketReq] ([CustomerID], [AgentID], [Status], [DueDate" +
+                "], [RequestDate], [Type]) VALUES (@CustomerID, @AgentID, @Status, @DueDate, @Req" +
+                "uestDate, @Type)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6917,9 +6917,9 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [TroubleTicketReq] SET [CustomerID] = @CustomerID, [AgentID] = @AgentID, [" +
-                "Status] = @Status, [DueDate] = @DueDate, [RequestDate] = @RequestDate, [Type] = " +
-                "@Type WHERE (([TroubleTicketNo] = @Original_TroubleTicketNo))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[TroubleTicketReq] SET [CustomerID] = @CustomerID, [AgentID] = @Agen" +
+                "tID, [Status] = @Status, [DueDate] = @DueDate, [RequestDate] = @RequestDate, [Ty" +
+                "pe] = @Type WHERE (([TroubleTicketNo] = @Original_TroubleTicketNo))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6934,7 +6934,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString2"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6943,45 +6943,45 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, Status, DueDate, RequestDate, Type\r\n" +
-                "FROM   TroubleTicketReq";
+            this._commandCollection[0].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, Status, DueDate, RequestDate, Type F" +
+                "ROM dbo.TroubleTicketReq";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString);
+            this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "DELETE FROM [dbo].[TroubleTicketReq] WHERE (([TroubleTicketNo] = @Original_Troubl" +
                 "eTicketNo))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString);
+            this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT AgentID, CustomerID, DueDate, RequestDate, Status, TroubleTicketNo, Type F" +
                 "ROM TroubleTicketReq WHERE (AgentID = @AgentID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString);
-            this._commandCollection[3].CommandText = "SELECT AgentID, CustomerID, DueDate, RequestDate, Status, TroubleTicketNo, Type F" +
-                "ROM TroubleTicketReq WHERE (CustomerID = @CustomerID)";
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, Status, DueDate, RequestDate, Type F" +
+                "ROM dbo.TroubleTicketReq Where (CustomerID = @CustomerID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString);
-            this._commandCollection[4].CommandText = "SELECT AgentID, CustomerID, DueDate, RequestDate, Status, TroubleTicketNo, Type F" +
-                "ROM TroubleTicketReq ORDER BY TroubleTicketNo";
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT TroubleTicketNo, Status, CAST(TroubleTicketNo AS VARCHAR) + \' | \' + Status" +
+                " AS TikList\r\nFROM   TroubleTicketReq\r\nORDER BY TroubleTicketNo";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString);
+            this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT AgentID, CustomerID, DueDate, RequestDate, Status, TroubleTicketNo, Type F" +
                 "ROM TroubleTicketReq WHERE (TroubleTicketNo = @TroubleTicketNo)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString);
-            this._commandCollection[6].CommandText = "SELECT AgentID, CustomerID, DueDate, RequestDate, Status, TroubleTicketNo, Type F" +
-                "ROM TroubleTicketReq";
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT TroubleTicketNo, Type, CAST(TroubleTicketNo AS VARCHAR) + \' | \' + Type AS " +
+                "NotList\r\nFROM   TroubleTicketReq\r\n";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[7].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString);
+            this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "INSERT INTO [dbo].[TroubleTicketReq] ([CustomerID], [AgentID], [Status], [DueDate" +
                 "], [RequestDate], [Type]) VALUES (@CustomerID, @AgentID, @Status, @DueDate, @Req" +
                 "uestDate, @Type)";
@@ -6993,7 +6993,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestDate", global::System.Data.SqlDbType.DateTime2, 8, global::System.Data.ParameterDirection.Input, 0, 0, "RequestDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[8].Connection = new global::System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString);
+            this._commandCollection[8].Connection = this.Connection;
             this._commandCollection[8].CommandText = "UPDATE [dbo].[TroubleTicketReq] SET [CustomerID] = @CustomerID, [AgentID] = @Agen" +
                 "tID, [Status] = @Status, [DueDate] = @DueDate, [RequestDate] = @RequestDate, [Ty" +
                 "pe] = @Type WHERE (([TroubleTicketNo] = @Original_TroubleTicketNo))";
