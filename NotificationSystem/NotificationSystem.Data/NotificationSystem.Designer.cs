@@ -4717,7 +4717,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString2"].ConnectionString;
+            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB; Initial Catalog=NotificationSystem; Integrated Security=True;";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6090,7 +6090,7 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString4"].ConnectionString;
+            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB; Initial Catalog=NotificationSystem; Integrated Security=True;";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6938,7 +6938,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString;
+            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB; Initial Catalog=NotificationSystem; Integrated Security=True;";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

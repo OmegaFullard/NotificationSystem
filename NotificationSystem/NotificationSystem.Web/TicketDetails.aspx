@@ -82,6 +82,6 @@
             <a href="Default.aspx"><< Back to Home</a><br/>
             <br/>
          </div>
-   	 <uc1:ctrTroubleTicketReq_Find runat="server" id="ctrTroubleTicketReq_Find" />
+   	 <uc1:ctrTroubleTicketReq runat="server" id="ctrTroubleTicketReq" />
 
 </asp:Content>

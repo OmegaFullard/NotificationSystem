@@ -18,7 +18,8 @@ namespace NotificationSystem.NotificationSystem.Web
 
     public partial class TicketDetails : System.Web.UI.Page
     {
-
+        // Adding the missing declaration for ctrTroubleTicketReq_Find
+        protected ctrTroubleTicketReq ctrTroubleTicketReq_Find;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +31,6 @@ namespace NotificationSystem.NotificationSystem.Web
                     {
                         ctrTroubleTicketReq_Search.PopulateSearchControl();
                         this.ctrTroubleTicketReq_Find.TroubleTicketNo = ctrTroubleTicketReq_Search.TroubleTicketNo;
-
                     }
                 }
             }
