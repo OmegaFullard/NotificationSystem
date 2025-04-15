@@ -24,15 +24,38 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 
    
         public bool Title { get; private set; }
-        public bool StartDate { get; private set; }
+        public DateTime StartDate
+        {
+            get
+            {
+                return m_StartDate;
+            }
+            set
+            {
+                m_StartDate = value;
+            }
+        }
 
         public bool Salary { get; private set; }
 		public bool Admin { get; private set; }
 
         private string m_ReportPath = string.Empty;
         private string m_UserName = string.Empty;
-        private DateTime m_RequestDate;
-        private DateTime m_StartDate;
+        //private DateTime m_RequestDate;
+        private DateTime m_RequestDate = DateTime.Now; // Initialize with a default value
+
+        public DateTime RequestDate
+        {
+            get
+            {
+                return m_RequestDate;
+            }
+            set
+            {
+                m_RequestDate = value;
+            }
+        }
+        private DateTime m_StartDate = DateTime.MinValue; // Initialize with a default value
         private int m_AgentID = 0;
         private int m_CustomerID = 0;
         private int m_TroubleTicketNo = 0;
@@ -97,21 +120,21 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
             }
         }
 
-        //public DataTable GetCustomersList()
-        //      {
-        //          try
-        //          {
-        //              CustomerTableAdapter adpCustomerList = new CustomerTableAdapter();
-        //              NotificationSystem.CustomerDataTable tblCustomerList = adpCustomerList.GetData();
+        public DataTable GetCustomersList()
+        {
+            try
+            {
+                CustomerTableAdapter adpCustomerList = new CustomerTableAdapter();
+                NotificationSystem.CustomerDataTable tblCustomerList = adpCustomerList.GetData();
 
-        //              return tblCustomerList;
-        //          }
+                return tblCustomerList;
+            }
 
-        //          catch (Exception)
-        //	{
-        //              throw;
-        //          }
-        //      }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public DataTable GetCustReport()
         {
@@ -249,22 +272,22 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
         }
 
 
-        //public void DeleteCustomer(clsCustomer thisCustomer)
-        //{
-        //    CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
+        public void DeleteCustomer(clsCustomer thisCustomer)
+        {
+            CustomerTableAdapter adpCustomer = new CustomerTableAdapter();
 
-        //    try
-        //    {
-        //        {
-        //            var withBlock = thisCustomer;
-        //            adpCustomer.DeleteQuery(withBlock.CustomerID);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
+            try
+            {
+                {
+                    var withBlock = thisCustomer;
+                    adpCustomer.DeleteQuery(withBlock.CustomerID);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public void GetbyUserPW(string username, string password)
         {

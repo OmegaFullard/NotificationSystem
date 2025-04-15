@@ -19,7 +19,8 @@
                     width="700px" AllowPaging="True" AllowSorting="True" PageSize="18" OnLoad="Page_Load" OnPageIndexChanging="grdAgent_PageIndexChanging" OnSorting="grdAgent_Sorting">
                     <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
                           <Columns>
-                              
+                              <asp:BoundField DataField="CustomerID" HeaderText="Customer ID" HtmlEncode="False"
+                                  ReadOnly="True" Visible="True" />
 									     <asp:BoundField DataField="StartDate" HeaderText="Start Date" HtmlEncode="False" DataFormatString="{0:MM/dd/yyyy}"
                                        ReadOnly="True"  Visible="True" />
                               <asp:BoundField DataField="TroubleTicketNo" HeaderText="Trouble Ticket#" HtmlEncode="False" 

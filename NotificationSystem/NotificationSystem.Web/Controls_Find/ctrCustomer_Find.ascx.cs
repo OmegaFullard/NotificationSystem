@@ -34,7 +34,7 @@ public partial class ctrCustomer_Find : System.Web.UI.UserControl
 		try 
         {
             if (Request.Form["ctl00$MainContent$ctrSearch_Customer_Find$btnSearch"] == "Search")
-                this.lblCustomerID.Text = "ID" + m_CustomerID;
+                this.lblSearchResult.Text = "ID" + m_CustomerID;
 
             if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
                 

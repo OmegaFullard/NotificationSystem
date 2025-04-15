@@ -8,7 +8,7 @@ namespace NotificationSystem.NotificationSystem.Data.Classes
 {
     public class clsCustomer
     {
-		internal int Original_CustomerID;
+        internal int Original_CustomerID { get; set; } = 0;
 		private string m_FirstN = string.Empty;
         private string m_LastN = string.Empty;
         private string m_Email = string.Empty;
