@@ -4,9 +4,11 @@ Imports System.Web.UI.WebControls
 Imports System.IO
 Imports Microsoft.VisualBasic
 Imports System.Data
+Imports NotificationSystem.NotificationSystem.Data.Classes
+Imports NotificationSystem.NotificationSystem.Data.NotificationSystem
 
 Namespace NotificationSystem.NotificationSystem.Web.Controls_Find
-    Public Partial Class ctrAdmin_Find
+    Partial Public Class ctrAdmin_Find
         Inherits UserControl
         Private m_UserName As String = String.Empty
 
@@ -19,30 +21,43 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Find
             End Set
         End Property
 
-        Protected Sub Page_Load(sender As Object, e As EventArgs)
+        Protected Sub Page_Load(ByVal sender As Object, e As System.EventArgs) Handles Me.Load
 
-            Dim theNotificationSystem As NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem = New NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem()
-            Dim tblAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable = New NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable()
-            Try
-                If Equals(Request.Form("ctl00$MainContent$ctrSearch_Admin_Find$btnSearch"), "Search") Then lblUserName.Text = "UserName" & m_UserName
+            If Page.IsPostBack Then
+                Try
+                    If m_UserName.Length > 0 Then
+                        lblUserName.Text = "UserName" & m_UserName
+                        If m_UserName.Length = 2 Then Exit Sub
 
-                If MyBase.Page.IsPostBack And lblUserName.Text.Length > 0 Then
-                    theNotificationSystem.GetAdmin(lblUserName.Text.Replace("UserName", ""))
-                Else
-                    tblAdmin = CType(theNotificationSystem.GetAdmins(), NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable)
-                End If
+                        If New clsNotificationSystem().GetAdmin(m_UserName).Rows.Count = 0 Then Exit Sub
+
+                        If Request.Form("ctl00$MainContent$ctrSearch_Admin_Find$btnSearch") = "Search" Then lblUserName.Text = "UserName" & m_UserName
+
+                    End If
 
 
-                lblSearchResult.Text = tblAdmin.Rows.Count.ToString()
-                grdAdmin.DataSource = tblAdmin.DefaultView
-                grdAdmin.DataBind()
+                    Dim theNotificationSystem As New clsNotificationSystem
+                    Dim tblAdmin As AdminDataTable = New AdminDataTable
 
-            Catch ex As Exception
-                Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
-                Dim NotificationBody = ex.Message & "  " & ex.StackTrace
-                SendError.SendMailMessage(NotificationBody)
-                Response.Redirect("ErrorPage.aspx", False)
-            End Try
+                    If Page.IsPostBack AndAlso lblSearchResult.Text.Length > 0 Then
+
+                        tblAdmin = CType(theNotificationSystem.GetAdmin(m_UserName), AdminDataTable)
+                    Else
+                        tblAdmin = CType(theNotificationSystem.GetAdmins(), AdminDataTable)
+                    End If
+
+
+                    lblSearchResult.Text = tblAdmin.Rows.Count.ToString()
+                    grdAdmin.DataSource = tblAdmin.DefaultView
+                    grdAdmin.DataBind()
+
+                Catch ex As Exception
+                    Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
+                    Dim NotificationBody = ex.Message & "  " & ex.StackTrace
+                    SendError.SendMailMessage(NotificationBody)
+                    Response.Redirect("ErrorPage.aspx", False)
+                End Try
+            End If
         End Sub
 
 

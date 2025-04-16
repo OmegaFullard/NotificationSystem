@@ -44,12 +44,32 @@ Public Partial Class ctrTroubleTicketReq_Find
     End Property
     Protected Sub Page_Load(sender As Object, e As EventArgs)
 
-        Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-        Dim tblTroubleTicketReq As TroubleTicketReqDataTable = New TroubleTicketReqDataTable()
-        Try
-            If Equals(Request.Form("ctl00$MainContent$ctrSearch_TT_Find$btnSearch"), "Search") Then lblSearchResult.Text = "Ticket" & m_TroubleTicketNo.ToString()
 
-            If MyBase.Page.IsPostBack And lblSearchResult.Text.Length > 0 Then
+        Try
+
+
+            If Page.IsPostBack And lblSearchResult.Text.Length > 0 Then
+                Me.lblSearchResult.Text = "Ticket" & m_TroubleTicketNo.ToString()
+
+                If m_TroubleTicketNo = 2 Then Exit Sub
+                If New clsNotificationSystem().GetTroubleTicket(m_TroubleTicketNo).Rows.Count = 0 Then Exit Sub
+
+                If Request.Form("ctl00$MainContent$ctrSearch_TT_Find$btnSearch") IsNot Nothing Then
+                    CreateExcelFiles()
+                End If
+
+            End If
+
+            If Request.Form("ctl00$MainContent$ctrSearch_TT_Find$btnSearch") = "Search" Then
+                lblSearchResult.Text = "Ticket" & m_TroubleTicketNo.ToString()
+
+            End If
+
+            Dim theNotificationSystem As New clsNotificationSystem
+            Dim tblTroubleTicketReq As TroubleTicketReqDataTable
+
+            If Page.IsPostBack AndAlso lblSearchResult.Text.Length > 0 Then
+
                 tblTroubleTicketReq = CType(theNotificationSystem.GetTroubleTicket(Integer.Parse(lblSearchResult.Text.Replace("Ticket", ""))), TroubleTicketReqDataTable)
             Else
                 tblTroubleTicketReq = CType(theNotificationSystem.GetTT(), TroubleTicketReqDataTable)

@@ -22,16 +22,20 @@ Public Partial Class ctrAgent_Find
     End Property
 
 
-    Protected Sub Page_Load(sender As Object, e As EventArgs)
-        Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-        Dim tblAgent As AgentDataTable = New AgentDataTable()
+    Protected Sub Page_Load(ByVal sender As Object, e As System.EventArgs) Handles Me.Load
+
 
         Try
 
 
-            If Equals(Request.Form("ctl00$MainContent$ctrSearch_Agent_Find$btnSearch"), "Search") Then lblSearchResult.Text = "ID" & m_AgentID.ToString()
+            If Request.Form("ctl00$MainContent$ctrSearch_Agent_Find$btnSearch") = "Search" Then
+                lblSearchResult.Text = "ID" & m_AgentID.ToString()
+            End If
 
-            If MyBase.Page.IsPostBack And lblSearchResult.Text.Length > 0 Then
+            Dim theNotificationSystem As New clsNotificationSystem
+            Dim tblAgent As AgentDataTable
+
+            If Page.IsPostBack And lblSearchResult.Text.Length > 0 Then
 
 
                 tblAgent = CType(theNotificationSystem.GetAgent(Integer.Parse(lblSearchResult.Text.Replace("ID", ""))), AgentDataTable)

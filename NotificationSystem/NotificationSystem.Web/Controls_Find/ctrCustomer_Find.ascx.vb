@@ -20,32 +20,50 @@ Public Partial Class ctrCustomer_Find
             m_CustomerID = value
         End Set
     End Property
-    Protected Sub Page_Load(sender As Object, e As EventArgs)
-        Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-        Dim tblCustomer As CustomerDataTable = New CustomerDataTable()
-        Try
-            If Equals(Request.Form("ctl00$MainContent$ctrSearch_Customer_Find$btnSearch"), "Search") Then lblSearchResult.Text = "ID" & m_CustomerID.ToString()
+    Protected Sub Page_Load(ByVal sender As Object, e As System.EventArgs) Handles Me.Load
 
-            If MyBase.Page.IsPostBack And lblSearchResult.Text.Length > 0 Then
+        If Page.IsPostBack Then
 
-                tblCustomer = CType(theNotificationSystem.GetCustomer(Integer.Parse(lblSearchResult.Text.Replace("ID", ""))), CustomerDataTable)
-            Else
-                tblCustomer = CType(theNotificationSystem.GetCustomers(), CustomerDataTable)
-            End If
+            Try
+                If m_CustomerID > 0 Then
+                    lblSearchResult.Text = "ID" & m_CustomerID.ToString()
+
+                    If m_CustomerID = 2 Then Exit Sub
+
+                    If New clsNotificationSystem().GetCustomer(Integer.Parse(Replace(lblSearchResult.Text, "ID", ""))).Rows.Count = 0 Then Exit Sub
+
+                    If Request.Form("ctl00$MainContent$ctrCustomer_Find$btnExcel") IsNot Nothing Then
+                        CreateExcelFiles()
+                    End If
+                End If
+                If Request.Form("ctl00$MainContent$ctrSearch_Customer_Find$btnSearch") = "Search" Then
+                        lblSearchResult.Text = "ID" & m_CustomerID.ToString()
+                    End If
+
+                    Dim theNotificationSystem As New clsNotificationSystem
+                    Dim tblCustomer As CustomerDataTable
+
+                    If Page.IsPostBack AndAlso lblSearchResult.Text.Length > 0 Then
+                        tblCustomer = CType(theNotificationSystem.GetCustomer(Integer.Parse(lblSearchResult.Text.Replace("ID", ""))), CustomerDataTable)
+                    Else
+                        tblCustomer = CType(theNotificationSystem.GetCustomers(), CustomerDataTable)
+                    End If
 
 
-            lblSearchResult.Text = tblCustomer.Rows.Count.ToString()
-            grdCustomer.DataSource = tblCustomer.DefaultView
-            grdCustomer.DataBind()
+                    lblSearchResult.Text = tblCustomer.Rows.Count.ToString()
+                    grdCustomer.DataSource = tblCustomer.DefaultView
+                    grdCustomer.DataBind()
 
 
         Catch ex As Exception
 
-            Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
-            Dim NotificationBody = ex.Message & "  " & ex.StackTrace
-            SendError.SendMailMessage(NotificationBody)
-            Response.Redirect("ErrorPage.aspx", False)
-        End Try
+                Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
+                Dim NotificationBody = ex.Message & "  " & ex.StackTrace
+                SendError.SendMailMessage(NotificationBody)
+                Response.Redirect("ErrorPage.aspx", False)
+            End Try
+
+        End If
     End Sub
 
 
@@ -92,7 +110,7 @@ Public Partial Class ctrCustomer_Find
 
 
 
-        Catch __unusedException1__ As Exception
+        Catch ex As Exception
             Throw
         End Try
     End Sub
