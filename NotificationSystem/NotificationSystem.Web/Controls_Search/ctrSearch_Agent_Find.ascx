@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrSearch_Agent_Find.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Agent_Find" %>
+﻿<%@ Control Language="vb" AutoEventWireup="true" CodeBehind="ctrSearch_Agent_Find.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Agent_Find" %>
 <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
                         You can use a partial Agent ID in your search
                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >

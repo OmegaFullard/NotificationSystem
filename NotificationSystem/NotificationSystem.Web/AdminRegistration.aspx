@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminRegistration.aspx.cs" MasterPageFile="MasterPage.Master" Inherits="NotificationSystem.NotificationSystem.Web.AdminRegistration" %>
+﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="AdminRegistration.aspx.cs" MasterPageFile="MasterPage.Master" Inherits="NotificationSystem.NotificationSystem.Web.AdminRegistration" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">

@@ -118,9 +118,9 @@ namespace NotificationSystem.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
             "Security=True;")]
-        public string NotificationSystem3 {
+        public string NotificationSystemConnectionString1 {
             get {
-                return ((string)(this["NotificationSystem3"]));
+                return ((string)(this["NotificationSystemConnectionString1"]));
             }
         }
     }

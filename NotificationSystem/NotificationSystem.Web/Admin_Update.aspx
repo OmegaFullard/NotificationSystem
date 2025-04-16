@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.master" CodeBehind="Admin_Update.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Admin_Update" %>
+﻿<%@ Page Language="vb" AutoEventWireup="true" MasterPageFile="MasterPage.master" CodeBehind="Admin_Update.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Admin_Update" %>
 
 	<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Search/ctrSearch_Admin.ascx" TagPrefix="uc1" TagName="ctrSearch_Admin" %>

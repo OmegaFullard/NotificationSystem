@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrSearch_Admin_Update.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Admin_Update" %>
+﻿<%@ Control Language="vb" AutoEventWireup="true" CodeBehind="ctrSearch_Admin_Update.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Admin_Update" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
   <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Admin Login" Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage.Master" CodeBehind="AdminLogin.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.AdminLogin" %>
+﻿<%@ Page Title="Admin Login" Language=vb" AutoEventWireup="true" MasterPageFile="MasterPage.Master" CodeBehind="AdminLogin.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.AdminLogin" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 

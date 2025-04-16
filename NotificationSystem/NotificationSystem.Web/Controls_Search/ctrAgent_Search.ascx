@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrAgent_Search.ascx.cs" Inherits="ctrAgent_Search" %>
+﻿<%@ Control Language="vb" AutoEventWireup="true" CodeBehind="ctrAgent_Search.ascx.cs" Inherits="ctrAgent_Search" %>
 
 <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
 <asp:Table ID="Table1" runat="server" ForeColor="#0000A0">

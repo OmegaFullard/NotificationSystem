@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Admin" %>
+﻿<%@ Page Language="vb#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Admin" %>
 
 <%@ Register Src="ctrAdmin.ascx" TagPrefix="uc1" TagName="ctrAdmin" %>
 <%@ Register Src="Controls_Search/ctrSearch_Admin.ascx" TagPrefix="uc1" TagName="ctrSearch_Admin" %>

@@ -4717,7 +4717,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString2"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4735,14 +4735,14 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT   UserName, Password, Email, First, Last\r\nFROM         Admin\r\nWHERE     (U" +
-                "serName = @username) ";
+            this._commandCollection[2].CommandText = "SELECT Email, First, Last, Password, UserName FROM Admin WHERE (UserName = @usern" +
+                "ame)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT   UserName, Password, Email, First, Last\r\nFROM         Admin\r\nWHERE     (U" +
-                "serName = @username) AND (Password = @password)\r\n";
+            this._commandCollection[3].CommandText = "SELECT Email, First, Last, Password, UserName FROM Admin WHERE (UserName = @usern" +
+                "ame) AND (Password = @password)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5367,7 +5367,7 @@ namespace NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString3"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6086,7 +6086,7 @@ WHERE (Agent.AgentID = @AgentID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB; Initial Catalog=NotificationSystem; Integrated Security=True;";
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6105,9 +6105,9 @@ WHERE (Agent.AgentID = @AgentID)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
-                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (AgentID = @Agent" +
-                "ID)\r\nORDER BY CustomerID";
+            this._commandCollection[2].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
+                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (AgentID = @AgentID) " +
+                "ORDER BY CustomerID";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -6123,23 +6123,23 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
-                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (CustomerID = @Cu" +
-                "stomerID)";
+            this._commandCollection[4].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
+                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (CustomerID = @Custom" +
+                "erID)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Address" +
-                ", City, State, Zip, UserName, Password FROM dbo.Customer WHERE (TroubleTicketNo " +
-                "= @TroubleTicketNo)";
+            this._commandCollection[5].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
+                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (TroubleTicketNo = @T" +
+                "roubleTicketNo)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "\r\nSELECT   CustomerID, AgentID, TroubleTicketNo, FirstN, LastN, Email, Phone, Add" +
-                "ress, City, State, Zip, UserName, Password\r\nFROM         Customer\r\nWHERE UserNam" +
-                "e = @username and Password = @password\r\n";
+            this._commandCollection[6].CommandText = "SELECT Address, AgentID, City, CustomerID, Email, FirstN, LastN, Password, Phone," +
+                " State, TroubleTicketNo, UserName, Zip FROM Customer WHERE (UserName = @username" +
+                ") AND (Password = @password)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6934,7 +6934,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString5"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6960,14 +6960,14 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AgentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT CustomerID, AgentID, TroubleTicketNo, Status, DueDate, RequestDate, Type F" +
-                "ROM dbo.TroubleTicketReq Where (CustomerID = @CustomerID)";
+            this._commandCollection[3].CommandText = "SELECT AgentID, CustomerID, DueDate, RequestDate, Status, TroubleTicketNo, Type F" +
+                "ROM TroubleTicketReq WHERE (CustomerID = @CustomerID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT TroubleTicketNo, Status, CAST(TroubleTicketNo AS VARCHAR) + \' | \' + Status" +
-                " AS TikList\r\nFROM   TroubleTicketReq\r\nORDER BY TroubleTicketNo";
+            this._commandCollection[4].CommandText = "SELECT AgentID, CustomerID, DueDate, RequestDate, Status, TroubleTicketNo, Type F" +
+                "ROM TroubleTicketReq ORDER BY TroubleTicketNo";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
@@ -6977,8 +6977,8 @@ WHERE        ([Customer].CustomerID = @CustomerID)
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TroubleTicketNo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TroubleTicketNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT TroubleTicketNo, Type, CAST(TroubleTicketNo AS VARCHAR) + \' | \' + Type AS " +
-                "NotList\r\nFROM   TroubleTicketReq\r\n";
+            this._commandCollection[6].CommandText = "SELECT AgentID, CustomerID, DueDate, RequestDate, Status, TroubleTicketNo, Type F" +
+                "ROM TroubleTicketReq";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
@@ -7556,8 +7556,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7724,8 +7723,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7892,8 +7890,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8060,8 +8057,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8229,8 +8225,7 @@ WHERE        ([Customer].CustomerID = @CustomerID)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\mssqlLocalDB;Initial Catalog=NotificationSystem;Integrated " +
-                "Security=True;Encrypt=False;TrustServerCertificate=True;User Instance=False";
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["NotificationSystemConnectionString1"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -1,4 +1,4 @@
-﻿ <%@ Control Language="c#" AutoEventWireup="false" CodeBehind="ctrAgent_Update.ascx.cs" Inherits="ctrAgent_Update" %>
+﻿ <%@ Control Language="vb" AutoEventWireup="false" CodeBehind="ctrAgent_Update.ascx.cs" Inherits="ctrAgent_Update" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 

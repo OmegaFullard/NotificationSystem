@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="false" CodeBehind="Agent_Find_Details.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Find_Details" %>	
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Agent_Find_Details.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Find_Details" %>	
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 

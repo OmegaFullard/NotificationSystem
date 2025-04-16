@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrAdmin_Delete.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Delete.ctrAdmin_Delete" %>
+﻿<%@ Control Language="vb" AutoEventWireup="true" CodeBehind="ctrAdmin_Delete.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Delete.ctrAdmin_Delete" %>
 
 <style type="text/css">
 

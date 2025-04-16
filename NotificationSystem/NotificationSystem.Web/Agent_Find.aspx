@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Agent_Find.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Find" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Agent_Find.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Agent_Find" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Search/ctrAgent_Search.ascx" TagPrefix="uc1" TagName="ctrAgent_Search" %>

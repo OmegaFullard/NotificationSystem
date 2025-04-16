@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrSearch_Customer_Find.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Customer_Find" %>
+﻿<%@ Control Language="vb" AutoEventWireup="true" CodeBehind="ctrSearch_Customer_Find.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Customer_Find" %>
 
 <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
                         You can use a partial Customer ID in your search

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrCustomer_Find.ascx.cs" Inherits="ctrCustomer_Find" %>
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="ctrCustomer_Find.ascx.cs" Inherits="ctrCustomer_Find" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 

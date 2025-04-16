@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrCustomer_Delete.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Delete.ctrCustomer_Delete" %>
+﻿<%@ Control Language="vb" AutoEventWireup="true" CodeBehind="ctrCustomer_Delete.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Controls_Delete.ctrCustomer_Delete" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 

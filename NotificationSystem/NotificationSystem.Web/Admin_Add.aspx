@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Add.aspx.cs" MasterPageFile="MasterPage.master" Inherits="NotificationSystem.NotificationSystem.Web.Admin_Add" %>
+﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="Admin_Add.aspx.cs" MasterPageFile="MasterPage.master" Inherits="NotificationSystem.NotificationSystem.Web.Admin_Add" %>
 <%@ Register Src="Controls_Search/ctrSearch_Admin_Update.ascx" TagPrefix="uc1" TagName="ctrSearch_Admin_Update" %>
 <%@ Register Src="Controls_Search/ctrSearch_Admin.ascx" TagPrefix="uc1" TagName="ctrSearch_Admin" %>
 <%@ Register Src="Controls_Delete/ctrAdmin_Delete.ascx" TagPrefix="uc1" TagName="ctrAdmin_Delete" %>

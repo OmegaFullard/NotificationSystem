@@ -57,7 +57,7 @@ namespace NotificationSystem.NotificationSystem.Web
                 if ((Page.IsPostBack) & this.lblSearchResult.Text.Length > 0)
 					tblGetAgent = (AgentDataTable)theNotificationSystem.GetAgent(m_AgentID);
 				else
-                    tblGetAgent = (AgentDataTable)theNotificationSystem.GetAgentList();
+                    tblGetAgent = (AgentDataTable)theNotificationSystem.GetAgents();
 
 
                 this.lblSearchResult.Text = tblGetAgent.Rows.Count + " Result(s)";

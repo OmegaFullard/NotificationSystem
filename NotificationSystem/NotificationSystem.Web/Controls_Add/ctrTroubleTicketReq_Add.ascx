@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ctrTroubleTicketReq_Add.ascx.cs" Inherits="ctrTroubleTicketReq_Add" %>
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="ctrTroubleTicketReq_Add.ascx.cs" Inherits="ctrTroubleTicketReq_Add" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 

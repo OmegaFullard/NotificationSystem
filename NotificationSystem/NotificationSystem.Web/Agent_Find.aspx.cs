@@ -25,7 +25,7 @@ namespace NotificationSystem.NotificationSystem.Web
                     if (Request.Form["ctl00$MainContent$ctrAgent_Search$btnSearch"] == "Search")
                     {
                         ctrAgent_Search.PopulateSearchControl();
-                        this.ctrAgent_Find.AgentID = ctrAgent_Search.AgentID;
+                        ctrAgent_Find.AgentID = ctrAgent_Search.AgentID;
 
                     }
                 }

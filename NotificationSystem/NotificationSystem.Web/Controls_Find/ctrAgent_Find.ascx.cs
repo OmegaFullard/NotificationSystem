@@ -36,8 +36,8 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
         }
 
 
-        protected void Page_Load(object sender, System.EventArgs e)
-        {
+	protected void Page_Load(object sender, System.EventArgs e)
+	{
 		clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
 		AgentDataTable tblAgent = new AgentDataTable();
 
@@ -69,12 +69,40 @@ public partial class ctrAgent_Find : System.Web.UI.UserControl
 		}
 	}
 
+	//protected void Page_Load(object sender, EventArgs e)
+	//{
+	//    try
+	//    {
+	//        var tblAgent = GetAgentData();
+	//        this.lblSearchResult.Text = tblAgent.Rows.Count.ToString();
+	//        this.grdAgent.DataSource = tblAgent.DefaultView;
+	//        this.grdAgent.DataBind();
+	//    }
+	//    catch (Exception ex)
+	//    {
+	//        HandleError(ex);
+	//    }
+	//}
 
+	//private AgentDataTable GetAgentData()
+	//{
+	//    clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
+	//    if (Request.Form["btnSearch"] == "Search" && lblSearchResult.Text.StartsWith("ID") &&
+	//        int.TryParse(lblSearchResult.Text.Replace("ID", ""), out int agentId))
+	//    {
+	//        return (AgentDataTable)theNotificationSystem.GetAgent(agentId);
+	//    }
+	//    return (AgentDataTable)theNotificationSystem.GetAgents();
+	//}
 
-
-	
-
-	
+	//private void HandleError(Exception ex)
+	//{
+	//    clsNotificationSystem_Web sendError = new clsNotificationSystem_Web();
+	//    string notificationBody = $"{ex.Message}\n{ex.StackTrace}";
+	//    sendError.SendMailMessage(notificationBody);
+	//    Debug.WriteLine(notificationBody);
+	//    Response.Redirect("ErrorPage.aspx", true);
+	//}
 	private string ConvertSortDirection(System.Web.UI.WebControls.GridViewSortEventArgs e)
 	{
 		ViewState.Add("columnname", e.SortExpression);

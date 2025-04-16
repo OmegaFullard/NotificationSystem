@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrCustomer.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrCustomer" %>
+﻿<%@ Control Language="vb" AutoEventWireup="true" CodeBehind="ctrCustomer.ascx.cs" Inherits="NotificationSystem.NotificationSystem.Web.ctrCustomer" %>
 
 <div style="width: 1200px; height:500px;  overflow: auto; padding-left:5px" >
            <div class="Heading" >Customer List</div>
