@@ -2,6 +2,8 @@
 Imports System.Data.SqlClient
 Imports System.Web.UI
 Imports System.Web.UI.WebControls
+Imports NotificationSystem.NotificationSystem.Data.Classes
+Imports NotificationSystem.NotificationSystem.Data.NotificationSystem
 
 Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
     Public Partial Class ctrCustomer_Delete
@@ -17,33 +19,24 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
             End Set
         End Property
         Public Property txtCustomerList As TextBox
-        Protected Sub Page_Load(sender As Object, e As EventArgs)
-            Dim theNotificationSystem As NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem = New NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem()
-            Dim tblCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable = New NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable()
+        Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+            Dim theNotificationSystem As New clsNotificationSystem
+            Dim tblCustomer As New CustomerDataTable
 
             Try
-                If MyBase.Page.IsPostBack Then
+                If Page.IsPostBack Then
 
 
-                    If Equals(Request.Form("ctl00$MainContent$ctrCustomer_Delete$btnDelete"), "Delete") Then DeleteCustomer()
+                    If Request.Form("ctl00$MainContent$ctrCustomer_Delete$btnDelete") = "Delete" Then
+                        DeleteCustomer()
+                    End If
                 Else
                     If m_CustomerID = 0 Then Return
-                    tblCustomer = CType(theNotificationSystem.GetCustomers(), NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable)
-                                        ''' Cannot convert IfStatementSyntax, System.InvalidCastException: Unable to cast object of type 'Microsoft.CodeAnalysis.VisualBasic.Syntax.EmptyStatementSyntax' to type 'Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax'.
-'''    at ICSharpCode.CodeConverter.VB.MethodBodyExecutableStatementVisitor.VisitIfStatement(IfStatementSyntax node)
-'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
-'''    at ICSharpCode.CodeConverter.VB.CommentConvertingMethodBodyVisitor.DefaultVisit(SyntaxNode node)
-''' 
-''' Input:
-''' 
-''' 
-'''                     if (tblCustomer.Count == 0)
-'''                         return;
-''' 
-''' 
+                    tblCustomer = CType(theNotificationSystem.GetCustomer(CustomerID), CustomerDataTable)
 
-                    If True Then
-                        Dim withBlock = tblCustomer(0)
+                    If tblCustomer.Count = 0 Then Return
+
+                    Dim withBlock = tblCustomer(0)
 
                         withBlock.CustomerID = Integer.Parse(txtcustomerid.Text)
                         withBlock.AgentID = Integer.Parse(txtAgentID.Text)
@@ -70,13 +63,12 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
                         End If
 
                         If Not String.IsNullOrEmpty(withBlock.Zip) Then txtzip.Text = withBlock.Zip.Substring(0, 5)
-                    End If
 
                     btnDelete.Enabled = True
                 End If
 
             Catch ex As Exception
-                Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
+                Dim SendError As New clsNotificationSystem_Web
                 Dim NotificationBody = ex.Message & "  " & ex.StackTrace
                 SendError.SendMailMessage(NotificationBody)
                 Response.Redirect("ErrorPage.aspx", False)
@@ -84,34 +76,24 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
 
         End Sub
         Public Sub DeleteCustomer()
+
+            Dim thisCustomer = New clsCustomer
+
+
+            If txtcustomerid.Text.Length = 0 Then Return
+            thisCustomer.CustomerID = Integer.Parse(txtcustomerid.Text)
+
             Try
-                Dim thisCustomer As NotificationSystem.NotificationSystem.Data.Classes.clsCustomer = New NotificationSystem.NotificationSystem.Data.Classes.clsCustomer()
+                Dim theNotificationSystem As New clsNotificationSystem
+                theNotificationSystem.DeleteCustomer(thisCustomer)
 
-                If True Then
+                lblResult.Text = "Customer data has been deleted"
+            Catch ex As Exception
 
-                    If txtcustomerid.Text.Length = 0 Then Return
-                    If True Then
-                        Dim withBlock = thisCustomer
-                        withBlock.CustomerID = Integer.Parse(txtcustomerid.Text)
-                    End If
-
-
-                End If
-
-                'clsNotificationSystem theNotificationSystem = new clsNotificationSystem();
-                'theNotificationSystem.DeleteCustomer(thisCustomer);
-                'lblResult.Text = "Customer data has been deleted";
-                Try
-                Catch ex As SqlException
-
-                    Throw New ApplicationException(ex.Message)
-                End Try
-
-
-                CleanupControls()
-            Catch __unusedException1__ As Exception
                 Throw
             End Try
+            CleanupControls()
+
         End Sub
         Private Sub CleanupControls()
             txtcustomerid.Text = String.Empty

@@ -39,7 +39,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtcustomerid As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtcustomerid As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''valRequiredFieldID control.
@@ -66,7 +66,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtfirstname As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtfirstname As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''valRequiredFieldFirstN control.
@@ -93,7 +93,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtlastname As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtlastname As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''valRequiredFieldLastN control.
@@ -120,7 +120,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtusername As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtusername As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtpassword control.
@@ -129,7 +129,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtpassword As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtpassword As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtaddress control.
@@ -138,7 +138,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtaddress As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtaddress As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtcity control.
@@ -147,7 +147,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtcity As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtcity As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtstate control.
@@ -156,7 +156,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtstate As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtstate As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtzip control.
@@ -165,7 +165,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtzip As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtzip As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtAgentID control.
@@ -174,7 +174,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtAgentID As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtAgentID As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txttroubleticketno control.
@@ -183,7 +183,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txttroubleticketno As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txttroubleticketno As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtemailaddress control.
@@ -192,7 +192,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtemailaddress As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtemailaddress As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtPhoneNumber control.
@@ -201,7 +201,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Delete
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtPhoneNumber As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtPhoneNumber As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''btnCancel control.
