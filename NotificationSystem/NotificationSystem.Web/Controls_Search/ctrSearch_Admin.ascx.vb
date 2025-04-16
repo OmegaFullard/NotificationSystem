@@ -14,7 +14,10 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Search
                 m_UserName = value
             End Set
         End Property
-        Protected Sub Page_Load(sender As Object, e As EventArgs)
+        Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+            If Not IsPostBack Then
+                txtUserName.Text = m_UserName
+            End If
 
         End Sub
         Public Sub PopulateSearchControl()

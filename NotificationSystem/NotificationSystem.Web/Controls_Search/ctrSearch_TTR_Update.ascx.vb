@@ -1,12 +1,13 @@
 ﻿Imports System
 Imports System.Web.UI
+Imports NotificationSystem.NotificationSystem.Data.Classes
 
 Namespace NotificationSystem.NotificationSystem.Web.Controls_Search
     Public Partial Class ctrSearch_TTR_Update
         Inherits UserControl
-        Protected Sub Page_Load(sender As Object, e As EventArgs)
-            Dim theNotificationSystem As NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem = New NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem()
-            If Not MyBase.Page.IsPostBack Then
+        Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+            Dim theNotificationSystem As New clsNotificationSystem
+            If Not Me.Page.IsPostBack Then
                 cmbTicket.DataSource = theNotificationSystem.GetTT()
                 cmbTicket.DataTextField = "TroubleTicketNo"
                 cmbTicket.DataValueField = "Status"

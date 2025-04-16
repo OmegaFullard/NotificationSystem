@@ -1,13 +1,14 @@
 ﻿Imports System
 Imports System.Web.UI
+Imports NotificationSystem.NotificationSystem.Data.Classes
 
 Namespace NotificationSystem.NotificationSystem.Web.Controls_Search
     Public Partial Class ctrSearch_Customer_Update
         Inherits UserControl
-        Protected Sub Page_Load(sender As Object, e As EventArgs)
-            Dim theNotificationSystem As NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem = New NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem()
+        Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+            Dim theNotificationSystem As New clsNotificationSystem
 
-            If Not MyBase.Page.IsPostBack Then
+            If Not Me.Page.IsPostBack Then
                 cmbCustomer.DataSource = theNotificationSystem.GetCustomers()
                 cmbCustomer.DataTextField = "CustomerID"
                 cmbCustomer.DataValueField = "FirstN"
