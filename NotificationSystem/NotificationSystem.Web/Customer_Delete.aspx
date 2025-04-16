@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Customer_Delete.aspx.cs" MasterPageFile="MasterPage.master" Inherits="NotificationSystem.NotificationSystem.Web.Customer_Delete" %>
+﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="Customer_Delete.aspx.cs" MasterPageFile="MasterPage.master" Inherits="NotificationSystem.NotificationSystem.Web.Customer_Delete" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Search/ctrSearch_Customer_Update.ascx" TagPrefix="uc1" TagName="ctrSearch_Customer_Update" %>
 <%@ Register Src="Controls_Delete/ctrCustomer_Delete.ascx" TagPrefix="uc1" TagName="ctrCustomer_Delete" %>

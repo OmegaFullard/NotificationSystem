@@ -7,72 +7,74 @@
 ' </auto-generated>
 '------------------------------------------------------------------------------
 
+Option Strict On
+Option Explicit On
+
 Namespace NotificationSystem.NotificationSystem.Web
 
+    Partial Public Class Customer_Update
 
-    Public Partial Class Customer_Update
+        '''<summary>
+        '''ScriptManager1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
-        ''' <summary>
-        ''' ScriptManager1 control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected ScriptManager1 As Global.System.Web.UI.ScriptManager
+        '''<summary>
+        '''Table1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents Table1 As Global.System.Web.UI.WebControls.Table
 
-        ''' <summary>
-        ''' Table1 control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected Table1 As Global.System.Web.UI.WebControls.Table
+        '''<summary>
+        '''Panel1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
-        ''' <summary>
-        ''' Panel1 control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected Panel1 As Global.System.Web.UI.WebControls.Panel
+        '''<summary>
+        '''customer control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents customer As Global.System.Web.UI.WebControls.Image
 
-        ''' <summary>
-        ''' customer control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected customer As Global.System.Web.UI.WebControls.Image
+        '''<summary>
+        '''ctrSearch_Customer_Update control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents ctrSearch_Customer_Update As Global.NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Customer_Update
 
-        ''' <summary>
-        ''' ctrSearch_Customer_Update control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected ctrSearch_Customer_Update As Global.NotificationSystem.NotificationSystem.Web.Controls_Search.ctrSearch_Customer_Update
+        '''<summary>
+        '''NavigationMenu control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents NavigationMenu As Global.System.Web.UI.WebControls.Menu
 
-        ''' <summary>
-        ''' NavigationMenu control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected NavigationMenu As Global.System.Web.UI.WebControls.Menu
-
-        ''' <summary>
-        ''' ctrCustomer_Update control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected ctrCustomer_Update As Global.ctrCustomer_Update
+        '''<summary>
+        '''ctrCustomer_Update control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents ctrCustomer_Update As Global.ctrCustomer_Update
     End Class
 End Namespace

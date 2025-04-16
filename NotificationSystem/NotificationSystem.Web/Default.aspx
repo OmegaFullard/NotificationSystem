@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Default" %>
+﻿<%@ Page Title="Home" Language="vb" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Default" %>
 
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" Runat="Server">

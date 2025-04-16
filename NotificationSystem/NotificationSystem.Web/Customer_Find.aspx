@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Customer_Find.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Customer_Find" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="MasterPage.master" CodeBehind="Customer_Find.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Customer_Find" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="Controls_Search/ctrCustomer_Search.ascx" TagPrefix="uc1" TagName="ctrCustomer_Search" %>
 <%@ Register Src="Controls_Find/ctrCustomer_Find.ascx" TagPrefix="uc1" TagName="ctrCustomer_Find" %>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Customer Management" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeFile="CustomerMgt.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.CustomerMgt" %>
+﻿<%@ Page Title="Customer Management" Language="vb" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeFile="CustomerMgt.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.CustomerMgt" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

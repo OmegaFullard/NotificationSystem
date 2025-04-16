@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ErrorPage.aspx.cs" MasterPageFile="~/NotificationSystem.Web/MasterPage.Master" Inherits="NotificationSystem.NotificationSystem.Web.ErrorPage" %>
+﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="ErrorPage.aspx.cs" MasterPageFile="~/NotificationSystem.Web/MasterPage.Master" Inherits="NotificationSystem.NotificationSystem.Web.ErrorPage" %>
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">

@@ -7,36 +7,38 @@
 ' </auto-generated>
 '------------------------------------------------------------------------------
 
+Option Strict On
+Option Explicit On
+
 Namespace NotificationSystem.NotificationSystem.Web
 
+    Partial Public Class [Default]
 
-    Public Partial Class [Default]
+        '''<summary>
+        '''ScriptManager1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
-        ''' <summary>
-        ''' ScriptManager1 control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected ScriptManager1 As Global.System.Web.UI.ScriptManager
+        '''<summary>
+        '''Panel1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
-        ''' <summary>
-        ''' Panel1 control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected Panel1 As Global.System.Web.UI.WebControls.Panel
-
-        ''' <summary>
-        ''' handshake control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected handshake As Global.System.Web.UI.WebControls.Image
+        '''<summary>
+        '''handshake control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents handshake As Global.System.Web.UI.WebControls.Image
     End Class
 End Namespace

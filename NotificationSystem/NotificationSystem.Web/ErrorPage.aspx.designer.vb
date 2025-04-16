@@ -7,18 +7,20 @@
 ' </auto-generated>
 '------------------------------------------------------------------------------
 
+Option Strict On
+Option Explicit On
+
 Namespace NotificationSystem.NotificationSystem.Web
 
+    Partial Public Class ErrorPage
 
-    Public Partial Class ErrorPage
-
-        ''' <summary>
-        ''' btnBack control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected btnBack As Global.System.Web.UI.WebControls.Button
+        '''<summary>
+        '''btnBack control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents btnBack As Global.System.Web.UI.WebControls.Button
     End Class
 End Namespace

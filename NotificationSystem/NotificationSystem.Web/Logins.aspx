@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Account Login" Language="C#" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="Logins.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Logins" %>
+﻿<%@ Page Title="Account Login" Language="vb" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="Logins.aspx.cs" Inherits="NotificationSystem.NotificationSystem.Web.Logins" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="server">
   

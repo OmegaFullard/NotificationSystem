@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Invoices" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Invoices.aspx.cs" Inherits="Invoices" %>
+﻿<%@ Page Title="Invoices" Language="vb" MasterPageFile="MasterPage.Master" AutoEventWireup="true" CodeBehind="Invoices.aspx.cs" Inherits="Invoices" %>
 
 
 

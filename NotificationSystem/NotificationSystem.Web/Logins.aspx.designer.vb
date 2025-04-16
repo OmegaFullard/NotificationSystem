@@ -7,18 +7,20 @@
 ' </auto-generated>
 '------------------------------------------------------------------------------
 
+Option Strict On
+Option Explicit On
+
 Namespace NotificationSystem.NotificationSystem.Web
 
+    Partial Public Class Logins
 
-    Public Partial Class Logins
-
-        ''' <summary>
-        ''' DynamicHyperLink1 control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected DynamicHyperLink1 As Global.System.Web.UI.WebControls.HyperLink
+        '''<summary>
+        '''DynamicHyperLink1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents DynamicHyperLink1 As Global.System.Web.UI.WebControls.HyperLink
     End Class
 End Namespace
