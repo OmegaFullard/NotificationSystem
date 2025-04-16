@@ -7,7 +7,7 @@ Imports System.Data.SqlClient
 
 Public Partial Class ctrAgent_Add
     Inherits UserControl
-    Private _AgentList As Integer
+    Private m_AgentList As Integer
 
 
 
@@ -27,75 +27,62 @@ Public Partial Class ctrAgent_Add
 
     Public Property AgentList As Integer
         Get
-            Return _AgentList
+            Return m_AgentList
         End Get
         Friend Set(value As Integer)
-            _AgentList = value
+            m_AgentList = value
         End Set
     End Property
 
-    Protected Sub Page_Load(sender As Object, e As EventArgs)
-        Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-        Dim tblAgent As AgentDataTable = New AgentDataTable()
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Try
-            If MyBase.Page.IsPostBack Then
-                If Equals(Request.Form("ctl00$MainContent$ctrAgent_Add$btnAdd"), "Add") Then AddAgent()
-            Else
-                PopulateControls()
-            End If
-        Catch __unusedException1__ As Exception
-            Throw
-        End Try
+        PopulateControls()
+
+
+
     End Sub
 
     Public Sub AddAgent()
         Try
-            Dim thisAgent As clsAgent = New clsAgent()
+            Dim thisAgent As New clsAgent
 
-            If True Then
-                Dim withBlock = thisAgent
+            With thisAgent
+
+
+
+                .AgentID = Integer.Parse(txtagentid.Text)
+                .Title = txttitle.Text
+                .FirstN = txtfirstname.Text
+                .LastN = txtlastname.Text
+                .Email = txtemailaddress.Text
+                .Phone = txtPhoneNumber.Text
+                .Fax = txtFaxNumber.Text
+                .Salary = txtsalary.Text
+
                 If txtagentid.Text.Length = 0 Then Return
+            End With
 
 
-                withBlock.AgentID = Integer.Parse(txtagentid.Text)
-                withBlock.Title = txttitle.Text
-                withBlock.FirstN = txtfirstname.Text
-                withBlock.LastN = txtlastname.Text
-                withBlock.Email = txtemailaddress.Text
-                withBlock.Phone = txtPhoneNumber.Text
-                withBlock.Fax = txtFaxNumber.Text
-                withBlock.Salary = txtsalary.Text
-            End If
-
-            Try
-                Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-                theNotificationSystem.AddAgent(thisAgent)
+            Dim theNotificationSystem As New clsNotificationSystem
+            theNotificationSystem.AddAgent(thisAgent)
                 lblResult.Text = "Agent data has been added"
-            Catch ex As SqlException
-                If ex.Number = 2627 Then
-                    lblResult.Text = "Agent already exist!"
-                Else
-                    Throw New ApplicationException(ex.Message)
-                End If
-            End Try
 
 
         Catch ex As Exception
-            Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
+            Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web
             Dim NotificationBody = ex.Message & "  " & ex.StackTrace
             SendError.SendMailMessage(NotificationBody)
             Response.Redirect("ErrorPage.aspx", False)
         End Try
     End Sub
     Public Sub PopulateControls()
-        Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
+
     End Sub
     Public Sub ClearControls()
         Try
 
 
-        Catch __unusedException1__ As Exception
+        Catch ex As Exception
             Throw
         End Try
     End Sub

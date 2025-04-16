@@ -95,13 +95,22 @@ Partial Public Class ctrTroubleTicketReq_Add
     Protected WithEvents cmbType As Global.Telerik.Web.UI.RadMultiColumnComboBox
 
     '''<summary>
+    '''ctrTroubleTicketReq_Add control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ctrTroubleTicketReq_Add As Global.System.Web.UI.UserControl
+
+    '''<summary>
     '''pickRequestDate control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pickRequestDate As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents pickRequestDate As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''pickDueDate control.
@@ -110,7 +119,7 @@ Partial Public Class ctrTroubleTicketReq_Add
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pickDueDate As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents pickDueDate As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''btnCancel control.

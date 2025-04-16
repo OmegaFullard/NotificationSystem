@@ -19,86 +19,53 @@ Public Partial Class ctrTroubleTicketReq_Add
     End Property
 
     Public Property txtTroubleTicketList As TextBox
-    Protected Sub Page_Load(sender As Object, e As EventArgs)
-        If MyBase.Page.IsPostBack Then
-            Try
-                If Equals(Request.Form("ctl00$MainContent$ctrTroubleTicketReq_Add$btnAdd"), "Add") Then
-                    AddTroubleTicket()
-
-                ElseIf Equals(Request.Form("ctl00$MainContent$ctrTroubleTicketReq_Search$btnSearch"), "Search") Then
-                    Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-
-                    Dim tblTroubleTicketReq As TroubleTicketReqDataTable = theNotificationSystem.GetTroubleTicket(m_TroubleTicketNo)
-
-                    If True Then
-                        Dim withBlock = tblTroubleTicketReq(0)
-                        withBlock.AgentID = Integer.Parse(txtAgentID.Text)
-                        withBlock.CustomerID = Integer.Parse(txtcustomerid.Text)
-                        withBlock.TroubleTicketNo = Integer.Parse(txttroubleticketno.Text)
-                        cmbStatus.Text = withBlock.Status
-                        cmbType.Text = withBlock.Type
-                        withBlock.RequestDate = Date.Now
-                        withBlock.DueDate = Date.Now
-                    End If
-                End If
-
-                PopulateControls()
-            Catch ex As Exception
-                Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
-                Dim NotificationBody = ex.Message & "  " & ex.StackTrace
-                SendError.SendMailMessage(NotificationBody)
-                Response.Redirect("ErrorPage.aspx", False)
-            End Try
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        PopulateControls()
+        If Not IsPostBack Then
+            txtcustomerid.Text = TroubleTicketNo.ToString()
+            txtcustomerid.Enabled = False
+            txtAgentID.Text = "0"
+            txttroubleticketno.Text = "0"
+            cmbStatus.Text = ""
+            cmbType.Text = ""
         End If
     End Sub
 
     Public Sub AddTroubleTicket()
         Try
-            Dim thisTroubleTicket As clsTroubleTicketReq = New clsTroubleTicketReq()
+            Dim thisTroubleTicket As New clsTroubleTicketReq
 
-            If True Then
-                Dim withBlock = thisTroubleTicket
+
+            With thisTroubleTicket
+
+                If pickRequestDate.SelectedDate Is Nothing Then .RequestDate = Date.Now Else .RequestDate = CDate(pickRequestDate.SelectedDate)
+
+
+                If String.IsNullOrEmpty(cmbType.Text) Then Return
+
+                .CustomerID = Integer.Parse(txtcustomerid.Text)
+                .AgentID = Integer.Parse(txtAgentID.Text)
+                .TroubleTicketNo = Integer.Parse(txttroubleticketno.Text)
+                .Status = cmbStatus.Text
+                .Type = cmbType.Text
+                .DueDate = Date.Now
+
                 If txttroubleticketno.Text.Length = 0 Then
-
-                    'if (pickRequestDate.SelectedDate == null)
-                    '    withBlock.RequestDate = DateTime.Now;
-                    'else
-                    '    withBlock.RequestDate = (DateTime)pickRequestDate.SelectedDate;
-                    If Equals(cmbType.Text, String.Empty) Then Return
+                    ' Handle empty TroubleTicketNo if necessary
                 End If
-
-
-
-                withBlock.CustomerID = Integer.Parse(txtcustomerid.Text)
-                withBlock.AgentID = Integer.Parse(txtAgentID.Text)
-                withBlock.TroubleTicketNo = Integer.Parse(txttroubleticketno.Text)
-                cmbStatus.Text = withBlock.Status
-                cmbType.Text = withBlock.Type
-                withBlock.DueDate = Date.Now
-                withBlock.RequestDate = Date.Now
-
-
-            End If
-            Try
-
-                Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-                theNotificationSystem.AddTroubleTicket(thisTroubleTicket)
+            End With
+            Dim theNotificationSystem As New clsNotificationSystem
+            theNotificationSystem.AddTroubleTicket(thisTroubleTicket)
                 lblResult.Text = "Trouble Ticket data has been added"
 
-            Catch ex As SqlException
-                If ex.Number = 2627 Then
-                    lblResult.Text = "Ticket already exist!"
-                Else
-                    Throw New ApplicationException(ex.Message)
-                End If
-            End Try
+
         Catch ex As Exception
             Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
             Dim NotificationBody = ex.Message & "  " & ex.StackTrace
             SendError.SendMailMessage(NotificationBody)
             Response.Redirect("ErrorPage.aspx", False)
         End Try
-        Return
+
     End Sub
 
     Public Sub ClearControls()

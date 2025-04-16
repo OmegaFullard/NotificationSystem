@@ -142,7 +142,7 @@
 										  <asp:TableRow> 
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true">Request Date:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
-                                                        <asp:Calendar ID="pickRequestDate" runat="server" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" Height="20px" MaxLength="127" EnableAjaxSkinRendering="True" EnableEmbeddedSkins="True" DateInput-CssClass="RadCalendarFastNavPopup" PopupDirection="TopRight"></asp:Calendar>
+                                                        <telerik:RadDatePicker ID="pickRequestDate" runat="server" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" Height="20px" MaxLength="127" EnableAjaxSkinRendering="True" EnableEmbeddedSkins="True" DateInput-CssClass="RadCalendarFastNavPopup" PopupDirection="TopRight"></telerik:RadDatePicker>
                                                       </asp:TableCell>
                                                 </asp:TableRow> 
                                                  <asp:TableRow  > 
@@ -153,7 +153,7 @@
 										    <asp:TableRow> 
                                                     <asp:TableCell HorizontalAlign="Right" Font-Bold="true"> Due Date:</asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Left">
-                                                        <asp:Calendar ID="pickDueDate" runat="server" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" Height="20px" MaxLength="127" EnableAjaxSkinRendering="True" EnableEmbeddedSkins="True" DateInput-CssClass="RadCalendarFastNavPopup" PopupDirection="TopRight"></asp:Calendar>
+                                                        <telerik:RadDatePicker ID="pickDueDate" runat="server" DateInput-EmptyMessage="Select" DataFormatString="{0:MM/dd/yyyy}" Width="140px" Height="20px" MaxLength="127" EnableAjaxSkinRendering="True" EnableEmbeddedSkins="True" DateInput-CssClass="RadCalendarFastNavPopup" PopupDirection="TopRight"></telerik:RadDatePicker>
                                            
                                                     </asp:TableCell>
                                                 </asp:TableRow> 

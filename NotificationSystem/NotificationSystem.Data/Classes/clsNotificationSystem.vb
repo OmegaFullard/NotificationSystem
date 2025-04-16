@@ -1,421 +1,376 @@
 ﻿Imports System
 Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Configuration
+Imports System.Collections.Generic
+Imports NotificationSystem.NotificationSystem.Data
+Imports NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters
+Imports NotificationSystem.NotificationSystem.Data.NotificationSystem
+
 
 Namespace NotificationSystem.NotificationSystem.Data.Classes
     Public Class clsNotificationSystem
 
 
-
-        Private _Customer As Boolean, _Agent As Boolean, _TroubleTicket As Boolean, _Title As Boolean, _Salary As Boolean, _Admin As Boolean
-
-        Public Property Customer As Boolean
-            Get
-                Return _Customer
-            End Get
-            Private Set(value As Boolean)
-                _Customer = value
-            End Set
-        End Property
-
-        Public Property Agent As Boolean
-            Get
-                Return _Agent
-            End Get
-            Private Set(value As Boolean)
-                _Agent = value
-            End Set
-        End Property
-
-        Public Property TroubleTicket As Boolean
-            Get
-                Return _TroubleTicket
-            End Get
-            Private Set(value As Boolean)
-                _TroubleTicket = value
-            End Set
-        End Property
-
-        Public Property Title As Boolean
-            Get
-                Return _Title
-            End Get
-            Private Set(value As Boolean)
-                _Title = value
-            End Set
-        End Property
-        Public Property StartDate As Date
-            Get
-                Return m_StartDate
-            End Get
-            Set(value As Date)
-                m_StartDate = value
-            End Set
-        End Property
-
-        Public Property Salary As Boolean
-            Get
-                Return _Salary
-            End Get
-            Private Set(value As Boolean)
-                _Salary = value
-            End Set
-        End Property
-
-        Public Property Admin As Boolean
-            Get
-                Return _Admin
-            End Get
-            Private Set(value As Boolean)
-                _Admin = value
-            End Set
-        End Property
-
-        Private m_ReportPath As String = String.Empty
-        Private m_UserName As String = String.Empty
-        'private DateTime m_RequestDate;
-        Private m_RequestDate As Date = Date.Now ' Initialize with a default value
-
-        Public Property RequestDate As Date
-            Get
-                Return m_RequestDate
-            End Get
-            Set(value As Date)
-                m_RequestDate = value
-            End Set
-        End Property
-        Private m_StartDate As Date = Date.MinValue ' Initialize with a default value
-        Private m_AgentID As Integer = 0
-        Private m_CustomerID As Integer = 0
-        Private m_TroubleTicketNo As Integer = 0
-
-        Public Property AgentID As Integer
-            Get
-                Return m_AgentID
-            End Get
-            Set(value As Integer)
-                m_AgentID = value
-            End Set
-        End Property
-        'public object CustomerID { get; internal set; }
-        Public Property CustomerID As Integer
-            Get
-                Return m_CustomerID
-            End Get
-            Set(value As Integer)
-                m_CustomerID = value
-            End Set
-        End Property
-
-        Public Property TroubleTicketNo As Integer
-            Get
-                Return m_TroubleTicketNo
-            End Get
-            Set(value As Integer)
-                m_TroubleTicketNo = value
-            End Set
-        End Property
-
-        Public Property UserName As String
-            Get
-                Return m_UserName
-            End Get
-            Set(value As String)
-                m_UserName = value
-            End Set
-        End Property
-
-        Public Property ReportPath As String
-            Get
-                Return m_ReportPath
-            End Get
-            Set(value As String)
-                m_ReportPath = value
-            End Set
-        End Property
-
         Public Function GetCustomersList() As DataTable
             Try
-                Dim adpCustomerList As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
-                Dim tblCustomerList As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable = adpCustomerList.GetData()
+                Dim adpCustomerList As CustomerTableAdapter = New CustomerTableAdapter
+                Dim tblCustomerList As CustomerDataTable = adpCustomerList.GetData()
 
                 Return tblCustomerList
 
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
         Public Function GetCustReport() As DataTable
             Try
-                Dim adpCustomers As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
-                Dim tblCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable = adpCustomers.GetData()
+                Dim adpCustomers As CustomerTableAdapter = New CustomerTableAdapter
+                Dim tblCustomer As CustomerDataTable = adpCustomers.GetData()
 
                 Return tblCustomer
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
-        Public Function GetCustomer(CustomerID As Integer) As DataTable
+        Public Function GetCustomer(ByRef CustomerID As Integer) As DataTable
             Try
-                Dim adpCustomerList As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
-                Dim tblCustomerList As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable = adpCustomerList.GetCustomerByCustomerID(CustomerID)
+                Dim adpCustomerList As New CustomerTableAdapter
+                Dim tblCustomerList As CustomerDataTable = adpCustomerList.GetCustomerByCustomerID(CustomerID)
 
                 Return tblCustomerList
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
         Public Function GetCustomers() As DataTable
             Try
-                Dim adpCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
-                Dim tblCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable = adpCustomer.GetData()
+                Dim adpCustomer As New CustomerTableAdapter
+                Dim tblCustomer As CustomerDataTable = adpCustomer.GetData()
 
                 Return tblCustomer
 
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
         Public Function GetCustomerByTroubleTicket(ByRef TroubleTicketNo As Integer) As DataTable
             Try
-                Dim adpCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
-                Dim tblCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable = adpCustomer.GetByTroubleTicket(TroubleTicketNo)
+                Dim adpCustomer As New CustomerTableAdapter
+                Dim tblCustomer As CustomerDataTable = adpCustomer.GetByTroubleTicket(TroubleTicketNo)
 
                 Return tblCustomer
 
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
 
 
-        Public Sub UpdateCustomer(thisCustomer As NotificationSystem.NotificationSystem.Data.Classes.clsCustomer)
-            Dim adpCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
+        Public Sub UpdateCustomer(ByVal thisCustomer As clsCustomer)
+            Dim adpCustomer As New CustomerTableAdapter
 
 
             Try
-                If True Then
-                    Dim withBlock = thisCustomer
-                    adpCustomer.Update(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.UserName, withBlock.Password, withBlock.Original_CustomerID)
-                End If
+                With thisCustomer
+                    adpCustomer.Update(.AgentID, .TroubleTicketNo, .FirstN, .LastN, .Email, .Phone, .Address, .City, .State, .Zip, .UserName, .Password, .Original_CustomerID)
+                End With
 
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Sub
-
-
-        Public Function AddCustomer(thisCustomer As NotificationSystem.NotificationSystem.Data.Classes.clsCustomer) As Integer
-
-            'add CustomerID to table and save
-
-
-            Dim adpCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
-            Dim adpGetCustomerID As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetCustomerIDTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetCustomerIDTableAdapter()
-
-            Dim tblCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable = New NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable()
-
-            Customer = False
-
-
-            Try
-                If True Then
-                    Dim withBlock = thisCustomer
-                    adpCustomer.Insert(withBlock.AgentID, withBlock.TroubleTicketNo, withBlock.FirstN, withBlock.LastN, withBlock.Phone, withBlock.Email, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.UserName, withBlock.Password)
-                End If
-
-                Dim tblGetCustomerID As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetCustomerIDDataTable = adpGetCustomerID.GetData()
-                Dim row As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetCustomerIDRow = tblGetCustomerID(0)
-                Return row.CustomerID
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-
-
-        End Function
 
         Public Function GetCustomerID() As Integer
-            Dim adpGetCustomerID As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetCustomerIDTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetCustomerIDTableAdapter()
+            Dim adpGetCustomerID As New GetCustomerIDTableAdapter
 
             Try
-                Dim tblGetCustomerID As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetCustomerIDDataTable = adpGetCustomerID.GetData()
-                Dim row As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetCustomerIDRow = tblGetCustomerID(0)
+                Dim tblGetCustomerID As GetCustomerIDDataTable = adpGetCustomerID.GetData()
+                Dim row As GetCustomerIDRow = tblGetCustomerID(0)
 
                 Return row.CustomerID
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
-
-
-        Public Sub DeleteCustomer(thisCustomer As NotificationSystem.NotificationSystem.Data.Classes.clsCustomer)
-            Dim adpCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
-
-            Try
-                If True Then
-                    Dim withBlock = thisCustomer
-                    adpCustomer.DeleteQuery(withBlock.CustomerID)
-                End If
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Sub
 
         Public Sub GetbyUserPW(username As String, password As String)
             Try
-                Dim adpCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.CustomerTableAdapter()
-                Dim tblCustomer As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerDataTable = adpCustomer.GetDataByUserPw(username, password)
-                Dim row As NotificationSystem.NotificationSystem.Data.NotificationSystem.CustomerRow = tblCustomer(0)
+                Dim adpCustomer As New CustomerTableAdapter
+                Dim tblCustomer As CustomerDataTable = adpCustomer.GetDataByUserPw(username, password)
+                Dim row As CustomerRow = tblCustomer(0)
                 Return
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Sub
 
 
 
+        Public Function AddCustomer(ByVal thisCustomer As clsCustomer) As Integer
+            Dim adpCustomer As New CustomerTableAdapter
+            Dim adpGetCustomerID As New GetCustomerIDTableAdapter
 
-
-
-        Public Function GetTroubleTicketList() As DataTable
             Try
-                Dim adpTroubleTicketList As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter()
-                Dim tblTroubleTicketList As NotificationSystem.NotificationSystem.Data.NotificationSystem.TroubleTicketReqDataTable = adpTroubleTicketList.GetData()
+                adpCustomer.Insert(thisCustomer.AgentID, thisCustomer.TroubleTicketNo, thisCustomer.FirstN, thisCustomer.LastN, thisCustomer.Phone, thisCustomer.Email, thisCustomer.Address, thisCustomer.City, thisCustomer.State, thisCustomer.Zip, thisCustomer.UserName, thisCustomer.Password)
 
-                Return tblTroubleTicketList
-
-            Catch __unusedException1__ As Exception
+                Dim tblGetCustomerID As GetCustomerIDDataTable = adpGetCustomerID.GetData()
+                Dim row As GetCustomerIDRow = tblGetCustomerID(0)
+                Return row.CustomerID
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
-        Public Function GetTroubleTicketByNo(TroubleTicketNo As Integer) As Integer
+        Public Sub DeleteCustomer(ByVal thisCustomer As clsCustomer)
+            Dim adpCustomer As New CustomerTableAdapter
+
             Try
-                Dim adpTroubleTicketList As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter()
-                Dim tblTroubleTicketList As NotificationSystem.NotificationSystem.Data.NotificationSystem.TroubleTicketReqDataTable = adpTroubleTicketList.GetDataByTroubleTicket(TroubleTicketNo)
-                Dim row As NotificationSystem.NotificationSystem.Data.NotificationSystem.TroubleTicketReqRow = tblTroubleTicketList(0)
+                adpCustomer.DeleteQuery(thisCustomer.CustomerID)
+            Catch ex As Exception
+                Throw
+            End Try
+        End Sub
+
+
+        Public Function GetAgentList() As DataTable
+            Try
+                Dim adpAgentList As New NotificationSystemTableAdapters.AgentTableAdapter
+                Dim tblAgentList As New NotificationSystem.AgentDataTable
+                tblAgentList = adpAgentList.GetData()
+
+                Return tblAgentList
+
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+        Public Function GetAgent(ByRef AgentID As Integer) As DataTable
+            Try
+                Dim adpAgentList As New NotificationSystemTableAdapters.AgentTableAdapter
+                Dim tblGetAgent As New NotificationSystem.AgentDataTable
+                tblGetAgent = adpAgentList.GetDataByAgentID(AgentID)
+
+                Return tblGetAgent
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+
+        Public Function GetAgents() As DataTable
+            Try
+                Dim adpAgent As New NotificationSystemTableAdapters.AgentTableAdapter()
+                Dim tblAgent As New NotificationSystem.AgentDataTable()
+                tblAgent = adpAgent.GetData()
+
+                Return tblAgent
+
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+
+        Public Function GetAgReport(ByRef AgentID As Integer) As DataTable
+            Try
+                Dim adpAgents As New NotificationSystemTableAdapters.AgentTableAdapter
+                Dim tblAgent As New NotificationSystem.AgentDataTable
+                tblAgent = adpAgents.GetDataByAgentReport(AgentID)
+
+                Return tblAgent
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+
+        Public Function GetAgentByTicket(ByRef TroubleTicketNo As Integer) As DataTable
+            Try
+                Dim adpAgent As New NotificationSystemTableAdapters.AgentTableAdapter
+                Dim tblAgent As New NotificationSystem.AgentDataTable
+                tblAgent = adpAgent.GetDataByTicket(TroubleTicketNo)
+
+                Return tblAgent
+
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+
+        Public Function GetAgentID() As Integer
+            Dim adpGetAgentID As New NotificationSystemTableAdapters.GetAgentIDTableAdapter
+
+            Try
+                Dim tblGetAgentID As New NotificationSystem.GetAgentIDDataTable
+                tblGetAgentID = adpGetAgentID.GetData()
+                Dim row As NotificationSystem.GetAgentIDRow = tblGetAgentID(0)
+
+                Return row.AgentID
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+        Public Function AddAgent(ByVal thisAgent As clsAgent) As Integer
+            Dim adpAgent As New AgentTableAdapter
+            Dim adpGetAgentID As New GetAgentIDTableAdapter
+
+            Try
+                adpAgent.InsertQuery(thisAgent.TroubleTicketNo, thisAgent.Title, thisAgent.StartDate.ToString(), Integer.Parse(thisAgent.Salary), thisAgent.FirstN, thisAgent.LastN, thisAgent.Email, thisAgent.Phone, thisAgent.Fax)
+
+                Dim tblGetAgentID As GetAgentIDDataTable = adpGetAgentID.GetData()
+                Dim row As GetAgentIDRow = tblGetAgentID(0)
+                Return row.AgentID
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+        Public Sub UpdateAgent(ByVal thisAgent As clsAgent)
+            Dim adpAgent As New AgentTableAdapter
+
+            Try
+                adpAgent.UpdateQuery(thisAgent.TroubleTicketNo, thisAgent.Title, thisAgent.StartDate.ToString(), Integer.Parse(thisAgent.Salary), thisAgent.FirstN, thisAgent.LastN, thisAgent.Email, thisAgent.Phone, thisAgent.Fax, thisAgent.Original_AgentID)
+            Catch ex As Exception
+                Throw
+            End Try
+        End Sub
+
+        Public Function GetTroubleTicketList() As DataTable
+            Try
+                Dim adpTroubleTicketList As New TroubleTicketReqTableAdapter
+                Dim tblTroubleTicketList As TroubleTicketReqDataTable = adpTroubleTicketList.GetData()
+
+                Return tblTroubleTicketList
+
+            Catch ex As Exception
+                Throw
+            End Try
+        End Function
+
+        Public Function GetTroubleTicketByNo(ByRef TroubleTicketNo As Integer) As Integer
+            Try
+                Dim adpTroubleTicketList As New TroubleTicketReqTableAdapter
+                Dim tblTroubleTicketList As TroubleTicketReqDataTable = adpTroubleTicketList.GetDataByTroubleTicket(TroubleTicketNo)
+                Dim row As TroubleTicketReqRow = tblTroubleTicketList(0)
                 Return row.TroubleTicketNo
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
         Public Function GetTT() As DataTable
             Try
-                Dim adpTroubleTicket As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter()
-                Dim tblTroubleTicketReq As NotificationSystem.NotificationSystem.Data.NotificationSystem.TroubleTicketReqDataTable = adpTroubleTicket.GetData()
+                Dim adpTroubleTicket As New TroubleTicketReqTableAdapter()
+                Dim tblTroubleTicketReq As TroubleTicketReqDataTable = adpTroubleTicket.GetData()
 
                 Return tblTroubleTicketReq
 
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
-        Public Function GetTroubleTicket(TroubleTicketNo As Integer) As DataTable
+        Public Function GetTroubleTicket(ByRef TroubleTicketNo As Integer) As DataTable
             Try
-                Dim adpTroubleTicketReq As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter()
-                Dim tblTroubleTicketReq As NotificationSystem.NotificationSystem.Data.NotificationSystem.TroubleTicketReqDataTable = adpTroubleTicketReq.GetDataByTroubleTicket(TroubleTicketNo)
+                Dim adpTroubleTicketReq As New TroubleTicketReqTableAdapter
+                Dim tblTroubleTicketReq As TroubleTicketReqDataTable = adpTroubleTicketReq.GetDataByTroubleTicket(TroubleTicketNo)
 
                 Return tblTroubleTicketReq
 
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
-
-
-
-        Public Sub UpdateTroubleTicket(thisTroubleTicket As NotificationSystem.NotificationSystem.Data.Classes.clsTroubleTicketReq)
-            Dim adpTroubleTicket As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter()
+        Public Sub UpdateTroubleTicket(ByVal thisTroubleTicket As clsTroubleTicketReq)
+            Dim adpTroubleTicket As New TroubleTicketReqTableAdapter
 
             Try
-                Dim withBlock = thisTroubleTicket
-                adpTroubleTicket.Update(withBlock.CustomerID, withBlock.AgentID, withBlock.Status, withBlock.DueDate, withBlock.RequestDate, withBlock.Type, withBlock.TroubleTicketNo)
-            Catch __unusedException1__ As Exception
+                adpTroubleTicket.Update(thisTroubleTicket.CustomerID, thisTroubleTicket.AgentID, thisTroubleTicket.Status, thisTroubleTicket.DueDate, thisTroubleTicket.RequestDate, thisTroubleTicket.Type, thisTroubleTicket.TroubleTicketNo)
+            Catch ex As Exception
                 Throw
             End Try
         End Sub
 
-
-        Public Sub AddTroubleTicket(thisTroubleTicket As NotificationSystem.NotificationSystem.Data.Classes.clsTroubleTicketReq)
-            Dim adpTroubleTicketReq As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TroubleTicketReqTableAdapter()
-            Dim tblTroubleTicketReq As NotificationSystem.NotificationSystem.Data.NotificationSystem.TroubleTicketReqDataTable = New NotificationSystem.NotificationSystem.Data.NotificationSystem.TroubleTicketReqDataTable()
-            TroubleTicket = False
+        Public Sub AddTroubleTicket(ByVal thisTroubleTicket As clsTroubleTicketReq)
+            Dim adpTroubleTicketReq As New TroubleTicketReqTableAdapter
 
             Try
-                Dim withBlock = thisTroubleTicket
-                adpTroubleTicketReq.Insert(withBlock.CustomerID, withBlock.AgentID, withBlock.Status, withBlock.DueDate, withBlock.RequestDate, withBlock.Type)
-            Catch __unusedException1__ As Exception
+                adpTroubleTicketReq.Insert(thisTroubleTicket.CustomerID, thisTroubleTicket.AgentID, thisTroubleTicket.Status, thisTroubleTicket.DueDate, thisTroubleTicket.RequestDate, thisTroubleTicket.Type)
+            Catch ex As Exception
                 Throw
             End Try
-            Return
         End Sub
+
 
         Public Function GetTroubleTicketNo() As Integer
-            Dim adpTroubleTicketNumber As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetTroubleTicketNoTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetTroubleTicketNoTableAdapter()
+
+            Dim adpTroubleTicketNumber As New GetTroubleTicketNoTableAdapter
 
             Try
-                Dim tblGetTroubleTicketNo As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetTroubleTicketNoDataTable = adpTroubleTicketNumber.GetData()
-                Dim row As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetTroubleTicketNoRow = tblGetTroubleTicketNo(0)
+                Dim tblGetTroubleTicketNo As GetTroubleTicketNoDataTable = adpTroubleTicketNumber.GetData()
+                Dim row As GetTroubleTicketNoRow = tblGetTroubleTicketNo(0)
 
                 Return row.TroubleTicketNo
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
 
         Public Function GetTypeList() As DataTable
-
             Try
-                Dim adpType As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TypeTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.TypeTableAdapter()
-                Dim tblType As NotificationSystem.NotificationSystem.Data.NotificationSystem.TypeDataTable = adpType.GetData()
+
+                Dim adpType As New TypeTableAdapter
+                Dim tblType As TypeDataTable = adpType.GetData()
 
                 Return tblType
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
-
-
-
-            'DataSet ds = new DataSet();
-            'DataTable dt = new DataTable("GetData");
-            '         DataRow dr;
-
-            'dt.Columns.Add("Type", Type.GetType("System.String")).DefaultValue = string.Empty;
-
-            '         // Create and populate rows
-            '         // DataRow dr = dt.NewRow();
-
-            '         dr = dt.NewRow();
-            '         dr["Type"] = "Incident";
-            '         dt.Rows.Add(dr);
-
-            '         dr = dt.NewRow();
-            '         dr["Type"] = "Task";
-            '         dt.Rows.Add(dr);
-
-            '         dr = dt.NewRow();
-            '         dr["Type"] = "Problem";
-            '         dt.Rows.Add(dr);
-
-            '         return dt;
         End Function
+
+        'DataSet ds = new DataSet();
+        'DataTable dt = new DataTable("GetData");
+        '         DataRow dr;
+
+        'dt.Columns.Add("Type", Type.GetType("System.String")).DefaultValue = string.Empty;
+
+        '         // Create and populate rows
+        '         // DataRow dr = dt.NewRow();
+
+        '         dr = dt.NewRow();
+        '         dr["Type"] = "Incident";
+        '         dt.Rows.Add(dr);
+
+        '         dr = dt.NewRow();
+        '         dr["Type"] = "Task";
+        '         dt.Rows.Add(dr);
+
+        '         dr = dt.NewRow();
+        '         dr["Type"] = "Problem";
+        '         dt.Rows.Add(dr);
+
+        '         return dt;
+        'End Function
 
 
         Public Function GetStatusList() As DataTable
 
             Try
-                Dim adpStatus As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.StatusTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.StatusTableAdapter()
-                Dim tblStatus As NotificationSystem.NotificationSystem.Data.NotificationSystem.StatusDataTable = adpStatus.GetData()
+                Dim adpStatus As New StatusTableAdapter
+                Dim tblStatus As StatusDataTable = adpStatus.GetData()
 
                 Return tblStatus
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
             'DataSet ds = new DataSet();
@@ -617,227 +572,68 @@ Namespace NotificationSystem.NotificationSystem.Data.Classes
         End Function
 
 
-        Public Function GetAgentList() As DataTable
-            Try
-                Dim adpAgentList As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter()
-                Dim tblAgentList As NotificationSystem.NotificationSystem.Data.NotificationSystem.AgentDataTable = adpAgentList.GetData()
-
-                Return tblAgentList
-
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Function
-
-
-
-        Public Function GetAgent(AgentID As Integer) As DataTable
-            Try
-                Dim adpAgentList As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter()
-                Dim tblGetAgent As NotificationSystem.NotificationSystem.Data.NotificationSystem.AgentDataTable = adpAgentList.GetDataByAgentID(AgentID)
-
-                Return tblGetAgent
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Function
-
-
-        Public Function GetAgents() As DataTable
-            Try
-                Dim adpAgent As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter()
-                Dim tblAgent As NotificationSystem.NotificationSystem.Data.NotificationSystem.AgentDataTable = adpAgent.GetData()
-
-                Return tblAgent
-
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Function
-
-
-        Public Function GetAgReport(AgentID As Integer) As DataTable
-            Try
-                Dim adpAgents As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter()
-                Dim tblAgent As NotificationSystem.NotificationSystem.Data.NotificationSystem.AgentDataTable = adpAgents.GetDataByAgentReport(AgentID)
-
-                Return tblAgent
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Function
-
-
-        Public Function GetAgentByTicket(ByRef TroubleTicketNo As Integer) As DataTable
-            Try
-                Dim adpAgent As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter()
-                Dim tblAgent As NotificationSystem.NotificationSystem.Data.NotificationSystem.AgentDataTable = adpAgent.GetDataByTicket(TroubleTicketNo)
-
-                Return tblAgent
-
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Function
-
-
-
-        Public Function AddAgent(thisAgent As NotificationSystem.NotificationSystem.Data.Classes.clsAgent) As Integer
-            Dim adpAgent As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter()
-            Dim adpGetAgentID As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetAgentIDTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetAgentIDTableAdapter()
-
-            Dim tblAgent As NotificationSystem.NotificationSystem.Data.NotificationSystem.AgentDataTable = New NotificationSystem.NotificationSystem.Data.NotificationSystem.AgentDataTable()
-            Agent = False
-
-            Try
-                Dim withBlock = thisAgent
-                adpAgent.InsertQuery(withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate.ToString(), Integer.Parse(withBlock.Salary), withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax)
-
-                Dim tblGetAgentID As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetAgentIDDataTable = adpGetAgentID.GetData()
-                Dim row As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetAgentIDRow = tblGetAgentID(0)
-                Return row.AgentID
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Function
-
-
-        Public Function GetAgentID() As Integer
-            Dim adpGetAgentID As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetAgentIDTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.GetAgentIDTableAdapter()
-
-            Try
-                Dim tblGetAgentID As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetAgentIDDataTable = adpGetAgentID.GetData()
-                Dim row As NotificationSystem.NotificationSystem.Data.NotificationSystem.GetAgentIDRow = tblGetAgentID(0)
-
-                Return row.AgentID
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Function
-
-
-        Public Sub UpdateAgent(thisAgent As NotificationSystem.NotificationSystem.Data.Classes.clsAgent)
-            Dim adpAgent As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AgentTableAdapter()
-
-            Try
-                Dim withBlock = thisAgent
-                adpAgent.UpdateQuery(withBlock.TroubleTicketNo, withBlock.Title, withBlock.StartDate.ToString(), Integer.Parse(withBlock.Salary), withBlock.FirstN, withBlock.LastN, withBlock.Email, withBlock.Phone, withBlock.Fax, withBlock.Original_AgentID)
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
-        End Sub
-        'public void DeleteAgent(clsAgent thisAgent)
-        '{
-        '    AgentTableAdapter adpAgent = new AgentTableAdapter();
-
-        '    try
-        '    {
-        '        {
-        '            var withBlock = thisAgent;
-        '            adpAgent.DeleteQuery(withBlock.AgentID);
-        '        }
-        '    }
-        '    catch (Exception)
-        '    {
-        '        throw;
-        '    }
-        '}
-
-
 
         Public Sub GetAdminbyUserPW(password As String, username As String)
             Try
-                Dim adpAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter()
-                Dim tblAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable = adpAdmin.GetDataByUserNamePassword(username, password)
-                Dim row As NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminRow = tblAdmin(0)
+                Dim adpAdmin As New AdminTableAdapter
+                Dim tblAdmin As AdminDataTable = adpAdmin.GetDataByUserNamePassword(username, password)
+                Dim row As AdminRow = tblAdmin(0)
                 Return
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Sub
-
-
-
-        'exception error ? 6/25/24 
 
         Public Function GetAdmins() As DataTable
             Try
-
-                Dim adpAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter()
-                Dim tblAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable = adpAdmin.GetData()
+                Dim adpAdmin As New AdminTableAdapter
+                Dim tblAdmin As AdminDataTable = adpAdmin.GetData()
                 Return tblAdmin
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
-
-
-        Public Function GetAdmin(UserName As String) As DataTable
+        Public Function GetAdmin(ByRef UserName As String) As DataTable
             Try
-                Dim adpAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter()
-                Dim tblAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable = adpAdmin.GetDataByUserName(UserName)
-
+                Dim adpAdmin As New AdminTableAdapter
+                Dim tblAdmin As AdminDataTable = adpAdmin.GetDataByUserName(UserName)
                 Return tblAdmin
-
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Function
 
-
-
-        Public Sub UpdateAdmin(thisAdmin As NotificationSystem.NotificationSystem.Data.Classes.clsAdmin)
-            Dim adpAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter()
+        Public Sub UpdateAdmin(ByVal thisAdmin As clsAdmin)
+            Dim adpAdmin As New AdminTableAdapter
 
             Try
-                Dim withBlock = thisAdmin
-                adpAdmin.UpdateQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last, withBlock.UserName) ' Added Original_UserName parameter
-            Catch __unusedException1__ As Exception
+                adpAdmin.UpdateQuery(thisAdmin.UserName, thisAdmin.Password, thisAdmin.Email, thisAdmin.First, thisAdmin.Last, thisAdmin.UserName)
+            Catch ex As Exception
                 Throw
             End Try
         End Sub
 
-        'public void DeleteAdmin(clsAgent thisAdmin)
-        '{
-        '    AdminTableAdapter adpAdmin = new AdminTableAdapter();
-
-        '    try
-        '    {
-        '        {
-        '            var withBlock = thisAdmin;
-        '            adpAdmin.DeleteQuery(withBlock.UserName);
-        '        }
-        '    }
-        '    catch (Exception)
-        '    {
-        '        throw;
-        '    }
-        '}
-
-        Public Sub AddAdmin(thisAdmin As NotificationSystem.NotificationSystem.Data.Classes.clsAdmin)
-
-            'add Admin to table and save
-
-
-            Dim adpAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter = New NotificationSystem.NotificationSystem.Data.NotificationSystemTableAdapters.AdminTableAdapter()
-
-            Dim tblAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable = New NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable()
-            Admin = False
-
+        Public Sub AddAdmin(ByVal thisAdmin As clsAdmin)
+            Dim adpAdmin As New AdminTableAdapter
 
             Try
-                If True Then
-                    Dim withBlock = thisAdmin
-                    adpAdmin.InsertQuery(withBlock.UserName, withBlock.Password, withBlock.Email, withBlock.First, withBlock.Last)
-                End If
-            Catch __unusedException1__ As Exception
+                adpAdmin.InsertQuery(thisAdmin.UserName, thisAdmin.Password, thisAdmin.Email, thisAdmin.First, thisAdmin.Last)
+            Catch ex As Exception
                 Throw
             End Try
-            Return
-
         End Sub
 
+
+        Public Sub DeleteAdmin(ByVal thisAdmin As clsAdmin)
+            Dim adpAdmin As New AdminTableAdapter
+
+            Try
+                adpAdmin.DeleteQuery(thisAdmin.UserName)
+            Catch ex As Exception
+                Throw
+            End Try
+        End Sub
 
     End Class
 End Namespace

@@ -24,7 +24,29 @@
     }
 </style>
 
- 
+ <script>
+    function OnClientLoad0(sender, args) {
+
+        $telerik.$(".k-input")[0].setAttribute("readonly", "true");
+    }
+    function OnClientLoad1(sender, args) {
+
+        $telerik.$(".k-input")[1].setAttribute("readonly", "true");
+    }
+    function OnClientLoad2(sender, args) {
+
+        $telerik.$(".k-input")[2].setAttribute("readonly", "true");
+    }
+    function OnClientLoad3(sender, args) {
+
+        $telerik.$(".k-input")[3].setAttribute("readonly", "true");
+    }
+    function OnClientLoad4(sender, args) {
+
+        $telerik.$(".k-input")[4].setAttribute("readonly", "true");
+    }
+
+ </script>
 
   <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
                          <div class="Heading" >Add Admin</div>

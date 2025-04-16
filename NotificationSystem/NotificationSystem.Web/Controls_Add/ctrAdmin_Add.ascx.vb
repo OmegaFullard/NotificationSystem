@@ -1,6 +1,7 @@
 ﻿Imports System
 Imports System.Data.SqlClient
 Imports System.Web.UI
+Imports NotificationSystem.NotificationSystem.Data.Classes
 
 Namespace NotificationSystem.NotificationSystem.Web.Controls_Add
     Public Partial Class ctrAdmin_Add
@@ -17,39 +18,37 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Add
             End Set
         End Property
 
-        Protected Sub Page_Load(sender As Object, e As EventArgs)
-            Dim theNotificationSystem As NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem = New NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem()
-            Dim tblAdmin As NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable = New NotificationSystem.NotificationSystem.Data.NotificationSystem.AdminDataTable()
+        Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-            Try
-                If MyBase.Page.IsPostBack Then
-                    If Equals(Request.Form("ctl00$MainContent$ctrAdmin_Add$btnAdd"), "Add") Then AddAdmin()
-                Else
-                    PopulateControls()
-                End If
-            Catch __unusedException1__ As Exception
-                Throw
-            End Try
+            PopulateControls()
+            If Not IsPostBack Then
+                txtusername.Text = UserName
+                txtusername.Enabled = False
+                txtfirstname.Text = ""
+                txtlastname.Text = ""
+                txtemailaddress.Text = ""
+                txtpassword.Text = ""
+            End If
+
         End Sub
 
         Public Sub AddAdmin()
             Try
-                Dim thisAdmin As NotificationSystem.NotificationSystem.Data.Classes.clsAdmin = New NotificationSystem.NotificationSystem.Data.Classes.clsAdmin()
+                Dim thisAdmin As New clsAdmin
 
-                If True Then
-                    Dim withBlock = thisAdmin
+                With thisAdmin
+
+                    .UserName = txtusername.Text
+                    .Password = txtpassword.Text
+                    .First = txtfirstname.Text
+                    .Last = txtlastname.Text
+                    .Email = txtemailaddress.Text
+
                     If txtusername.Text.Length = 0 Then Return
 
+                End With
 
-                    withBlock.UserName = txtusername.Text
-                    withBlock.Password = txtpassword.Text
-                    withBlock.First = txtfirstname.Text
-                    withBlock.Last = txtlastname.Text
-                    withBlock.Email = txtemailaddress.Text
-                End If
-
-                Try
-                    Dim theNotificationSystem As NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem = New NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem()
+                Dim theNotificationSystem As New clsNotificationSystem
                     theNotificationSystem.AddAdmin(thisAdmin)
                     lblResult.Text = "Admin data has been added"
                 Catch ex As SqlException
@@ -61,21 +60,16 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Add
                 End Try
 
 
-            Catch ex As Exception
-                Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
-                Dim NotificationBody = ex.Message & "  " & ex.StackTrace
-                SendError.SendMailMessage(NotificationBody)
-                Response.Redirect("ErrorPage.aspx", False)
-            End Try
+
         End Sub
         Public Sub PopulateControls()
-            Dim theNotificationSystem As NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem = New NotificationSystem.NotificationSystem.Data.Classes.clsNotificationSystem()
+            Dim theNotificationSystem As New clsNotificationSystem
         End Sub
         Public Sub ClearControls()
             Try
 
 
-            Catch __unusedException1__ As Exception
+            Catch ex As Exception
                 Throw
             End Try
         End Sub

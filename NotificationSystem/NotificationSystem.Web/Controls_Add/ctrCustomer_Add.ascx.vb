@@ -22,61 +22,58 @@ Public Partial Class ctrCustomer_Add
     End Property
 
     Public Property txtCustomerList As TextBox
-    Protected Sub Page_Load(sender As Object, e As EventArgs)
-        Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-        Dim tblAgent As CustomerDataTable = New CustomerDataTable()
-        Dim client = New HttpClient()
-        Try
-            If MyBase.Page.IsPostBack Then
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-
-                If Equals(Request.Form("ctl00$MainContent$ctrCustomer_Add$btnAdd"), "Add") Then AddCustomer()
-            Else
-            End If
-        Catch __unusedException1__ As Exception
-            Throw
-        End Try
-
+        PopulateControls()
+        If Not IsPostBack Then
+            txtcustomerid.Text = CustomerID.ToString()
+            txtcustomerid.Enabled = False
+            txtAgentID.Text = "0"
+            txttroubleticketno.Text = "0"
+            txtfirstname.Text = ""
+            txtlastname.Text = ""
+            txtemailaddress.Text = ""
+            txtPhoneNumber.Text = ""
+            txtaddress.Text = ""
+            txtcity.Text = ""
+            txtstate.Text = ""
+            txtzip.Text = ""
+            txtusername.Text = ""
+            txtpassword.Text = ""
+        End If
     End Sub
 
 
     Public Sub AddCustomer()
         Try
-            Dim thisCustomer As clsCustomer = New clsCustomer()
+            Dim thisCustomer As New clsCustomer
 
-            If True Then
-                Dim withBlock = thisCustomer
+            With thisCustomer
+
+                thisCustomer.CustomerID = Integer.Parse(txtcustomerid.Text)
+                thisCustomer.AgentID = Integer.Parse(txtAgentID.Text)
+                thisCustomer.TroubleTicketNo = Integer.Parse(txttroubleticketno.Text)
+                thisCustomer.FirstN = txtfirstname.Text
+                thisCustomer.LastN = txtlastname.Text
+                thisCustomer.Email = txtemailaddress.Text
+                thisCustomer.Phone = txtPhoneNumber.Text
+                thisCustomer.Address = txtaddress.Text
+                thisCustomer.City = txtcity.Text
+                thisCustomer.State = txtstate.Text
+                thisCustomer.Zip = txtzip.Text
+                thisCustomer.UserName = txtusername.Text
+                thisCustomer.Password = txtpassword.Text
                 If txtcustomerid.Text.Length = 0 Then Return
 
-                withBlock.CustomerID = Integer.Parse(txtcustomerid.Text)
-                withBlock.AgentID = Integer.Parse(txtAgentID.Text)
-                withBlock.TroubleTicketNo = Integer.Parse(txttroubleticketno.Text)
-                withBlock.FirstN = txtfirstname.Text
-                withBlock.LastN = txtlastname.Text
-                withBlock.Email = txtemailaddress.Text
-                withBlock.Phone = txtPhoneNumber.Text
-                withBlock.Address = txtaddress.Text
-                withBlock.City = txtcity.Text
-                withBlock.State = txtstate.Text
-                withBlock.Zip = txtzip.Text
-                withBlock.UserName = txtusername.Text
-                withBlock.Password = txtpassword.Text
+            End With
 
-            End If
-            Try
 
-                Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-                theNotificationSystem.AddCustomer(thisCustomer)
+
+            Dim theNotificationSystem As New clsNotificationSystem
+            theNotificationSystem.AddCustomer(thisCustomer)
                 lblResult.Text = "Customer data has been added"
 
-            Catch ex As SqlException
-                If ex.Number = 2627 Then
-                    lblResult.Text = "Customer already exist!"
-                Else
-                    Throw New ApplicationException(ex.Message)
-                End If
-            End Try
-        Catch ex As Exception
+            Catch ex As Exception
             Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
             Dim NotificationBody = ex.Message & "  " & ex.StackTrace
             SendError.SendMailMessage(NotificationBody)
@@ -96,10 +93,21 @@ Public Partial Class ctrCustomer_Add
     End Sub
     Public Sub ClearControls()
         Try
-
-
-        Catch __unusedException1__ As Exception
-            Throw
+            txtcustomerid.Text = ""
+            txtAgentID.Text = ""
+            txttroubleticketno.Text = ""
+            txtfirstname.Text = ""
+            txtlastname.Text = ""
+            txtemailaddress.Text = ""
+            txtPhoneNumber.Text = ""
+            txtaddress.Text = ""
+            txtcity.Text = ""
+            txtstate.Text = ""
+            txtzip.Text = ""
+            txtusername.Text = ""
+            txtpassword.Text = ""
+        Catch ex As Exception
+            lblResult.Text = "An error occurred while clearing controls: " & ex.Message
         End Try
     End Sub
     Protected Sub btnCancel_Click(sender As Object, e As EventArgs)
