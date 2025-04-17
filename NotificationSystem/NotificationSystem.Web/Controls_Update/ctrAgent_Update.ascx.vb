@@ -3,8 +3,9 @@ Imports System.Web.UI
 Imports NotificationSystem.NotificationSystem.Data.NotificationSystem
 Imports NotificationSystem.NotificationSystem.Data.Classes
 Imports System.Data.SqlClient
+Imports Microsoft.VisualBasic
 
-Public Partial Class ctrAgent_Update
+Partial Public Class ctrAgent_Update
     Inherits UserControl
     Private m_AgentID As Integer = 0
 
@@ -16,13 +17,13 @@ Public Partial Class ctrAgent_Update
             m_AgentID = value
         End Set
     End Property
-    Protected Sub Page_Load(sender As Object, e As EventArgs)
-        Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-        Dim tblAgent As AgentDataTable = New AgentDataTable()
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim theNotificationSystem As New clsNotificationSystem
+        Dim tblAgent As New AgentDataTable
         Try
-            If MyBase.Page.IsPostBack Then
+            If Page.IsPostBack Then
 
-                If Equals(Request.Form("ctl00$MainContent$ctrAgent_Update$btnUpdate"), "Update") Then
+                If Request.Form("ctl00$MainContent$ctrAgent_Update$btnUpdate") = "Update" Then
                     UpdateAgent()
                 Else
                     If m_AgentID > 0 Then lblResult.Text = "ID" & m_AgentID.ToString()
@@ -70,33 +71,41 @@ Public Partial Class ctrAgent_Update
 
     Public Sub ClearControls()
         Try
+            txtagentid.Text = ""
+            txttitle.Text = ""
+            txtfirstname.Text = ""
+            txtlastname.Text = ""
+            txtemailaddress.Text = ""
+            txtPhoneNumber.Text = ""
+            txtFaxNumber.Text = ""
+            txtsalary.Text = ""
 
 
-        Catch __unusedException1__ As Exception
+        Catch ex As Exception
             Throw
         End Try
     End Sub
     Public Sub UpdateAgent()
+
+        Dim thisAgent As New clsAgent
         Try
-            Dim thisAgent As clsAgent = New clsAgent()
-
-            If True Then
-                Dim withBlock = thisAgent
-                If txtagentid.Text.Length = 0 Then Return
 
 
-                withBlock.AgentID = Integer.Parse(txtagentid.Text)
-                withBlock.Title = txttitle.Text
-                withBlock.FirstN = txtfirstname.Text
-                withBlock.LastN = txtlastname.Text
-                withBlock.Email = txtemailaddress.Text
-                withBlock.Phone = txtPhoneNumber.Text
-                withBlock.Fax = txtFaxNumber.Text
-                withBlock.Salary = txtsalary.Text
-            End If
+            Dim withBlock = thisAgent
+            If txtagentid.Text.Length = 0 Then Return
 
+            withBlock.AgentID = Integer.Parse(txtagentid.Text)
+            withBlock.Title = txttitle.Text
+            withBlock.FirstN = txtfirstname.Text
+            withBlock.LastN = txtlastname.Text
+            withBlock.Email = txtemailaddress.Text
+            withBlock.Phone = txtPhoneNumber.Text
+            withBlock.Fax = txtFaxNumber.Text
+            withBlock.Salary = txtsalary.Text
+
+            withBlock.AgentID = Integer.Parse(Strings.Replace(txtagentid.Text, "ID", ""))
             Try
-                Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
+                Dim theNotificationSystem As New clsNotificationSystem
                 theNotificationSystem.UpdateAgent(thisAgent)
                 lblResult.Text = "Agent data has been added"
             Catch ex As SqlException
@@ -109,10 +118,7 @@ Public Partial Class ctrAgent_Update
 
 
         Catch ex As Exception
-            Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
-            Dim NotificationBody = ex.Message & "  " & ex.StackTrace
-            SendError.SendMailMessage(NotificationBody)
-            Response.Redirect("ErrorPage.aspx", False)
+            Throw
         End Try
     End Sub
     Protected Sub btnCancel_Click(sender As Object, e As EventArgs)

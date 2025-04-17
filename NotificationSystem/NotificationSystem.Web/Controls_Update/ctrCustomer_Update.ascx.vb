@@ -3,8 +3,9 @@ Imports System.Web.UI
 Imports NotificationSystem.NotificationSystem.Data.NotificationSystem
 Imports NotificationSystem.NotificationSystem.Data.Classes
 Imports System.Data.SqlClient
+Imports Microsoft.VisualBasic
 
-Public Partial Class ctrCustomer_Update
+Partial Public Class ctrCustomer_Update
     Inherits UserControl
 
     Private m_CustomerID As Integer = 0
@@ -17,13 +18,14 @@ Public Partial Class ctrCustomer_Update
             m_CustomerID = value
         End Set
     End Property
-    Protected Sub Page_Load(sender As Object, e As EventArgs)
-        Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
-        Dim tblCustomer As CustomerDataTable = New CustomerDataTable()
-        Try
-            If MyBase.Page.IsPostBack Then
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-                If Equals(Request.Form("ct100$MainContent$ctrCustomer_Update$btnUpdate"), "Update") Then
+        Dim theNotificationSystem As New clsNotificationSystem
+        Dim tblCustomer As New CustomerDataTable
+        Try
+            If Page.IsPostBack Then
+
+                If Request.Form("ct100$MainContent$ctrCustomer_Update$btnUpdate") = "Update" Then
                     UpdateCustomer()
                 Else
                     If m_CustomerID > 0 Then lblResult.Text = "ID" & m_CustomerID.ToString()
@@ -64,6 +66,8 @@ Public Partial Class ctrCustomer_Update
             End If
 
 
+            PopulateControls()
+
         Catch ex As Exception
             Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
             Dim NotificationBody = ex.Message & "  " & ex.StackTrace
@@ -76,55 +80,69 @@ Public Partial Class ctrCustomer_Update
     Public Sub ClearControls()
         Try
 
+            txtcustomerid.Text = ""
+            txtAgentID.Text = ""
+            txttroubleticketno.Text = ""
+            txtfirstname.Text = ""
+            txtlastname.Text = ""
+            txtaddress.Text = ""
+            txtcity.Text = ""
+            txtstate.Text = ""
+            txtzip.Text = ""
+            txtusername.Text = ""
+            txtpassword.Text = ""
+            txtPhoneNumber.Text = ""
+            txtemailaddress.Text = ""
 
-        Catch __unusedException1__ As Exception
+        Catch ex As Exception
             Throw
         End Try
     End Sub
 
+    Public Sub CleanResultControl()
+        lblResult.Text = String.Empty
+    End Sub
+
     Public Sub UpdateCustomer()
+
+        Dim thisCustomer As New clsCustomer
+
         Try
-            Dim thisCustomer As clsCustomer = New clsCustomer()
-
-            If True Then
-                Dim withBlock = thisCustomer
-                If txtcustomerid.Text.Length = 0 Then Return
 
 
-                withBlock.CustomerID = Integer.Parse(txtcustomerid.Text)
-                withBlock.AgentID = Integer.Parse(txtAgentID.Text)
-                withBlock.TroubleTicketNo = Integer.Parse(txttroubleticketno.Text)
-                withBlock.FirstN = txtfirstname.Text
-                withBlock.LastN = txtlastname.Text
-                withBlock.Email = txtemailaddress.Text
-                withBlock.Phone = txtPhoneNumber.Text
-                withBlock.Address = txtaddress.Text
-                withBlock.City = txtcity.Text
-                withBlock.State = txtstate.Text
-                withBlock.Zip = txtzip.Text
-                withBlock.UserName = txtusername.Text
-                withBlock.Password = txtpassword.Text
-            End If
+            Dim withBlock = thisCustomer
+            If txtcustomerid.Text.Length = 0 Then Return
 
+
+            withBlock.CustomerID = Integer.Parse(txtcustomerid.Text)
+            withBlock.AgentID = Integer.Parse(txtAgentID.Text)
+            withBlock.TroubleTicketNo = Integer.Parse(txttroubleticketno.Text)
+            withBlock.FirstN = txtfirstname.Text
+            withBlock.LastN = txtlastname.Text
+            withBlock.Email = txtemailaddress.Text
+            withBlock.Phone = txtPhoneNumber.Text
+            withBlock.Address = txtaddress.Text
+            withBlock.City = txtcity.Text
+            withBlock.State = txtstate.Text
+            withBlock.Zip = txtzip.Text
+            withBlock.UserName = txtusername.Text
+            withBlock.Password = txtpassword.Text
+
+            withBlock.CustomerID = Integer.Parse(Strings.Replace(txtcustomerid.Text, "ID", ""))
             Try
-                Dim theNotificationSystem As clsNotificationSystem = New clsNotificationSystem()
+                Dim theNotificationSystem As New clsNotificationSystem
                 theNotificationSystem.UpdateCustomer(thisCustomer)
                 lblResult.Text = "Customer data has been updated"
-            Catch __unusedSqlException1__ As SqlException
-                'if (ex.Number == 2627)
-                '    lblResult.Text = "Customer already exist!";
-                'else
-                '    throw new ApplicationException(ex.Message);
+            Catch ex As SqlException
+
+                Throw New ApplicationException(ex.Message)
             End Try
 
 
         Catch ex As Exception
-            Dim SendError As clsNotificationSystem_Web = New clsNotificationSystem_Web()
-            Dim NotificationBody = ex.Message & "  " & ex.StackTrace
-            SendError.SendMailMessage(NotificationBody)
-            Response.Redirect("ErrorPage.aspx", False)
+            Throw
         End Try
-        PopulateControls()
+
 
 
     End Sub

@@ -39,7 +39,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Update
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtfirstname As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtfirstname As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''valRequiredFieldFirst control.
@@ -66,7 +66,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Update
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtlastname As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtlastname As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''valRequiredFieldLast control.
@@ -93,7 +93,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Update
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtusername As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtusername As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtpassword control.
@@ -102,7 +102,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Update
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtpassword As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtpassword As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''txtemailaddress control.
@@ -111,7 +111,7 @@ Namespace NotificationSystem.NotificationSystem.Web.Controls_Update
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtemailaddress As Global.System.Web.UI.WebControls.TextBox
+        Protected WithEvents txtemailaddress As Global.Telerik.Web.UI.RadTextBox
 
         '''<summary>
         '''btnCancel control.
